@@ -1,0 +1,27 @@
+{
+  "name": "nuxeo-website-styles",
+  "description": "Styles to be used on Nuxeo websites",
+  "private": true,
+  "version": "0.0.1",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Andrew Goodricke",
+    "email": "github@andrewgoodricke.com",
+    "url": "http://www.nuxeo.com"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "sass-lint": "^1.10.2"
+},
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:nuxeo/website-styles.git"
+  },
+  "bugs": {
+    "url": "git@github.com:nuxeo/website-styles.git/issues"
+  },
+}
