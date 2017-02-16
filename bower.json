@@ -1,0 +1,7 @@
+{
+  "name": "nuxeo-website-elements",
+  "version": "0.0.0",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.8.0"
+  }
+}

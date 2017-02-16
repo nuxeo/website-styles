@@ -1,0 +1,117 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- site-name="Elements" menu-items='[{title: "Milestones", url: "/milestones"}, {title: "Continuous", url: "/continuous"}, {title: "Login", url: "/login"}]' -->
+<dom-module id="nuxeo-menu">
+    <template>
+        <style>
+        /* local DOM styles go here */
+        :host {
+            background: black;
+            display: block;
+            height: 50px;
+            width: 100%;
+            color: white;
+        }
+
+        :host .nuxeo-satellite-left-menu,
+        :host .nuxeo-satellite-right-menu {
+            display: inline-block;
+        }
+
+        :host .nuxeo-satellite-right-menu {
+            float: right;
+        }
+
+        :host ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline-block;
+        }
+
+        :host li,
+        :host li * {
+            display: inline-block;
+        }
+
+        :host a {
+            color: white;
+            line-height: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding-left: 1em;
+            padding-right: 1em;
+            font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 100;
+            transition: color .4s ease;
+
+        }
+
+        :host a img {
+            vertical-align: middle;
+        }
+
+        :host a:hover {
+            color: #1585cf;
+        }
+
+        :host .site-home a {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        :host .site-home a img {
+            margin-left: .5em;
+            margin-right: 1em;
+        }
+
+        :host .site-home::after {
+            content: '|';
+            color: grey;
+        }
+
+        </style>
+        <!-- local DOM goes here -->
+        <div class="nuxeo-satellite-left-menu">
+            <ul>
+                <li class="site-home">
+                    <a href="[[siteUrl]]">
+                        <img class="nuxeo-satellite-icon" src="//www.nuxeo.com/assets/icons/favicon-16x16.png" width="16" height="16" alt="[[siteName]]">
+                        [[siteName]]
+                    </a>
+                </li>
+                <template is="dom-repeat" items="{{menuItems}}">
+                    <li>
+                        <a href="{{item.url}}">{{item.title}}</a>
+                    </li>
+                </template>
+            </ul>
+        </div>
+        <div class="nuxeo-satellite-right-menu">
+            <template is="dom-repeat" items="{{menuItemsRight}}">
+                <li>
+                    <a href="{{item.url}}">{{item.title}}</a>
+                </li>
+            </template>
+        </div>
+
+    </template>
+    <script>
+    Polymer({
+        is: 'nuxeo-menu',
+        properties: {
+            siteName: {
+                type: String,
+                value: 'Nuxeo'
+            },
+            siteUrl: {
+                type: String,
+                value: '/'
+            },
+            menuItems: Array,
+            menuItemsRight: Array
+        }
+    });
+    </script>
+</dom-module>
