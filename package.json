@@ -4,8 +4,13 @@
   "private": true,
   "version": "0.0.1",
   "main": "",
+  "config": {
+    "browser": "chromium-browser"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run server & nodemon --exec 'npm run compile:styles && browser-sync reload'",
+    "server": "browser-sync start --server . --startPath demo --browser=$npm_package_config_browser",
     "postinstall": "npm run compile",
     "precompile": "bower install",
     "compile": "npm run compile:header",
@@ -25,8 +30,10 @@
   "devDependencies": {
     "autoprefixer": "^6.7.3",
     "bower": "^1.8.0",
+    "browser-sync": "^2.18.8",
     "eslint": "^3.13.1",
     "node-sass": "^4.5.0",
+    "nodemon": "^1.11.0",
     "postcss-cli": "^2.6.0",
     "sass-lint": "^1.10.2"
   },

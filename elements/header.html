@@ -1,0 +1,173 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="./header_banner.html">
+<link rel="import" href="./header_menu.html">
+
+<dom-module id="nuxeo-header">
+    <template>
+        <style>
+        /* local DOM styles go here */
+        :host {
+            display: block;
+        }
+
+        @media (max-width: 700px) {
+            :host .nuxeo-satellite-header {
+                display: none;
+            }
+        }
+
+        @media (max-width: 900px) {
+            :host .nuxeo-satellite-header > .nuxeo-satellite-right-menu {
+                display: none;
+            }
+        }
+
+        :host .nuxeo-satellite-header {
+            background: white;
+            height: 50px;
+            width: 100%;
+        }
+
+        :host .nuxeo-satellite-left-menu,
+        :host .nuxeo-satellite-right-menu {
+            display: inline-block;
+        }
+
+        :host .nuxeo-satellite-right-menu {
+            float: right;
+        }
+
+        :host ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline-block;
+        }
+
+        :host li,
+        :host li * {
+            display: inline-block;
+        }
+
+        :host a {
+            color: black;
+            line-height: 50px;
+            text-decoration: none;
+            padding-left: 1em;
+            padding-right: 1em;
+            font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 100;
+            transition: color .4s ease;
+        }
+
+        :host a img {
+            vertical-align: middle;
+        }
+
+        :host a:hover {
+            color: #1585cf;
+        }
+
+        :host .menu-home::after {
+            content: '|';
+            color: grey;
+        }
+
+        :host .nuxeo-satellite-download {
+            background-color: #ff452a;
+            transition: background-color .4s ease;
+        }
+
+        :host .nuxeo-satellite-download:hover {
+            background-color: #dd1c00;
+        }
+
+        :host .nuxeo-satellite-download a {
+            color: white;
+            text-transform: uppercase;
+            font-size: .95em;
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+
+        </style>
+        <!-- local DOM goes here -->
+        <template is="dom-if" if="{{showNuxeoMenu}}">
+            <div class="nuxeo-satellite-header">
+                <div class="nuxeo-satellite-left-menu">
+                    <ul>
+                        <li class="menu-home" role="menuitem">
+                            <a href="https://www.nuxeo.com/">
+                                <img src="//www.nuxeo.com/assets/imgs/logo340x60.png" width="80" height="14" alt="Nuxeo" class="nuxeo-satellite-logo">
+                            </a>
+                        </li>
+                        <li class="menu-link" role="menuitem">
+                            <a href="https://www.nuxeo.com/why-nuxeo/">
+                                Why Nuxeo
+                            </a>
+                        </li>
+                        <li class="menu-link" role="menuitem">
+                            <a href="https://www.nuxeo.com/products/content-management-platform/">
+                                Products
+                            </a>
+                        </li>
+                        <li class="menu-link" role="menuitem">
+                            <a href="https://www.nuxeo.com/solutions/digital-asset-management/">
+                                Use Cases
+                            </a>
+                        </li>
+                        <li class="menu-link" role="menuitem">
+                            <a href="https://www.nuxeo.com/services/">
+                                Services
+                            </a>
+                        </li>
+                        <li class="menu-link" role="menuitem">
+                            <a href="https://www.nuxeo.com/customers/">
+                                Customers
+                            </a>
+                        </li>
+                        <li class="menu-link" role="menuitem">
+                            <a href="https://www.nuxeo.com/resources/">
+                                Learning
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nuxeo-satellite-right-menu">
+                    <ul>
+                        <li>
+                            <a href="https://nuxeo.com/about/contact/">
+                                <img alt="Contact" src="//doc.nuxeo.com/assets/imgs/contact.svg">
+                            </a>
+                        </li>
+                        <li class="nuxeo-satellite-download">
+                            <a href="https://www.nuxeo.com/downloads/">
+                                Download
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </template>
+        <content></content>
+    </template>
+    <script>
+        Polymer({
+            is: 'nuxeo-header',
+            properties: {
+                showNuxeoMenu: Boolean
+            }
+        });
+    </script>
+</dom-module>
+
+
+<!-- nsh('sitename', 'Elements');
+nsh('menu_items', 'Core Elements', '/core-elements');
+nsh('menu_items', 'UI Elements', '/ui-elements');
+nsh('banner_image_id', '1');
+nsh('banner_title', 'Elements');
+nsh('banner_text', 'Placeholder text.'); -->

@@ -35,6 +35,19 @@ Mixin name | Description
 nuxeo-base | Base styles required
 nuxeo-typography | Standard typography styles
 
+## Polymer Elements
+
+### Run Locally
+```bash
+npm run dev
+```
+
+### Change browser
+The broswer defaults to `chromium-browser` but can be changed with the following command and then locally as usual.
+```bash
+npm config set Nuxeo-website:browser firefox
+```
+
 ## Contributions
 Please keep the [available mixins table](#available-mixins) up to date if you add or amend mixins.
 

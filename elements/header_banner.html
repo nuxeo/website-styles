@@ -1,0 +1,51 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="nuxeo-banner">
+    <template>
+        <style>
+        /* local DOM styles go here */
+        :host {
+            background-color: #091f3f;
+            color: white;
+            display: block;
+            height: 300px;
+            padding-top: 6rem;
+            text-align: center;
+            background-size: cover;
+        }
+
+        :host[background-id='1'] {
+            background-image: url('//www.nuxeo.com/assets/imgs/ea-background.png');
+        }
+
+        :host h1 {
+            margin-bottom: 3rem;
+        }
+
+        :host .content {
+            width: 40em;
+            font-size: 1.2rem;
+            margin: 0 auto;
+        }
+
+        </style>
+        <!-- local DOM goes here -->
+        <h1>[[title]]</h1>
+        <div class="content">
+            <content></content>
+        </div>
+
+    </template>
+    <script>
+    Polymer({
+        is: 'nuxeo-banner',
+        properties: {
+            title: String,
+            backgroundId: {
+                type: String,
+                reflectToAttribute: true
+            }
+        }
+    });
+    </script>
+</dom-module>
