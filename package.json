@@ -6,19 +6,31 @@
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "touch did-something-nice-after-install.delete-me"
+    "postinstall": "npm run compile",
+    "precompile": "bower install",
+    "compile": "npm run compile:header",
+    "compile:header": "vulcanize -o elements/header.html elements/header.html --strip-comments --inline-scripts --inline-css",
+    "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./node_modules/normalize-scss/sass/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
+    "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css"
   },
   "author": {
     "name": "Andrew Goodricke",
     "email": "github@andrewgoodricke.com",
     "url": "http://www.nuxeo.com"
   },
-  "license": "MIT",
+  "dependencies": {
+    "normalize-scss": "^6.0.0",
+    "open-sans-fontface": "^1.4.0"
+  },
   "devDependencies": {
+    "autoprefixer": "^6.7.3",
     "bower": "^1.8.0",
     "eslint": "^3.13.1",
+    "node-sass": "^4.5.0",
+    "postcss-cli": "^2.6.0",
     "sass-lint": "^1.10.2"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:nuxeo/website-styles.git"

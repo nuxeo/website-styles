@@ -45,3 +45,13 @@ jspm_packages
 
 # Yarn Integrity file
 .yarn-integrity
+
+# Bower
+/bower_components
+
+# css generation
+/tmp
+/css
+
+# Vulcanized
+/elements/vulcanized.html

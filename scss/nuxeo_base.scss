@@ -1,13 +1,13 @@
 // Styling for Nuxeo websites
 @charset 'utf-8';
 
+// Normalise
+@import 'normalize';
+
 // Base
 @import 'settings';
 @import 'base';
 
-// Components
-@import 'components/typography';
-
 // Includes
+@include normalize;
 @include nuxeo-base-styles;
-@include nuxeo-typography;
