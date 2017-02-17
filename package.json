@@ -14,7 +14,7 @@
     "postinstall": "npm run compile",
     "precompile": "bower install",
     "compile": "npm run compile:header",
-    "compile:header": "vulcanize -o elements/header.html elements/header.html --strip-comments --inline-scripts --inline-css",
+    "compile:header": "vulcanize -o elements/header.min.html elements/header/header.html --strip-comments --inline-scripts --inline-css",
     "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./node_modules/normalize-scss/sass/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
     "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css"
   },
