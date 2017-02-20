@@ -4,6 +4,10 @@
 
 // Normalise
 @import 'normalize';
-@include normalize;
 
 @import 'nuxeo';
+
+// Includes
+@include normalize;
+@include nuxeo-base-styles;
+@include nuxeo-typography;
