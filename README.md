@@ -22,7 +22,7 @@ e.g. npm scripts
 ### Include styles
 In SCSS import and include the appropriate styles:
 ```
-@import 'nuxeo';
+@import 'nuxeo_styles';
 
 @include 'nuxeo-base-styles';
 @include 'nuxeo-typography';
