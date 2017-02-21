@@ -34,6 +34,7 @@ Mixin name | Description
 -----------|------------
 nuxeo-base | Base styles required
 nuxeo-typography | Standard typography styles
+nuxeo-codeblock | Codeblock with HighlightJS styling and copy button
 
 ## Polymer Elements
 
