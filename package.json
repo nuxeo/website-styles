@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predev": "npm install",
     "dev": "npm run server & nodemon --exec 'npm run compile:styles && browser-sync reload'",
     "server": "browser-sync start --server . --startPath demo --browser=$npm_package_config_browser",
     "postinstall": "npm run compile",
