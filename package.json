@@ -14,8 +14,9 @@
     "server": "browser-sync start --server . --startPath demo --browser=$npm_package_config_browser",
     "postinstall": "npm run compile",
     "precompile": "bower install",
-    "compile": "npm run compile:header",
+    "compile": "npm run compile:header & npm run compile:footer",
     "compile:header": "vulcanize -o elements/header.min.html elements/header/header.html --strip-comments --inline-scripts --inline-css",
+    "compile:footer": "vulcanize -o elements/footer.min.html elements/footer/footer.html --strip-comments --inline-scripts --inline-css",
     "precompile:styles": "rm -rf ./tmp ./css",
     "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./node_modules/normalize-scss/sass/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
     "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css"
