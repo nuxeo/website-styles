@@ -18,7 +18,7 @@
     "compile:header": "vulcanize -o elements/header.min.html elements/header/header.html --strip-comments --inline-scripts --inline-css",
     "compile:footer": "vulcanize -o elements/footer.min.html elements/footer/footer.html --strip-comments --inline-scripts --inline-css",
     "precompile:styles": "rm -rf ./tmp ./css",
-    "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./node_modules/normalize-scss/sass/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
+    "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/normalize-scss/sass/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
     "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css"
   },
   "author": {
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "bower": "^1.8.0",
+    "foundation-sites": "^6.3.1",
     "normalize-scss": "^6.0.0",
     "open-sans-fontface": "^1.4.0",
     "vulcanize": "^1.15.3"
