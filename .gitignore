@@ -53,5 +53,7 @@ jspm_packages
 /tmp
 /css
 
-# Vulcanized
-/elements/*.min.html
+# Vulcanized, crispered and uglyfied
+/elements/*.build.html
+/elements/*.build.js
+/elements/*.min.js
