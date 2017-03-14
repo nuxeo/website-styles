@@ -16,7 +16,7 @@
     "precompile": "bower install",
     "compile": "npm run compile:elements",
     "compile:elements": "vulcanize --inline-css --inline-scripts --strip-comments elements/elements.html | crisper --html elements/elements.build.html --js elements/elements.build.js",
-    "postcompile:elements": "uglifyjs --compress --mangle -o elements/elements.min.js -- elements/elements.build.js && sed -i '' 's/elements.build.js/elements.min.js/g' elements/elements.build.html",
+    "postcompile:elements": "uglifyjs --compress --mangle -o elements/elements.min.js -- elements/elements.build.js && sed -i.bak 's/elements.build.js/elements.min.js/g' elements/elements.build.html && rm elements/elements.build.html.bak",
     "precompile:styles": "rm -rf ./tmp ./css",
     "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./node_modules/normalize-scss/sass/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
     "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css"
