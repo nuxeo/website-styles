@@ -4,6 +4,10 @@
     <template>
         <style>
         /* local DOM styles go here */
+        :host {
+            display: block;
+        }
+
         :host ul {
           list-style-position: outside;
           list-style-type: none;
@@ -38,7 +42,6 @@
           position: absolute;
           width: 20px;
         }
-
         </style>
         <!-- local DOM goes here -->
         <template is="dom-repeat" items="{{columnItems}}">

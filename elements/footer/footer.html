@@ -70,9 +70,12 @@
         }
 
         /* local DOM styles go here */
+        :host {
+            display: block;
+        }
+
         :host,
         ::content {
-            display: block;
             background-color: #000522;
             color: #d9e6f0;
             font-size: 12px;
@@ -97,33 +100,35 @@
             color: #2199e8;
         }
 
-        #copyright-social {
-          letter-spacing: normal;
-          margin: 100px 48px 60px;
+        :host #copyright-social {
+            letter-spacing: normal;
+            margin: 100px 48px 60px;
         }
 
-        #copyright-social .copyright {
-          display: -webkit-flex;
-          display: flex;
-          -webkit-align-items: center;
-          align-items: center;
-          -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
-          white-space: nowrap;
+        :host #copyright-social .copyright {
+            -webkit-align-items: center;
+            align-items: center;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            flex-wrap: wrap;
+            white-space: nowrap;
         }
 
-        #copyright-social .separator {
-          margin-left: 12px;
-          margin-right: 12px;
+        :host #copyright-social .copyright img {
+            vertical-align: middle;
         }
 
+        :host #copyright-social .separator {
+            margin-left: 12px;
+            margin-right: 12px;
+        }
         </style>
         <!-- local DOM goes here -->
         <div class="nuxeo-satellite-footer">
             <div class="row small-up-1 medium-up-2 large-up-4">
                 <content></content>
             </div>
-
             <div id="copyright-social" class="row medium-up-2">
                 <div class="column copyright">
                     Copyright &copy; {{year}} Nuxeo
