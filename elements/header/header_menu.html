@@ -74,8 +74,55 @@
             color: grey;
         }
 
+        :host .responsive-toggle {
+            display: none;
+        }
+
+        @media (max-width: 900px) {
+            :host .responsive-toggle {
+                display: block;
+                float: right;
+            }
+
+            :host .responsive-toggle a:hover {
+                color: white;
+            }
+
+            :host .nuxeo-satellite-left-menu li {
+                background: black;
+            }
+
+            :host .nuxeo-satellite-left-menu li:first-of-type {
+                display: block;
+            }
+
+            :host .nuxeo-satellite-left-menu li:not(:first-of-type),
+            :host .nuxeo-satellite-right-menu {
+                display: none;
+            }
+
+            :host.responsive .responsive-toggle {
+                position: absolute;
+                right: 0;
+                z-index: 10;
+            }
+
+            :host.responsive .nuxeo-satellite-left-menu,
+            :host.responsive .nuxeo-satellite-left-menu ul {
+                width: 100%;
+            }
+
+            :host.responsive .nuxeo-satellite-left-menu li {
+                display: block;
+                position: relative;
+            }
+        }
+
         </style>
         <!-- local DOM goes here -->
+        <div class="responsive-toggle">
+            <a href="javascript:void(0);" on-tap="handleTap">&#9776;</a>
+        </div>
         <div class="nuxeo-satellite-left-menu">
             <ul>
                 <li class="site-home">
@@ -114,6 +161,13 @@
             },
             menuItems: Array,
             menuItemsRight: Array
+        },
+        handleTap: function() {
+            if (this.className.indexOf('responsive') === -1) {
+                this.className += ' responsive';
+            } else {
+                this.className = this.className.replace(' responsive', '');
+            }
         }
     });
     </script>
