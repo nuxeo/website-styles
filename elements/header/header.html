@@ -64,6 +64,11 @@
             transition: color .2s ease;
         }
 
+        :host .active a,
+        :host ::content .active a {
+            color: #1585cf;
+        }
+
         :host .menu-home::after,
         :host ::content .menu-home::after {
             content: '|';

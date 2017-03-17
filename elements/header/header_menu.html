@@ -104,7 +104,7 @@
                     </a>
                 </li>
                 <template is="dom-repeat" items="{{menuItems}}">
-                    <li>
+                    <li class$="{{_isActive(item.pathname)}}">
                         <a href="{{item.url}}">{{item.title}}</a>
                     </li>
                 </template>
@@ -113,14 +113,14 @@
         <div class="nuxeo-satellite-right-menu">
             <ul>
                 <template is="dom-repeat" items="{{menuItemsRight}}">
-                    <li>
+                    <li class$="{{_isActive(item.pathname)}}">
                         <a href="{{item.url}}">{{item.title}}</a>
                     </li>
                 </template>
             </ul>
         </div>
         <div class="responsive-toggle">
-            <a href="javascript:void(0);" on-tap="handleTap">&#9776;</a>
+            <a href="javascript:void(0);" on-tap="openResponsiveMenu">&#9776;</a>
         </div>
     </template>
     <script>
@@ -138,7 +138,13 @@
             menuItems: Array,
             menuItemsRight: Array
         },
-        handleTap: function() {
+        _isActive: function(pathname) {
+            if (window.location.pathname === pathname) {
+                return 'active';
+            }
+            return '';
+        },
+        openResponsiveMenu: function() {
             if (this.className.indexOf('responsive') === -1) {
                 this.className += ' responsive';
             } else {
