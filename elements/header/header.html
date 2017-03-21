@@ -13,11 +13,13 @@
 
         :host .nuxeo-satellite-header {
             background: white;
+            display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
             min-height: 48px;
             -webkit-justify-content: space-between;
-            justify-content: space-between;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
         }
 
         @media (max-width: 700px) {
@@ -26,13 +28,23 @@
             }
         }
 
+        :host .nuxeo-satellite-left-menu,
+        :host ::content .nuxeo-satellite-left-menu,
+        :host .nuxeo-satellite-right-menu,
+        :host ::content .nuxeo-satellite-right-menu {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+        }
+
         :host ul,
         :host ::content ul {
             -webkit-align-items: center;
-            align-items: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
-            height: 100%;
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -77,11 +89,14 @@
 
         :host .nuxeo-satellite-download {
             -webkit-align-items: center;
-            align-items: center;
-            -webkit-align-self: center;
-            align-self: stretch;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-align-self: stretch;
+                -ms-flex-item-align: stretch;
+                    align-self: stretch;
             background-color: #ff452a;
             display: -ms-flexbox;
+            display: -webkit-flex;
             display: flex;
             transition: background-color .4s ease;
         }

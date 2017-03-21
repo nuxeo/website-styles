@@ -8,11 +8,13 @@
         :host {
             background: #000522;
             color: white;
+            display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
             min-height: 48px;
             -webkit-justify-content: space-between;
-            justify-content: space-between;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
         }
 
         :host a {
@@ -50,7 +52,8 @@
 
             :host .nuxeo-satellite-left-menu ul {
                 -webkit-flex-direction: column;
-                flex-direction: column;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
             }
 
             :host .responsive-toggle,
