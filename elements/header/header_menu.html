@@ -140,7 +140,7 @@
             menuItemsRight: Array
         },
         _isActive: function(pathname) {
-            if (window.location.pathname === pathname) {
+            if (new RegExp('^' + pathname + '(.+\..+)?').test(window.location.pathname)) {
                 return 'active';
             }
             return '';
