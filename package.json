@@ -2,7 +2,7 @@
   "name": "nuxeo-website-styles",
   "description": "Styles to be used on Nuxeo websites",
   "private": true,
-  "version": "3.2.3",
+  "version": "3.2.4",
   "main": "",
   "config": {
     "browser": "chromium-browser"
