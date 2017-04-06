@@ -203,8 +203,7 @@
         }
       }
     }
-  }
-  @else {
+  } @else {
     @each $size, $headers in $header-styles {
       @include breakpoint($size) {
         .code-heading {
