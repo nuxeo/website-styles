@@ -13,7 +13,7 @@
     "dev": "npm run server & nodemon --exec 'npm run compile:styles && browser-sync reload'",
     "server": "browser-sync start --server . --startPath demo --browser=$npm_package_config_browser",
     "postinstall": "npm run compile",
-    "precompile": "bower install",
+    "precompile": "bower install --allow-root",
     "compile": "npm run compile:elements",
     "compile:elements": "vulcanize --inline-css --inline-scripts --strip-comments elements/elements.html | crisper --html elements/elements.build.html --js elements/elements.build.js",
     "postcompile:elements": "uglifyjs --compress --mangle -o elements/elements.min.js -- elements/elements.build.js && sed -i.bak 's/elements.build.js/elements.min.js/g' elements/elements.build.html && rm elements/elements.build.html.bak",
