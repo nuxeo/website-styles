@@ -12,14 +12,15 @@
     "predev": "npm install",
     "dev": "npm run server & nodemon --exec 'npm run compile:styles && browser-sync reload'",
     "server": "browser-sync start --server . --startPath demo --browser=$npm_package_config_browser",
-    "postinstall": "npm run compile",
+    "postinstall": "npm run compile && npm run minify",
     "precompile": "bower install --allow-root",
     "compile": "npm run compile:elements",
     "compile:elements": "vulcanize --inline-css --inline-scripts --strip-comments elements/elements.html | crisper --html elements/elements.build.html --js elements/elements.build.js",
     "postcompile:elements": "uglifyjs --compress --mangle -o elements/elements.min.js -- elements/elements.build.js && sed -i.bak 's/elements.build.js/elements.min.js/g' elements/elements.build.html && rm elements/elements.build.html.bak",
     "precompile:styles": "rm -rf ./tmp ./css",
     "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./node_modules/normalize-scss/sass/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
-    "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css"
+    "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css",
+    "minify": "html-minifier elements/elements.build.html -o elements/elements.build.min.html --collapse-boolean-attributes --collapse-whitespace --decode-entities --html5 --minify-css --minify-js --process-conditional-comments --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --sort-attributes --sort-class-name --trim-custom-fragments --use-short-doctype"
   },
   "author": {
     "name": "Andrew Goodricke",
@@ -29,6 +30,7 @@
   "dependencies": {
     "bower": "^1.8.0",
     "crisper": "^2.0.2",
+    "html-minifier": "^3.4.3",
     "normalize-scss": "^6.0.0",
     "open-sans-fontface": "^1.4.0",
     "uglify-js": "^2.8.12",
