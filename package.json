@@ -28,22 +28,22 @@
     "url": "http://www.nuxeo.com"
   },
   "dependencies": {
+    "autoprefixer": "^6.7.3",
     "bower": "^1.8.0",
     "crisper": "^2.0.2",
     "html-minifier": "^3.4.3",
+    "node-sass": "^4.5.0",
     "normalize-scss": "^6.0.0",
     "open-sans-fontface": "^1.4.0",
+    "postcss-cli": "^2.6.0",
+    "sass-lint": "^1.10.2",
     "uglify-js": "^2.8.12",
     "vulcanize": "^1.15.3"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.3",
     "browser-sync": "^2.18.8",
     "eslint": "^3.13.1",
-    "node-sass": "^4.5.0",
-    "nodemon": "^1.11.0",
-    "postcss-cli": "^2.6.0",
-    "sass-lint": "^1.10.2"
+    "nodemon": "^1.11.0"
   },
   "license": "MIT",
   "repository": {
