@@ -66,6 +66,33 @@ Element | Description | Parameters | Sub elements | Sub element parameters
 `<nuxeo-header></nuxeo-header>` | Nuxeo standard header | `show-nuxeo-menu`: if set to true show corporate website menu | `<nuxeo-banner></nuxeo-banner>`<br />_____<br />`<nuxeo-menu></nuxeo-menu>` | `background-id`: the background image id to use (currently only "1")<br />`title`: the title to display (h1)<br />_____<br />`site-name`: the site name<br />`site-url`: the homepage URL<br />`menu-items`: menu items to display on the left<br />`menu-items-right`: menu items to display on the right (not visible on mobile version)
 `<nuxeo-footer></nuxeo-footer>` | Nuxeo standard footer | `year`: the year to display<br />`show-license`: if set to true show CC Licence logo | `<nuxeo-footer-column></nuxeo-footer-column>` | `column-items`: column items to display
 
+# Development (Local)
+## Requirements
+- [git](https://git-scm.com/) &mdash; make sure your Privacy & Security settings allow to download applications from anywhere
+- [Node.js](https://github.com/creationix/nvm#install-script) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v6.9)
+    - `nvm install lts/*` will get the [latest Long Term Support](https://github.com/nodejs/LTS#lts-schedule1) version
+    - Test with `node --version`
+    - _Remember:_ Run `nvm use` at the start of your session.
+- [libsass](http://sass-lang.com/libsass) &mdash; Might not be necessary.
+- A decent code editor (https://atom.io/ or https://www.sublimetext.com/ for example) with ideally the following:
+  - [EditorConfig plugin](http://editorconfig.org/#download).
+  - [ESLint](https://atom.io/packages/linter-eslint)
+  - [Sass-Lint](https://atom.io/packages/linter-sass-lint)
+
+**To install on mac:**
+- install homebrew (http://brew.sh/)
+- run ```brew update```
+- use brew to install (or use upgrade if you have already some installed):
+```bash
+brew install git nodejs libsass
+```
+
+## Installation
+Clone the repository to your local machine, using your favorite Git client or the command line:
+```bash
+git clone https://github.com/nuxeo/website-styles
+cd frontend-check
+```
 ## Run Locally
 ```bash
 npm run dev
