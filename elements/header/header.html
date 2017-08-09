@@ -11,73 +11,93 @@
             display: block;
         }
 
+        :host .nuxeo-satellite-header {
+            background: white;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            min-height: 48px;
+            -webkit-justify-content: space-between;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
+        }
+
         @media (max-width: 700px) {
             :host .nuxeo-satellite-header {
                 display: none;
             }
         }
 
-        @media (max-width: 900px) {
-            :host .nuxeo-satellite-header > .nuxeo-satellite-right-menu {
-                display: none;
-            }
-        }
-
-        :host .nuxeo-satellite-header {
-            background: white;
-            height: 50px;
-            width: 100%;
-        }
-
         :host .nuxeo-satellite-left-menu,
-        :host .nuxeo-satellite-right-menu {
-            display: inline-block;
+        :host ::content .nuxeo-satellite-left-menu,
+        :host .nuxeo-satellite-right-menu,
+        :host ::content .nuxeo-satellite-right-menu {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
         }
 
-        :host .nuxeo-satellite-right-menu {
-            float: right;
-        }
-
-        :host ul {
+        :host ul,
+        :host ::content ul {
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            list-style-type: none;
             margin: 0;
             padding: 0;
-            list-style: none;
-            display: inline-block;
-        }
-
-        :host li,
-        :host li * {
-            display: inline-block;
         }
 
         :host a {
-            color: black;
-            line-height: 50px;
-            text-decoration: none;
-            padding-left: 1em;
-            padding-right: 1em;
+            color: #000522;
+        }
+
+        :host a,
+        :host ::content a {
             font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
             font-size: 14px;
             font-weight: 100;
+            padding-left: 14px;
+            padding-right: 14px;
+            text-decoration: none;
             transition: color .4s ease;
         }
 
-        :host a img {
+        :host a img,
+        :host ::content a img {
             vertical-align: middle;
         }
 
-        :host a:hover {
+        :host a:hover,
+        :host ::content a:hover {
             color: #1585cf;
             transition: color .2s ease;
         }
 
-        :host .menu-home::after {
+        :host .active a,
+        :host ::content .active a {
+            color: #1585cf;
+        }
+
+        :host .menu-home::after,
+        :host ::content .menu-home::after {
             content: '|';
             color: grey;
         }
 
         :host .nuxeo-satellite-download {
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            -webkit-align-self: stretch;
+                -ms-flex-item-align: stretch;
+                    align-self: stretch;
             background-color: #ff452a;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
             transition: background-color .4s ease;
         }
 
@@ -88,13 +108,11 @@
 
         :host .nuxeo-satellite-download a {
             color: white;
+            font-size: 15px;
+            padding-left: 30px;
+            padding-right: 30px;
             text-transform: uppercase;
-            font-size: .95em;
-            padding-left: 2em;
-            padding-right: 2em;
         }
-
-
         </style>
         <!-- local DOM goes here -->
         <template is="dom-if" if="{{showNuxeoMenu}}">

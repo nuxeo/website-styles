@@ -6,97 +6,123 @@
         <style>
         /* local DOM styles go here */
         :host {
-            background: black;
-            display: block;
-            height: 50px;
-            width: 100%;
+            background: #000522;
             color: white;
-        }
-
-        :host .nuxeo-satellite-left-menu,
-        :host .nuxeo-satellite-right-menu {
-            display: inline-block;
-        }
-
-        :host .nuxeo-satellite-right-menu {
-            float: right;
-        }
-
-        :host ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            display: inline-block;
-        }
-
-        :host li,
-        :host li * {
-            display: inline-block;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            min-height: 48px;
+            -webkit-justify-content: space-between;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
         }
 
         :host a {
             color: white;
-            line-height: 50px;
-            text-decoration: none;
             text-transform: uppercase;
-            padding-left: 1em;
-            padding-right: 1em;
-            font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            font-weight: 100;
-            transition: color .4s ease;
-
         }
 
-        :host a img {
-            vertical-align: middle;
-        }
-
-        :host a:hover {
-            color: #1585cf;
-            transition: color .2s ease;
-        }
-
-        :host .site-home a {
+        :host .menu-home a {
             font-weight: 600;
             letter-spacing: 1px;
         }
 
-        :host .site-home a img {
-            margin-left: .5em;
-            margin-right: 1em;
+        :host .menu-home a img {
+            margin-left: 7px;
+            margin-right: 14px;
         }
 
-        :host .site-home::after {
-            content: '|';
-            color: grey;
+        /* Responsive menu */
+        :host .responsive-toggle {
+            display: none;
         }
 
+        @media (max-width: 900px) {
+            :host .responsive-toggle {
+                display: block;
+            }
+
+            :host .responsive-toggle a:hover {
+                color: white;
+            }
+
+            :host .nuxeo-satellite-left-menu {
+                width: 100%;
+            }
+
+            :host .nuxeo-satellite-left-menu ul {
+                -webkit-flex-direction: column;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+            }
+
+            :host .responsive-toggle,
+            :host .nuxeo-satellite-left-menu li {
+                height: 48px;
+                line-height: 48px;
+            }
+
+            :host .nuxeo-satellite-left-menu li {
+                width: 100%;
+            }
+
+            :host .nuxeo-satellite-left-menu a {
+                display: block;
+            }
+
+            :host .nuxeo-satellite-left-menu li:not(:first-of-type),
+            :host .nuxeo-satellite-right-menu {
+                display: none;
+            }
+
+            :host.responsive {
+                position: relative;
+            }
+
+            :host.responsive .responsive-toggle {
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 10;
+            }
+
+            :host.responsive .nuxeo-satellite-left-menu li {
+                display: block;
+            }
+
+            :host .menu-home::after {
+                content: '';
+            }
+        }
         </style>
         <!-- local DOM goes here -->
         <div class="nuxeo-satellite-left-menu">
             <ul>
-                <li class="site-home">
+                <li class="menu-home">
                     <a href="[[siteUrl]]">
                         <img class="nuxeo-satellite-icon" src="//www.nuxeo.com/assets/icons/favicon-16x16.png" width="16" height="16" alt="[[siteName]]">
                         [[siteName]]
                     </a>
                 </li>
                 <template is="dom-repeat" items="{{menuItems}}">
-                    <li>
+                    <li class$="{{_isActive(item.pathname)}}">
                         <a href="{{item.url}}">{{item.title}}</a>
                     </li>
                 </template>
             </ul>
         </div>
         <div class="nuxeo-satellite-right-menu">
-            <template is="dom-repeat" items="{{menuItemsRight}}">
-                <li>
-                    <a href="{{item.url}}">{{item.title}}</a>
-                </li>
-            </template>
+            <ul>
+                <template is="dom-repeat" items="{{menuItemsRight}}">
+                    <li class$="{{_isActive(item.pathname)}}">
+                        <a href="{{item.url}}">{{item.title}}</a>
+                    </li>
+                </template>
+            </ul>
         </div>
-
+        <div class="responsive-toggle">
+            <a href="javascript:void(0);" on-tap="openResponsiveMenu">&#9776;</a>
+        </div>
     </template>
     <script>
     Polymer({
@@ -112,6 +138,19 @@
             },
             menuItems: Array,
             menuItemsRight: Array
+        },
+        _isActive: function(pathname) {
+            if (new RegExp('^' + pathname + '(.+\..+)?').test(window.location.pathname)) {
+                return 'active';
+            }
+            return '';
+        },
+        openResponsiveMenu: function() {
+            if (this.className.indexOf('responsive') === -1) {
+                this.className += ' responsive';
+            } else {
+                this.className = this.className.replace(' responsive', '');
+            }
         }
     });
     </script>

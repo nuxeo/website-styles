@@ -195,10 +195,20 @@
   }
 
   // code-header - Same as h4
-  @each $size, $headers in $header-sizes {
-    @include breakpoint($size) {
-      .code-heading {
-        font-size: rem-calc(map-get($headers, 'h4'));
+  @if variable-exists(header-sizes) {
+    @each $size, $headers in $header-sizes {
+      @include breakpoint($size) {
+        .code-heading {
+          font-size: rem-calc(map-get($headers, 'h4'));
+        }
+      }
+    }
+  } @else {
+    @each $size, $headers in $header-styles {
+      @include breakpoint($size) {
+        .code-heading {
+          font-size: rem-calc(map-get(map-get($headers, 'h4'), 'font-size'));
+        }
       }
     }
   }

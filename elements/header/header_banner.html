@@ -10,35 +10,29 @@
             color: white;
             display: block;
             height: 300px;
-            padding-top: 6rem;
+            padding-top: 100px;
             text-align: center;
-            font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-
-        :host * {
         }
 
         :host[background-id='1'] {
-            background-image: url('//www.nuxeo.com/assets/imgs/ea-background.png');
+            background-image: url('//www.nuxeo.com/assets/imgs/backgrounds/ea-background.png');
         }
 
         :host h1 {
-            margin-bottom: 3rem;
+            margin-bottom: 48px;
         }
 
         :host .content {
-            width: 40em;
-            font-size: 1.2rem;
+            font-size: 20px;
             margin: 0 auto;
+            max-width: 960px;
         }
-
         </style>
         <!-- local DOM goes here -->
         <h1>[[title]]</h1>
         <div class="content">
             <content></content>
         </div>
-
     </template>
     <script>
     Polymer({
