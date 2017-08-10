@@ -1,0 +1,7 @@
+// Nuxeo Base styling
+@mixin nuxeo-base-styles {
+  // We could include settings and the base Foundation styles here
+  * {
+    font-family: $nuxeo-font-family;
+  }
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800');
+
+// Variables for use across the mixins
+$nuxeo-font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Colours
+$white: #fff;
+$black: #000;
+
+// Code Block
+$nuxeo-color-code-background: $white;
+$nuxeo-color-code-foreground: $black;
+$nuxeo-color-code-border: #d9e6f0;
+$code-border-radius: 4px;
+
+// Tooltips
+$tooltip-background-color: rgba(0, 0, 0, .8);
+$tooltip-text-color: $white;
+$tooltip-duration: .4s;
+$tooltip-delay: .2s;

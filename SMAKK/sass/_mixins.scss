@@ -1,0 +1,62 @@
+//Styles
+@mixin borders($border-w, $border-s, $border-c) {
+  border: $border-w $border-s $border-c
+}
+
+@mixin inline-list() {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0;
+  padding: 0
+}
+
+//Fonts and Weights
+@mixin primary-font-light {
+  font-family: $font-primary;
+  font-weight: 300
+}
+
+@mixin primary-font {
+  font-family: $font-primary;
+  font-weight: 400
+}
+
+@mixin primary-font-semibold {
+  font-family: $font-primary;
+  font-weight: 600
+}
+
+@mixin primary-font-bold {
+  font-family: $font-primary;
+  font-weight: 700
+}
+
+@mixin primary-font-extrabold {
+  font-family: $font-primary;
+  font-weight: 800
+}
+
+//BUTTONS, TOGGLES
+
+/// Colors for toggles.
+/// @type Map
+$toggle-colors: (
+  is-green: $c-green,
+  is-white: #fff,
+  is-blue: $c-blue
+) !default;
+@mixin toggle-item($w, $h) {
+  width: $w;
+  height: $h;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid;
+  &:hover {
+    background-color: map-get($toggle-colors, default);
+    @each $color, $value in map-remove($toggle-colors, default) {
+      &.#{$color} {
+        background-color: $value;
+      }
+    }
+  }
+}

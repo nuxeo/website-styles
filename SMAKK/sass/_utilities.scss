@@ -1,0 +1,143 @@
+//HELPER CLASSES
+//Colors, states, weights etc meant to extend design in OOCSS fashion
+
+%inline-list,
+.inline-list {
+  list-style-type: none;
+  display: inline-block
+}
+//a11y
+%ally-hidden,
+.ally-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// Fonts
+%is-bold,
+.is-bold {
+  font-weight: 700
+}
+
+%is-bigger,
+.is-bigger {
+  font-size: $scale-2
+}
+
+%is-smaller,
+.is-smaller {
+  font-size: $scale-0
+}
+
+//Colors
+%is-green,
+.is-green {
+  color: $c-green
+}
+
+%is-bg-green,
+.is-bg-green {
+  background-color: $c-green
+}
+
+%is-blue,
+.is-blue {
+  color: $c-blue;
+}
+
+%is-bg-blue,
+.is-bg-blue {
+  background-color: $c-blue;
+}
+
+%is-navy,
+.is-navy {
+  color: $c-navy
+}
+
+%is-bg-navy,
+.is-bg-navy {
+  background-color: $c-navy
+}
+
+%is-grey,
+.is-grey {
+  color: $c-grey
+}
+
+%is-bg-grey,
+.is-bg-grey {
+  background-color: $c-grey
+}
+
+%is-grey-2,
+.is-grey-2 {
+  color: $c-grey-2
+}
+
+%is-bg-grey-2,
+.is-bg-grey-2 {
+  background-color: $c-grey-2
+}
+
+%is-grey-3,
+.is-grey-3 {
+  color: $c-grey-3
+}
+
+%is-bg-grey-3,
+.is-bg-grey-3 {
+  background-color: $c-grey-3
+}
+
+%is-red,
+.is-red {
+  color: $c-red
+}
+
+%is-bg-red,
+.is-bg-red {
+  background-color: $c-red
+}
+
+%is-purple,
+.is-purple {
+  color: $c-purple
+}
+
+%is-bg-purple,
+.is-bg-purple {
+  background-color: $c-purple
+}
+
+%is-aqua,
+.is-aqua {
+  color: $c-aqua
+}
+
+%is-bg-aqua,
+.is-bg-aqua {
+  background-color: $c-aqua
+}
+
+%is-orange,
+.is-orange {
+  color: $c-orange
+}
+
+%is-bg-orange,
+.is-bg-orange {
+  background-color: $c-orange
+}
+%is-bg-white,
+.is-bg-white {
+  background-color: #fff
+}
+%is-bg-black,
+.is-bg-black {
+  background-color: #000
+}

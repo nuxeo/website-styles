@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+// Variables for use across the mixins
+$btn-bg-color: lightblue !default;
+$btn-bg-color-hover: darken($btn-bg-color, 5%);
+//Scale 1.333 perfect fourth
+$scale-7: 5.611em;
+$scale-6: 4.209em;
+$scale-5: 3.157em;
+$scale-4: 2.369em;
+$scale-3: 1.777em;
+$scale-2: 1.333em;
+$scale-1: 1em;
+$scale-0: .75em;
+
+//Fonts
+$font-primary: 'Open Sans', 'Arial',sans-serif !default;
+
+// Colors
+$c-green: #73d2cf;
+$c-blue: #0067FF;
+$c-navy: #1F28BF;
+$c-grey: #F5F5F5;
+$c-grey-2: #808285;
+$c-grey-3: #4a4a4a;
+$c-red: #FF0044;
+$c-purple: #8500FF;
+$c-aqua: #00ADED;
+$c-orange: #F15818;
+
+//Etc
+$radius: 50px
