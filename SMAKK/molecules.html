@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Molecules</title>
+
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="stylesheets/foundation.css" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="small-12 medium-4 columns is-bg-blue">
+            <h1 class="h3">Forms</h1>
+        </div>
+        <div class="small-12 medium-8 columns">
+            <form>
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <label class="ally-hidden">Name</label>
+                    <input type="text" placeholder="My name is..." /></div>
+                <div class="small-12 medium-6 columns">
+                    <label class="ally-hidden">Email</label>
+                    <input type="text" placeholder="Please email me @" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <label class="ally-hidden">Job title</label>
+                    <input type="text" required placeholder="My job title is..." />
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <label class="ally-hidden">Company</label>
+                    <input type="text" required placeholder="The company I work for is..." />
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                     <div class="select--styled">
+                    <select name="help" required>
+                        <option value="" disabled selected>I am looking for help with</option>
+                        <option value="this">This thing</option>
+                        <option value="that">That thing</option>
+                        <option value="another">Another thing</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="small-12 medium-6 columns">
+                     <div class="select--styled">
+                    <select name="demo" required>
+                        <option value="" disabled selected>I'd like to schedule my demo for</option>
+                        <option value="this">This week</option>
+                        <option value="that">Next week</option>
+                        <option value="another">Another time</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
+             <div class="row">
+                <div class="large-12 columns">
+                    <input type="Submit" value="Submit" class="is-bg-blue" />
+                 </div>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Shouldn't need but included for completeness
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/4.3.1/what-input.min.js" integrity="sha256-fiTIY/rb1/SIs/7gB+2nr6Q10ZRKy/6NiV33O4+hmNE=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script>
+        <script>
+            $(document).foundation();
+        </script> -->
+</body>
+
+</html>
