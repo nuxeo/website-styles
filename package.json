@@ -31,6 +31,7 @@
     "autoprefixer": "^6.7.3",
     "bower": "^1.8.0",
     "crisper": "^2.0.2",
+    "foundation-sites": "^6.4.1",
     "html-minifier": "^3.4.3",
     "node-sass": "^4.5.0",
     "normalize-scss": "^6.0.0",
