@@ -1,3 +1,7 @@
+// Fonts
+$OpenSansPath: '//www.nuxeo.com/assets/fonts' !default;
+$OpenSansVersion: '1.1.0' !default;
+
 //  Foundation for Sites Settings
 //  -----------------------------
 //
@@ -44,6 +48,8 @@
 
 @import 'util/util';
 
+$nuxeo-font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 // 1. Global
 // ---------
 
@@ -51,8 +57,8 @@
 // $global-width: rem-calc(1200);
 // $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
-  secondary: #767676,
+  primary: #0067ff,
+  secondary: #73d2cf,
   success: #3adb76,
   warning: #ffae00,
   alert: #cc4b37,
@@ -76,6 +82,36 @@ $foundation-palette: (
 // $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
+
+// Nuxeo Colours
+// Colours
+$white: #fff;
+$black: #000;
+
+
+
+
+$nuxeo-color-darker-gray: #333;
+
+$nuxeo-color-accent: #ff452a;
+$nuxeo-color-accent-yellow: #e8ff7f;
+
+$nuxeo-color-light-blue: #ecf3f7;
+$nuxeo-color-dark-background: #000522;
+
+// Code Block
+$nuxeo-color-code-background: $white;
+$nuxeo-color-code-foreground: $black;
+$nuxeo-color-code-border: #d9e6f0;
+$code-border-radius: 4px;
+
+
+// Tooltips
+$tooltip-background-color: rgba(0, 0, 0, .8);
+$tooltip-text-color: $white;
+$tooltip-duration: .4s;
+$tooltip-delay: .2s;
+
 
 // 2. Breakpoints
 // --------------
@@ -112,24 +148,24 @@ $foundation-palette: (
 // $header-color: inherit;
 // $header-lineheight: 1.4;
 // $header-margin-bottom: 0.5rem;
-// $header-styles: (
-//   small: (
-//     'h1': ('font-size': 24),
-//     'h2': ('font-size': 20),
-//     'h3': ('font-size': 19),
-//     'h4': ('font-size': 18),
-//     'h5': ('font-size': 17),
-//     'h6': ('font-size': 16),
-//   ),
-//   medium: (
-//     'h1': ('font-size': 48),
-//     'h2': ('font-size': 40),
-//     'h3': ('font-size': 31),
-//     'h4': ('font-size': 25),
-//     'h5': ('font-size': 20),
-//     'h6': ('font-size': 16),
-//   ),
-// );
+$header-styles: (
+  small: (
+    'h1': ('font-size': 100),
+    'h2': ('font-size': 72),
+    'h3': ('font-size': 48),
+    'h4': ('font-size': 32),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 100),
+    'h2': ('font-size': 78),
+    'h3': ('font-size': 54),
+    'h4': ('font-size': 36),
+    'h5': ('font-size': 26),
+    'h6': ('font-size': 22),
+  ),
+);
 // $header-text-rendering: optimizeLegibility;
 // $small-font-size: 80%;
 // $header-small-font-color: $medium-gray;
@@ -624,20 +660,10 @@ $foundation-palette: (
 // -----------
 
 // Variables for use across the mixins
-$nuxeo-font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-// Colours
-$white: #fff;
-$black: #000;
-
-// Code Block
-$nuxeo-color-code-background: $white;
-$nuxeo-color-code-foreground: $black;
-$nuxeo-color-code-border: #d9e6f0;
-$code-border-radius: 4px;
-
-// Tooltips
-$tooltip-background-color: rgba(0, 0, 0, .8);
-$tooltip-text-color: $white;
-$tooltip-duration: .4s;
-$tooltip-delay: .2s;
+// Spacers
+$nuxeo-space-x-large: 4rem;
+$nuxeo-space-large: 3rem;
+$nuxeo-space: 2rem;
+$nuxeo-space-small: 1rem;
+$nuxeo-space-x-small: .5rem;
