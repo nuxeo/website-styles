@@ -1,5 +1,195 @@
 @mixin nuxeo-typography {
-  // Typography common to all components
-  * {
+  %h2,
+  h2,
+  .h2-like {
+    font-weight: 300;
+    margin-top: $nuxeo-space;
+
+    &::before {
+      background: $primary-color;
+      border-bottom: 0;
+      content: '';
+      display: block;
+      height: 3px;
+      margin-bottom: $nuxeo-space-small;
+      width: 100px;
+    }
+
+    &.uppercase {
+      text-transform: uppercase;
+    }
+
+    &.centered {
+      text-align: center;
+
+      &::before {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  %h345 {
+    font-weight: 600;
+
+    &.uppercase {
+      text-transform: uppercase;
+    }
+
+    &.centered {
+      text-align: center;
+    }
+  }
+
+  %h3,
+  h3,
+  .h3-like {
+    @extend %h345;
+  }
+
+  %h4,
+  h4,
+  .h4-like {
+    @extend %h345;
+    color: rgba($nuxeo-color-dark-background, .5);
+    margin-top: $nuxeo-space;
+    position: relative;
+
+    &::before {
+      background: rgba($nuxeo-color-dark-background, .3);
+      border-bottom: 0;
+      content: '';
+      display: block;
+      height: 3px;
+      left: 0;
+      position: absolute;
+      top: -$nuxeo-space-small;
+      width: 100px;
+    }
+
+    &.centered {
+      &::before {
+        margin-left: auto;
+        margin-right: auto;
+        right: 0;
+      }
+    }
+  }
+
+  %h5,
+  h5,
+  .h5-like {
+    @extend %h345;
+  }
+
+  h2 + .subheader,
+  .h2-like + .subheader {
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+  }
+
+  // Decorations
+  .strong {
+    font-weight: 600;
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .shadow-primary {
+    text-shadow: $primary-color 0 0 10px;
+  }
+
+  // Colors
+  .fg-black {
+    color: $black;
+
+    .bg-primary & {
+      color: $black;
+    }
+  }
+
+  .fg-accent {
+    color: $nuxeo-color-accent;
+
+    .bg-primary & {
+      color: $nuxeo-color-accent;
+    }
+  }
+
+  .fg-accent-yellow {
+    color: $nuxeo-color-accent-yellow;
+
+    .bg-primary & {
+      color: $nuxeo-color-accent-yellow;
+    }
+  }
+
+  .fg-medium-gray {
+    color: $medium-gray;
+
+    .bg-primary & {
+      color: $medium-gray;
+    }
+  }
+
+  .fg-light-blue {
+    color: $nuxeo-color-light-blue;
+
+    .bg-primary & {
+      color: $nuxeo-color-light-blue;
+    }
+  }
+
+  .bg-primary {
+    a {
+      &.fg-light-blue {
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  // Lighter color text
+  .muted {
+    color: $nuxeo-color-darker-gray;
+  }
+
+  // Sizes
+  .body-small {
+    p,
+    li {
+      font-size: small;
+      line-height: 1.8;
+    }
+  }
+
+  .body-large {
+    p,
+    li,
+    a,
+    blockquote {
+      font-size: large;
+    }
+  }
+
+  a {
+    &.as-block {
+      display: block;
+    }
+
+    &.as-inline-block {
+      display: inline-block;
+    }
+  }
+
+  .thumbnail {
+    margin-bottom: 1rem;
   }
 }

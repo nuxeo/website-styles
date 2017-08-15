@@ -1,7 +1,68 @@
+// Settings
+@import 'settings';
+
 // Nuxeo Base styling
+@import 'mixins'; // Terrible name defined by open-sans package
+// @import 'Light';
+// @import 'LightItalic';
+@import 'Regular';
+@import 'Italic';
+@import 'Semibold';
+@import 'SemiboldItalic';
+@import 'Bold';
+@import 'BoldItalic';
+@import 'ExtraBold';
+@import 'ExtraBoldItalic';
+
+// Foundation base
+@import 'foundation';
+
+// Nuxeo base typography
+@import 'components/typography';
+
+// Optional components that can be included outside of nuxeo-base-styles
+@import 'components/codeblock';
+
 @mixin nuxeo-base-styles {
-  // We could include settings and the base Foundation styles here
-  * {
-    font-family: $nuxeo-font-family;
-  }
+  @include foundation-global-styles;
+  // @include foundation-grid;
+  @include foundation-flex-classes;
+  @include foundation-flex-grid;
+  @include foundation-typography;
+  @include foundation-forms;
+  @include foundation-button;
+  @include foundation-accordion;
+  @include foundation-accordion-menu;
+  @include foundation-badge;
+  @include foundation-breadcrumbs;
+  @include foundation-button-group;
+  @include foundation-callout;
+  @include foundation-card;
+  @include foundation-close-button;
+  @include foundation-menu;
+  @include foundation-menu-icon;
+  @include foundation-drilldown-menu;
+  @include foundation-dropdown;
+  @include foundation-dropdown-menu;
+  @include foundation-responsive-embed;
+  @include foundation-label;
+  @include foundation-media-object;
+  @include foundation-off-canvas;
+  @include foundation-orbit;
+  @include foundation-pagination;
+  @include foundation-progress-bar;
+  @include foundation-slider;
+  @include foundation-sticky;
+  @include foundation-reveal;
+  @include foundation-switch;
+  @include foundation-table;
+  @include foundation-tabs;
+  @include foundation-thumbnail;
+  @include foundation-title-bar;
+  @include foundation-tooltip;
+  @include foundation-top-bar;
+  @include foundation-visibility-classes;
+  @include foundation-float-classes;
+
+  @include nuxeo-typography;
 }

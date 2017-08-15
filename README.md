@@ -88,7 +88,7 @@ brew install git nodejs libsass
 ```
 
 ## Installation
-Clone the repository to your local machine, using your favorite Git client or the command line:
+Clone the repository to your local machine, using your favourite Git client or the command line:
 ```bash
 git clone https://github.com/nuxeo/website-styles
 cd website-styles
