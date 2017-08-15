@@ -1,7 +1,8 @@
 @mixin nuxeo-typography {
 
 
-  %h2 {
+  %h2,
+  h2 {
     font-weight: 300;
     margin-top: $nuxeo-space;
 
@@ -27,10 +28,6 @@
         margin-right: auto;
       }
     }
-  }
-
-  h2 {
-    @extend %h2;
   }
 
   %h345 {
