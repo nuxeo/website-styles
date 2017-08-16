@@ -2,9 +2,10 @@
 //r- for row
 //c- for column/card
 
-.r-main {
-  min-height: 70vh;
+.r-main{
+    
 }
+
 .r-main--video {
   position: relative;
   &:after{
@@ -20,8 +21,9 @@
     box-shadow: 2px 4px 10px rgba(0,0,0,.6);
   }
 }
+
 .r-masthead {
-  min-height: 50vh;
+  min-height: $height-thin;
 }
 
 .r-thin{
@@ -29,10 +31,12 @@
     min-height: 200px
 }
 
-
 .c-checker {
   @include display-flex();
-  padding: $scale-7; //Adds padding to the card
+  padding: $scale-7;
+    .r-main &{
+        min-height: $height-reg
+    }
 }
 
 .c-content {
