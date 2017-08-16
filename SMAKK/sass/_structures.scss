@@ -20,7 +20,6 @@
     box-shadow: 2px 4px 10px rgba(0,0,0,.6);
   }
 }
-
 .r-masthead {
   min-height: 50vh;
 }
@@ -29,11 +28,14 @@
     @include display-flex();
     min-height: 200px
 }
+
+
 .c-checker {
   @include display-flex();
-  padding: $scale-7
+  padding: $scale-7; //Adds padding to the card
 }
 
 .c-content {
-  margin: auto
+  margin: auto; //Wrap around content inside a c-checker col to vertically align
+  position: relative
 }
