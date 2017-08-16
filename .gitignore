@@ -59,20 +59,4 @@ package.md5
 # Vulcanized, crispered and uglyfied
 /elements/*.build*
 /elements/*.min.js
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/_variables.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/_base-smakk.scssc
-SMAKK/.sass-cache/8b1de0fb964996dfca872842620703baaa5efa9b/_utilities.scssc
-SMAKK/.sass-cache/c17044e14c0b02252815f0ff968911ec47c759ba/_reset.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/ie.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/_utilities.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/_settings.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/print.scssc
-SMAKK/.sass-cache/db25dfc4eb3500b7054f63a42a9e97eed87fcce4/_reset.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/_mixins-smakk.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/_mixins.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/style.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/_base.scssc
-SMAKK/.sass-cache/d0aa92fbb01df1a9ca53e3709e61cd569dadc2f6/_utilities.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/_settings-smakk.scssc
-SMAKK/.sass-cache/f15f2e51315a9abcc6cd98c589049890fe38fdb4/screen.scssc
-SMAKK/modules.html
+/SMAKK/.sass-cache
