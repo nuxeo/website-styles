@@ -53,6 +53,9 @@ jspm_packages
 /tmp
 /css
 
+# package cache
+package.md5
+
 # Vulcanized, crispered and uglyfied
 /elements/*.build*
 /elements/*.min.js
