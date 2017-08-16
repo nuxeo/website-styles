@@ -5,7 +5,7 @@
   border-bottom: 2px solid #1F28BF;
 }
 
-/* line 8, sass/_structures.scss */
+/* line 7, sass/_structures.scss */
 .r-cards {
   display: -webkit-box;
   display: -webkit-flex;
@@ -16,33 +16,33 @@
   flex-wrap: nowrap;
 }
 
-/* line 12, sass/_structures.scss */
+/* line 11, sass/_structures.scss */
 .r-main .columns {
   min-height: 70vh;
 }
-/* line 15, sass/_structures.scss */
+/* line 14, sass/_structures.scss */
 .r-masthead .columns {
   min-height: 50vh;
 }
-/* line 18, sass/_structures.scss */
+/* line 17, sass/_structures.scss */
 .r-thin .columns {
   min-height: 150px;
 }
-/* line 21, sass/_structures.scss */
+/* line 20, sass/_structures.scss */
 .r-header .columns {
   align-items: center;
 }
-/* line 24, sass/_structures.scss */
+/* line 23, sass/_structures.scss */
 .r-cards .columns {
   padding: 0.75em;
 }
-/* line 27, sass/_structures.scss */
+/* line 26, sass/_structures.scss */
 .r-cards--blocked .columns {
   margin: 1.333em;
   padding: 0.75em;
 }
 
-/* line 33, sass/_structures.scss */
+/* line 32, sass/_structures.scss */
 .c-checker {
   display: -webkit-box;
   display: -webkit-flex;
@@ -53,12 +53,12 @@
   flex-wrap: nowrap;
   padding: 5.611em;
 }
-/* line 36, sass/_structures.scss */
+/* line 35, sass/_structures.scss */
 .r-main .c-checker {
   min-height: 70vh;
 }
 
-/* line 40, sass/_structures.scss */
+/* line 39, sass/_structures.scss */
 .c-content {
   margin: auto;
   position: relative;
