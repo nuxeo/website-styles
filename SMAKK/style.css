@@ -1,144 +1,60 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
-/* line 4, sass/_utilities.scss */
-.inline-list {
-  list-style-type: none;
-  display: inline-block;
+/* line 5, sass/_structures.scss */
+.r-main {
+  min-height: 70vh;
 }
 
-/* line 10, sass/_utilities.scss */
-.ally-hidden {
+/* line 8, sass/_structures.scss */
+.r-main--video {
+  position: relative;
+}
+/* line 10, sass/_structures.scss */
+.r-main--video:after {
+  content: '';
   position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #8500FF;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* line 21, sass/_utilities.scss */
-.is-bold {
-  font-weight: 700;
+/* line 24, sass/_structures.scss */
+.r-masthead {
+  min-height: 50vh;
 }
 
-/* line 26, sass/_utilities.scss */
-.is-bigger {
-  font-size: 1.333em;
+/* line 28, sass/_structures.scss */
+.r-thin {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  min-height: 200px;
 }
 
-/* line 31, sass/_utilities.scss */
-.is-smaller {
-  font-size: 0.75em;
+/* line 32, sass/_structures.scss */
+.c-checker {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 5.611em;
 }
 
-/* line 37, sass/_utilities.scss */
-.is-green {
-  color: #73d2cf;
-}
-
-/* line 42, sass/_utilities.scss */
-.is-bg-green {
-  background-color: #73d2cf;
-}
-
-/* line 47, sass/_utilities.scss */
-.is-blue {
-  color: #0067FF;
-}
-
-/* line 52, sass/_utilities.scss */
-.is-bg-blue {
-  background-color: #0067FF;
-}
-
-/* line 57, sass/_utilities.scss */
-.is-navy {
-  color: #1F28BF;
-}
-
-/* line 62, sass/_utilities.scss */
-.is-bg-navy {
-  background-color: #1F28BF;
-}
-
-/* line 67, sass/_utilities.scss */
-.is-grey {
-  color: #F5F5F5;
-}
-
-/* line 72, sass/_utilities.scss */
-.is-bg-grey {
-  background-color: #F5F5F5;
-}
-
-/* line 77, sass/_utilities.scss */
-.is-grey-2 {
-  color: #808285;
-}
-
-/* line 82, sass/_utilities.scss */
-.is-bg-grey-2 {
-  background-color: #808285;
-}
-
-/* line 87, sass/_utilities.scss */
-.is-grey-3 {
-  color: #4a4a4a;
-}
-
-/* line 92, sass/_utilities.scss */
-.is-bg-grey-3 {
-  background-color: #4a4a4a;
-}
-
-/* line 97, sass/_utilities.scss */
-.is-red {
-  color: #FF0044;
-}
-
-/* line 102, sass/_utilities.scss */
-.is-bg-red {
-  background-color: #FF0044;
-}
-
-/* line 107, sass/_utilities.scss */
-.is-purple {
-  color: #8500FF;
-}
-
-/* line 112, sass/_utilities.scss */
-.is-bg-purple {
-  background-color: #8500FF;
-}
-
-/* line 117, sass/_utilities.scss */
-.is-aqua {
-  color: #00ADED;
-}
-
-/* line 122, sass/_utilities.scss */
-.is-bg-aqua {
-  background-color: #00ADED;
-}
-
-/* line 127, sass/_utilities.scss */
-.is-orange {
-  color: #F15818;
-}
-
-/* line 132, sass/_utilities.scss */
-.is-bg-orange {
-  background-color: #F15818;
-}
-
-/* line 136, sass/_utilities.scss */
-.is-bg-white {
-  background-color: #fff;
-}
-
-/* line 140, sass/_utilities.scss */
-.is-bg-black {
-  background-color: #000;
+/* line 37, sass/_structures.scss */
+.c-content {
+  margin: auto;
 }
 
 /* line 2, sass/_base-smakk.scss */
@@ -148,9 +64,10 @@ body {
   font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 700;
   color: #fff;
+  background: #F5F5F5;
 }
 
-/* line 9, sass/_base-smakk.scss */
+/* line 10, sass/_base-smakk.scss */
 h1,
 h2,
 h3,
@@ -162,55 +79,62 @@ h4,
   font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 700;
   margin: 0;
+  margin-bottom: 40px;
 }
 
-/* line 21, sass/_base-smakk.scss */
+/* line 23, sass/_base-smakk.scss */
 h1,
 .h1 {
   font-size: 5.611em;
+  line-height: 100px;
   letter-spacing: -2px;
 }
 
-/* line 27, sass/_base-smakk.scss */
+/* line 30, sass/_base-smakk.scss */
 h2,
 .h2 {
   font-size: 4.209em;
+  line-height: 78px;
   letter-spacing: -1px;
 }
 
-/* line 33, sass/_base-smakk.scss */
+/* line 37, sass/_base-smakk.scss */
 h3,
 .h3 {
   font-size: 2.369em;
+  line-height: 54px;
   letter-spacing: -1px;
 }
 
-/* line 39, sass/_base-smakk.scss */
+/* line 44, sass/_base-smakk.scss */
 h4,
 .h4 {
   font-size: 1.777em;
+  line-height: 36px;
 }
 
-/* line 44, sass/_base-smakk.scss */
+/* line 50, sass/_base-smakk.scss */
 p {
   font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 700;
+  font-size: 1em;
+  line-height: 24px;
 }
 
-/* line 48, sass/_base-smakk.scss */
+/* line 56, sass/_base-smakk.scss */
 blockquote {
   position: relative;
   margin: 20px 120px;
   padding-right: 30px;
   margin-bottom: 1.333em;
 }
-/* line 53, sass/_base-smakk.scss */
+/* line 61, sass/_base-smakk.scss */
 blockquote cite {
   margin-top: 0.75em;
   font-style: normal;
   display: block;
 }
-/* line 58, sass/_base-smakk.scss */
+/* line 66, sass/_base-smakk.scss */
 blockquote:before, blockquote:after {
   position: absolute;
   font-family: 'Times New Roman';
@@ -218,42 +142,42 @@ blockquote:before, blockquote:after {
   height: 0px;
   top: -35px;
 }
-/* line 66, sass/_base-smakk.scss */
+/* line 74, sass/_base-smakk.scss */
 blockquote:before {
   content: '“';
   left: -100px;
 }
-/* line 70, sass/_base-smakk.scss */
+/* line 78, sass/_base-smakk.scss */
 blockquote:after {
   content: '”';
   right: -40px;
 }
 
-/* line 76, sass/_base-smakk.scss */
+/* line 84, sass/_base-smakk.scss */
 a:link {
   border-bottom: 2px solid;
   color: inherit;
 }
-/* line 79, sass/_base-smakk.scss */
+/* line 87, sass/_base-smakk.scss */
 a:link:hover {
   color: inherit;
   border-bottom: 2px solid #73d2cf;
 }
-/* line 83, sass/_base-smakk.scss */
+/* line 91, sass/_base-smakk.scss */
 .is-blue a:link {
   border-bottom: 2px solid #73d2cf;
 }
-/* line 85, sass/_base-smakk.scss */
+/* line 93, sass/_base-smakk.scss */
 .is-blue a:link:hover {
   border-bottom: 2px solid #0067FF;
 }
-/* line 90, sass/_base-smakk.scss */
+/* line 98, sass/_base-smakk.scss */
 .is-bg-green a:link:hover {
   color: #0067FF;
   border-bottom: 2px solid #0067FF;
 }
 
-/* line 98, sass/_base-smakk.scss */
+/* line 106, sass/_base-smakk.scss */
 label {
   color: #73d2cf;
   font-family: "Open Sans", "Arial", sans-serif;
@@ -261,7 +185,7 @@ label {
   display: block;
 }
 
-/* line 104, sass/_base-smakk.scss */
+/* line 112, sass/_base-smakk.scss */
 input:not([type="submit"]),
 select,
 textarea {
@@ -277,7 +201,7 @@ textarea {
   padding: 2px;
   background: transparent;
 }
-/* line 117, sass/_base-smakk.scss */
+/* line 125, sass/_base-smakk.scss */
 input:not([type="submit"])::placeholder,
 input:not([type="submit"]) option,
 input:not([type="submit"]) label,
@@ -292,17 +216,17 @@ textarea label {
   font-weight: 600;
 }
 
-/* line 125, sass/_base-smakk.scss */
+/* line 133, sass/_base-smakk.scss */
 .select--styled {
   position: relative;
 }
-/* line 127, sass/_base-smakk.scss */
+/* line 135, sass/_base-smakk.scss */
 .select--styled select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
-/* line 132, sass/_base-smakk.scss */
+/* line 140, sass/_base-smakk.scss */
 .select--styled:after {
   content: '';
   position: absolute;
@@ -317,14 +241,14 @@ textarea label {
   pointer-events: none;
 }
 
-/* line 147, sass/_base-smakk.scss */
+/* line 155, sass/_base-smakk.scss */
 input[type='radio'],
 input[type='checkbox'] {
   width: auto;
   margin-top: 0.75em;
 }
 
-/* line 153, sass/_base-smakk.scss */
+/* line 161, sass/_base-smakk.scss */
 input[type="checkbox"] + label,
 input[type="radio"] + label {
   display: inline-block;
@@ -334,13 +258,13 @@ input[type="radio"] + label {
   vertical-align: baseline;
 }
 
-/* line 162, sass/_base-smakk.scss */
+/* line 170, sass/_base-smakk.scss */
 input[type='submit'] {
   width: auto;
   border: 0;
 }
 
-/* line 168, sass/_base-smakk.scss */
+/* line 176, sass/_base-smakk.scss */
 button,
 .button,
 input[type='submit'] {
@@ -352,7 +276,7 @@ input[type='submit'] {
   border-radius: 50px;
   font-size: 0.75em;
   cursor: pointer;
-  margin: 0 0 1.333em;
+  margin: 0 0.75em 1.333em;
   min-width: 190px;
   position: relative;
   text-align: center;
@@ -362,7 +286,7 @@ input[type='submit'] {
   color: #fff;
   transition: all 300ms ease-out;
 }
-/* line 186, sass/_base-smakk.scss */
+/* line 194, sass/_base-smakk.scss */
 button:hover,
 .button:hover,
 input[type='submit']:hover {
@@ -371,25 +295,25 @@ input[type='submit']:hover {
   border: 1px solid #0067FF;
 }
 
-/* line 193, sass/_base-smakk.scss */
-.button-ghost {
+/* line 201, sass/_base-smakk.scss */
+.button--ghost {
   border: 1px solid #fff;
   background: transparent;
 }
 
-/* line 198, sass/_base-smakk.scss */
-.button-callout {
+/* line 206, sass/_base-smakk.scss */
+.button--callout {
   background: #fff;
   color: #0067FF;
 }
-/* line 201, sass/_base-smakk.scss */
-.button-callout:hover {
+/* line 209, sass/_base-smakk.scss */
+.button--callout:hover {
   background: #0067FF;
   color: white;
   border: 1px solid #0067FF;
 }
 
-/* line 208, sass/_base-smakk.scss */
+/* line 216, sass/_base-smakk.scss */
 .toggle__item {
   list-style-type: none;
   display: inline-block;
@@ -402,20 +326,20 @@ input[type='submit']:hover {
   border: 2px solid;
   transition: all 200ms ease-out;
 }
-/* line 57, sass/_mixins.scss */
+/* line 89, sass/_mixins.scss */
 .toggle__item:hover.is-green {
   background-color: #73d2cf;
 }
-/* line 57, sass/_mixins.scss */
+/* line 89, sass/_mixins.scss */
 .toggle__item:hover.is-white {
   background-color: #fff;
 }
-/* line 57, sass/_mixins.scss */
+/* line 89, sass/_mixins.scss */
 .toggle__item:hover.is-blue {
   background-color: #0067FF;
 }
 
-/* line 214, sass/_base-smakk.scss */
+/* line 222, sass/_base-smakk.scss */
 .toggle__item--large {
   width: 20px;
   height: 20px;
@@ -423,15 +347,190 @@ input[type='submit']:hover {
   background: transparent;
   border: 2px solid;
 }
-/* line 57, sass/_mixins.scss */
+/* line 89, sass/_mixins.scss */
 .toggle__item--large:hover.is-green {
   background-color: #73d2cf;
 }
-/* line 57, sass/_mixins.scss */
+/* line 89, sass/_mixins.scss */
 .toggle__item--large:hover.is-white {
   background-color: #fff;
 }
-/* line 57, sass/_mixins.scss */
+/* line 89, sass/_mixins.scss */
 .toggle__item--large:hover.is-blue {
   background-color: #0067FF;
+}
+
+/* line 5, sass/_utilities.scss */
+.inline-list {
+  list-style-type: none;
+  display: inline-block;
+}
+
+/* line 11, sass/_utilities.scss */
+.is-flex-col {
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+/* line 15, sass/_utilities.scss */
+.ally-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* line 26, sass/_utilities.scss */
+.is-bold {
+  font-weight: 700;
+}
+
+/* line 31, sass/_utilities.scss */
+.is-bigger {
+  font-size: 1.333em;
+  line-height: 32px;
+}
+
+/* line 37, sass/_utilities.scss */
+.is-smaller {
+  font-size: 0.75em;
+  line-height: 20px;
+}
+
+/* line 44, sass/_utilities.scss */
+* .underlined {
+  position: relative;
+}
+/* line 47, sass/_utilities.scss */
+.underlined:after {
+  content: '';
+  width: 25px;
+  height: 3px;
+  border-radius: 20%;
+  border: 2px solid;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+
+/* line 60, sass/_utilities.scss */
+.is-green {
+  color: #73d2cf;
+}
+
+/* line 65, sass/_utilities.scss */
+.is-bg-green {
+  background-color: #73d2cf;
+}
+
+/* line 70, sass/_utilities.scss */
+.is-blue {
+  color: #0067FF;
+}
+
+/* line 75, sass/_utilities.scss */
+.is-bg-blue {
+  background-color: #0067FF;
+}
+
+/* line 80, sass/_utilities.scss */
+.is-navy {
+  color: #1F28BF;
+}
+
+/* line 85, sass/_utilities.scss */
+.is-bg-navy {
+  background-color: #1F28BF;
+}
+
+/* line 90, sass/_utilities.scss */
+.is-grey {
+  color: #F5F5F5;
+}
+
+/* line 95, sass/_utilities.scss */
+.is-bg-grey {
+  background-color: #F5F5F5;
+}
+
+/* line 100, sass/_utilities.scss */
+.is-grey-2 {
+  color: #808285;
+}
+
+/* line 105, sass/_utilities.scss */
+.is-bg-grey-2 {
+  background-color: #808285;
+}
+
+/* line 110, sass/_utilities.scss */
+.is-grey-3 {
+  color: #4a4a4a;
+}
+
+/* line 115, sass/_utilities.scss */
+.is-bg-grey-3 {
+  background-color: #4a4a4a;
+}
+
+/* line 120, sass/_utilities.scss */
+.is-red {
+  color: #FF0044;
+}
+
+/* line 125, sass/_utilities.scss */
+.is-bg-red {
+  background-color: #FF0044;
+}
+
+/* line 130, sass/_utilities.scss */
+.is-purple {
+  color: #8500FF;
+}
+
+/* line 135, sass/_utilities.scss */
+.is-bg-purple {
+  background-color: #8500FF;
+}
+
+/* line 140, sass/_utilities.scss */
+.is-aqua {
+  color: #00ADED;
+}
+
+/* line 145, sass/_utilities.scss */
+.is-bg-aqua {
+  background-color: #00ADED;
+}
+
+/* line 150, sass/_utilities.scss */
+.is-orange {
+  color: #F15818;
+}
+
+/* line 155, sass/_utilities.scss */
+.is-bg-orange {
+  background-color: #F15818;
+}
+
+/* line 159, sass/_utilities.scss */
+.is-bg-white {
+  background-color: #fff;
+}
+
+/* line 163, sass/_utilities.scss */
+.is-bg-black {
+  background-color: #000;
+}
+
+/* line 169, sass/_utilities.scss */
+.has-bg-image {
+  background-size: cover;
+  background-repeat: no-repeat;
 }
