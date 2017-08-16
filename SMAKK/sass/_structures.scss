@@ -1,34 +1,33 @@
 //Card and masthead styles
 //r- for row
 //c- for column/card
-
-.r-main{
-    
+.r-header {
+    border-bottom: 2px solid $c-navy;
+    height: 100px;
 }
-
-.r-main--video {
-  position: relative;
-  &:after{
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: $c-purple;
-    box-shadow: 2px 4px 10px rgba(0,0,0,.6);
-  }
+.r-cards {
+    @include display-flex
 }
-
-.r-masthead {
-  min-height: $height-thin;
-}
-
-.r-thin{
-    @include display-flex();
-    min-height: 200px
+.columns {
+    .r-main & {
+       min-height: $height-reg; 
+    }
+    .r-masthead & {
+       min-height: $height-thin; 
+    }
+    .r-thin &{
+        min-height: 150px
+    }
+    .r-header &{
+        align-items: center
+    }
+    .r-cards & {
+        padding: $scale-0
+    }
+    .r-cards--blocked & {
+        margin: $scale-2;
+        padding: $scale-0
+    }
 }
 
 .c-checker {
@@ -38,8 +37,9 @@
         min-height: $height-reg
     }
 }
-
 .c-content {
   margin: auto; //Wrap around content inside a c-checker col to vertically align
   position: relative
 }
+
+

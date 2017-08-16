@@ -1,177 +1,219 @@
-//HELPER CLASSES
-//Colors, states, weights etc meant to extend design in OOCSS fashion
-
-//Display
-%inline-list,
-.inline-list {
-  list-style-type: none;
-  display: inline-block
-}
-
-.is-flex-col{
-  @include flex-direction(column)
-}
-//a11y
-%ally-hidden,
-.ally-hidden {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-// Fonts
-%is-bold,
-.is-bold {
-  font-weight: 700
-}
-
-%is-bigger,
-.is-bigger {
-  font-size: $scale-2;
-  line-height: 32px
-}
-
-%is-smaller,
-.is-smaller {
-  font-size: $scale-0;
-  line-height: 20px
-}
-
-.underlined {
-  * & {
-    position: relative;
-  }
-  &:after{
-    content: '';
-     width: 25px;
-    height: 3px;
-    border-radius: 20%;
-    border: 2px solid;
-    position: absolute;
-    top: 40px;
-    left: 0
-  }
-}
-
-.superhead{
-  position: absolute;
-  top: -70px
-}
-
-//Colors
-%is-green,
-.is-green {
-  color: $c-green
-}
-
-%is-bg-green,
-.is-bg-green {
-  background-color: $c-green
-}
-
-%is-blue,
-.is-blue {
-  color: $c-blue;
-}
-
-%is-bg-blue,
-.is-bg-blue {
-  background-color: $c-blue;
-}
-
-%is-navy,
-.is-navy {
-  color: $c-navy
-}
-
-%is-bg-navy,
-.is-bg-navy {
-  background-color: $c-navy
-}
-
-%is-grey,
-.is-grey {
-  color: $c-grey
-}
-
-%is-bg-grey,
-.is-bg-grey {
-  background-color: $c-grey
-}
-
-%is-grey-2,
-.is-grey-2 {
-  color: $c-grey-2
-}
-
-%is-bg-grey-2,
-.is-bg-grey-2 {
-  background-color: $c-grey-2
-}
-
-%is-grey-3,
-.is-grey-3 {
-  color: $c-grey-3
-}
-
-%is-bg-grey-3,
-.is-bg-grey-3 {
-  background-color: $c-grey-3
-}
-
-%is-red,
-.is-red {
-  color: $c-red
-}
-
-%is-bg-red,
-.is-bg-red {
-  background-color: $c-red
-}
-
-%is-purple,
-.is-purple {
-  color: $c-purple
-}
-
-%is-bg-purple,
-.is-bg-purple {
-  background-color: $c-purple
-}
-
-%is-aqua,
-.is-aqua {
-  color: $c-aqua
-}
-
-%is-bg-aqua,
-.is-bg-aqua {
-  background-color: $c-aqua
-}
-
-%is-orange,
-.is-orange {
-  color: $c-orange
-}
-
-%is-bg-orange,
-.is-bg-orange {
-  background-color: $c-orange
-}
-%is-bg-white,
-.is-bg-white {
-  background-color: #fff
-}
-%is-bg-black,
-.is-bg-black {
-  background-color: #000
-}
-
-
-.has-bg-image {
-  background-size: cover;
-  background-repeat: no-repeat
-}
+    //HELPER CLASSES
+    //Colors, states, weights etc meant to extend design in OOCSS fashion
+    //Display
+    %inline-list,
+    .inline-list {
+        list-style-type: none;
+        display: inline-block
+    }
+    
+    %display-flex,
+    .display-flex {
+        @include display-flex
+    }
+    
+    .is-flex-col {
+        @include flex-direction(column)
+    }
+    
+    //a11y
+    %ally-hidden,
+    .ally-hidden {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+    
+    // Fonts
+    %is-bold,
+    .is-bold {
+        font-weight: 700
+    }
+    
+    %is-bigger,
+    .is-bigger {
+        font-size: $scale-2;
+        line-height: 32px
+    }
+    
+    %is-smaller,
+    .is-smaller {
+        font-size: $scale-0;
+        line-height: 20px
+    }
+    
+    .underlined {
+        * & {
+            position: relative;
+        }
+        &:after {
+            content: '';
+            width: 25px;
+            height: 3px;
+            border-radius: 20%;
+            border: 2px solid;
+            position: absolute;
+            top: 40px;
+            left: 0
+        }
+    }
+    
+    .superhead {
+        position: absolute;
+        top: -70px
+    }
+    
+    //Colors
+    %is-green,
+    .is-green {
+        color: $c-green
+    }
+    
+    %is-bg-green,
+    .is-bg-green {
+        background-color: $c-green
+    }
+    
+    %is-blue,
+    .is-blue {
+        color: $c-blue;
+    }
+    
+    %is-bg-blue,
+    .is-bg-blue {
+        background-color: $c-blue;
+    }
+    
+    %is-navy,
+    .is-navy {
+        color: $c-navy
+    }
+    
+    %is-bg-navy,
+    .is-bg-navy {
+        background-color: $c-navy
+    }
+    
+    %is-grey,
+    .is-grey {
+        color: $c-grey
+    }
+    
+    %is-bg-grey,
+    .is-bg-grey {
+        background-color: $c-grey
+    }
+    
+    %is-grey-2,
+    .is-grey-2 {
+        color: $c-grey-2
+    }
+    
+    %is-bg-grey-2,
+    .is-bg-grey-2 {
+        background-color: $c-grey-2
+    }
+    
+    %is-grey-3,
+    .is-grey-3 {
+        color: $c-grey-3
+    }
+    
+    %is-bg-grey-3,
+    .is-bg-grey-3 {
+        background-color: $c-grey-3
+    }
+    
+    %is-red,
+    .is-red {
+        color: $c-red
+    }
+    
+    %is-bg-red,
+    .is-bg-red {
+        background-color: $c-red
+    }
+    
+    %is-purple,
+    .is-purple {
+        color: $c-purple
+    }
+    
+    %is-bg-purple,
+    .is-bg-purple {
+        background-color: $c-purple
+    }
+    
+    %is-aqua,
+    .is-aqua {
+        color: $c-aqua
+    }
+    
+    %is-bg-aqua,
+    .is-bg-aqua {
+        background-color: $c-aqua
+    }
+    
+    %is-orange,
+    .is-orange {
+        color: $c-orange
+    }
+    
+    %is-bg-orange,
+    .is-bg-orange {
+        background-color: $c-orange
+    }
+    
+    %is-bg-white,
+    .is-bg-white {
+        background-color: #fff
+    }
+    
+    %is-bg-black,
+    .is-bg-black {
+        background-color: #000
+    }
+    
+    .has-bg-image {
+        background-size: cover;
+        background-repeat: no-repeat
+    }
+    
+    .has-icon {
+        position: relative;
+        &.icon-video {
+            &:after {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                background: $c-purple;
+                box-shadow: 2px 4px 10px rgba(0, 0, 0, .6);
+            }
+        }
+        &.icon-plus {
+            &:after {
+                content: '+';
+                position: absolute;
+                right: 35px;
+                top: 20px;
+                font-size: $scale-3
+            }
+        }
+        &.icon-arrow {
+            &:after {
+                content: '→';
+                position: absolute;
+                right: 35px;
+                bottom: 20px;
+                font-size: $scale-3
+            }
+        }
+    }
