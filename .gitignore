@@ -60,3 +60,6 @@ package.md5
 /elements/*.build*
 /elements/*.min.js
 /SMAKK/.sass-cache
+*.scssc
+SMAKK/.sass-cache/37f0b01187d25ac3d1a485ca036979109c905025/_structures.scssc
+*.scssc
