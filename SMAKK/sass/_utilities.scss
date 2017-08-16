@@ -1,10 +1,15 @@
 //HELPER CLASSES
 //Colors, states, weights etc meant to extend design in OOCSS fashion
 
+//Display
 %inline-list,
 .inline-list {
   list-style-type: none;
   display: inline-block
+}
+
+.is-flex-col{
+  @include flex-direction(column)
 }
 //a11y
 %ally-hidden,
@@ -25,12 +30,30 @@
 
 %is-bigger,
 .is-bigger {
-  font-size: $scale-2
+  font-size: $scale-2;
+  line-height: 32px
 }
 
 %is-smaller,
 .is-smaller {
-  font-size: $scale-0
+  font-size: $scale-0;
+  line-height: 20px
+}
+
+.underlined {
+  * & {
+    position: relative;
+  }
+  &:after{
+    content: '';
+     width: 25px;
+    height: 3px;
+    border-radius: 20%;
+    border: 2px solid;
+    position: absolute;
+    top: 40px;
+    left: 0
+  }
 }
 
 //Colors
@@ -140,4 +163,10 @@
 %is-bg-black,
 .is-bg-black {
   background-color: #000
+}
+
+
+.has-bg-image {
+  background-size: cover;
+  background-repeat: no-repeat
 }
