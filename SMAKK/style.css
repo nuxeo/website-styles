@@ -1,15 +1,10 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
-/* line 5, sass/_structures.scss */
-.r-main {
-  min-height: 70vh;
-}
-
-/* line 8, sass/_structures.scss */
+/* line 9, sass/_structures.scss */
 .r-main--video {
   position: relative;
 }
-/* line 10, sass/_structures.scss */
+/* line 11, sass/_structures.scss */
 .r-main--video:after {
   content: '';
   position: absolute;
@@ -23,12 +18,12 @@
   box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
 }
 
-/* line 23, sass/_structures.scss */
+/* line 25, sass/_structures.scss */
 .r-masthead {
   min-height: 50vh;
 }
 
-/* line 27, sass/_structures.scss */
+/* line 29, sass/_structures.scss */
 .r-thin {
   display: -webkit-box;
   display: -webkit-flex;
@@ -40,7 +35,7 @@
   min-height: 200px;
 }
 
-/* line 33, sass/_structures.scss */
+/* line 34, sass/_structures.scss */
 .c-checker {
   display: -webkit-box;
   display: -webkit-flex;
@@ -51,8 +46,12 @@
   flex-wrap: nowrap;
   padding: 5.611em;
 }
+/* line 37, sass/_structures.scss */
+.r-main .c-checker {
+  min-height: 70vh;
+}
 
-/* line 38, sass/_structures.scss */
+/* line 42, sass/_structures.scss */
 .c-content {
   margin: auto;
   position: relative;
