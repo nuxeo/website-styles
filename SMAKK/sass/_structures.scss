@@ -1,0 +1,39 @@
+//Card and masthead styles
+//r- for row
+//c- for column/card
+
+.r-main {
+  min-height: 70vh;
+}
+.r-main--video {
+  position: relative;
+  &:after{
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $c-purple;
+    box-shadow: 2px 4px 10px rgba(0,0,0,.6);
+  }
+}
+
+.r-masthead {
+  min-height: 50vh;
+}
+
+.r-thin{
+    @include display-flex();
+    min-height: 200px
+}
+.c-checker {
+  @include display-flex();
+  padding: $scale-7
+}
+
+.c-content {
+  margin: auto
+}
