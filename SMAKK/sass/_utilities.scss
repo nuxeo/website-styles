@@ -48,6 +48,8 @@
     .underlined {
         * & {
             position: relative;
+            margin: 0;
+            margin-bottom: 3em;
         }
         &:after {
             content: '';
@@ -199,6 +201,7 @@
             }
         }
         &.icon-plus {
+            &.columns {padding-top: $scale-5;}
             &:after {
                 content: '+';
                 position: absolute;

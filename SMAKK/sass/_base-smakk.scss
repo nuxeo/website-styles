@@ -66,18 +66,22 @@ blockquote {
     &:before,
     &:after {
         position: absolute;
-        font-family: 'Times New Roman';
-        font-size: $scale-7;
-        height: 0px;
-        top: -35px;
+        height: 40px;
+        width: 55px;
+        top: 0;
+        background-image: url(svg/quotation-mark.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
     &:before {
-        content: '“';
+        content: '';
         left: -100px;
+        
     }
     &:after {
-        content: '”';
+        content: '';
         right: -40px;
+        background-position-x: -93px;
     }
 }
 
