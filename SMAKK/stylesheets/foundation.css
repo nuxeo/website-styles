@@ -644,18 +644,6 @@ select {
     max-width: none !important;
 }
 
-button {
-    padding: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: 0;
-    border-radius: 3px;
-    background: transparent;
-    line-height: 1;
-    cursor: auto;
-}
-
 [data-whatinput='mouse'] button {
     outline: 0;
 }
@@ -3619,4 +3607,105 @@ screen and (min-width: 64em) {
 .long-delay {
     -webkit-animation-delay: 700ms !important;
     animation-delay: 700ms !important;
+}
+
+
+/**** APPS ****/
+
+
+/* Orbit */
+
+orbit {
+    position: relative;
+}
+
+.orbit-container {
+    position: relative;
+    /*height: 0;*/
+    min-height: 30vh;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.orbit-slide {
+    width: 100%;
+}
+
+.orbit-slide.no-motionui.is-active {
+    top: 0;
+    left: 0;
+}
+
+.orbit-figure {
+    margin: 0;
+}
+
+.orbit-image {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+}
+
+.orbit-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding: 1rem;
+    background-color: rgba(10, 10, 10, 0.5);
+    color: #fefefe;
+}
+
+.orbit-previous,
+.orbit-next {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    z-index: 10;
+    padding: 1rem;
+    color: #fefefe;
+}
+
+[data-whatinput='mouse'] .orbit-previous,
+[data-whatinput='mouse'] .orbit-next {
+    outline: 0;
+}
+
+.orbit-previous:hover,
+.orbit-next:hover,
+.orbit-previous:active,
+.orbit-next:active,
+.orbit-previous:focus,
+.orbit-next:focus {
+    background-color: rgba(10, 10, 10, 0.5);
+}
+
+.orbit-previous {
+    left: 0;
+}
+
+.orbit-next {
+    left: auto;
+    right: 0;
+}
+
+.orbit-bullets {
+    position: relative;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    float: right;
+    display: inline-block
+}
+
+[data-whatinput='mouse'] .orbit-bullets {
+    outline: 0;
+}
+
+.orbit-bullets button {
+    min-width: 0;
+    margin: 0.1rem;
+    border-radius: 50%;
 }
