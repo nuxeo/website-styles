@@ -42,7 +42,8 @@
     %is-smaller,
     .is-smaller {
         font-size: $scale-0;
-        line-height: 20px
+        line-height: 20px;
+        letter-spacing: 1px;
     }
     
     .underlined {
@@ -193,7 +194,7 @@
                 position: absolute;
                 right: 35px;
                 top: 20px;
-                font-size: $scale-3
+                font-size: $scale-4
             }
         }
         &.icon-arrow {
@@ -202,7 +203,7 @@
                 position: absolute;
                 right: 35px;
                 bottom: 20px;
-                font-size: $scale-3
+                font-size: $scale-5
             }
         }
     }
