@@ -1,3 +1,16 @@
+//Breakpoints
+//Points from foundation
+
+@mixin breakpoint($point) { 
+   @if $point == large {
+     @media (min-width: 64em) { @content ; }
+  }
+    @else if $point == medium {
+     @media (min-width: 40em) { @content ; }
+  }
+}
+
+
 //Display mixins
 @mixin display-flex($direction: row, $wrap: nowrap) {
     display: -webkit-box;
@@ -45,6 +58,56 @@
 }
 
 //Fonts and Weights
+
+//Fluid typography
+
+$mod_1: .4;
+$mod_2: 1;
+
+
+// Fluid Type Mixin
+// https://codepen.io/anon/pen/RZxvMm
+// Calculate Modular Scale
+
+$h1-min: $mod_1 * $scale-7;
+$h1-max: $mod_2 * $scale-7;
+
+$h2-min: $mod_1 * $scale-6;
+$h2-max: $mod_2 * $scale-6;
+
+$h3-min: $mod_1 * $scale-5;
+$h3-max: $mod_2 * $scale-5;
+
+$h4-min: $mod_1 * $scale-5;
+$h4-max: $mod_2 * $scale-4;
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        line-height: 1.33;
+      }
+
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  } @else {
+    @error "Detected mixed units. Please use the same units for all parameters. " + $u1 +", " + $u2 + ", " + $u3 +", "+ $u4;
+  }
+}
+
 @mixin primary-font-light {
     font-family: $font-primary;
     font-weight: 300
@@ -94,7 +157,8 @@ $toggle-colors: ( is-green: $c-green, is-white: #fff, is-blue: $c-blue) !default
     border-radius: 50%;
     background: rgba(0, 0, 0, 0);
     border: 2px solid;
-    &:hover {
+    &:hover,
+    &.is-active {
         background-color: map-get($toggle-colors, default);
         @each $color,
         $value in map-remove($toggle-colors, default) {
