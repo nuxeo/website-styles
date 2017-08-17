@@ -630,23 +630,10 @@ input[type='submit']:hover {
   position: relative;
 }
 /* line 190, sass/_utilities.scss */
-.has-icon.icon-video:after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #8500FF;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
-}
-/* line 204, sass/_utilities.scss */
 .has-icon.icon-plus.columns {
   padding-top: 3.157em;
 }
-/* line 205, sass/_utilities.scss */
+/* line 191, sass/_utilities.scss */
 .has-icon.icon-plus:after {
   content: '+';
   position: absolute;
@@ -654,7 +641,7 @@ input[type='submit']:hover {
   top: 20px;
   font-size: 1.777em;
 }
-/* line 214, sass/_utilities.scss */
+/* line 200, sass/_utilities.scss */
 .has-icon.icon-arrow:after {
   content: '→';
   position: absolute;
