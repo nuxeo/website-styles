@@ -6,30 +6,33 @@
 }
 
 .r-cards {
-    @include display-flex;
     font-size: 85%
 }
 
 .r-challenge {
-        position: relative;
+    padding: $scale-2;
+    position: relative;
+    @include breakpoint(large) {
         padding: $scale-7
     }
+}
+
 .columns {
     .r-main & {
-       min-height: $height-reg; 
+        min-height: $height-reg;
     }
     .r-masthead & {
-       min-height: $height-thin; 
+        min-height: $height-thin;
     }
-    .r-thin &{
+    .r-thin & {
         min-height: 150px
     }
-    .r-header &{
+    .r-header & {
         align-items: center
     }
     .r-cards & {
         padding: $scale-1 $scale-0;
-        min-height: 350px 
+        min-height: 350px
     }
     .r-cards--spaced & {
         border: 20px solid white;
@@ -37,24 +40,77 @@
 }
 
 .c-checker {
-  @include display-flex();
-  padding: $scale-7;
-    .r-main &{
-        min-height: $height-reg
+    @include display-flex();
+    padding: $scale-1;
+    .r-main & {
+        min-height: $height-sm
+    }
+    @include breakpoint(large) {
+        padding: $scale-7;
+        .r-main & {
+            min-height: $height-reg
+        }
     }
 }
+
 .c-content {
-  margin: auto; //Wrap around content inside a c-checker col to vertically align
-  position: relative
+    margin: auto; //Wrap around content inside a c-checker col to vertically align
+    position: relative
 }
 
 .c-challenge {
-    padding: $scale-5 $scale-6;
-    position: absolute;
-    right: 0;
-    box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+    padding: $scale-2;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+    @include breakpoint(large) {
+        padding: $scale-5 $scale-6;
+        position: absolute;
+        right: 0;
+    }
 }
+
 .challenge__text {
     margin-top: $scale-5;
     max-width: 400px
+}
+
+.c-testimonials {
+    padding: $scale-1;
+    @include breakpoint(large) {
+        padding: $scale-6;
+        p {
+            font-size: 120%;
+            line-height: 32px;
+            margin-top: 0;
+        }
+    }
+}
+
+.c-testimonials--texty {
+    p {
+        font-size: $scale-3;
+        line-height: 1.2;
+        @include breakpoint(large) {
+            font-size: $scale-5;
+            line-height: 1.1
+        }
+    }
+    .orbit-slide {
+        padding: $scale-2;
+        @include breakpoint(large) {
+            padding: $scale-6;
+        }
+    }
+    .orbit-bullets {
+        float: left
+    }
+    .c-testimontials__link {
+        float: right;
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+.c-testimonials__logo {
+    display: block;
+    margin-top: $scale-3;
 }
