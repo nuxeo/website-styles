@@ -186,20 +186,6 @@
     
     .has-icon {
         position: relative;
-        &.icon-video {
-            &:after {
-                content: '';
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                transform: translate(-50%, -50%);
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                background: $c-purple;
-                box-shadow: 2px 4px 10px rgba(0, 0, 0, .6);
-            }
-        }
         &.icon-plus {
             &.columns {padding-top: $scale-5;}
             &:after {
