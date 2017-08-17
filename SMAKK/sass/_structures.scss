@@ -3,11 +3,17 @@
 //c- for column/card
 .r-header {
     border-bottom: 2px solid $c-navy;
+}
 
-}
 .r-cards {
-    @include display-flex
+    @include display-flex;
+    font-size: 85%
 }
+
+.r-challenge {
+        position: relative;
+        padding: $scale-7
+    }
 .columns {
     .r-main & {
        min-height: $height-reg; 
@@ -22,11 +28,11 @@
         align-items: center
     }
     .r-cards & {
-        padding: $scale-0
+        padding: $scale-1 $scale-0;
+        min-height: 350px 
     }
-    .r-cards--blocked & {
-        margin: $scale-2;
-        padding: $scale-0
+    .r-cards--spaced & {
+        border: 20px solid white;
     }
 }
 
@@ -42,4 +48,13 @@
   position: relative
 }
 
-
+.c-challenge {
+    padding: $scale-5 $scale-6;
+    position: absolute;
+    right: 0;
+    box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+}
+.challenge__text {
+    margin-top: $scale-5;
+    max-width: 400px
+}
