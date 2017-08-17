@@ -4,6 +4,10 @@
     <template>
         <style>
         /* local DOM styles go here */
+        svg {
+            fill: currentColor;
+        }
+
         :host {
             display: block;
         }
@@ -67,9 +71,9 @@
             margin-right: 12px;
         }
 
-        /*:host #copyright-social .social {
-            margin-bottom: 2rem;
-        }*/
+        :host #copyright-social .social svg {
+            height: 1em;
+        }
         </style>
         <!-- local DOM goes here -->
         <div class="row content-wrapper">
@@ -102,7 +106,7 @@
                     </div>
                 </div>
                 <div class="column small-12 medium-8 large-4">
-                    <a href="https://nuxeo.com/products/content-management-platform/">Platform</a>
+                    <a href="#">Integrations</a>
                     <div class="row small-up-1 medium-up-2">
                         <div class="column"><a href="#">EFSS</a></div>
                         <div class="column"><a href="#">Elastic Search</a></div>
@@ -116,71 +120,15 @@
                     </div>
                 </div>
                 <div class="column small-12 medium-4 large-2">
-                    <a href="https://nuxeo.com/why-nuxeo/">Why Nuxeo</a>
+                    <a href="#">Learn</a>
                     <div class="row small-up-1">
-                        <div class="column"><a href="#">University</a></div>
+                        <div class="column"><a href="https://doc.nuxeo.com/x/Sgg7">University</a></div>
                         <div class="column"><a href="#">Certification</a></div>
                         <div class="column"><a href="#">Answers</a></div>
-                        <div class="column"><a href="#">Documentation</a></div>
-                        <div class="column"><a href="#">Reports</a></div>
+                        <div class="column"><a href="https://university.nuxeo.io/">Documentation</a></div>
+                        <div class="column"><a href="https://nuxeo.com/reports/">Reports</a></div>
                     </div>
                 </div>
-
-                <!--
-                <nuxeo-footer-column link="https://nuxeo.com/why-nuxeo/" text="Why Nuxeo">
-                    <nuxeo-footer-item><a href="https://nuxeo.com/about/">About</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/careers/">Careers</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/about/leadership/#executive-team">Executive Team</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/media-center/">Press</a></nuxeo-footer-item>
-                </nuxeo-footer-column>
-                <nuxeo-footer-column link="https://nuxeo.com/products/content-management-platform/" text="Platform" span="2">
-                    <nuxeo-footer-item><a href="https://nuxeo.com/overview/">Overview</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/cloud/">Cloud</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/about/leadership/#executive-team">Executive Team</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/media-center/">Press</a></nuxeo-footer-item>
-                </nuxeo-footer-column>
-
-                <nuxeo-footer-column link="https://nuxeo.com/products/content-management-platform/" text="Platform" span="2">
-                    <nuxeo-footer-item><a href="https://nuxeo.com/overview/">Overview</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/cloud/">Cloud</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/about/leadership/#executive-team">Executive Team</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/media-center/">Press</a></nuxeo-footer-item>
-                </nuxeo-footer-column>
-                <nuxeo-footer-column link="https://nuxeo.com/why-nuxeo/" text="Why Nuxeo">
-                    <nuxeo-footer-item><a href="https://nuxeo.com/about/">About</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/careers/">Careers</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/about/leadership/#executive-team">Executive Team</a></nuxeo-footer-item>
-                    <nuxeo-footer-item><a href="https://nuxeo.com/media-center/">Press</a></nuxeo-footer-item>
-                </nuxeo-footer-column>
-                {"title": "Contact", "url": "https://nuxeo.com/about/contact/"},
-                {"title": "Request a Demo", "url": "https://nuxeo.com/about/request-demo/"},
-                <nuxeo-footer-column column-items='[[
-                {"title": "Nuxeo Platform", "url": "https://nuxeo.com/products/content-management-platform/"},
-                {"title": "Nuxeo Studio", "url": "https://nuxeo.com/products/studio/"},
-                {"title": "Cloud Hosting", "url": "https://nuxeo.com/products/nuxeo-cloud/"},
-                {"title": "Cloud File Sharing", "url": "https://nuxeo.com/products/nuxeo-live-connect/"},
-                {"title": "Desktop Sync", "url": "https://nuxeo.com/products/drive-desktop-sync/"},
-                {"title": "Integrations", "url": "https://nuxeo.com/integration/"},
-                {"title": "REST API", "url": "https://nuxeo.com/rest-api/"},
-                {"title": "Performance & Scalability", "url": "https://nuxeo.com/products/performance/"}], [
-                {"title": "Download or Online Trial", "url": "https://nuxeo.com/downloads/"}]]'></nuxeo-footer-column>
-                <nuxeo-footer-column column-items='[[
-                {"title": "Use Cases", "url": "https://nuxeo.com/solutions/digital-asset-management/"},
-                {"title": "Document Management", "url": "https://nuxeo.com/solutions/document-management/"},
-                {"title": "Digital Asset Management", "url": "https://nuxeo.com/solutions/digital-asset-management/"},
-                {"title": "Case Management", "url": "https://nuxeo.com/solutions/case-management/"},
-                {"title": "Knowledge Management", "url": "https://nuxeo.com/solutions/advanced-knowledge-base/"}], [
-                {"title": "Customers", "url": "https://nuxeo.com/customers/"}], [
-                {"title": "Partners", "url": "https://nuxeo.com/partners/"}]]'></nuxeo-footer-column>
-                <nuxeo-footer-column column-items='[[
-                {"title": "Learning", "url": "https://nuxeo.com/resources/"},
-                {"title": "Events", "url": "https://nuxeo.com/events/"},
-                {"title": "Reports", "url": "https://nuxeo.com/reports/"},
-                {"title": "Blog", "url": "https://nuxeo.com/blog/"},
-                {"title": "Documentation", "url": "https://doc.nuxeo.com/x/Sgg7"},
-                {"title": "University", "url": "https://university.nuxeo.io/"}], [
-                {"title": "Services", "url": "https://nuxeo.com/services/"}]]'></nuxeo-footer-column>
-                 -->
             </content>
         </div>
         <div id="copyright-social" class="row small-up-1 medium-up-2">
@@ -196,83 +144,19 @@
             <div class="column medium-text-right social">
                 <a href="https://www.facebook.com/Nuxeo">
                     <?xml version="1.0" encoding="UTF-8"?>
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-                        <title>F0652723-3854-4A05-84AA-1008A42ACBDA</title>
-                        <desc>Created with sketchtool.</desc>
-                        <defs></defs>
-                        <g id="Doc-Center-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
-                            <g id="V2-/-DocCenter---Home" transform="translate(-1061.000000, -1982.000000)" stroke="#D9E6F0">
-                                <g id="Group-7" transform="translate(1061.000000, 1982.000000)">
-                                    <g id="facebook">
-                                        <path d="M23.5,12 C23.5,18.351 18.352,23.5 12,23.5 C5.648,23.5 0.5,18.351 0.5,12 C0.5,5.648 5.648,0.5 12,0.5 C18.352,0.5 23.5,5.648 23.5,12 L23.5,12 Z" id="Stroke-551" stroke-linecap="round"></path>
-                                        <path d="M15.8389,9.5 L13.4999,9.5 L13.4999,8.477 C13.4999,7.954 13.8479,7.83 14.0919,7.83 L15.4999,7.83 L15.4999,5.524 L13.1499,5.518 C10.8519,5.518 10.4999,7.237 10.4999,8.336 L10.4999,9.5 L8.4999,9.5 L8.4999,11.5 L10.4999,11.5 L10.4999,18.5 L13.4999,18.5 L13.4999,11.5 L15.5949,11.5 L15.8389,9.5 L15.8389,9.5 Z" id="Stroke-552"></path>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
-                </a>
-                <a href="http://www.linkedin.com/groups/Nuxeo-Community-43314?home=&gid=43314&trk=anet_ug_hm">
-                    <?xml version="1.0" encoding="UTF-8"?>
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-                        <title>4575C0BF-4A27-4E5A-9C4A-C42B10B5690E</title>
-                        <desc>Created with sketchtool.</desc>
-                        <defs></defs>
-                        <g id="Doc-Center-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
-                            <g id="V2-/-DocCenter---Home" transform="translate(-1105.000000, -1982.000000)" stroke="#D9E6F0">
-                                <g id="Group-7" transform="translate(1061.000000, 1982.000000)">
-                                    <g id="linkedin" transform="translate(44.000000, 0.000000)">
-                                        <path d="M23.5,12 C23.5,18.351 18.352,23.5 12,23.5 C5.648,23.5 0.5,18.351 0.5,12 C0.5,5.648 5.648,0.5 12,0.5 C18.352,0.5 23.5,5.648 23.5,12 L23.5,12 Z" id="Stroke-640" stroke-linecap="round"></path>
-                                        <path d="M15,12.5 C14.724,12.5 14.5,12.723 14.5,13 L14.5,16.5 L11.5,16.5 C11.5,16.5 11.531,10.023 11.5,9.5 L14.5,9.5 L14.5,10.335 C14.5,10.335 14.957,9.581 16.207,9.581 C17.757,9.581 18.5,10.701 18.5,12.878 L18.5,16.5 L15.5,16.5 L15.5,13 C15.5,12.723 15.275,12.5 15,12.5 L15,12.5 Z" id="Stroke-641"></path>
-                                        <polygon id="Stroke-642" points="7.5 9.5 9.5 9.5 9.5 16.5 7.5 16.5"></polygon>
-                                        <path d="M9.5,6.5 C9.5,7.052 9.053,7.5 8.5,7.5 C7.947,7.5 7.5,7.052 7.5,6.5 C7.5,5.948 7.947,5.5 8.5,5.5 C9.053,5.5 9.5,5.948 9.5,6.5 L9.5,6.5 Z" id="Stroke-643"></path>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.768 7.465H14.5V5.56c0-.896.594-1.105 1.012-1.105H18.5V.513L14.171.5C10.244.5 9.5 3.438 9.5 5.32v2.144h-3v4h3v12h5v-12h3.851l.417-3.999z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
                 </a>
                 <a href="https://twitter.com/nuxeo">
                     <?xml version="1.0" encoding="UTF-8"?>
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-                        <title>7B977B97-502E-4049-AB2B-87B3846B5844</title>
-                        <desc>Created with sketchtool.</desc>
-                        <defs></defs>
-                        <g id="Doc-Center-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
-                            <g id="V2-/-DocCenter---Home" transform="translate(-1150.000000, -1982.000000)" stroke="#D9E6F0">
-                                <g id="Group-7" transform="translate(1061.000000, 1982.000000)">
-                                    <g id="twitter" transform="translate(89.000000, 0.000000)">
-                                        <path d="M18.5,7.3535 C18.5,7.3535 17.149,7.4995 16.55,7.6195 C16.069,7.1065 15.386,6.7875 14.629,6.7875 C13.175,6.7875 11.996,7.9655 11.996,9.4195 C11.996,9.6245 12.019,9.8275 12.065,10.0185 C9.877,9.9105 7.937,8.8615 6.64,7.2685 C6.413,7.6595 6.283,8.1105 6.283,8.5925 C6.283,9.5065 6.748,10.3105 7.454,10.7835 C7.023,10.7685 6.617,10.6505 6.262,10.4535 L6.262,10.4885 C6.262,11.7625 7.169,12.8275 8.373,13.0675 C7.987,13.1735 7.581,13.1875 7.185,13.1135 C7.519,14.1585 8.491,14.9195 9.643,14.9415 C8.518,15.8245 7.12,16.1915 5.746,16.0305 C6.911,16.7775 8.295,17.2145 9.781,17.2145 C14.622,17.2145 17.269,13.2025 17.269,9.7255 C17.269,9.6105 17.268,9.4975 17.262,9.3845 C17.776,9.0125 18.148,7.8825 18.5,7.3535 L18.5,7.3535 Z" id="Stroke-540"></path>
-                                        <path d="M23.5,12 C23.5,18.352 18.352,23.5 12,23.5 C5.648,23.5 0.5,18.352 0.5,12 C0.5,5.648 5.648,0.5 12,0.5 C18.352,0.5 23.5,5.648 23.5,12 L23.5,12 Z" id="Stroke-541" stroke-linecap="round"></path>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23.444 4.834c-.814.363-1.5.375-2.227.016.938-.562.981-.957 1.32-2.019-.878.521-1.851.9-2.886 1.104a4.545 4.545 0 0 0-7.743 4.145 12.897 12.897 0 0 1-9.366-4.748 4.525 4.525 0 0 0-.615 2.285c0 1.577.803 2.967 2.021 3.782a4.527 4.527 0 0 1-2.057-.568l-.001.057a4.547 4.547 0 0 0 3.646 4.456 4.575 4.575 0 0 1-2.053.079 4.551 4.551 0 0 0 4.245 3.155A9.138 9.138 0 0 1 1 18.459 12.865 12.865 0 0 0 7.966 20.5c8.358 0 12.928-6.924 12.928-12.929 0-.198-.003-.393-.012-.588.887-.64 1.953-1.237 2.562-2.149z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
+                </a>
+                <a href="http://www.linkedin.com/groups/Nuxeo-Community-43314?home=&gid=43314&trk=anet_ug_hm">
+                    <?xml version="1.0" encoding="UTF-8"?>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6.527 21.5h-5v-13h5v13zm-2.509-15h-.03C2.477 6.5 1.5 5.318 1.5 4.019c0-1.329 1.008-2.412 2.547-2.412 1.541 0 2.488 1.118 2.519 2.447C6.565 5.353 5.588 6.5 4.018 6.5zm11.509 6a2 2 0 0 0-2 2v7h-5s.059-12 0-13h5v1.485s1.548-1.443 3.938-1.443c2.962 0 5.062 2.144 5.062 6.304V21.5h-5v-7a2 2 0 0 0-2-2z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
                 </a>
                 <a href="https://plus.google.com/u/0/+nuxeo/posts">
                     <?xml version="1.0" encoding="UTF-8"?>
-                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <!-- Generator: sketchtool 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
-                        <title>3DDF3464-1B1E-4FCC-950F-56B87B289653</title>
-                        <desc>Created with sketchtool.</desc>
-                        <defs></defs>
-                        <g id="Doc-Center-V2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
-                            <g id="V2-/-DocCenter---Home" transform="translate(-1194.000000, -1982.000000)" stroke="#D9E6F0">
-                                <g id="Group-7" transform="translate(1061.000000, 1982.000000)">
-                                    <g id="google-plus" transform="translate(133.000000, 0.000000)">
-                                        <path d="M23.5,12 C23.5,18.351 18.352,23.5 12,23.5 C5.648,23.5 0.5,18.351 0.5,12 C0.5,5.649 5.648,0.5 12,0.5 C18.352,0.5 23.5,5.649 23.5,12 L23.5,12 Z" id="Stroke-1" stroke-linecap="round"></path>
-                                        <path d="M12.3536,8.9994 C11.5296,8.0794 10.3326,7.5004 8.9996,7.5004 C6.5146,7.5004 4.4996,9.5144 4.4996,12.0004 C4.4996,14.4854 6.5146,16.5004 8.9996,16.5004 C11.3156,16.5004 13.2236,14.7504 13.4726,12.5004 L8.9996,12.5004" id="Stroke-3"></path>
-                                        <path d="M16,12.5 L21,12.5" id="Stroke-5"></path>
-                                        <path d="M18.5,10 L18.5,15" id="Stroke-7"></path>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.919 11H7.5v3h5.277c-.249 1.777-1.818 3.5-4.527 3.5C5.355 17.5 3 15.145 3 12.25S5.355 7 8.25 7c1.268 0 2.492.458 3.447 1.29l.338.295 2.202-2.036-.398-.367A8.226 8.226 0 0 0 8.25 4C3.701 4 0 7.701 0 12.25s3.701 8.25 8.25 8.25c5.714 0 7.75-4.262 7.75-8.25a8.39 8.39 0 0 0-.038-.797L15.919 11zM22 11V9h-3v2h-2v3h2v2h3v-2h2v-3z"/><g><path fill="none" d="M0 0h24v24H0z"/></g></svg>
                 </a>
             </div>
         </div>
