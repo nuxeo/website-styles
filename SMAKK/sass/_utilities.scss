@@ -188,13 +188,27 @@
     .has-icon {
         position: relative;
         &.icon-plus {
-            &.columns {padding-top: $scale-5;}
+            &.columns {padding-top: $scale-6;}
             &:after {
                 content: '+';
                 position: absolute;
                 right: 35px;
                 top: 20px;
-                font-size: $scale-4
+                font-size: $scale-4;
+                cursor: pointer;
+                pointer-events: all;
+            }
+        }
+        &.icon-minus {
+            &.columns {padding-top: $scale-6;}
+            &:after {
+                content: '-';
+                position: absolute;
+                right: 35px;
+                top: 20px;
+                font-size: $scale-4;
+                cursor: pointer;
+                pointer-events: all;
             }
         }
         &.icon-arrow {
