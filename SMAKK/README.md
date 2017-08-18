@@ -1,5 +1,7 @@
 # To do
 - Font sizing for cards in mobile
+- Make Plus pseudo element selectable
+- Mobile bevahior of plus/minus cards
 - Float logos for large testimonials right
 
 # Stuff Added
@@ -17,14 +19,19 @@ Moveable components with meaning
 - Padded cards
 - Cards
 - Cards with icons
+- Collapsing cards (plus/minus)
 
 ### Organisms
 Modules, structures
 - Checkerboard
 - Challenge
+- Collapsing cards (plus/minus) series of 4
 
 # Foundation components 
 - Flex grid
+
+## General
+- Visibility classes
 
 ### Navigation
 - Menu
@@ -33,4 +40,4 @@ Modules, structures
 - Top bar
 
 ### Media
--- Orbit
+- Orbit
