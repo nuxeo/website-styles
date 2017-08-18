@@ -9,11 +9,27 @@
     font-size: 85%
 }
 
+.r-cards--collapsing {
+    position: relative
+}
+
 .r-challenge {
     padding: $scale-2;
     position: relative;
     @include breakpoint(large) {
         padding: $scale-7
+    }
+}
+
+.r-cards--collapsing__panel{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: none;
+    width: 100%;
+ 
+    p{
+     font-size: 20px
     }
 }
 
@@ -37,6 +53,15 @@
     .r-cards--spaced & {
         border: 20px solid white;
     }
+    .r-cards--collapsing & {
+        a:link {
+            border: 0;
+
+        }
+    }
+    .r-cards--collapsing__panel &{
+        padding: 0 !important
+    }
 }
 
 .c-checker {
@@ -56,6 +81,10 @@
 .c-content {
     margin: auto; //Wrap around content inside a c-checker col to vertically align
     position: relative
+}
+
+.c-card__title {
+    @extend .h4
 }
 
 .c-challenge {
@@ -113,4 +142,14 @@
 .c-testimonials__logo {
     display: block;
     margin-top: $scale-3;
+}
+.c-cards--collapsing {
+    @include display-flex;
+    padding-top: 0 !important
+}
+.c-cards--collapsing__title {
+    cursor: pointer;
+    pointer-events: all;
+    margin-top: auto;
+    margin-bottom: auto
 }
