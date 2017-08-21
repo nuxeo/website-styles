@@ -1613,8 +1613,8 @@ screen and (min-width: 40em) {
 @media print,
 screen and (min-width: 64em) {
     .row .row {
-        margin-right: -0.9375rem;
-        margin-left: -0.9375rem;
+        margin-right: 0;
+        margin-left: 0;
     }
 }
 
