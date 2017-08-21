@@ -2,13 +2,12 @@
 <html lang="en" class="no-js">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Atoms</title>
 
-    <!-- Compressed CSS -->
     <link rel="stylesheet" href="stylesheets/foundation.css" />
     <link rel="stylesheet" href="style.css" />
 
@@ -67,7 +66,7 @@
             <input type="text" placeholder="Input label" />
 
             <label class="ally-hidden">Email Label</label>
-            <input type="text" placeholder="Email valiation" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"/>
+            <input type="text" placeholder="Email valiation" required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$" />
 
             <div class="select--styled">
                 <select name="cars">
@@ -123,8 +122,8 @@
                     is-bg-red<br />
                     <a href="#">Link</a>
                 </div>
-                <div class="small-12 medium-3 columns is-bg-purple">
-                    is-bg-purple<br />
+                <div class="small-12 medium-3 columns is-green is-bg-purple">
+                    is-green is-bg-purple<br />
                     <a href="#">Link</a>
                 </div>
                 <div class="small-12 medium-3 columns is-bg-aqua">
@@ -153,13 +152,30 @@
         </div>
     </div>
 
-    <!-- Shouldn't need but included for completeness
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/4.3.1/what-input.min.js" integrity="sha256-fiTIY/rb1/SIs/7gB+2nr6Q10ZRKy/6NiV33O4+hmNE=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/js/foundation.min.js" integrity="sha256-Nd2xznOkrE9HkrAMi4xWy/hXkQraXioBg9iYsBrcFrs=" crossorigin="anonymous"></script>
-        <script>
-            $(document).foundation();
-        </script> -->
+    <div class="row">
+        <div class="small-12 medium-4 columns is-bg-green">
+            <h1 class="h3">Icons</h1>
+        </div>
+
+        <div class="small-12 medium-8 columns">
+
+            <svg class="icon icon-network"><use xlink:href="svg-defs.svg#icon-network"></use></svg>
+            <svg class="icon icon-heart"><use xlink:href="svg-defs.svg#icon-heart"></use></svg>
+
+
+        </div>
+    </div>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/svg4everybody.js"></script>
+    
+    <script>
+        svg4everybody(); 
+    </script>
+    
 </body>
 
 </html>

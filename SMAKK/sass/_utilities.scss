@@ -4,7 +4,10 @@
     %inline-list,
     .inline-list {
         list-style-type: none;
-        display: inline-block
+        display: inline-block;
+        li {
+            display: inline-block
+        }
     }
     
     %display-flex,
@@ -44,6 +47,7 @@
         font-size: $scale-0;
         line-height: 20px;
         letter-spacing: 1px;
+        font-weight: 400
     }
     
     .underlined {
@@ -65,9 +69,14 @@
     }
     
     .superhead {
-        position: absolute;
-        top: -70px
+       // position: absolute;
+        top: -70px;
+        
     }
+
+.text-center{
+    text-align: center
+}
     
     //Colors
     %is-green,
@@ -188,24 +197,24 @@
     .has-icon {
         position: relative;
         &.icon-plus {
-            &.columns {padding-top: $scale-6;}
+           // &.columns {padding-top: $scale-6;}
             &:after {
                 content: '+';
                 position: absolute;
-                right: 35px;
-                top: 20px;
+                right: 20px;
+                top: 8px;
                 font-size: $scale-4;
                 cursor: pointer;
                 pointer-events: all;
             }
         }
         &.icon-minus {
-            &.columns {padding-top: $scale-6;}
+          //  &.columns {padding-top: $scale-6;}
             &:after {
-                content: '-';
+                content: '—';
                 position: absolute;
-                right: 35px;
-                top: 20px;
+                right: 60px;
+                top: 8px;
                 font-size: $scale-4;
                 cursor: pointer;
                 pointer-events: all;
@@ -214,9 +223,10 @@
         &.icon-arrow {
             &:after {
                 content: '→';
+                color: #fff;
                 position: absolute;
                 right: 35px;
-                bottom: 20px;
+                bottom: 10px;
                 font-size: $scale-5
             }
         }
