@@ -1,8 +1,9 @@
 # To do
 - Font sizing for cards in mobile
 - Make Plus pseudo element selectable
-- Mobile bevahior of plus/minus cards
 - Float logos for large testimonials right
+- Install flexslider (replace orbit??)
+- Test SVGs
 
 # Stuff Added
 
@@ -41,3 +42,6 @@ Modules, structures
 
 ### Media
 - Orbit
+
+# External JS
+- svg4everybody.js
