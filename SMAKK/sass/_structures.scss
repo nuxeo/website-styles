@@ -6,7 +6,7 @@
 }
 
 .r-cards {
-    font-size: 85%
+    font-size: 75%
 }
 
 .r-challenge {
@@ -21,44 +21,46 @@
     position: relative
 }
 
-
-.r-collapsing__panel{
+.r-collapsing__panel {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     display: none;
     width: 100%;
-    p{
-     font-size: 20px
+    p {
+        font-size: 20px
     }
     .r-collapsing--challenge & {
         position: relative;
-        @include breakpoint(large){
+        @include breakpoint(large) {
             position: absolute
         }
     }
 }
 
-
-
 .r-padded {
     padding: $scale-1;
     @include breakpoint(large) {
-         padding: $scale-7;
-    }
-}
-.r-padded0{
-    padding: $scale-2 0
-}
-.r-padded2{
-    padding: $scale-7 $scale-4;
-    @include breakpoint(large) {
-         padding: $scale-8;
+        padding: $scale-7;
     }
 }
 
-.r-casestudies{
+.r-padded0 {
+    padding: $scale-2 0
+}
+.r-padded1 {
+    padding: $scale-4 0
+}
+
+.r-padded2 {
+    padding: $scale-7 $scale-4;
+    @include breakpoint(large) {
+        padding: $scale-8;
+    }
+}
+
+.r-casestudies {
     .casestudies__text {
         padding: 30px
     }
@@ -69,7 +71,10 @@
         min-height: $height-reg;
     }
     .r-masthead & {
-        min-height: $height-thin;
+        min-height: $height-xsm;
+        @include breakpoint(large){
+            min-height: $height-sm;
+        }
     }
     .r-thin & {
         min-height: 150px
@@ -78,25 +83,40 @@
         align-items: center
     }
     .r-cards & {
-        padding: $scale-1 $scale-0;
+        padding: $scale-1;
         min-height: 70px;
-        @include breakpoint(large){
-            min-height: 320px;
+        @include breakpoint(large) {
+            min-height: 300px;
             max-height: 400px
         }
     }
     .r-cards--spaced & {
-        border: 20px solid white;
+        @include box-shadow();
+        margin: 10px;
+    }
+    .spaced-by-4 & {
+        max-width: calc(50% - 20px);
+        @include breakpoint(large) {
+            max-width: calc(25% - 20px);
+        }
+    }
+    .spaced-by-2 & {
+        max-width: calc(50% - 20px); 
+        min-height: 70px;
+        @include breakpoint(large) {
+            min-height: 250px;
+            max-height: 400px
+        }
     }
     .r-collapsing & {
         a:link {
             border: 0;
         }
     }
-    .r-collapsing__panel &{
+    .r-collapsing__panel & {
         //padding: 0 !important
     }
-    .r-casestudies &{
+    .r-casestudies & {
         margin-bottom: 30px;
         padding-bottom: 10px;
     }
@@ -118,7 +138,7 @@
 
 .c-checker--small {
     @include breakpoint(large) {
-         padding: $scale-4;
+        padding: $scale-4;
     }
 }
 
@@ -128,7 +148,10 @@
 }
 
 .c-card__title {
-    @extend .h4
+    @extend .h4;
+    &:link {
+        border: 0
+    }
 }
 
 .c-challenge {
@@ -187,13 +210,15 @@
     display: block;
     margin-top: $scale-3;
 }
+
 .c-collapsing {
     @include display-flex;
     position: relative;
-    @include breakpoint(large){
+    @include breakpoint(large) {
         padding-top: 0 !important;
     }
 }
+
 .c-collapsing__title {
     cursor: pointer;
     pointer-events: all;
