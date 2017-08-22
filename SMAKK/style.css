@@ -126,40 +126,42 @@
 .r-cards--spaced .columns {
   box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.3);
   margin: 10px;
-}
-/* line 97, sass/_structures.scss */
-.spaced-by-4 .columns {
   max-width: calc(50% - 20px);
 }
 @media (min-width: 64em) {
-  /* line 97, sass/_structures.scss */
+  /* line 98, sass/_structures.scss */
   .spaced-by-4 .columns {
     max-width: calc(25% - 20px);
   }
 }
-/* line 103, sass/_structures.scss */
+@media (min-width: 64em) {
+  /* line 103, sass/_structures.scss */
+  .spaced-by-3 .columns {
+    max-width: calc(33.3333% - 20px);
+  }
+}
+/* line 108, sass/_structures.scss */
 .spaced-by-2 .columns {
-  max-width: calc(50% - 20px);
   min-height: 70px;
 }
 @media (min-width: 64em) {
-  /* line 103, sass/_structures.scss */
+  /* line 108, sass/_structures.scss */
   .spaced-by-2 .columns {
     min-height: 250px;
     max-height: 400px;
   }
 }
-/* line 112, sass/_structures.scss */
+/* line 116, sass/_structures.scss */
 .r-collapsing .columns a:link {
   border: 0;
 }
-/* line 119, sass/_structures.scss */
+/* line 123, sass/_structures.scss */
 .r-casestudies .columns {
   margin-bottom: 30px;
   padding-bottom: 10px;
 }
 
-/* line 125, sass/_structures.scss */
+/* line 129, sass/_structures.scss */
 .c-checker {
   display: -webkit-box;
   display: -webkit-flex;
@@ -170,46 +172,46 @@
   flex-wrap: nowrap;
   padding: 1em;
 }
-/* line 128, sass/_structures.scss */
+/* line 132, sass/_structures.scss */
 .r-main .c-checker {
   min-height: 50vh;
 }
 @media (min-width: 64em) {
-  /* line 125, sass/_structures.scss */
+  /* line 129, sass/_structures.scss */
   .c-checker {
     padding: 5.611em;
   }
-  /* line 133, sass/_structures.scss */
+  /* line 137, sass/_structures.scss */
   .r-main .c-checker {
     min-height: 65vh;
   }
 }
 
 @media (min-width: 64em) {
-  /* line 139, sass/_structures.scss */
+  /* line 143, sass/_structures.scss */
   .c-checker--small {
     padding: 2.369em;
   }
 }
 
-/* line 145, sass/_structures.scss */
+/* line 149, sass/_structures.scss */
 .c-content {
   margin: auto;
   position: relative;
 }
 
-/* line 152, sass/_structures.scss */
+/* line 156, sass/_structures.scss */
 .c-card__title:link {
   border: 0;
 }
 
-/* line 157, sass/_structures.scss */
+/* line 161, sass/_structures.scss */
 .c-challenge {
   padding: 1.333em;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 @media (min-width: 64em) {
-  /* line 157, sass/_structures.scss */
+  /* line 161, sass/_structures.scss */
   .c-challenge {
     padding: 3.157em 4.209em;
     position: absolute;
@@ -217,22 +219,22 @@
   }
 }
 
-/* line 167, sass/_structures.scss */
+/* line 171, sass/_structures.scss */
 .challenge__text {
   margin-top: 3.157em;
   max-width: 400px;
 }
 
-/* line 172, sass/_structures.scss */
+/* line 176, sass/_structures.scss */
 .c-testimonials {
   padding: 1em;
 }
 @media (min-width: 64em) {
-  /* line 172, sass/_structures.scss */
+  /* line 176, sass/_structures.scss */
   .c-testimonials {
     padding: 4.209em;
   }
-  /* line 176, sass/_structures.scss */
+  /* line 180, sass/_structures.scss */
   .c-testimonials p {
     font-size: 120%;
     line-height: 32px;
@@ -240,46 +242,46 @@
   }
 }
 
-/* line 185, sass/_structures.scss */
+/* line 189, sass/_structures.scss */
 .c-testimonials--texty p {
   font-size: 1.777em;
   line-height: 1.2;
 }
 @media (min-width: 64em) {
-  /* line 185, sass/_structures.scss */
+  /* line 189, sass/_structures.scss */
   .c-testimonials--texty p {
     font-size: 3.157em;
     line-height: 1.1;
   }
 }
-/* line 193, sass/_structures.scss */
+/* line 197, sass/_structures.scss */
 .c-testimonials--texty .orbit-slide {
   padding: 1.333em;
 }
 @media (min-width: 64em) {
-  /* line 193, sass/_structures.scss */
+  /* line 197, sass/_structures.scss */
   .c-testimonials--texty .orbit-slide {
     padding: 4.209em;
   }
 }
-/* line 199, sass/_structures.scss */
+/* line 203, sass/_structures.scss */
 .c-testimonials--texty .orbit-bullets {
   float: left;
 }
-/* line 202, sass/_structures.scss */
+/* line 206, sass/_structures.scss */
 .c-testimonials--texty .c-testimontials__link {
   float: right;
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
 }
 
-/* line 209, sass/_structures.scss */
+/* line 213, sass/_structures.scss */
 .c-testimonials__logo {
   display: block;
   margin-top: 1.777em;
 }
 
-/* line 214, sass/_structures.scss */
+/* line 218, sass/_structures.scss */
 .c-collapsing {
   display: -webkit-box;
   display: -webkit-flex;
@@ -291,13 +293,13 @@
   position: relative;
 }
 @media (min-width: 64em) {
-  /* line 214, sass/_structures.scss */
+  /* line 218, sass/_structures.scss */
   .c-collapsing {
     padding-top: 0 !important;
   }
 }
 
-/* line 222, sass/_structures.scss */
+/* line 226, sass/_structures.scss */
 .c-collapsing__title {
   cursor: pointer;
   pointer-events: all;

@@ -93,15 +93,19 @@
     .r-cards--spaced & {
         @include box-shadow();
         margin: 10px;
+        max-width: calc(50% - 20px);
     }
     .spaced-by-4 & {
-        max-width: calc(50% - 20px);
         @include breakpoint(large) {
             max-width: calc(25% - 20px);
         }
     }
+    .spaced-by-3 & {
+        @include breakpoint(large) {
+            max-width: calc(33.3333% - 20px);
+        }
+    }
     .spaced-by-2 & {
-        max-width: calc(50% - 20px); 
         min-height: 70px;
         @include breakpoint(large) {
             min-height: 250px;
