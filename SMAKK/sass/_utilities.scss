@@ -44,10 +44,10 @@
     
     %is-smaller,
     .is-smaller {
-        font-size: $scale-0;
-        line-height: 20px;
+        font-size: 90%;
         letter-spacing: 1px;
-        font-weight: 400
+        font-weight: 400;
+        line-height: 20px;
     }
     
     .underlined {
@@ -69,19 +69,21 @@
     }
     
     .superhead {
-       // position: absolute;
+        // position: absolute;
         top: -70px;
-        
     }
-
-.text-center{
-    text-align: center
-}
+    
+    .text-center {
+        text-align: center
+    }
     
     //Colors
     %is-green,
     .is-green {
-        color: $c-green
+        color: $c-green;
+        &.icon {
+            fill: $c-green
+        }
     }
     
     %is-bg-green,
@@ -92,6 +94,9 @@
     %is-blue,
     .is-blue {
         color: $c-blue;
+        &.icon {
+            fill: $c-blue
+        }
     }
     
     %is-bg-blue,
@@ -101,7 +106,10 @@
     
     %is-navy,
     .is-navy {
-        color: $c-navy
+        color: $c-navy;
+        &.icon {
+            fill: $c-navy
+        }
     }
     
     %is-bg-navy,
@@ -111,7 +119,10 @@
     
     %is-grey,
     .is-grey {
-        color: $c-grey
+        color: $c-grey;
+        &.icon {
+            fill: $c-grey
+        }
     }
     
     %is-bg-grey,
@@ -121,7 +132,10 @@
     
     %is-grey-2,
     .is-grey-2 {
-        color: $c-grey-2
+        color: $c-grey-2;
+        &.icon {
+            fill: $c-grey-2
+        }
     }
     
     %is-bg-grey-2,
@@ -131,7 +145,10 @@
     
     %is-grey-3,
     .is-grey-3 {
-        color: $c-grey-3
+        color: $c-grey-3;
+        &.icon {
+            fill: $c-grey-3
+        }
     }
     
     %is-bg-grey-3,
@@ -141,7 +158,10 @@
     
     %is-red,
     .is-red {
-        color: $c-red
+        color: $c-red;
+        &.icon {
+            fill: $c-red
+        }
     }
     
     %is-bg-red,
@@ -151,7 +171,10 @@
     
     %is-purple,
     .is-purple {
-        color: $c-purple
+        color: $c-purple;
+        &.icon {
+            fill: $c-purple
+        }
     }
     
     %is-bg-purple,
@@ -161,7 +184,10 @@
     
     %is-aqua,
     .is-aqua {
-        color: $c-aqua
+        color: $c-aqua;
+        &.icon {
+            fill: $c-aqua
+        }
     }
     
     %is-bg-aqua,
@@ -171,7 +197,10 @@
     
     %is-orange,
     .is-orange {
-        color: $c-orange
+        color: $c-orange;
+        &.icon {
+            fill: $c-orange
+        }
     }
     
     %is-bg-orange,
@@ -179,9 +208,25 @@
         background-color: $c-orange
     }
     
+    %is-white,
+    .is-white {
+        color: #fff;
+        &.icon {
+            fill: #fff
+        }
+    }
+    
     %is-bg-white,
     .is-bg-white {
         background-color: #fff
+    }
+    
+    %is-black,
+    .is-black {
+        color: #000;
+        &.icon {
+            fill: #000
+        }
     }
     
     %is-bg-black,
@@ -197,7 +242,7 @@
     .has-icon {
         position: relative;
         &.icon-plus {
-           // &.columns {padding-top: $scale-6;}
+            // &.columns {padding-top: $scale-6;}
             &:after {
                 content: '+';
                 position: absolute;
@@ -209,7 +254,7 @@
             }
         }
         &.icon-minus {
-          //  &.columns {padding-top: $scale-6;}
+            //  &.columns {padding-top: $scale-6;}
             &:after {
                 content: '—';
                 position: absolute;
