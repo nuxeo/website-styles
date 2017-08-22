@@ -5,6 +5,7 @@
     .inline-list {
         list-style-type: none;
         display: inline-block;
+        padding: 0;
         li {
             display: inline-block
         }
@@ -17,6 +18,53 @@
     
     .is-flex-col {
         @include flex-direction(column)
+    }
+    
+    //Light desktop and mobile
+    .padded0 {
+        padding: $scale-1
+    }
+    
+    //Heavy on dekstop, light on mobile
+    .padded {
+        padding: $scale-1;
+        @include breakpoint(large) {
+            padding: $scale-7;
+        }
+    }
+    
+    //medium on desktop light on mobile
+    .padded2 {
+        padding: $scale-1;
+        @include breakpoint(large) {
+            padding: $scale-5;
+        }
+    }
+    
+    //padded heavy on desktop and mobile
+    .padded3 {
+        padding: $scale-7 $scale-4;
+        @include breakpoint(large) {
+            padding: $scale-8;
+        }
+    }
+    
+    //Padded light top and bottom
+    .paddedt0 {
+        padding-top: $scale-2;
+        padding-bottom: $scale-2
+    }
+    
+    //padded medium top and bottom
+    .paddedt1 {
+        padding-top: $scale-4;
+        padding-bottom: $scale-4
+    }
+    
+    //padded heavy top and bottom
+    .paddedt3 {
+        padding-top: $scale-7;
+        padding-bottom: $scale-7
     }
     
     //a11y
@@ -235,8 +283,7 @@
     }
     
     .has-bg-image {
-        background-size: cover;
-        background-repeat: no-repeat
+        @include background-cover()
     }
     
     .has-icon {
@@ -256,7 +303,7 @@
         &.icon-minus {
             //  &.columns {padding-top: $scale-6;}
             &:after {
-                content: '—';
+                content: '–';
                 position: absolute;
                 right: 60px;
                 top: 8px;
@@ -267,12 +314,18 @@
         }
         &.icon-arrow {
             &:after {
-                content: '→';
+                content: '➡';
                 color: #fff;
                 position: absolute;
                 right: 35px;
                 bottom: 10px;
                 font-size: $scale-5
+            }
+            &.down {
+                &:after {
+                    content: '➧';
+                    transform: rotate(90deg)
+                }
             }
         }
     }
