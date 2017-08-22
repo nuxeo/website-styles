@@ -3762,3 +3762,20 @@ orbit {
     margin: 0.1rem;
     border-radius: 50%;
 }
+
+
+/*SHAME*/
+
+.menu .nav-main {
+    position: relative
+}
+.is-dropdown-submenu-parent {
+    position: static
+}
+
+
+.is-dropdown-submenu.js-dropdown-active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
