@@ -50,6 +50,10 @@
     border: $border-w $border-s $border-c
 }
 
+@mixin box-shadow(){
+    box-shadow: 1px 5px 20px rgba(0,0,0,.3);
+}
+
 @mixin inline-list() {
     list-style-type: none;
     display: inline-block;
