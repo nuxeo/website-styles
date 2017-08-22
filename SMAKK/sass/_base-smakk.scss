@@ -81,20 +81,16 @@ blockquote {
         position: absolute;
         height: 25px;
         width: 95px;
-        top: 70px;
+        bottom: 55px;
         background-image: url(svg/quotation-mark.svg);
         background-repeat: no-repeat;
         background-size: cover;
     }
 }
 
-a:link {
+a, a:link {
     border-bottom: 2px solid;
-    color: inherit;
-    &:hover {
-        color: inherit;
-        border-bottom: 2px solid $c-green;
-    }
+    //color: inherit;
     .is-blue & {
         border-bottom: 2px solid $c-green;
         &:hover {
@@ -107,6 +103,10 @@ a:link {
         }
     }
 }
+    a:hover {
+        color: inherit;
+        border-bottom: 2px solid $c-green;
+    }
 
 //Forms , inputs buttons
 label {
@@ -242,6 +242,31 @@ button,
     @include nav-links($c-blue, 16px)
 }
 
+ul.nav-main__submenu {
+    right: 0;
+    background: #0067FF;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-wrap: wrap
+}
+.nav-main__subitem {
+    padding: $scale-4
+}
+a.nav-main__subitem__title {
+    color: $c-green;
+    font-size: $scale-4;
+    padding: 0 !important;
+}
+
+.nav-main__subitem__text,
+.nav-main__subitem__text a{
+    color:#fff;
+    display: block;
+    padding: 0 !important;
+    margin: $scale-1 0
+}
+
 .nav-footer {
     @include inline-list;
 }
@@ -250,23 +275,3 @@ button,
     @include nav-links($c-navy, $scale-0)
 }
 
-//Misc
-.integrations {
-    @extend %inline-list
-}
-
-.integrations__item {
-    margin-left: 30px;
-    font-size: 16px;
-    &:before {
-        color: $c-green;
-        content: '';
-        @include toggle-item(12px, 12px);
-        transition: all 200ms ease-out;
-        display:  inline-block;
-        margin-right: 5px
-    }
-    a:link{
-        border: 0
-    }
-}
