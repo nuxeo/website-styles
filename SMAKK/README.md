@@ -1,9 +1,10 @@
 # To do
-- Font sizing for cards in mobile
 - Make Plus pseudo element selectable
 - Float logos for large testimonials right
 - Install flexslider (replace orbit??)
-- Test SVGs
+-- Events
+-- Case studies
+- Complete navigation submenus desktop and mobile
 
 # Stuff Added
 
@@ -25,8 +26,11 @@ Moveable components with meaning
 ### Organisms
 Modules, structures
 - Checkerboard
-- Challenge
-- Collapsing cards (plus/minus) series of 4
+- Challenge/Solution 2-sided card
+- Collapsing cards (plus/minus, challenge)
+- Padded cards series of 4, 3, 2
+- 'Crazy callouts'
+
 
 # Foundation components 
 - Flex grid
