@@ -171,6 +171,7 @@ $toggle-colors: ( is-green: $c-green, is-white: #fff, is-blue: $c-blue) !default
     &:hover,
     &.is-active {
         background-color: map-get($toggle-colors, default);
+         border-color: map-get($toggle-colors, default);
         @each $color,
         $value in map-remove($toggle-colors, default) {
             &.#{$color} {
