@@ -1,331 +1,334 @@
-    //HELPER CLASSES
-    //Colors, states, weights etc meant to extend design in OOCSS fashion
-    //Display
-    %inline-list,
-    .inline-list {
-        list-style-type: none;
-        display: inline-block;
-        padding: 0;
-        li {
-            display: inline-block
-        }
+@mixin smakk-utilities {
+  //HELPER CLASSES
+  //Colors, states, weights etc meant to extend design in OOCSS fashion
+  //Display
+  %inline-list,
+  .inline-list {
+    list-style-type: none;
+    display: inline-block;
+    padding: 0;
+    li {
+      display: inline-block
     }
-    
-    %display-flex,
-    .display-flex {
-        @include display-flex
+  }
+
+  %display-flex,
+  .display-flex {
+    @include display-flex
+  }
+
+  .is-flex-col {
+    @include flex-direction(column)
+  }
+
+  //Light desktop and mobile
+  .padded0 {
+    padding: $scale-1
+  }
+
+  //Heavy on dekstop, light on mobile
+  .padded {
+    padding: $scale-1;
+    @include breakpoint(large) {
+      padding: $scale-7;
     }
-    
-    .is-flex-col {
-        @include flex-direction(column)
+  }
+
+  //medium on desktop light on mobile
+  .padded2 {
+    padding: $scale-1;
+    @include breakpoint(large) {
+      padding: $scale-5;
     }
-    
-    //Light desktop and mobile
-    .padded0 {
-        padding: $scale-1
+  }
+
+  //padded heavy on desktop and mobile
+  .padded3 {
+    padding: $scale-7 $scale-4;
+    @include breakpoint(large) {
+      padding: $scale-8;
     }
-    
-    //Heavy on dekstop, light on mobile
-    .padded {
-        padding: $scale-1;
-        @include breakpoint(large) {
-            padding: $scale-7;
-        }
+  }
+
+  //Padded light top and bottom
+  .paddedt0 {
+    padding-top: $scale-2;
+    padding-bottom: $scale-2
+  }
+
+  //padded medium top and bottom
+  .paddedt1 {
+    padding-top: $scale-4;
+    padding-bottom: $scale-4
+  }
+
+  //padded heavy top and bottom
+  .paddedt3 {
+    padding-top: $scale-7;
+    padding-bottom: $scale-7
+  }
+
+  //a11y
+  %ally-hidden,
+  .ally-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  // Fonts
+  %is-bold,
+  .is-bold {
+    font-weight: 700
+  }
+
+  %is-bigger,
+  .is-bigger {
+    font-size: $scale-2;
+    line-height: 32px
+  }
+
+  %is-smaller,
+  .is-smaller {
+    font-size: 90%;
+    letter-spacing: 1px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .underlined {
+    * & {
+      position: relative;
+      margin: 0;
+      margin-bottom: 3em;
     }
-    
-    //medium on desktop light on mobile
-    .padded2 {
-        padding: $scale-1;
-        @include breakpoint(large) {
-            padding: $scale-5;
-        }
+    &:after {
+      content: '';
+      width: 25px;
+      height: 3px;
+      border-radius: 20%;
+      border: 2px solid;
+      position: absolute;
+      top: 40px;
+      left: 0
     }
-    
-    //padded heavy on desktop and mobile
-    .padded3 {
-        padding: $scale-7 $scale-4;
-        @include breakpoint(large) {
-            padding: $scale-8;
-        }
+  }
+
+  .superhead {
+    // position: absolute;
+    top: -70px;
+  }
+
+  .text-center {
+    text-align: center
+  }
+
+  //Colors
+  %is-green,
+  .is-green {
+    color: $c-green;
+    &.icon {
+      fill: $c-green
     }
-    
-    //Padded light top and bottom
-    .paddedt0 {
-        padding-top: $scale-2;
-        padding-bottom: $scale-2
+  }
+
+  %is-bg-green,
+  .is-bg-green {
+    background-color: $c-green
+  }
+
+  %is-blue,
+  .is-blue {
+    color: $c-blue;
+    &.icon {
+      fill: $c-blue
     }
-    
-    //padded medium top and bottom
-    .paddedt1 {
-        padding-top: $scale-4;
-        padding-bottom: $scale-4
+  }
+
+  %is-bg-blue,
+  .is-bg-blue {
+    background-color: $c-blue;
+  }
+
+  %is-navy,
+  .is-navy {
+    color: $c-navy;
+    &.icon {
+      fill: $c-navy
     }
-    
-    //padded heavy top and bottom
-    .paddedt3 {
-        padding-top: $scale-7;
-        padding-bottom: $scale-7
+  }
+
+  %is-bg-navy,
+  .is-bg-navy {
+    background-color: $c-navy
+  }
+
+  %is-grey,
+  .is-grey {
+    color: $c-grey;
+    &.icon {
+      fill: $c-grey
     }
-    
-    //a11y
-    %ally-hidden,
-    .ally-hidden {
+  }
+
+  %is-bg-grey,
+  .is-bg-grey {
+    background-color: $c-grey
+  }
+
+  %is-grey-2,
+  .is-grey-2 {
+    color: $c-grey-2;
+    &.icon {
+      fill: $c-grey-2
+    }
+  }
+
+  %is-bg-grey-2,
+  .is-bg-grey-2 {
+    background-color: $c-grey-2
+  }
+
+  %is-grey-3,
+  .is-grey-3 {
+    color: $c-grey-3;
+    &.icon {
+      fill: $c-grey-3
+    }
+  }
+
+  %is-bg-grey-3,
+  .is-bg-grey-3 {
+    background-color: $c-grey-3
+  }
+
+  %is-red,
+  .is-red {
+    color: $c-red;
+    &.icon {
+      fill: $c-red
+    }
+  }
+
+  %is-bg-red,
+  .is-bg-red {
+    background-color: $c-red
+  }
+
+  %is-purple,
+  .is-purple {
+    color: $c-purple;
+    &.icon {
+      fill: $c-purple
+    }
+  }
+
+  %is-bg-purple,
+  .is-bg-purple {
+    background-color: $c-purple
+  }
+
+  %is-aqua,
+  .is-aqua {
+    color: $c-aqua;
+    &.icon {
+      fill: $c-aqua
+    }
+  }
+
+  %is-bg-aqua,
+  .is-bg-aqua {
+    background-color: $c-aqua
+  }
+
+  %is-orange,
+  .is-orange {
+    color: $c-orange;
+    &.icon {
+      fill: $c-orange
+    }
+  }
+
+  %is-bg-orange,
+  .is-bg-orange {
+    background-color: $c-orange
+  }
+
+  %is-white,
+  .is-white {
+    color: #fff;
+    &.icon {
+      fill: #fff
+    }
+  }
+
+  %is-bg-white,
+  .is-bg-white {
+    background-color: #fff
+  }
+
+  %is-black,
+  .is-black {
+    color: #000;
+    &.icon {
+      fill: #000
+    }
+  }
+
+  %is-bg-black,
+  .is-bg-black {
+    background-color: #000
+  }
+
+  .has-bg-image {
+    @include background-cover()
+  }
+
+  .has-icon {
+    position: relative;
+    &.icon-plus {
+      // &.columns {padding-top: $scale-6;}
+      &:after {
+        content: '+';
         position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
+        right: 20px;
+        top: 8px;
+        font-size: $scale-4;
+        cursor: pointer;
+        pointer-events: all;
+      }
     }
-    
-    // Fonts
-    %is-bold,
-    .is-bold {
-        font-weight: 700
+    &.icon-minus {
+      //  &.columns {padding-top: $scale-6;}
+      &:after {
+        content: '–';
+        position: absolute;
+        right: 60px;
+        top: 8px;
+        font-size: $scale-4;
+        cursor: pointer;
+        pointer-events: all;
+      }
     }
-    
-    %is-bigger,
-    .is-bigger {
-        font-size: $scale-2;
-        line-height: 32px
-    }
-    
-    %is-smaller,
-    .is-smaller {
-        font-size: 90%;
-        letter-spacing: 1px;
-        font-weight: 400;
-        line-height: 20px;
-    }
-    
-    .underlined {
-        * & {
-            position: relative;
-            margin: 0;
-            margin-bottom: 3em;
-        }
-        &:after {
-            content: '';
-            width: 25px;
-            height: 3px;
-            border-radius: 20%;
-            border: 2px solid;
-            position: absolute;
-            top: 40px;
-            left: 0
-        }
-    }
-    
-    .superhead {
-        // position: absolute;
-        top: -70px;
-    }
-    
-    .text-center {
-        text-align: center
-    }
-    
-    //Colors
-    %is-green,
-    .is-green {
-        color: $c-green;
-        &.icon {
-            fill: $c-green
-        }
-    }
-    
-    %is-bg-green,
-    .is-bg-green {
-        background-color: $c-green
-    }
-    
-    %is-blue,
-    .is-blue {
-        color: $c-blue;
-        &.icon {
-            fill: $c-blue
-        }
-    }
-    
-    %is-bg-blue,
-    .is-bg-blue {
-        background-color: $c-blue;
-    }
-    
-    %is-navy,
-    .is-navy {
-        color: $c-navy;
-        &.icon {
-            fill: $c-navy
-        }
-    }
-    
-    %is-bg-navy,
-    .is-bg-navy {
-        background-color: $c-navy
-    }
-    
-    %is-grey,
-    .is-grey {
-        color: $c-grey;
-        &.icon {
-            fill: $c-grey
-        }
-    }
-    
-    %is-bg-grey,
-    .is-bg-grey {
-        background-color: $c-grey
-    }
-    
-    %is-grey-2,
-    .is-grey-2 {
-        color: $c-grey-2;
-        &.icon {
-            fill: $c-grey-2
-        }
-    }
-    
-    %is-bg-grey-2,
-    .is-bg-grey-2 {
-        background-color: $c-grey-2
-    }
-    
-    %is-grey-3,
-    .is-grey-3 {
-        color: $c-grey-3;
-        &.icon {
-            fill: $c-grey-3
-        }
-    }
-    
-    %is-bg-grey-3,
-    .is-bg-grey-3 {
-        background-color: $c-grey-3
-    }
-    
-    %is-red,
-    .is-red {
-        color: $c-red;
-        &.icon {
-            fill: $c-red
-        }
-    }
-    
-    %is-bg-red,
-    .is-bg-red {
-        background-color: $c-red
-    }
-    
-    %is-purple,
-    .is-purple {
-        color: $c-purple;
-        &.icon {
-            fill: $c-purple
-        }
-    }
-    
-    %is-bg-purple,
-    .is-bg-purple {
-        background-color: $c-purple
-    }
-    
-    %is-aqua,
-    .is-aqua {
-        color: $c-aqua;
-        &.icon {
-            fill: $c-aqua
-        }
-    }
-    
-    %is-bg-aqua,
-    .is-bg-aqua {
-        background-color: $c-aqua
-    }
-    
-    %is-orange,
-    .is-orange {
-        color: $c-orange;
-        &.icon {
-            fill: $c-orange
-        }
-    }
-    
-    %is-bg-orange,
-    .is-bg-orange {
-        background-color: $c-orange
-    }
-    
-    %is-white,
-    .is-white {
+    &.icon-arrow {
+      &:after {
+        content: '➡';
         color: #fff;
-        &.icon {
-            fill: #fff
+        position: absolute;
+        right: 35px;
+        bottom: 10px;
+        font-size: $scale-5
+      }
+      &.down {
+        &:after {
+          content: '➧';
+          transform: rotate(90deg)
         }
+      }
     }
-    
-    %is-bg-white,
-    .is-bg-white {
-        background-color: #fff
-    }
-    
-    %is-black,
-    .is-black {
-        color: #000;
-        &.icon {
-            fill: #000
-        }
-    }
-    
-    %is-bg-black,
-    .is-bg-black {
-        background-color: #000
-    }
-    
-    .has-bg-image {
-        @include background-cover()
-    }
-    
-    .has-icon {
-        position: relative;
-        &.icon-plus {
-            // &.columns {padding-top: $scale-6;}
-            &:after {
-                content: '+';
-                position: absolute;
-                right: 20px;
-                top: 8px;
-                font-size: $scale-4;
-                cursor: pointer;
-                pointer-events: all;
-            }
-        }
-        &.icon-minus {
-            //  &.columns {padding-top: $scale-6;}
-            &:after {
-                content: '–';
-                position: absolute;
-                right: 60px;
-                top: 8px;
-                font-size: $scale-4;
-                cursor: pointer;
-                pointer-events: all;
-            }
-        }
-        &.icon-arrow {
-            &:after {
-                content: '➡';
-                color: #fff;
-                position: absolute;
-                right: 35px;
-                bottom: 10px;
-                font-size: $scale-5
-            }
-            &.down {
-                &:after {
-                    content: '➧';
-                    transform: rotate(90deg)
-                }
-            }
-        }
-    }
+
+  }
+}
