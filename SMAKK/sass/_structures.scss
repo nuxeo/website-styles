@@ -1,19 +1,20 @@
-//General card and row styles
-//r- for row
-//c- for column/card
+@mixin smakk-structures {
+  //General card and row styles
+  //r- for row
+  //c- for column/card
 
-.row {
+  .row {
     position: relative
-}
+  }
 
-.r-cards {
+  .r-cards {
     font-size: 75%;
     a, a:link,a:hover {
-        border: 0 !important
+      border: 0 !important
     }
-}
+  }
 
-.r-collapsing__panel {
+  .r-collapsing__panel {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -21,244 +22,245 @@
     display: none;
     width: 100%;
     p {
-        font-size: 20px;
+      font-size: 20px;
     }
     .r-collapsing--challenge & {
-        position: relative;
-        @include breakpoint(large) {
-            position: absolute
-        }
+      position: relative;
+      @include breakpoint(large) {
+        position: absolute
+      }
     }
-}
+  }
 
 
-.columns {
+  .columns {
     .r-main & {
-        min-height: $height-reg;
+      min-height: $height-reg;
     }
     .r-masthead & {
-        min-height: $height-xsm;
-        @include breakpoint(large){
-            min-height: $height-sm;
-        }
+      min-height: $height-xsm;
+      @include breakpoint(large){
+        min-height: $height-sm;
+      }
     }
     .r-thin & {
-        min-height: 150px
+      min-height: 150px
     }
     .r-header & {
-        align-items: center
+      align-items: center
     }
     .r-cards & {
-        padding: $scale-1;
-        min-height: 70px;
-        @include breakpoint(large) {
-            min-height: 300px;
-            max-height: 400px
-        }
+      padding: $scale-1;
+      min-height: 70px;
+      @include breakpoint(large) {
+        min-height: 300px;
+        max-height: 400px
+      }
     }
     .r-cards--spaced & {
-        @include box-shadow();
-        margin: 10px;
-        max-width: calc(50% - 20px);
+      @include box-shadow();
+      margin: 10px;
+      max-width: calc(50% - 20px);
     }
     .spaced-by-4 & {
-        @include breakpoint(large) {
-            max-width: calc(25% - 20px);
-        }
+      @include breakpoint(large) {
+        max-width: calc(25% - 20px);
+      }
     }
     .spaced-by-3 & {
-        @include breakpoint(large) {
-            max-width: calc(33.3333% - 20px);
-        }
+      @include breakpoint(large) {
+        max-width: calc(33.3333% - 20px);
+      }
     }
     .spaced-by-2 & {
-        min-height: 100px;
-        @include breakpoint(large) {
-            min-height: 250px;
-            max-height: 400px
-        }
+      min-height: 100px;
+      @include breakpoint(large) {
+        min-height: 250px;
+        max-height: 400px
+      }
     }
     .r-collapsing & {
-        a:link {
-            border: 0;
-        }
+      a:link {
+        border: 0;
+      }
     }
     .r-collapsing__panel & {
-        //padding: 0 !important
+      //padding: 0 !important
     }
     .r-casestudies & {
-        margin-bottom: 30px;
-        padding-bottom: 10px;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
     }
-}
+  }
 
-.c-checker {
+  .c-checker {
     @include display-flex();
     padding: $scale-1;
     .r-main & {
-        min-height: $height-sm
+      min-height: $height-sm
     }
     @include breakpoint(large) {
-        padding: $scale-7;
-        .r-main & {
-            min-height: $height-reg
-        }
+      padding: $scale-7;
+      .r-main & {
+        min-height: $height-reg
+      }
     }
-}
+  }
 
-.c-checker--small {
+  .c-checker--small {
     @include breakpoint(large) {
-        padding: $scale-4;
+      padding: $scale-4;
     }
-}
+  }
 
-.c-content {
+  .c-content {
     margin: auto; //Wrap around content inside a c-checker col to vertically align
     position: relative
-}
+  }
 
-.c-card__title {
+  .c-card__title {
     @extend .h4;
     &:link {
-        border: 0
+      border: 0
     }
-}
+  }
 
-.c-collapsing {
+  .c-collapsing {
     @include display-flex;
     position: relative;
     @include breakpoint(large) {
-        padding-top: 0 !important;
+      padding-top: 0 !important;
     }
-}
+  }
 
-.c-collapsing__title {
+  .c-collapsing__title {
     cursor: pointer;
     pointer-events: all;
     margin-top: auto;
     margin-bottom: auto
-}
+  }
 
-//SPECIAL LAYOUTS
+  //SPECIAL LAYOUTS
 
-.r-header {
+  .r-header {
     border-bottom: 2px solid $c-navy;
-}
+  }
 
-.r-challenge {
+  .r-challenge {
     padding: $scale-2;
     @include breakpoint(large) {
-        padding: $scale-7
+      padding: $scale-7
     }
-}
-.c-challenge {
+  }
+  .c-challenge {
     padding: $scale-2;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
     @include breakpoint(large) {
-        padding: $scale-5 $scale-6;
-        position: absolute;
-        right: 0;
+      padding: $scale-5 $scale-6;
+      position: absolute;
+      right: 0;
     }
-}
+  }
 
-.challenge__text {
+  .challenge__text {
     margin-top: $scale-5;
     max-width: 400px
-}
+  }
 
 
-.r-casestudies {
+  .r-casestudies {
     .casestudies__text {
-        padding: 30px
+      padding: 30px
     }
-}
-.c-testimonials {
+  }
+  .c-testimonials {
     padding: $scale-1;
     @include breakpoint(large) {
-        padding: $scale-6;
-        p {
-            font-size: 120%;
-            line-height: 32px;
-            margin-top: 0;
-        }
+      padding: $scale-6;
+      p {
+        font-size: 120%;
+        line-height: 32px;
+        margin-top: 0;
+      }
     }
-}
+  }
 
-.c-testimonials--texty {
+  .c-testimonials--texty {
     p {
-        font-size: $scale-3;
-        line-height: 1.2;
-        @include breakpoint(large) {
-            font-size: $scale-5;
-            line-height: 1.1
-        }
+      font-size: $scale-3;
+      line-height: 1.2;
+      @include breakpoint(large) {
+        font-size: $scale-5;
+        line-height: 1.1
+      }
     }
     .orbit-slide {
-        padding: $scale-2;
-        @include breakpoint(large) {
-            padding: $scale-6;
-        }
+      padding: $scale-2;
+      @include breakpoint(large) {
+        padding: $scale-6;
+      }
     }
     .orbit-bullets {
-        float: left
+      float: left
     }
     .c-testimontials__link {
-        float: right;
-        margin-top: 0.8rem;
-        margin-bottom: 0.8rem;
+      float: right;
+      margin-top: 0.8rem;
+      margin-bottom: 0.8rem;
     }
-}
+  }
 
-.c-testimonials__logo {
+  .c-testimonials__logo {
     display: block;
     margin-top: $scale-3;
-}
+  }
 
-.r-crazycallout {
+  .r-crazycallout {
     @include breakpoint(medium){
-        margin-bottom: 420px;
+      margin-bottom: 420px;
     }
     @include breakpoint(large){
-        margin-bottom: 520px
+      margin-bottom: 520px
     }
-}
-.c-crazycallout__bgimage {
+  }
+  .c-crazycallout__bgimage {
     @include background-cover();
     min-height: 40vh;
-}
-.c-crazycallout__box {
+  }
+  .c-crazycallout__box {
     padding: $scale-1 $scale-3;
     @include breakpoint(medium){
-        position: absolute;
-            top: 35%;
-        padding: $scale-6;
-        &.on-right {
-            right: 10%
-        }
-        &.on-left {
-            left: 10%
-        }
+      position: absolute;
+      top: 35%;
+      padding: $scale-6;
+      &.on-right {
+        right: 10%
+      }
+      &.on-left {
+        left: 10%
+      }
     }
-} 
+  }
 
 
-//Misc
-.integrations {
+  //Misc
+  .integrations {
     @extend %inline-list
-}
+  }
 
-.integrations__item {
+  .integrations__item {
     margin-left: 30px;
     font-size: 16px;
     &:before {
-        color: $c-green;
-        content: '';
-        @include toggle-item(12px, 12px);
-        transition: all 200ms ease-out;
-        display:  inline-block;
-        margin-right: 5px
+      color: $c-green;
+      content: '';
+      @include toggle-item(12px, 12px);
+      transition: all 200ms ease-out;
+      display:  inline-block;
+      margin-right: 5px
     }
     a:link{
-        border: 0
+      border: 0
     }
+  }
 }

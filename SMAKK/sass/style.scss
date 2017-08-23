@@ -1,5 +1,9 @@
 @import 'variables';
-@import 'mixins';
+@import 'mixins-smakk';
 @import 'structures';
 @import 'base-smakk';
 @import 'utilities';
+
+@include smakk-structures;
+@include smakk-base;
+@include smakk-utilities;
