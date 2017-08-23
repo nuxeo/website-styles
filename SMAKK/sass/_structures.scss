@@ -120,6 +120,7 @@
 
   .c-card__title {
     @extend .h4;
+      word-break: break-all;
     &:link {
       border: 0
     }

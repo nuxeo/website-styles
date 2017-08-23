@@ -5,7 +5,7 @@
     font-size: 18px;
     @include primary-font-bold;
     color: #fff;
-    background: $c-grey
+    background: $c-grey;
   }
 
   h1,
@@ -240,7 +240,7 @@
 
   //Navigation
   .nav-main__item {
-    @include smakk-nav-links($c-blue, 16px)
+    @include smakk-nav-links($c-blue, 16px);
   }
 
   ul.nav-main__submenu {
