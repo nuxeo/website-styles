@@ -308,7 +308,7 @@
         position: absolute;
         right: 60px;
         top: 8px;
-        font-size: $scale-4;
+        
         cursor: pointer;
         pointer-events: all;
       }
@@ -325,7 +325,11 @@
       &.down {
         &:after {
           content: '➧';
-          transform: rotate(90deg)
+          transform: rotate(90deg);
+            font-size: $scale-3;
+            @include smakk-breakpoint(large){
+                font-size: $scale-5
+            }
         }
       }
     }
