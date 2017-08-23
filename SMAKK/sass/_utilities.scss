@@ -14,11 +14,11 @@
 
   %display-flex,
   .display-flex {
-    @include display-flex
+    @include smakk-display-flex
   }
 
   .is-flex-col {
-    @include flex-direction(column)
+    @include smakk-flex-direction(column)
   }
 
   //Light desktop and mobile
@@ -29,7 +29,7 @@
   //Heavy on dekstop, light on mobile
   .padded {
     padding: $scale-1;
-    @include breakpoint(large) {
+    @include smakk-breakpoint(large) {
       padding: $scale-7;
     }
   }
@@ -37,7 +37,7 @@
   //medium on desktop light on mobile
   .padded2 {
     padding: $scale-1;
-    @include breakpoint(large) {
+    @include smakk-breakpoint(large) {
       padding: $scale-5;
     }
   }
@@ -45,7 +45,7 @@
   //padded heavy on desktop and mobile
   .padded3 {
     padding: $scale-7 $scale-4;
-    @include breakpoint(large) {
+    @include smakk-breakpoint(large) {
       padding: $scale-8;
     }
   }
@@ -284,7 +284,7 @@
   }
 
   .has-bg-image {
-    @include background-cover()
+    @include smakk-background-cover()
   }
 
   .has-icon {

@@ -1,7 +1,7 @@
 //Breakpoints
 //Points from foundation
 
-@mixin breakpoint($point) { 
+@mixin smakk-breakpoint($point) {
    @if $point == large {
      @media (min-width: 64em) { @content ; }
   }
@@ -12,7 +12,7 @@
 
 
 //Display mixins
-@mixin display-flex($direction: row, $wrap: nowrap) {
+@mixin smakk-display-flex($direction: row, $wrap: nowrap) {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
@@ -22,7 +22,7 @@
     flex-wrap: $wrap
 }
 
-@mixin flex-direction($value: row) {
+@mixin smakk-flex-direction($value: row) {
     @if $value==row-reverse {
         -webkit-box-direction: reverse;
         -webkit-box-orient: horizontal;
@@ -46,22 +46,22 @@
 }
 
 //Styles
-@mixin borders($border-w, $border-s, $border-c) {
+@mixin smakk-borders($border-w, $border-s, $border-c) {
     border: $border-w $border-s $border-c
 }
 
-@mixin box-shadow(){
+@mixin smakk-box-shadow(){
     box-shadow: 1px 5px 20px rgba(0,0,0,.3);
 }
 
-@mixin inline-list() {
+@mixin smakk-inline-list() {
     list-style-type: none;
     display: inline-block;
     margin: 0;
     padding: 0
 }
 
-@mixin background-cover() {
+@mixin smakk-background-cover() {
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
@@ -97,7 +97,7 @@ $h4-max: $mod_2 * $scale-4;
   @return $value / ($value * 0 + 1);
 }
 
-@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+@mixin smakk-fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
   $u1: unit($min-vw);
   $u2: unit($max-vw);
   $u3: unit($min-font-size);
@@ -145,7 +145,7 @@ $h4-max: $mod_2 * $scale-4;
 }
 
 //Nav links
-@mixin nav-links ($color, $font-size){
+@mixin smakk-nav-links ($color, $font-size){
     color: $color;
     font-size: $font-size;
     a {
@@ -162,7 +162,7 @@ $h4-max: $mod_2 * $scale-4;
 /// Colors for toggles.
 /// @type Map
 $toggle-colors: ( is-green: $c-green, is-white: #fff, is-blue: $c-blue) !default;
-@mixin toggle-item($w, $h) {
+@mixin smakk-toggle-item($w, $h) {
     width: $w;
     height: $h;
     border-radius: 50%;
