@@ -1,8 +1,9 @@
 // Settings
 @import 'settings';
 
-// Nuxeo Base styling
-@import 'mixins'; // Terrible name defined by open-sans package
+// Nuxeo Mixins
+@import 'nuxeo-mixins';
+
 // @import 'Light';
 // @import 'LightItalic';
 @import 'Regular';
