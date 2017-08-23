@@ -2,9 +2,9 @@
 - Make Plus pseudo element selectable
 - Float logos for large testimonials right
 - Install flexslider (replace orbit??)
--- Events
--- Case studies
-- Complete navigation submenus desktop and mobile
+- Events
+- Case studies
+- Navigation button and tablet width
 
 # Stuff Added
 
@@ -30,6 +30,7 @@ Modules, structures
 - Collapsing cards (plus/minus, challenge)
 - Padded cards series of 4, 3, 2
 - 'Crazy callouts'
+- Navigation (80%)
 
 
 # Foundation components 
@@ -46,6 +47,12 @@ Modules, structures
 
 ### Media
 - Orbit
+- Responsive embed
+
+### Plugins
+- Sticky
+- Responsive toggle
+- Smooth scroll
 
 # External JS
 - svg4everybody.js
