@@ -2,9 +2,8 @@
 - Make Plus pseudo element selectable
 - Float logos for large testimonials right
 - Install flexslider (replace orbit??)
-- Events
 - Case studies
-- Navigation button and tablet width
+- Mobile FAQ cards
 
 # Stuff Added
 
@@ -31,6 +30,12 @@ Modules, structures
 - Padded cards series of 4, 3, 2
 - 'Crazy callouts'
 - Navigation (80%)
+
+# Built pages
+Requires server
+- learn.html
+- why-nuxeo.html
+- download.html
 
 
 # Foundation components 
