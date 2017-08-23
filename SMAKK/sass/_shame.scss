@@ -1,0 +1,84 @@
+div[data-include="menu-top"] {
+   position: fixed;
+    top: 0px;
+    z-index: 1000;
+    right: 0;
+    left: 0;
+    background: $c-blue;
+    color: white;
+    padding: $scale-0 $scale-1;
+    @include smakk-breakpoint(large){
+        color: initial;
+        background: none;
+        padding: 0
+    }
+}
+
+.top-bar,
+.top-bar ul {
+    background-color: rgba(0,0,0,0);
+}
+
+.menu .nav-main {
+    position: relative
+}
+.title-bar-title {
+    display: inline-block
+}
+.is-dropdown-submenu {
+    border: none
+}
+.is-dropdown-submenu-parent {
+    position: static
+}
+.dropdown.menu>li.is-dropdown-submenu-parent>a::after,
+.dropdown.menu.vertical>li.opens-left>a::after,
+.dropdown.menu.vertical>li.opens-right>a::after,
+.dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after{
+    content: none
+}
+
+.submenu {
+    padding-left: $scale-3
+}
+.is-submenu-item {
+    @include smakk-nav-links(#fff, 14px);
+    font-weight: 600
+}
+.dropdown .is-dropdown-submenu a {
+    padding: 0
+}
+
+.is-dropdown-submenu.js-dropdown-active {
+    display: flex; }
+
+@media print,
+screen and (min-width: 64em) {
+    .row .row {
+    margin-right: 0;
+     margin-left: 0;
+}
+}
+
+.orbit-container {
+    height: auto;
+    min-height: 30vh;
+    padding: 0
+}
+
+.orbit-bullets {
+    float: right;
+    display: inline-block
+}
+.orbit-bullets button {
+    min-width: 0;
+    background-color: inherit
+}
+.orbit-bullets button:hover {		
+    background-color: inherit;
+    color: inherit
+}		
+.orbit-bullets button.is-active {		
+    background-color: inherit;		
+}
+
