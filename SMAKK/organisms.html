@@ -18,40 +18,8 @@
 </head>
 
 <body>
-    <div class="row top-bar r-header">
-        <div class="small-12 columns">
 
-            <div class="top-bar" id="responsive-menu">
-                <div class="top-bar-left">
-                    <ul class="dropdown menu nav-main" data-dropdown-menu>
-                        <li class="menu-text">LOGO</li>
-                        <li class="nav-main__item has-submenu">
-                            <a href="#0">Why Nuxeo</a>
-                            <ul class="submenu menu vertical" data-submenu>
-                                <li><a href="#0">One</a></li>
-                                <li><a href="#0">Two</a></li>
-                                <li><a href="#0">Three</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-main__item"><a href="#0">Products</a></li>
-                        <li class="nav-main__item"><a href="#0">Integrations</a></li>
-                        <li class="nav-main__item"><a href="#0">Services</a></li>
-                        <li class="nav-main__item"><a href="#0">Customers</a></li>
-                        <li class="nav-main__item"><a href="#0">About</a></li>
-                        <li class="nav-main__item"><a href="#0">Learn</a></li>
-                    </ul>
-                </div>
-                <div class="top-bar-right">
-                    <ul class="menu">
-                        <li>Icon</li>
-                        <li>Icon</li>
-                        <li>Icon</li>
-                        <li><a type="button" class="button is-bg-blue">Request a Demo</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<div data-include="menu-top"></div>
 
     <div class="row r-main">
         <div class="large-6 small-12 columns has-bg-image" style="background-image:url('pngs/1000.jpg')">
@@ -463,39 +431,13 @@
     </div>
 
 
-    <div class="row r-masthead is-bg-navy is-green">
-        <div class="large-8 small-12 columns c-checker">
-            <div class="c-content">
-                <h2>Have any more qestions?</h2>
-                <button class="button--callout">Download Nuxeo Platform</button> <button class="button--ghost">Email Us</button>
-            </div>
-        </div>
-        <div class="large-4 columns show-for-large">
-        </div>
-    </div>
-    <div class="row r-thin is-bg-aqua">
-        <div class="small-12 large-2 columns  display-flex">
-            <div class="c-content">
-                Nuxeo for:
-            </div>
-        </div>
-        <div class="small-12 large-10 columns display-flex">
-            <div class="c-content">
-                <a class="button is-bg-blue">Government</a><a class="button is-bg-blue">Financial Services</a><a class="button is-bg-blue">Media &amp; Entertainment</a>
-            </div>
-        </div>
-    </div>
+   <div data-include="footer-top"></div>
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/svg4everybody.js"></script>
 
-    <script>
-        svg4everybody();
-
-    </script>
 
     <!-- show and hide plus/minus cards -->
     <script>
@@ -510,6 +452,17 @@
             $('.icon-minus, .c-title').click(function(e) {
                 e.preventDefault();
                 $(".r-collapsing__panel").hide('slow').css('z-index','0');
+            });
+        });
+
+    </script>
+    
+    <script>
+        $(function() {
+            var includes = $('[data-include]');
+            jQuery.each(includes, function() {
+                var file = 'organisms/' + $(this).data('include') + '.html';
+                $(this).load(file);
             });
         });
 
