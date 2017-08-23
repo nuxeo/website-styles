@@ -2,14 +2,14 @@
   "name": "nuxeo-website-styles",
   "description": "Styles to be used on Nuxeo websites",
   "private": true,
-  "version": "4.0.0",
+  "version": "3.2.8",
   "main": "",
   "config": {
     "browser": "chromium-browser"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predev": "npm run npm_install",
+    "predev": "npm install",
     "dev": "npm run server & nodemon --exec 'npm run compile:styles && browser-sync reload'",
     "server": "browser-sync start --server . --startPath demo --browser=$npm_package_config_browser",
     "postinstall": "npm run compile && npm run minify",
@@ -18,11 +18,14 @@
     "compile:elements": "vulcanize --inline-css --inline-scripts --strip-comments elements/elements.html | crisper --html elements/elements.build.html --js elements/elements.build.js",
     "postcompile:elements": "uglifyjs --compress --mangle -o elements/elements.min.js -- elements/elements.build.js && sed -i.bak 's/elements.build.js/elements.min.js/g' elements/elements.build.html && rm elements/elements.build.html.bak",
     "precompile:styles": "rm -rf ./tmp ./css",
-    "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./SMAKK/sass/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
+<<<<<<< HEAD
+    "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./node_modules/normalize-scss/sass/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
     "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css",
-    "minify": "html-minifier elements/elements.build.html -o elements/elements.build.min.html --collapse-boolean-attributes --collapse-whitespace --decode-entities --html5 --minify-css --minify-js --process-conditional-comments --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --sort-attributes --sort-class-name --trim-custom-fragments --use-short-doctype",
-    "npm_install": "[ `npm run -s package_checksum` = `cat package.md5` ] || npm install && npm run -s package_checksum > package.md5",
-    "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'"
+    "minify": "html-minifier elements/elements.build.html -o elements/elements.build.min.html --collapse-boolean-attributes --collapse-whitespace --decode-entities --html5 --minify-css --minify-js --process-conditional-comments --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --sort-attributes --sort-class-name --trim-custom-fragments --use-short-doctype"
+=======
+    "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/normalize-scss/sass/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
+    "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css"
+>>>>>>> Added foundation lib
   },
   "author": {
     "name": "Andrew Goodricke",
@@ -32,10 +35,15 @@
   "dependencies": {
     "autoprefixer": "^6.7.3",
     "bower": "^1.8.0",
+<<<<<<< HEAD
     "crisper": "^2.0.2",
     "foundation-sites": "^6.4.1",
     "html-minifier": "^3.4.3",
     "node-sass": "^4.5.0",
+=======
+    "foundation-sites": "^6.3.1",
+>>>>>>> Added foundation lib
+    "normalize-scss": "^6.0.0",
     "open-sans-fontface": "^1.4.0",
     "postcss-cli": "^2.6.0",
     "sass-lint": "^1.10.2",

@@ -20,6 +20,13 @@
 // Nuxeo base typography
 @import 'components/typography';
 
+// SMAKK
+@import 'variables';
+@import 'mixins-smakk';
+@import 'structures';
+@import 'base-smakk';
+@import 'utilities';
+
 // Optional components that can be included outside of nuxeo-base-styles
 @import 'components/codeblock';
 
@@ -65,4 +72,8 @@
   @include foundation-float-classes;
 
   @include nuxeo-typography;
+
+  @include smakk-structures;
+  @include smakk-base;
+  @include smakk-utilities;
 }

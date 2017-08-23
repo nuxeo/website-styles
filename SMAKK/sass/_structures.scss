@@ -26,7 +26,7 @@
     }
     .r-collapsing--challenge & {
       position: relative;
-      @include breakpoint(large) {
+      @include smakk-breakpoint(large) {
         position: absolute
       }
     }
@@ -39,7 +39,7 @@
     }
     .r-masthead & {
       min-height: $height-xsm;
-      @include breakpoint(large){
+      @include smakk-breakpoint(large){
         min-height: $height-sm;
       }
     }
@@ -52,29 +52,29 @@
     .r-cards & {
       padding: $scale-1;
       min-height: 70px;
-      @include breakpoint(large) {
+      @include smakk-breakpoint(large) {
         min-height: 300px;
         max-height: 400px
       }
     }
     .r-cards--spaced & {
-      @include box-shadow();
+      @include smakk-box-shadow();
       margin: 10px;
       max-width: calc(50% - 20px);
     }
     .spaced-by-4 & {
-      @include breakpoint(large) {
+      @include smakk-breakpoint(large) {
         max-width: calc(25% - 20px);
       }
     }
     .spaced-by-3 & {
-      @include breakpoint(large) {
+      @include smakk-breakpoint(large) {
         max-width: calc(33.3333% - 20px);
       }
     }
     .spaced-by-2 & {
       min-height: 100px;
-      @include breakpoint(large) {
+      @include smakk-breakpoint(large) {
         min-height: 250px;
         max-height: 400px
       }
@@ -94,12 +94,12 @@
   }
 
   .c-checker {
-    @include display-flex();
+    @include smakk-display-flex();
     padding: $scale-1;
     .r-main & {
       min-height: $height-sm
     }
-    @include breakpoint(large) {
+    @include smakk-breakpoint(large) {
       padding: $scale-7;
       .r-main & {
         min-height: $height-reg
@@ -108,7 +108,7 @@
   }
 
   .c-checker--small {
-    @include breakpoint(large) {
+    @include smakk-breakpoint(large) {
       padding: $scale-4;
     }
   }
@@ -126,9 +126,9 @@
   }
 
   .c-collapsing {
-    @include display-flex;
+    @include smakk-display-flex;
     position: relative;
-    @include breakpoint(large) {
+    @include smakk-breakpoint(large) {
       padding-top: 0 !important;
     }
   }
@@ -148,14 +148,14 @@
 
   .r-challenge {
     padding: $scale-2;
-    @include breakpoint(large) {
+    @include smakk-breakpoint(large) {
       padding: $scale-7
     }
   }
   .c-challenge {
     padding: $scale-2;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
-    @include breakpoint(large) {
+    @include smakk-breakpoint(large) {
       padding: $scale-5 $scale-6;
       position: absolute;
       right: 0;
@@ -175,7 +175,7 @@
   }
   .c-testimonials {
     padding: $scale-1;
-    @include breakpoint(large) {
+    @include smakk-breakpoint(large) {
       padding: $scale-6;
       p {
         font-size: 120%;
@@ -189,14 +189,14 @@
     p {
       font-size: $scale-3;
       line-height: 1.2;
-      @include breakpoint(large) {
+      @include smakk-breakpoint(large) {
         font-size: $scale-5;
         line-height: 1.1
       }
     }
     .orbit-slide {
       padding: $scale-2;
-      @include breakpoint(large) {
+      @include smakk-breakpoint(large) {
         padding: $scale-6;
       }
     }
@@ -216,20 +216,20 @@
   }
 
   .r-crazycallout {
-    @include breakpoint(medium){
+    @include smakk-breakpoint(medium){
       margin-bottom: 420px;
     }
-    @include breakpoint(large){
+    @include smakk-breakpoint(large){
       margin-bottom: 520px
     }
   }
   .c-crazycallout__bgimage {
-    @include background-cover();
+    @include smakk-background-cover();
     min-height: 40vh;
   }
   .c-crazycallout__box {
     padding: $scale-1 $scale-3;
-    @include breakpoint(medium){
+    @include smakk-breakpoint(medium){
       position: absolute;
       top: 35%;
       padding: $scale-6;
@@ -254,7 +254,7 @@
     &:before {
       color: $c-green;
       content: '';
-      @include toggle-item(12px, 12px);
+      @include smakk-toggle-item(12px, 12px);
       transition: all 200ms ease-out;
       display:  inline-block;
       margin-right: 5px
