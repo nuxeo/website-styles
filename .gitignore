@@ -59,6 +59,7 @@ package.md5
 # Vulcanized, crispered and uglyfied
 /elements/*.build*
 /elements/*.min.js
+.sass-cache
 /SMAKK/.sass-cache
 *.scssc
 SMAKK/.sass-cache/37f0b01187d25ac3d1a485ca036979109c905025/_structures.scssc
