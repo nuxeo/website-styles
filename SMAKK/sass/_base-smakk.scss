@@ -237,8 +237,7 @@
     }
     .nav-main__subitem__text a {
         display: none;
-        @include smakk-nav-links(#fff, 16px);
-        border-bottom: 2px solid $c-green;
+        
     }
     //NAV ON LARGE
     @include smakk-breakpoint(large) {
@@ -253,6 +252,7 @@
             color: $c-green;
             font-size: $scale-4;
             padding: 0 !important;
+            font-weight: 700
         }
         .nav-main__subitem__text {
             color: #fff;
@@ -262,7 +262,9 @@
         }
         .nav-main__subitem__text a {
             display: inline-block;
-            margin-top: $scale-0
+            margin-top: $scale-0;
+            @include smakk-nav-links(#fff, 16px);
+            border-bottom: 2px solid $c-green;
         }
     }
     .nav-footer {

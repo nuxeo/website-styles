@@ -2,11 +2,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
 /* line 1, sass/_shame.scss */
 div[data-include="menu-top"] {
-  position: fixed;
-  top: 0px;
-  z-index: 1000;
-  right: 0;
-  left: 0;
   background: #0067FF;
   color: white;
   padding: 0.75em 1em;
@@ -17,36 +12,62 @@ div[data-include="menu-top"] {
     color: initial;
     background: none;
     padding: 0;
+    background: #fff;
   }
 }
 
-/* line 17, sass/_shame.scss */
+/* line 13, sass/_shame.scss */
 .top-bar,
 .top-bar ul {
   background-color: transparent;
 }
 
-/* line 22, sass/_shame.scss */
+/* line 17, sass/_shame.scss */
+.top-bar-right .button, .top-bar-right input[type='submit'] {
+  margin: 0;
+}
+
+/* line 20, sass/_shame.scss */
+.menu-icon {
+  border: 0;
+  max-width: 30px;
+  min-width: 0;
+  padding: 10px;
+  border-radius: 0;
+  margin: 0;
+}
+/* line 27, sass/_shame.scss */
+.menu-icon:hover {
+  border: 0;
+  background: 0;
+}
+
+/* line 32, sass/_shame.scss */
 .menu .nav-main {
   position: relative;
 }
 
-/* line 25, sass/_shame.scss */
+/* line 35, sass/_shame.scss */
+.title-bar {
+  max-width: 1800px;
+}
+
+/* line 38, sass/_shame.scss */
 .title-bar-title {
   display: inline-block;
 }
 
-/* line 28, sass/_shame.scss */
+/* line 41, sass/_shame.scss */
 .is-dropdown-submenu {
   border: none;
 }
 
-/* line 31, sass/_shame.scss */
+/* line 44, sass/_shame.scss */
 .is-dropdown-submenu-parent {
   position: static;
 }
 
-/* line 34, sass/_shame.scss */
+/* line 47, sass/_shame.scss */
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after,
 .dropdown.menu.vertical > li.opens-left > a::after,
 .dropdown.menu.vertical > li.opens-right > a::after,
@@ -54,12 +75,17 @@ div[data-include="menu-top"] {
   content: none;
 }
 
-/* line 41, sass/_shame.scss */
+/* line 53, sass/_shame.scss */
+.dropdown.menu.large-horizontal > li.opens-right > .is-dropdown-submenu {
+  top: 120%;
+}
+
+/* line 56, sass/_shame.scss */
 .submenu {
   padding-left: 1.777em;
 }
 
-/* line 44, sass/_shame.scss */
+/* line 59, sass/_shame.scss */
 .is-submenu-item {
   color: #fff;
   font-size: 14px;
@@ -76,49 +102,49 @@ div[data-include="menu-top"] {
   border-bottom: none;
 }
 
-/* line 48, sass/_shame.scss */
+/* line 63, sass/_shame.scss */
 .dropdown .is-dropdown-submenu a {
   padding: 0;
 }
 
-/* line 52, sass/_shame.scss */
+/* line 67, sass/_shame.scss */
 .is-dropdown-submenu.js-dropdown-active {
   display: flex;
 }
 
 @media print, screen and (min-width: 64em) {
-  /* line 57, sass/_shame.scss */
+  /* line 72, sass/_shame.scss */
   .row .row {
     margin-right: 0;
     margin-left: 0;
   }
 }
-/* line 63, sass/_shame.scss */
+/* line 78, sass/_shame.scss */
 .orbit-container {
   height: auto;
   min-height: 30vh;
   padding: 0;
 }
 
-/* line 69, sass/_shame.scss */
+/* line 84, sass/_shame.scss */
 .orbit-bullets {
   float: right;
   display: inline-block;
 }
 
-/* line 73, sass/_shame.scss */
+/* line 88, sass/_shame.scss */
 .orbit-bullets button {
   min-width: 0;
   background-color: inherit;
 }
 
-/* line 77, sass/_shame.scss */
+/* line 92, sass/_shame.scss */
 .orbit-bullets button:hover {
   background-color: inherit;
   color: inherit;
 }
 
-/* line 81, sass/_shame.scss */
+/* line 96, sass/_shame.scss */
 .orbit-bullets button.is-active {
   background-color: inherit;
 }
@@ -951,23 +977,10 @@ ul.nav-main__submenu {
 /* line 238, sass/_base-smakk.scss */
 .nav-main__subitem__text a {
   display: none;
-  color: #fff;
-  font-size: 16px;
-  border-bottom: 2px solid #73d2cf;
-}
-/* line 151, sass/_mixins-smakk.scss */
-.nav-main__subitem__text a a {
-  color: #fff;
-  text-decoration: none;
-  border-bottom: none;
-}
-/* line 155, sass/_mixins-smakk.scss */
-.nav-main__subitem__text a a:hover {
-  border-bottom: none;
 }
 
 @media (min-width: 64em) {
-  /* line 245, sass/_base-smakk.scss */
+  /* line 244, sass/_base-smakk.scss */
   .nav-main__item {
     color: #0067FF;
     font-size: 16px;
@@ -983,17 +996,18 @@ ul.nav-main__submenu {
     border-bottom: none;
   }
 
-  /* line 248, sass/_base-smakk.scss */
+  /* line 247, sass/_base-smakk.scss */
   .nav-main__subitem {
     padding: 2.369em;
     max-width: 50%;
   }
 
-  /* line 252, sass/_base-smakk.scss */
+  /* line 251, sass/_base-smakk.scss */
   a.nav-main__subitem__title {
     color: #73d2cf;
     font-size: 2.369em;
     padding: 0 !important;
+    font-weight: 700;
   }
 
   /* line 257, sass/_base-smakk.scss */
@@ -1008,9 +1022,22 @@ ul.nav-main__submenu {
   .nav-main__subitem__text a {
     display: inline-block;
     margin-top: 0.75em;
+    color: #fff;
+    font-size: 16px;
+    border-bottom: 2px solid #73d2cf;
+  }
+  /* line 151, sass/_mixins-smakk.scss */
+  .nav-main__subitem__text a a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  /* line 155, sass/_mixins-smakk.scss */
+  .nav-main__subitem__text a a:hover {
+    border-bottom: none;
   }
 }
-/* line 268, sass/_base-smakk.scss */
+/* line 270, sass/_base-smakk.scss */
 .nav-footer {
   list-style-type: none;
   display: inline-block;
@@ -1018,7 +1045,7 @@ ul.nav-main__submenu {
   padding: 0;
 }
 
-/* line 271, sass/_base-smakk.scss */
+/* line 273, sass/_base-smakk.scss */
 .nav-footer__item {
   color: #1F28BF;
   font-size: 0.75em;

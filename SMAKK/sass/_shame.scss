@@ -1,26 +1,39 @@
 div[data-include="menu-top"] {
-   position: fixed;
-    top: 0px;
-    z-index: 1000;
-    right: 0;
-    left: 0;
     background: $c-blue;
     color: white;
     padding: $scale-0 $scale-1;
     @include smakk-breakpoint(large){
         color: initial;
         background: none;
-        padding: 0
+        padding: 0;
+        background: #fff
     }
 }
 
 .top-bar,
 .top-bar ul {
-    background-color: rgba(0,0,0,0);
+    background-color: transparent;
 }
-
+.top-bar-right .button {
+    margin: 0
+}
+.menu-icon{
+    border: 0;
+    max-width: 30px;
+    min-width: 0;
+    padding: 10px;
+    border-radius: 0;
+    margin: 0;
+    &:hover{
+        border: 0;
+        background: 0
+    }
+}
 .menu .nav-main {
     position: relative
+}
+.title-bar {
+    max-width: 1800px
 }
 .title-bar-title {
     display: inline-block
@@ -37,7 +50,9 @@ div[data-include="menu-top"] {
 .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after{
     content: none
 }
-
+.dropdown.menu.large-horizontal > li.opens-right > .is-dropdown-submenu {
+    top: 120%
+}
 .submenu {
     padding-left: $scale-3
 }
@@ -81,4 +96,3 @@ screen and (min-width: 64em) {
 .orbit-bullets button.is-active {		
     background-color: inherit;		
 }
-
