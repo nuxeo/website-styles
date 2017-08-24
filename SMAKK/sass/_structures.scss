@@ -13,6 +13,9 @@
             border: 0 !important
         }
     }
+    .r-parallax {
+        //height: 100vh
+    }
     .r-collapsing__panel {
         display: none;
         width: 100%;
@@ -203,22 +206,20 @@
         margin-top: $scale-3;
     }
     .r-crazycallout {
-        @include smakk-breakpoint(medium) {
-            margin-bottom: 420px;
-        }
-        @include smakk-breakpoint(large) {
-            margin-bottom: 520px
-        }
+        
+    }
+    .c-crazycallout__blank {
+
     }
     .c-crazycallout__bgimage {
         @include smakk-background-cover();
-        min-height: 40vh;
+        min-height: 50vh;
     }
     .c-crazycallout__box {
         padding: $scale-1 $scale-3;
         @include smakk-breakpoint(medium) {
             position: absolute;
-            top: 35%;
+            top: 10%;   
             padding: $scale-6;
             &.on-right {
                 right: 10%
@@ -230,11 +231,17 @@
     }
     //Misc
     .integrations {
-        @extend %inline-list
+        @extend %inline-list;
+        margin: 0;
+        @include smakk-breakpoint(large){
+            margin: 15px;
+            margin-left: 5%
+        }
     }
     .integrations__item {
-        margin-left: 30px;
         font-size: 16px;
+        color: $c-blue;
+        margin-left: 10px;
         &:before {
             color: $c-green;
             content: '';
@@ -244,7 +251,23 @@
             margin-right: 5px
         }
         a:link {
-            border: 0
+            border: 0;
+            color: $c-blue;
+            &:hover{
+                border-bottom: 2px solid $c-green;
+            }
+        }
+        @include smakk-breakpoint(large){
+             margin-left: 40px;
         }
     }
+    .integrations-arrow {
+        font-size: $scale-4;
+        color: $c-green;
+        vertical-align: middle;
+        margin-left: 80px;
+        pointer-events: all;
+        cursor: pointer;
+    }
+   
 }

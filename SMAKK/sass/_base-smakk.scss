@@ -56,7 +56,7 @@
         line-height: 1.2
     }
     p {
-        @include primary-font-semibold;
+        @include primary-font-bold;
         font-size: 1em;
         line-height: 24px;
     }
