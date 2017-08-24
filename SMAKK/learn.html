@@ -128,29 +128,13 @@
 
     <div data-include="footer-top"></div>
 
-    <script src="js/vendor/jquery.js"></script>
+     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/jquery.sticky-kit.min.js"></script>
+    <script src="js/custom_scripts.js"></script>
 
-
-    <!-- show and hide plus/minus cards -->
-    <script>
-        $(function() {
-            $(".c-collapsing__title").click(function(e) {
-                e.preventDefault();
-                $('.r-collapsing__panel[data-tab ="' + $(this).data('tab') + '"]').show('slow').css({
-                    'display': 'flex',
-                    'z-index': '1000'
-                });
-            });
-            $('.icon-minus, .c-title').click(function(e) {
-                e.preventDefault();
-                $(".r-collapsing__panel").hide('slow').css('z-index', '0');
-            });
-        });
-
-    </script>
 
     <!-- include files -->
 
@@ -165,15 +149,6 @@
 
     </script>
     
-    <script>
-     $(function() {
-            var includes = $('[data-include]');
-            jQuery.each(includes, function() {
-                var file = 'organisms/' + $(this).data('include') + '.html';
-                $(this).load(file);
-            });
-        });
-    </script>
 </body>
 
 </html>
