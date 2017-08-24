@@ -143,11 +143,11 @@
 
     </div>
 
-        <div class="row r-cards r-collapsing">
-        <div class="small-12 large-3 columns c-collapsing is-bg-purple has-icon icon-plus"  data-tab="1">
+    <div class="row r-cards r-collapsing">
+        <div class="small-12 large-3 columns c-collapsing is-bg-purple has-icon icon-plus" data-tab="1">
             <h4 class="c-collapsing__title">What is Nuxeo's Pricing?</h4>
         </div>
-        <div class="r-collapsing__panel is-bg-purple"  data-tab="1">
+        <div class="r-collapsing__panel is-bg-purple" data-tab="1">
             <div class="large-3 large-offset-1 show-for-large columns c-checker">
                 <h4 class="c-collapsing__title">What is Nuxeo's Pricing?</h4>
             </div>
@@ -208,13 +208,16 @@
             <h4>A Large Block of Text is link</h4>
         </div>
     </div>
-
-     <div class="row r-collapsing">
-        <div class="small-12 large-12 padded3 columns c-collapsing is-bg-purple has-icon icon-plus"  data-tab="8">
-           <p class="underlined">Challenge</p>
+    
+       <span class="is-blue">TO DO: parallax this <br />
+       http://prinzhorn.github.io/skrollr/examples/classic.html</span>
+        
+    <div class="row r-parallax scene">
+        <div class="small-12 large-12 padded3 columns c-collapsing is-bg-purple has-icon icon-plus" data-depth="0.00">
+            <p class="underlined">Challenge</p>
             <h2 class="c-collapsing__title">My users prefer a variety of tools to manage digital assets scattered across my organization</h2>
         </div>
-        <div class="r-collapsing__panel is-bg-purple" data-tab="8">
+        <div class="is-bg-purple" data-depth="1.00">
             <div class="row padded has-icon icon-minus">
                 <div class="large-12 small-12 columns">
                     <p class="underlined">Solution</p>
@@ -229,6 +232,8 @@
             </div>
         </div>
     </div>
+
+
 
     <div class="row padded is-blue is-bg-white">
         <div class="small-12 columns">
@@ -379,8 +384,60 @@
         </div>
     </div>
 
+
+    <div class="row is-bg-white">
+        <div class="small-12 large-6 columns padded2  r-collapsing">
+            <div class="row r-cards r-cards--spaced spaced-by-2">
+                <div class="small-12 large-6 columns has-icon icon-arrow down is-bg-green">
+                    <a class="h3" href="#">Windows Package (.exe)</a>
+                </div>
+                <div class="small-12 large-6 columns has-icon icon-arrow down is-bg-aqua is-blue">
+                    <a class="h3">VMWare images</a>
+                </div>
+                <div class="small-12 large-6 columns  has-icon icon-arrow down is-green is-bg-navy">
+                    <a class="h3">Multi-platform package</a>
+                </div>
+                <div class="small-12 large-6 columns  has-icon icon-arrow down is-bg-blue">
+                    <a class="h3">Virtual box images</a>
+                </div>
+            </div>
+            <p class="is-blue">Or install the Nuxeo Platform using your <a class="c-collapsing is-green" data-tab="1d">favorite package manager</a>.</p>
+
+            <div class="r-collapsing__panel paddedt0" data-tab="1d">
+                <div class="small-12 large-6 columns is-bg-grey">
+                    <h4 class="is-blue">Docker</h4>
+                    <div class="is-bg-green padded0">
+                        $ docker run -ti --name mynuxeo -p 8080:8080 nuxeo/nuxeo:discover-ft
+                    </div>
+
+                    <h4 class="is-blue">APT-Get</h4>
+                    <div class="is-bg-green padded0">
+                        $ wget -q -O- http://apt.nuxeo.org/nuxeo.key | sudo apt-key add - <br /> $ sudo add -apt-repository "deb http://apt.nuxeo.org/ $ (lsb_release -cs) fasttracks"<br /> $ sudo apt-get update <br /> $ sudo apt-get install nuxeo
+                    </div>
+
+                    <h4 class="is-blue">Homebrew</h4>
+                    <div class="is-bg-green padded0">
+                        $ brew install nuxeo<br /> $ nuxeoctl start
+                    </div>
+                    <p class="is-blue">Or install the Nuxeo Platform <a class="c-title is-blue">directly</a>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="small-12 large-6 columns c-checker is-blue">
+            <div class="c-content">
+                <span class="is-green is-bigger">Version</span>
+                <h2>LTS 2016</h2>
+                <p>Or install the Nuxeo Platform using your favotite package manager. If you don't want to install Nuxeo locally, you can use our cloud environment with Azure or AWS.</p>
+                <p>Looking for an older version of Nuxeo?<br />
+                    <a href="#" class="is-green">Download it here</a>.</p>
+                <button class="is-bg-blue" href="#">Azure</button> <button class="is-bg-blue" href="#">AWS</button>
+            </div>
+        </div>
+    </div>
+
     <div class="row r-crazycallout">
         <div class="small-12 columns c-crazycallout__bgimage" style="background-image: url(pngs/1000.jpg)"></div>
+        <div class="small-12 columns c-crazycallout__blank hide-for-small-only" style="height: 35vh; min-height: 500px"></div>
         <div class="small-12 medium-8 large-5 columns c-crazycallout__box on-right is-bg-green is-blue">
             <h2>Adobe Creative Suite</h2>
             <p>Creative professionals can easily search, retrieve, and work with imaes stored in the Nuxeo platform from within Adobe creative appplication of their choice (Photoshop, InDesign, or Illustrator).</p>
@@ -393,15 +450,18 @@
 
     <div class="row r-crazycallout">
         <div class="small-12 columns c-crazycallout__bgimage" style="background-image: url(pngs/1000.jpg)"></div>
+        <div class="small-12 columns c-crazycallout__blank hide-for-small-only" style="height: 5vh; min-height: 200px"></div>
         <div class="small-12 medium-8 large-5 columns c-crazycallout__box on-left is-bg-purple is-green">
             <h2>Google Vision</h2>
             <p>Creative professionals can easily search, retrieve, and work with imaes stored in the Nuxeo platform from within Adobe creative appplication of their choice (Photoshop, InDesign, or Illustrator).</p>
         </div>
     </div>
 
+
+
     <div class="row">
         <div class="small-12 columns">
-            <ul class="integrations is-blue toggle">
+            <ul class="integrations toggle" id="int1">
                 <li class="integrations__item"><a href="#">Sales Force</a></li>
                 <li class="integrations__item"><a href="#">Adobe</a></li>
                 <li class="integrations__item"><a href="#">Google Vision</a></li>
@@ -422,7 +482,8 @@
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
- <script>
+    <script src="js/skrollr.min.js"></script>
+    <script>
         $(function() {
             var includes = $('[data-include]');
             jQuery.each(includes, function() {
@@ -430,8 +491,25 @@
                 $(this).load(file);
             });
         });
-
     </script>
+     
+    <script>
+        $('.integrations__item:last-child').after("<li class=\"integrations-arrow\">➡</li>");
+         $(".integrations__item:nth-of-type(n+8)").hide();
+        $('.integrations-arrow').click(function (e) {
+            $(".integrations__item").toggle("slide");
+             $(this).css({'transform': 'rotate(180deg)'});
+             return false;
+        });
+    
+    </script>
+    
+    <script type="text/javascript">
+	skrollr.init({
+		smoothScrolling: false,
+		mobileDeceleration: 0.004
+	});
+	</script>
 
 </body>
 
