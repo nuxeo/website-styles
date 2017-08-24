@@ -290,7 +290,6 @@
   .has-icon {
     position: relative;
     &.icon-plus {
-      // &.columns {padding-top: $scale-6;}
       &:after {
         content: '+';
         position: absolute;
@@ -302,13 +301,12 @@
       }
     }
     &.icon-minus {
-      //  &.columns {padding-top: $scale-6;}
       &:after {
         content: '–';
         position: absolute;
-        right: 60px;
+        right: 20px;
         top: 8px;
-        
+        font-size: $scale-4;
         cursor: pointer;
         pointer-events: all;
       }
