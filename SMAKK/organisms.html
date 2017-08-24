@@ -208,28 +208,26 @@
             <h4>A Large Block of Text is link</h4>
         </div>
     </div>
-    
-       <span class="is-blue">TO DO: parallax this <br />
-       http://prinzhorn.github.io/skrollr/examples/classic.html</span>
-        
-    <div class="row r-parallax scene">
-        <div class="small-12 large-12 padded3 columns c-collapsing is-bg-purple has-icon icon-plus" data-depth="0.00">
-            <p class="underlined">Challenge</p>
-            <h2 class="c-collapsing__title">My users prefer a variety of tools to manage digital assets scattered across my organization</h2>
-        </div>
-        <div class="is-bg-purple" data-depth="1.00">
-            <div class="row padded has-icon icon-minus">
-                <div class="large-12 small-12 columns">
-                    <p class="underlined">Solution</p>
-                    <h4 class="c-collapsing__title">Our Cloud-native Platform</h4>
-                </div>
-                <div class="large-6 small-12 columns">
-                    <p>One of the real fallacies of ECM -- and DAM for that matter -- is that a single solution, with one repository, will meet all your users’ needs. The reality is that your employees work with content across a broad array of different tools and technologies. And, over the years, your content has become siloed inside of any number of different systems.</p>
-                </div>
-                <div class="large-6 small-12 columns">
-                    <p>However, with Nuxeo’s open architecture and broad array of out-of-the-box connectors, we can integrate with existing business apps, like Salesforce and Adobe Creative Cloud, and productivity apps, like Microsoft SharePoint and Slack. We can also access and manage documents and assets that are stored in existing content sources, including legacy ECM products like Alfresco, Documentum, IBM and OpenText and Cloud storage services like Box, DropBox and Google Drive.</p>
-                </div>
+
+    <div id="r-parallax-section-1">
+        <div class="row r-100vh">
+            <div class="small-12 large-12 padded3 columns is-bg-purple has-icon icon-plus">
+                <p class="underlined">Challenge</p>
+                <h2>My users prefer a variety of tools to manage digital assets scattered across my organization</h2>
             </div>
+        </div>
+    </div>
+
+    <div class="row r-100vh padded has-icon icon-minus is-bg-purple">
+        <div class="large-12 small-12 columns">
+            <p class="underlined">Solution</p>
+            <h4>Our Cloud-native Platform</h4>
+        </div>
+        <div class="large-6 small-12 columns">
+            <p>One of the real fallacies of ECM &ndash; and DAM for that matter &ndash; is that a single solution, with one repository, will meet all your users’ needs. The reality is that your employees work with content across a broad array of different tools and technologies. And, over the years, your content has become siloed inside of any number of different systems.</p>
+        </div>
+        <div class="large-6 small-12 columns">
+            <p>However, with Nuxeo’s open architecture and broad array of out-of-the-box connectors, we can integrate with existing business apps, like Salesforce and Adobe Creative Cloud, and productivity apps, like Microsoft SharePoint and Slack. We can also access and manage documents and assets that are stored in existing content sources, including legacy ECM products like Alfresco, Documentum, IBM and OpenText and Cloud storage services like Box, DropBox and Google Drive.</p>
         </div>
     </div>
 
@@ -482,7 +480,9 @@
     <script src="js/vendor/what-input.js"></script>
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/skrollr.min.js"></script>
+    <script src="js/jquery.sticky-kit.min.js"></script>
+    <script src="js/custom_scripts.js"></script>
+    
     <script>
         $(function() {
             var includes = $('[data-include]');
@@ -491,25 +491,14 @@
                 $(this).load(file);
             });
         });
+
     </script>
-     
+
+
     <script>
-        $('.integrations__item:last-child').after("<li class=\"integrations-arrow\">➡</li>");
-         $(".integrations__item:nth-of-type(n+8)").hide();
-        $('.integrations-arrow').click(function (e) {
-            $(".integrations__item").toggle("slide");
-             $(this).css({'transform': 'rotate(180deg)'});
-             return false;
-        });
-    
+        $("#r-parallax-section-1").stick_in_parent();
+
     </script>
-    
-    <script type="text/javascript">
-	skrollr.init({
-		smoothScrolling: false,
-		mobileDeceleration: 0.004
-	});
-	</script>
 
 </body>
 
