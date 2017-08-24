@@ -9,7 +9,11 @@ div[data-include="menu-top"] {
         background: #fff
     }
 }
-
+.top-bar {
+    max-width: 1600px;
+    margin: 0 auto;
+    border-bottom: 2px solid $c-blue
+}
 .top-bar,
 .top-bar ul {
     background-color: transparent;
@@ -24,6 +28,8 @@ div[data-include="menu-top"] {
     padding: 10px;
     border-radius: 0;
     margin: 0;
+    float: right;
+    margin-top: 8px;
     &:hover{
         border: 0;
         background: 0
@@ -32,12 +38,7 @@ div[data-include="menu-top"] {
 .menu .nav-main {
     position: relative
 }
-.title-bar {
-    max-width: 1800px
-}
-.title-bar-title {
-    display: inline-block
-}
+
 .is-dropdown-submenu {
     border: none
 }
@@ -51,7 +52,7 @@ div[data-include="menu-top"] {
     content: none
 }
 .dropdown.menu.large-horizontal > li.opens-right > .is-dropdown-submenu {
-    top: 120%
+    top: 58px
 }
 .submenu {
     padding-left: $scale-3

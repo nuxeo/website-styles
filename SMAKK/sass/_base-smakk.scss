@@ -52,10 +52,11 @@
     h3.smaller {
         @include primary-font-bold;
         @include smakk-fluid-type(37.5em, 80em, $h4-min, $h4-max);
-        margin-bottom: 20px
+        margin-bottom: 20px;
+        line-height: 1.2
     }
     p {
-        @include primary-font-bold;
+        @include primary-font-semibold;
         font-size: 1em;
         line-height: 24px;
     }
@@ -220,9 +221,16 @@
     .toggle__item--large {
         @include smakk-toggle-item(20px, 20px);
     }
+    
     //Navigation ON SMALL
     .nav-main__item {
         @include smakk-nav-links(#fff, 20px);
+    }
+    
+    .main-menu__logo {
+        max-width: 120px;
+        margin-right: $scale-3;
+        vertical-align: -webkit-baseline-middle;
     }
     ul.nav-main__submenu {
         right: 0;

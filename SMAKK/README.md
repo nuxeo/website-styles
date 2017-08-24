@@ -3,7 +3,6 @@
 - Float logos for large testimonials right
 - Install flexslider (replace orbit??)
 - Case studies
-- Mobile FAQ cards
 
 # Stuff Added
 
@@ -29,7 +28,7 @@ Modules, structures
 - Collapsing cards (plus/minus, challenge)
 - Padded cards series of 4, 3, 2
 - 'Crazy callouts'
-- Navigation (80%)
+- Navigation 
 
 # Built pages
 Requires server
@@ -47,6 +46,7 @@ Requires server
 ### Navigation
 - Menu
 - Dropdown Menu
+- Accordion menu
 - Responsive Menu
 - Top bar
 
