@@ -1,3 +1,8 @@
+//necessary for stickykit to work 
+.row {
+    background: #fff
+}
+
 div[data-include="menu-top"] {
     background: $c-blue;
     color: white;
