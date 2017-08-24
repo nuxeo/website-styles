@@ -1,60 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="no-js">
+
 <head>
-    <title>Nuxeo Components and Styles Demo</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organisms</title>
 
-    <!-- 0. Include a reset or normalise. -->
-    <link rel="stylesheet" href="/css/nuxeo_normalize.css" media="screen" title="no title">
-    <!-- <link rel="stylesheet" href="/SMAKK/style.css" media="screen" title="no title"> -->
+    <!-- UNCOMPRESSED CSS -->
+    <!-- <link rel="stylesheet" href="stylesheets/foundation.css" />
+    <link rel="stylesheet" href="/css/v2_styles.css" /> -->
+    <link rel="stylesheet" href="/css/nuxeo_normalize.css" />
 
-    <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-    <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js">
-    </script>
+    <!-- Javascript -->
+    <script srrc=""></script>
 
-    <!-- 2. Use an HTML Import to bring in some elements. -->
-    <!-- <link rel="import" href="/elements/header/header.html"> -->
-    <link rel="import" href="/elements/footer/footer.html">
 </head>
-<body>
-    <div class="row top-bar r-header">
-        <div class="small-12 columns">
 
-            <div class="top-bar" id="responsive-menu">
-                <div class="top-bar-left">
-                    <ul class="dropdown menu nav-main" data-dropdown-menu>
-                        <li class="menu-text">LOGO</li>
-                        <li class="nav-main__item has-submenu">
-                            <a href="#0">Why Nuxeo</a>
-                            <ul class="submenu menu vertical" data-submenu>
-                                <li><a href="#0">One</a></li>
-                                <li><a href="#0">Two</a></li>
-                                <li><a href="#0">Three</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-main__item"><a href="#0">Products</a></li>
-                        <li class="nav-main__item"><a href="#0">Integrations</a></li>
-                        <li class="nav-main__item"><a href="#0">Services</a></li>
-                        <li class="nav-main__item"><a href="#0">Customers</a></li>
-                        <li class="nav-main__item"><a href="#0">About</a></li>
-                        <li class="nav-main__item"><a href="#0">Learn</a></li>
-                    </ul>
-                </div>
-                <div class="top-bar-right">
-                    <ul class="menu">
-                        <li>Icon</li>
-                        <li>Icon</li>
-                        <li>Icon</li>
-                        <li><a type="button" class="button is-bg-blue">Request a Demo</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+<body>
+
+<div data-include="menu-top"></div>
 
     <div class="row r-main">
-        <div class="large-6 small-12 columns has-bg-image" style="background-image:url('/SMAKK/pngs/1000.jpg')">
+        <div class="large-6 small-12 columns has-bg-image" style="background-image:url('pngs/1000.jpg')">
         </div>
         <div class="large-6 small-12 columns c-checker is-blue is-bg-grey ">
             <div class="c-content">
@@ -73,7 +42,7 @@
                 <a href="#">Meet the Team</a>
             </div>
         </div>
-        <div class="large-6 small-12 columns has-bg-image" style="background-image:url('/SMAKK/pngs/1000.jpg')">
+        <div class="large-6 small-12 columns has-bg-image" style="background-image:url('pngs/1000.jpg')">
         </div>
     </div>
 
@@ -84,12 +53,12 @@
                 <p class="is-smaller">Nuxeo studios offers an extensive application design environment that will greatly reduce your developement times.Nuxeo studios offers an extensive application design environment that will greatly reduce your developement times.Nuxeo studios offers an extensive application design environment that will greatly reduce your developement times.</p>
             </div>
         </div>
-        <div class="large-6 small-12 columns has-bg-image" style="background-image:url('/SMAKK/pngs/1000.jpg')">
+        <div class="large-6 small-12 columns has-bg-image" style="background-image:url('pngs/1000.jpg')">
         </div>
     </div>
 
     <div class="row">
-        <div class="small-12 medium-12 large-6 columns has-bg-image" style="background-image:url('/SMAKK/pngs/1000.jpg')">
+        <div class="small-12 medium-12 large-6 columns has-bg-image" style="background-image:url('pngs/1000.jpg')">
 
         </div>
 
@@ -99,7 +68,7 @@
                     <li class="is-active orbit-slide">
                         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis id enim rutrum dictum eu sit amet ipsum. Nam blandit et massa sed eleifend. Ut sed posuere elit. Nunc vitae vehicula lectus. Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat. Maecenas et velit ultricies, semper libero ut, viverra magna."</p>
                         <a href="#">Show the full case study</a>
-                        <img src="/SMAKK/pngs/120.jpg" class="c-testimonials__logo" />
+                        <img src="pngs/120.jpg" class="c-testimonials__logo" />
                     </li>
                     <li class="orbit-slide">
                         <p>"Duis maximus ligula nisl, at luctus ipsum finibus eget. Morbi molestie arcu ut massa cursus, eget lacinia dui ultricies. Mauris sagittis leo bibendum neque finibus feugiat. Maecenas pulvinar erat tellus. Quisque tincidunt lobortis congue. Aliquam et tellus varius, cursus orci eget, varius leo. Curabitur vitae orci erat. "</p>
@@ -133,7 +102,7 @@
                     <li class="is-active orbit-slide is-bg-green is-blue">
                         <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis id enim rutrum dictum eu sit amet ipsum."</p>
 
-                        <img src="/SMAKK/pngs/120.jpg" class="c-testimonials__logo" />
+                        <img src="pngs/120.jpg" class="c-testimonials__logo" />
                     </li>
                     <li class="orbit-slide is-bg-purple">
                         <p>"Duis maximus ligula nisl, at luctus ipsum finibus eget. Morbi molestie arcu ut massa cursus, eget lacinia dui ultricies."</p>
@@ -155,7 +124,7 @@
         </div>
     </div>
 
-    <div class="row r-masthead has-bg-image" style="background-image:url('/SMAKK/pngs/600.jpg')">
+    <div class="row r-masthead has-bg-image" style="background-image:url('pngs/600.jpg')">
         <div class="large-12 columns">
 
         </div>
@@ -163,13 +132,13 @@
 
 
     <div class="row r-collapsing r-collapsing--challenge">
-        <div class="r-padded2 is-bg-purple  has-icon icon-plus">
+        <div class="padded3 is-bg-purple  has-icon icon-plus">
             <div class="large-12 columns">
                 <span class="p underlined superhead">Challenge</span>
                 <h2 class="c-collapsing__title" data-tab="1a">Existing ECM or DAM systems are expensive to manage and maintain</h2>
             </div>
         </div>
-        <div class="r-collapsing__panel r-padded2 has-icon icon-minus is-bg-grey" data-tab="1a">
+        <div class="r-collapsing__panel padded3 has-icon icon-minus is-bg-grey" data-tab="1a">
             <div class="row is-green" style="position: relative">
                 <span class="p underlined superhead">Solution</span>
                 <h2 class="c-title is-blue">Our Cloud-native Platform</h2>
@@ -248,7 +217,7 @@
         </div>
     </div>
 
-    <div class="row r-cards r-cards--spaced">
+    <div class="row r-cards r-cards--spaced spaced-by-4">
         <div class="small-12 medium-6 large-3 columns is-bg-orange has-icon icon-arrow">
             <h4>A Large Block of Text is link</h4>
 
@@ -268,7 +237,7 @@
         <div class="small-12 large-7">
             <p class="underlined is-green">Challenge</p>
             <p class="challenge__text is-blue">Existing ECM or DAM systems are expensive to manage and maintain</p>
-            <img src="/SMAKK/pngs/1000.jpg" />
+            <img src="pngs/1000.jpg" />
         </div>
         <div class="small-12 large-6 c-challenge is-bg-white">
 
@@ -279,7 +248,7 @@
         </div>
     </div>
 
-    <div class="row r-padded is-blue is-bg-white">
+    <div class="row padded is-blue is-bg-white">
         <div class="small-12 columns">
             <h2>Advantages</h2>
         </div>
@@ -357,7 +326,7 @@
             </div>
     </div>
 
-    <div class="row r-padded is-bg-white">
+    <div class="row padded is-bg-white">
         <div class="small-12 large-6 columns is-blue">
             <h2>Meet Our Customers</h2>
             <p class="is-bigger">Our customers across intustries build content management applications that help then gain efficiency and market share.</p>
@@ -395,7 +364,7 @@
             </div>
     </div>
 
-    <div class="row is-bg-white r-padded0">
+    <div class="row is-bg-white paddedt0">
         <div class="small-12 large-6 is-blue c-checker">
            <div class="c-content">
             <h2>Explore Some More</h2>
@@ -403,7 +372,7 @@
             </div>
         </div>
         <div class="small-12 large-6 columns">
-           <div class="row r-cards r-cards--spaced">
+           <div class="row r-cards r-cards--spaced spaced-by-2">
                <div class="small-12 large-6 columns has-icon icon-arrow is-bg-green">
                    <h4>Our Products</h4>
                </div>
@@ -426,6 +395,26 @@
         </div>
     </div>
 
+    <div class="row r-crazycallout">
+        <div class="small-12 columns c-crazycallout__bgimage" style="background-image: url(pngs/1000.jpg)"></div>
+        <div class="small-12 medium-8 large-5 columns c-crazycallout__box on-right is-bg-green is-blue">
+            <h2>Adobe Creative Suite</h2>
+            <p>Creative professionals can easily search, retrieve, and work with imaes stored in the Nuxeo platform from within Adobe creative appplication of their choice (Photoshop, InDesign, or Illustrator).</p>
+            <blockquote class="is-white is-smaller">
+               It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'.
+                <cite>Jenne Harris<br/>CEO DEsign Studios</cite>
+            </blockquote>
+        </div>
+    </div>
+
+    <div class="row r-crazycallout">
+        <div class="small-12 columns c-crazycallout__bgimage" style="background-image: url(pngs/1000.jpg)"></div>
+        <div class="small-12 medium-8 large-5 columns c-crazycallout__box on-left is-bg-purple is-green">
+            <h2>Google Vision</h2>
+            <p>Creative professionals can easily search, retrieve, and work with imaes stored in the Nuxeo platform from within Adobe creative appplication of their choice (Photoshop, InDesign, or Illustrator).</p>
+        </div>
+    </div>
+
     <div class="row">
         <div class="small-12 columns">
             <ul class="integrations is-blue toggle">
@@ -443,41 +432,16 @@
     </div>
 
 
-    <div class="row r-masthead is-bg-navy is-green">
-        <div class="large-8 small-12 columns c-checker">
-            <div class="c-content">
-                <h2>Have any more qestions?</h2>
-                <button class="button--callout">Download Nuxeo Platform</button> <button class="button--ghost">Email Us</button>
-            </div>
-        </div>
-        <div class="large-4 columns show-for-large">
-        </div>
-    </div>
-    <div class="row r-thin is-bg-aqua">
-        <div class="small-12 large-2 columns  display-flex">
-            <div class="c-content">
-                Nuxeo for:
-            </div>
-        </div>
-        <div class="small-12 large-10 columns display-flex">
-            <div class="c-content">
-                <a class="button is-bg-blue">Government</a><a class="button is-bg-blue">Financial Services</a><a class="button is-bg-blue">Media &amp; Entertainment</a>
-            </div>
-        </div>
-    </div>
+   <div data-include="footer-top"></div>
 
-    <nuxeo-footer year="2017"></nuxeo-footer>
-    <!-- Shouldn't need but included for completeness -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/what-input/4.3.1/what-input.min.js" integrity="sha256-fiTIY/rb1/SIs/7gB+2nr6Q10ZRKy/6NiV33O4+hmNE=" crossorigin="anonymous"></script> -->
-    <script src="/SMAKK/js/vendor/jquery.js"></script>
-    <script src="/SMAKK/js/vendor/what-input.js"></script>
-    <script src="/SMAKK/js/vendor/foundation.js"></script>
-    <script src="/SMAKK/js/svg4everybody.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
 
-   <!-- show and hide plus/minus cards -->
+
+    <!-- show and hide plus/minus cards -->
     <script>
-        $(document).foundation();
         $(function() {
             $(".c-collapsing__title").click(function(e) {
                 e.preventDefault();
@@ -493,5 +457,17 @@
         });
 
     </script>
+
+    <script>
+        $(function() {
+            var includes = $('[data-include]');
+            jQuery.each(includes, function() {
+                var file = 'organisms/' + $(this).data('include') + '.html';
+                $(this).load(file);
+            });
+        });
+
+    </script>
 </body>
+
 </html>
