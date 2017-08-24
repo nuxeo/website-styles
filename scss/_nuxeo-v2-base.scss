@@ -1,4 +1,4 @@
-// Nuxeo Base styling
+// Settings
 @import 'settings';
 
 // Nuxeo Mixins
@@ -18,12 +18,21 @@
 // Foundation base
 @import 'foundation';
 
+// SMAKK
+@import 'variables-smakk';
+@import 'mixins-smakk';
+@import 'structures';
+@import 'base-smakk';
+@import 'utilities';
+
 // Optional components that can be included outside of nuxeo-base-styles
 @import 'components/codeblock';
 
 @mixin nuxeo-base-styles {
-  // We could include settings and the base Foundation styles here
-  * {
-    font-family: $nuxeo-font-family;
-  }
+  $flex: true;
+  @include foundation-everything;
+
+  @include smakk-structures;
+  @include smakk-base;
+  @include smakk-utilities;
 }
