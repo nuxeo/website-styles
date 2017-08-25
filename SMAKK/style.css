@@ -5,31 +5,29 @@
   background: #fff;
 }
 
-/* line 7, sass/_shame.scss */
-a:link, a:visited {
-  border-bottom: 2px solid transparent;
-  text-decoration: none !important;
-  color: inherit;
-}
-/* line 12, sass/_shame.scss */
-.is-blue a:link, .is-blue a:visited {
-  border-bottom: 2px solid #73d2cf;
-}
-/* line 14, sass/_shame.scss */
-.is-blue a:link:hover, .is-blue a:visited:hover {
-  border-bottom: 2px solid #0067FF;
-}
-/* line 19, sass/_shame.scss */
-.is-bg-green a:link:hover, .is-bg-green a:visited:hover {
-  border-bottom: 2px solid #0067FF;
-}
-
-/* line 24, sass/_shame.scss */
-a:hover {
-  color: inherit;
-  border-bottom: 2px solid #73d2cf;
-}
-
+/*
+    a:link,a:visited
+    {
+        border-bottom: 2px solid transparent;
+        text-decoration: none !important;
+        color: inherit;
+        .is-blue & {
+            border-bottom: 2px solid $c-green;
+            &:hover {
+                border-bottom: 2px solid $c-blue;
+            }
+        }
+      .is-bg-green & {
+            &:hover {
+                border-bottom: 2px solid $c-blue;
+            }
+        }
+    }
+    a:hover {
+        color: inherit;
+        border-bottom: 2px solid $c-green;
+    }
+*/
 /* line 30, sass/_shame.scss */
 div[data-include="menu-top"] {
   background: #0067FF;
@@ -779,7 +777,7 @@ blockquote:after {
 /* line 84, sass/_base-smakk.scss */
 a,
 a:link, a:visited {
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid;
   text-decoration: none !important;
   color: inherit;
 }
