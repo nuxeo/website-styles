@@ -1,5 +1,8 @@
 // Settings
-@import 'settings';
+// @import 'settings';
+// Fonts
+$OpenSansPath: '//www.nuxeo.com/assets/fonts' !default;
+$OpenSansVersion: '1.1.0' !default;
 
 // Nuxeo Mixins
 @import 'nuxeo-mixins';
@@ -16,7 +19,7 @@
 @import 'ExtraBoldItalic';
 
 // Foundation base
-@import 'foundation';
+// @import 'foundation';
 
 // SMAKK
 @import 'variables-smakk';
@@ -24,14 +27,17 @@
 @import 'structures';
 @import 'base-smakk';
 @import 'utilities';
+@import 'shame';
+
 
 // Optional components that can be included outside of nuxeo-base-styles
-@import 'components/codeblock';
+// @import 'components/codeblock';
 
 @mixin nuxeo-base-styles {
   $flex: true;
-  @include foundation-everything;
+  // @include foundation-everything;
 
+  @include smakk-shame;
   @include smakk-structures;
   @include smakk-base;
   @include smakk-utilities;

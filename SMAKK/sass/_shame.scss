@@ -1,3 +1,4 @@
+@mixin smakk-shame {
 //necessary for stickykit to work 
 .row {
     background: #fff
@@ -102,3 +103,4 @@ screen and (min-width: 64em) {
 .orbit-bullets button.is-active {		
     background-color: inherit;		
 }
+  }
