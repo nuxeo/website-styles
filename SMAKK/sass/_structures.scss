@@ -7,11 +7,6 @@
     }
     .r-cards {
         font-size: 75%;
-        a,
-        a:link,
-        a:hover {
-            border: 0 !important
-        }
     }
     .r-100vh {
         height: 100vh
@@ -86,7 +81,7 @@
         }
         .r-collapsing & {
             a:link {
-                border: 0;
+                text-decoration: none;
             }
         }
         .r-collapsing__panel & {
@@ -123,7 +118,7 @@
         @extend .h4;
         word-break: break-all;
         &:link {
-            border: 0
+            text-decoration: none
         }
     }
     .c-collapsing {
@@ -206,7 +201,7 @@
         margin-top: $scale-3;
     }
     .r-crazycallout {
-        
+
     }
     .c-crazycallout__blank {
 
@@ -219,7 +214,7 @@
         padding: $scale-1 $scale-3;
         @include smakk-breakpoint(medium) {
             position: absolute;
-            top: 10%;   
+            top: 10%;
             padding: $scale-6;
             &.on-right {
                 right: 10%
@@ -269,5 +264,5 @@
         pointer-events: all;
         cursor: pointer;
     }
-   
+
 }

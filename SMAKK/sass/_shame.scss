@@ -4,6 +4,30 @@
     background: #fff
   }
 
+  a,
+    a:link,a:visited
+    {
+        border-bottom: 2px solid transparent;
+        text-decoration: none !important;
+        color: inherit;
+        .is-blue & {
+            border-bottom: 2px solid $c-green;
+            &:hover {
+                border-bottom: 2px solid $c-blue;
+            }
+        }
+      .is-bg-green & {
+            &:hover {
+                border-bottom: 2px solid $c-blue;
+            }
+        }
+    }
+    a:hover {
+        color: inherit;
+        border-bottom: 2px solid $c-green;
+    }
+
+
   div[data-include="menu-top"] {
     background: $c-blue;
     color: white;

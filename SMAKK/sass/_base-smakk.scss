@@ -82,9 +82,10 @@
         }
     }
     a,
-    a:link {
+    a:link,a:visited
+    {
         border-bottom: 2px solid;
-        text-decoration: none;
+        text-decoration: none !important;
         color: inherit;
         .is-blue & {
             border-bottom: 2px solid $c-green;
@@ -102,6 +103,14 @@
         color: inherit;
         border-bottom: 2px solid $c-green;
     }
+  a.h1, a.h2, a.h3, a.h4 {
+    border-bottom: 0;
+    &:hover {
+       border-bottom: 0 !important;
+    }
+  }
+
+
     //Forms , inputs buttons
     label {
         color: $c-green;
@@ -221,12 +230,12 @@
     .toggle__item--large {
         @include smakk-toggle-item(20px, 20px);
     }
-    
+
     //Navigation ON SMALL
     .nav-main__item {
         @include smakk-nav-links(#fff, 20px);
     }
-    
+
     .main-menu__logo {
         max-width: 120px;
         margin-right: $scale-3;
@@ -245,7 +254,7 @@
     }
     .nav-main__subitem__text a {
         display: none;
-        
+
     }
     //NAV ON LARGE
     @include smakk-breakpoint(large) {
