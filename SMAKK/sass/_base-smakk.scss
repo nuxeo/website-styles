@@ -103,6 +103,12 @@
         color: inherit;
         border-bottom: 2px solid $c-green;
     }
+  a.button {
+   border: 1px transparent;
+    &:hover {
+      border: 1px transparent
+    }
+  }
   a.h1, a.h2, a.h3, a.h4 {
     border-bottom: 0;
     &:hover {

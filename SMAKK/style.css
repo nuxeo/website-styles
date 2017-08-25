@@ -804,15 +804,24 @@ a:hover {
 }
 
 /* line 106, sass/_base-smakk.scss */
+a.button {
+  border: 1px transparent;
+}
+/* line 108, sass/_base-smakk.scss */
+a.button:hover {
+  border: 1px transparent;
+}
+
+/* line 112, sass/_base-smakk.scss */
 a.h1, a.h2, a.h3, a.h4, a.c-card__title {
   border-bottom: 0;
 }
-/* line 108, sass/_base-smakk.scss */
+/* line 114, sass/_base-smakk.scss */
 a.h1:hover, a.h2:hover, a.h3:hover, a.h4:hover, a.c-card__title:hover {
   border-bottom: 0 !important;
 }
 
-/* line 115, sass/_base-smakk.scss */
+/* line 121, sass/_base-smakk.scss */
 label {
   color: #73d2cf;
   font-family: "Open Sans", "Arial", sans-serif;
@@ -820,7 +829,7 @@ label {
   display: block;
 }
 
-/* line 120, sass/_base-smakk.scss */
+/* line 126, sass/_base-smakk.scss */
 input:not([type="submit"]),
 select,
 textarea {
@@ -836,7 +845,7 @@ textarea {
   padding: 2px;
   background: transparent;
 }
-/* line 133, sass/_base-smakk.scss */
+/* line 139, sass/_base-smakk.scss */
 input:not([type="submit"])::placeholder,
 input:not([type="submit"]) option,
 input:not([type="submit"]) label,
@@ -851,17 +860,17 @@ textarea label {
   font-weight: 600;
 }
 
-/* line 140, sass/_base-smakk.scss */
+/* line 146, sass/_base-smakk.scss */
 .select--styled {
   position: relative;
 }
-/* line 142, sass/_base-smakk.scss */
+/* line 148, sass/_base-smakk.scss */
 .select--styled select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
-/* line 147, sass/_base-smakk.scss */
+/* line 153, sass/_base-smakk.scss */
 .select--styled:after {
   content: '';
   position: absolute;
@@ -876,14 +885,14 @@ textarea label {
   pointer-events: none;
 }
 
-/* line 161, sass/_base-smakk.scss */
+/* line 167, sass/_base-smakk.scss */
 input[type='radio'],
 input[type='checkbox'] {
   width: auto;
   margin-top: 0.75em;
 }
 
-/* line 166, sass/_base-smakk.scss */
+/* line 172, sass/_base-smakk.scss */
 input[type="checkbox"] + label,
 input[type="radio"] + label {
   display: inline-block;
@@ -893,13 +902,13 @@ input[type="radio"] + label {
   vertical-align: baseline;
 }
 
-/* line 174, sass/_base-smakk.scss */
+/* line 180, sass/_base-smakk.scss */
 input[type='submit'] {
   width: auto;
   border: 0;
 }
 
-/* line 179, sass/_base-smakk.scss */
+/* line 185, sass/_base-smakk.scss */
 button,
 .button,
 input[type='submit'] {
@@ -922,7 +931,7 @@ input[type='submit'] {
   color: #fff;
   transition: all 300ms ease-out;
 }
-/* line 198, sass/_base-smakk.scss */
+/* line 204, sass/_base-smakk.scss */
 button:hover,
 .button:hover,
 input[type='submit']:hover {
@@ -931,33 +940,33 @@ input[type='submit']:hover {
   border: 1px solid #0067FF;
 }
 
-/* line 204, sass/_base-smakk.scss */
+/* line 210, sass/_base-smakk.scss */
 .button--ghost {
   border: 1px solid #fff !important;
   background: transparent;
 }
 
-/* line 208, sass/_base-smakk.scss */
+/* line 214, sass/_base-smakk.scss */
 .button--callout {
   background: #fff;
   color: #0067FF !important;
   border: 1px solid #fff !important;
 }
-/* line 212, sass/_base-smakk.scss */
+/* line 218, sass/_base-smakk.scss */
 .button--callout:hover {
   background: #0067FF;
   color: white !important;
   border: 1px solid #0067FF !important;
 }
 
-/* line 219, sass/_base-smakk.scss */
+/* line 225, sass/_base-smakk.scss */
 .icon {
   width: 80px;
   height: 100px;
   fill: black;
 }
 
-/* line 225, sass/_base-smakk.scss */
+/* line 231, sass/_base-smakk.scss */
 button.toggle__item,
 .toggle__item {
   list-style-type: none;
@@ -990,7 +999,7 @@ button.toggle__item:hover.is-blue, button.toggle__item.is-active.is-blue,
   background-color: #0067FF;
 }
 
-/* line 231, sass/_base-smakk.scss */
+/* line 237, sass/_base-smakk.scss */
 .toggle__item--large {
   width: 20px;
   height: 20px;
@@ -1011,7 +1020,7 @@ button.toggle__item:hover.is-blue, button.toggle__item.is-active.is-blue,
   background-color: #0067FF;
 }
 
-/* line 236, sass/_base-smakk.scss */
+/* line 242, sass/_base-smakk.scss */
 .nav-main__item {
   color: #fff;
   font-size: 20px;
@@ -1027,14 +1036,14 @@ button.toggle__item:hover.is-blue, button.toggle__item.is-active.is-blue,
   border-bottom: none;
 }
 
-/* line 240, sass/_base-smakk.scss */
+/* line 246, sass/_base-smakk.scss */
 .main-menu__logo {
   max-width: 120px;
   margin-right: 1.777em;
   vertical-align: -webkit-baseline-middle;
 }
 
-/* line 245, sass/_base-smakk.scss */
+/* line 251, sass/_base-smakk.scss */
 ul.nav-main__submenu {
   right: 0;
   background: #0067FF;
@@ -1044,18 +1053,18 @@ ul.nav-main__submenu {
   flex-wrap: wrap;
 }
 
-/* line 253, sass/_base-smakk.scss */
+/* line 259, sass/_base-smakk.scss */
 .nav-main__subitem__text {
   display: none;
 }
 
-/* line 256, sass/_base-smakk.scss */
+/* line 262, sass/_base-smakk.scss */
 .nav-main__subitem__text a {
   display: none;
 }
 
 @media (min-width: 64em) {
-  /* line 262, sass/_base-smakk.scss */
+  /* line 268, sass/_base-smakk.scss */
   .nav-main__item {
     color: #0067FF;
     font-size: 16px;
@@ -1071,13 +1080,13 @@ ul.nav-main__submenu {
     border-bottom: none;
   }
 
-  /* line 265, sass/_base-smakk.scss */
+  /* line 271, sass/_base-smakk.scss */
   .nav-main__subitem {
     padding: 2.369em;
     max-width: 50%;
   }
 
-  /* line 269, sass/_base-smakk.scss */
+  /* line 275, sass/_base-smakk.scss */
   a.nav-main__subitem__title {
     color: #73d2cf;
     font-size: 2.369em;
@@ -1085,7 +1094,7 @@ ul.nav-main__submenu {
     font-weight: 700;
   }
 
-  /* line 275, sass/_base-smakk.scss */
+  /* line 281, sass/_base-smakk.scss */
   .nav-main__subitem__text {
     color: #fff;
     display: block;
@@ -1093,7 +1102,7 @@ ul.nav-main__submenu {
     margin: 1em 0;
   }
 
-  /* line 281, sass/_base-smakk.scss */
+  /* line 287, sass/_base-smakk.scss */
   .nav-main__subitem__text a {
     display: inline-block;
     margin-top: 0.75em;
@@ -1112,7 +1121,7 @@ ul.nav-main__submenu {
     border-bottom: none;
   }
 }
-/* line 288, sass/_base-smakk.scss */
+/* line 294, sass/_base-smakk.scss */
 .nav-footer {
   list-style-type: none;
   display: inline-block;
@@ -1120,7 +1129,7 @@ ul.nav-main__submenu {
   padding: 0;
 }
 
-/* line 291, sass/_base-smakk.scss */
+/* line 297, sass/_base-smakk.scss */
 .nav-footer__item {
   color: #1F28BF;
   font-size: 0.75em;
