@@ -84,7 +84,7 @@
     a,
     a:link,a:visited
     {
-        border-bottom: 2px solid;
+        border-bottom: 2px solid transparent;
         text-decoration: none !important;
         color: inherit;
         .is-blue & {
@@ -201,17 +201,18 @@
             border: 1px solid $c-blue;
         }
     }
-    .button--ghost {
-        @include smakk-borders(1px, solid, #fff);
+    .button--ghost {;
+      border: 1px solid #fff !important;
         background: rgba(0, 0, 0, 0);
     }
     .button--callout {
         background: #fff;
-        color: $c-blue;
+        color: $c-blue  !important;
+      border: 1px solid #fff !important;
         &:hover {
             background: $c-blue;
-            color: white;
-            border: 1px solid $c-blue;
+            color: white !important;
+            border: 1px solid $c-blue !important;
         }
     }
     //svg icons
