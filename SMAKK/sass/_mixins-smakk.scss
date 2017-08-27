@@ -84,10 +84,10 @@ $mod_2: 1;
 $h1-min: $mod_1 * $scale-7;
 $h1-max: $mod_2 * $scale-7;
 
-$h2-min: $mod_1 * $scale-6;
+$h2-min: $mod_1 * $scale-7;
 $h2-max: $mod_2 * $scale-6;
 
-$h3-min: $mod_1 * $scale-5;
+$h3-min: $mod_1 * $scale-6;
 $h3-max: $mod_2 * $scale-5;
 
 $h4-min: $mod_1 * $scale-5;
@@ -176,6 +176,7 @@ $toggle-colors: ( is-green: $c-green, is-white: #fff, is-blue: $c-blue) !default
         $value in map-remove($toggle-colors, default) {
             &.#{$color} {
                 background-color: $value;
+              border-color: $value
             }
         }
     }

@@ -52,8 +52,8 @@
 
   //Padded light top and bottom
   .paddedt0 {
-    padding-top: $scale-2;
-    padding-bottom: $scale-2
+    padding-top: $scale-2 !important;
+    padding-bottom: $scale-2 !important
   }
 
   //padded medium top and bottom
@@ -104,6 +104,7 @@
       position: relative;
       margin: 0;
       margin-bottom: 3em;
+      font-size: 14px
     }
     &:after {
       content: '';
@@ -293,6 +294,8 @@
 
   .has-icon {
     position: relative;
+    pointer-events: all;
+    cursor: pointer;
     &.icon-plus {
       &:after {
         content: '+';
@@ -317,16 +320,19 @@
     }
     &.icon-arrow {
       &:after {
-        content: '➡';
+        content: '';
+        background-image: url(/pngs/arrow.png);
         color: #fff;
+        height: 30px;
+        width: 30px;
+        background-size: contain;
         position: absolute;
-        right: 35px;
-        bottom: 10px;
+          right: 30px;
+        bottom: 22px;
         font-size: $scale-5
       }
       &.down {
         &:after {
-          content: '➧';
           transform: rotate(90deg);
             font-size: $scale-3;
             @include smakk-breakpoint(large){
