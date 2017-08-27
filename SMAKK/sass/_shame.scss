@@ -1,33 +1,8 @@
 @mixin smakk-shame {
-  //necessary for stickykit to work
-  .row {
-    background: #fff
-  }
-/*
-    a:link,a:visited
-    {
-        border-bottom: 2px solid transparent;
-        text-decoration: none !important;
-        color: inherit;
-        .is-blue & {
-            border-bottom: 2px solid $c-green;
-            &:hover {
-                border-bottom: 2px solid $c-blue;
-            }
-        }
-      .is-bg-green & {
-            &:hover {
-                border-bottom: 2px solid $c-blue;
-            }
-        }
-    }
-    a:hover {
-        color: inherit;
-        border-bottom: 2px solid $c-green;
-    }
-*/
-
-  div[data-include="menu-top"] {
+.row {
+  max-width: 1800px;
+}
+  #menu-top {
     background: $c-blue;
     color: white;
     padding: $scale-0 $scale-1;
@@ -46,6 +21,8 @@
   .top-bar,
   .top-bar ul {
     background-color: transparent;
+    width: 100%;
+    align-items: center;
   }
   .top-bar-right .button {
     margin: 0
@@ -67,6 +44,9 @@
   .menu .nav-main {
     position: relative
   }
+
+  .menu a, .menu .button {margin: .3em 0;}
+
 
   .is-dropdown-submenu {
     border: none
@@ -112,7 +92,7 @@
     }
 
     .orbit-bullets {
-      float: right;
+      float: left;
       display: inline-block
     }
     .orbit-bullets button {
@@ -127,3 +107,39 @@
       background-color: inherit;
     }
   }
+
+    .orbit-slide {
+      padding: $scale-2;
+      @include smakk-breakpoint(large) {
+        padding: $scale-6;
+      }
+    }
+.tabs {
+  background: transparent;
+  border: 0
+}
+.tabs-title {
+  @extend .integrations__item;
+  > a,a:link {
+    padding: 0;
+    opacity: .7;
+    font-size: initial;
+    display:  inline-block;
+    border-bottom: 2px solid transparent;
+    &[aria-selected='true'],
+    &:hover{
+      opacity: 1;
+      background: transparent;
+      color: $c-blue !important;
+      border-bottom: 2px solid $c-green;
+    }
+  }
+}
+
+.tabs-panel {
+  padding: 0
+}
+.tabs-content {
+  color: inherit;
+  border: 0
+}

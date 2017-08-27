@@ -1,268 +1,334 @@
 @mixin smakk-structures {
-    //General card and row styles
-    //r- for row
-    //c- for column/card
-    .row {
-        position: relative
+  //General card and row styles
+  //r- for row
+  //c- for column/card
+  .row {
+    position: relative;
+    background: #fff
+  }
+  .r-cards {
+    font-size: .9rem;
+  }
+  .r-collapsing__panel {
+    display: none;
+    width: 100%;
+    @include smakk-breakpoint(large) {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
     }
-    .r-cards {
-        font-size: 75%;
+    p {
+      font-size: 18px;
+      @include smakk-breakpoint(large) {
+        font-size: 20px;
+      }
     }
-    .r-100vh {
-        height: 100vh
+    .r-collapsing--challenge & {
+      position: relative;
+      @include smakk-breakpoint(large) {
+        position: absolute
+      }
     }
-    .r-collapsing__panel {
-        display: none;
-        width: 100%;
-        @include smakk-breakpoint(large) {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-        }
-        p {
-            font-size: 18px;
-            @include smakk-breakpoint(large) {
-            font-size: 20px;
-            }
-        }
-        .r-collapsing--challenge & {
-            position: relative;
-            @include smakk-breakpoint(large) {
-                position: absolute
-            }
-        }
+  }
+  .r-challenge2 {
+    min-height: 100vh;
+    padding: $scale-3;
+    @include smakk-breakpoint(large) {
+      padding: $scale-8
     }
-    .columns {
-        .r-main & {
-            min-height: $height-reg;
-        }
-        .r-masthead & {
-            min-height: $height-xsm;
-            @include smakk-breakpoint(large) {
-                min-height: $height-sm;
-            }
-        }
-        .r-thin & {
-            min-height: 150px
-        }
-        .r-header & {
-            align-items: center
-        }
-        .r-cards & {
-            padding: $scale-1;
-            min-height: 70px;
-            @include smakk-breakpoint(large) {
-                min-height: 300px;
-                max-height: 400px
-            }
-        }
-        .r-cards--spaced & {
-            @include smakk-box-shadow();
-            margin: 10px;
-            max-width: calc(50% - 20px);
-        }
-        .spaced-by-4 & {
-            @include smakk-breakpoint(large) {
-                max-width: calc(25% - 20px);
-            }
-        }
-        .spaced-by-3 & {
-            @include smakk-breakpoint(large) {
-                max-width: calc(33.3333% - 20px);
-            }
-        }
-        .spaced-by-2 & {
-            min-height: 100px;
-            @include smakk-breakpoint(large) {
-                min-height: 250px;
-                max-height: 400px
-            }
-        }
-        .r-collapsing & {
-            a:link {
-                text-decoration: none;
-            }
-        }
-        .r-collapsing__panel & {
-            //padding: 0 !important
-        }
-        .r-casestudies & {
-            margin-bottom: 30px;
-            padding-bottom: 10px;
-        }
+  }
+  .r-challenge2.solution {
+    z-index: 100
+  }
+  .columns {
+    .r-main & {
+      min-height: $height-reg;
     }
-    .c-checker {
-        @include smakk-display-flex();
-        padding: $scale-1;
-        .r-main & {
-            min-height: $height-sm
+    .r-high & {
+      min-height: $height-hi
+    }
+    .r-100vh & {
+      min-height: 100vh
+    }
+    .r-masthead & {
+      min-height: $height-xsm;
+      @include smakk-breakpoint(large) {
+        min-height: $height-sm;
+      }
+    }
+    .r-thin & {
+      min-height: 150px;
+      padding-top: $scale-3;
+      padding-bottom: $scale-3
+    }
+    .r-header & {
+      align-items: center
+    }
+    .r-cards & {
+      padding: $scale-2;
+      min-height: 100px;
+      @include smakk-breakpoint(large) {
+        padding: $scale-4 $scale-2;
+        min-height: 300px;
+        max-height: 400px
+      }
+      .r-form & {
+        padding: $scale-1 !important
+      }
+    }
+    .r-cards--spaced & {
+      @include smakk-box-shadow();
+      margin: 10px;
+      max-width: calc(50% - 20px);
+    }
+    .spaced-by-4 & {
+      @include smakk-breakpoint(large) {
+        max-width: calc(25% - 20px);
+      }
+    }
+    .spaced-by-3 & {
+      @include smakk-breakpoint(large) {
+        max-width: calc(33.3333% - 20px);
+      }
+    }
+    .spaced-by-2 & {
+      min-height: 150px;
+      @include smakk-breakpoint(large) {
+        min-height: 250px;
+        max-height: 400px
+      }
+    }
+    .r-collapsing & {
+      a:link {
+        text-decoration: none;
+      }
+    }
+    .r-collapsing__panel & {
+      .r-cards & {
+        padding-top: 50px
+      }
+    }
+    .r-casestudies & {
+      margin-bottom: 30px;
+      padding: $scale-4;
+      padding-bottom: 10px;
+      position: relative
+    }
+  }
+  .c-checker {
+    @include smakk-display-flex();
+    padding: $scale-4;
+    @include smakk-breakpoint(large) {
+      padding: $scale-8;
+      .r-main & {
+        min-height: $height-reg
+      }
+    }
+    .r-main & {
+      min-height: $height-sm
+    }
+    .r-thin & {
+      padding: $scale-4
+    }
+  }
+  .c-checker--small {
+    @include smakk-breakpoint(large) {
+      padding: $scale-4;
+    }
+  }
+  .c-content {
+    margin: auto; //Wrap around content inside a c-checker col to vertically align
+    position: relative
+  }
+  .c-title {
+    padding-top: $scale-5 !important;
+  }
+  .c-card__title {
+    @extend .h4;
+    word-break: break-all;
+    &:link {
+      text-decoration: none
+    }
+  }
+  .c-collapsing {
+    position: relative;
+    .r-cards & {
+      @include smakk-display-flex
+    }
+  }
+  .c-collapsing__title {
+    cursor: pointer;
+    pointer-events: all;
+    margin-top: auto;
+    margin-bottom: auto
+  }
+  //SPECIAL LAYOUTS
+  .r-header {
+    border-bottom: 2px solid $c-navy;
+  }
+  .r-challenge {
+    padding-top: $scale-5;
+    picture>img {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      max-width: none
+    }
+    @include smakk-breakpoint(large) {
+      padding-bottom: 250px;
+       picture>img {
+         margin: auto;
+         position: static;
+         left: auto;
+         right: auto;
+         width: 100%
+      }
+      &:last-of-type~* {
+        padding-top: 40px
+      }
+    }
+  }
+  .c-challenge,
+  .c-solution {
+    padding: $scale-2;
+    @include smakk-breakpoint(large) {
+      @include smakk-display-flex(column);
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+      justify-content: center;
+      min-height: 750px;
+      position: absolute;
+      right: 10%;
+      top: 20%;
+      padding: $scale-6;
+      &.left {
+        left: 8%;
+        right: auto;
+      }
+    }
+  }
+  .challenge__img {
+    max-height: 250px;
+    @include smakk-breakpoint(large) {
+      height: auto
+    }
+  }
+  .challenge__text {
+    margin-top: $scale-5;
+    max-width: 80%;
+    font-size: $scale-2;
+    line-height: 1.2;
+    @include primary-font-bold;
+    @include smakk-breakpoint(large) {
+      max-width: 400px;
+      font-size: 18px
+    }
+  }
+    .casestudies__text {
+      padding: 30px;
+  }
+  .c-testimonials {
+    padding: $scale-1;
+    @include smakk-breakpoint(large) {
+      padding: $scale-6;
+    }
+  }
+  .c-testimonials__text {
+    font-size: $scale-3;
+    line-height: 1.2;
+    @include smakk-breakpoint(large) {
+      font-size: $scale-5;
+      line-height: 1.1
+    }
+  }
+  .c-testimontials__link {
+    float: right;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .c-testimonials__logo {
+    display: block;
+    margin-top: $scale-3;
+    margin-left: auto
+  }
+  .c-crazycallout__blank {}
+  .c-crazycallout__bgimage {
+    @include smakk-background-cover();
+    min-height: 50vh;
+  }
+  .c-crazycallout__box {
+    padding: $scale-1 $scale-3;
+    @include smakk-breakpoint(medium) {
+      position: absolute;
+      top: 10%;
+      padding: $scale-6;
+      &.on-right {
+        right: 10%
+      }
+      &.on-left {
+        left: 10%
+      }
+    }
+  }
+  .r-learn {
+    padding: $scale-3;
+    .columns:last-child {
+      border-bottom: 3px solid $c-blue
+    }
+    @include smakk-breakpoint(large) {
+      padding: $scale-3 $scale-7 $scale-5;
+      .columns {
+        border-bottom: 3px solid $c-blue;
+        &:first-child {
+          @include smakk-display-flex(column);
+          justify-content: center
         }
-        @include smakk-breakpoint(large) {
-            padding: $scale-7;
-            .r-main & {
-                min-height: $height-reg
-            }
-        }
+      }
     }
-    .c-checker--small {
-        @include smakk-breakpoint(large) {
-            padding: $scale-4;
-        }
-    }
-    .c-content {
-        margin: auto; //Wrap around content inside a c-checker col to vertically align
-        position: relative
-    }
-    .c-card__title {
-        @extend .h4;
-        word-break: break-all;
-        &:link {
-            text-decoration: none
-        }
-    }
-    .c-collapsing {
-        position: relative;
-        .r-cards &{
-            @include smakk-display-flex
-        }
-    }
-    .c-collapsing__title {
-        cursor: pointer;
-        pointer-events: all;
-        margin-top: auto;
-        margin-bottom: auto
-    }
-    //SPECIAL LAYOUTS
-    .r-header {
-        border-bottom: 2px solid $c-navy;
-    }
-    .r-challenge {
-        padding: $scale-2;
-        @include smakk-breakpoint(large) {
-            padding: $scale-7
-        }
-    }
-    .c-challenge {
-        padding: $scale-2;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
-        @include smakk-breakpoint(large) {
-            padding: $scale-5 $scale-6;
-            position: absolute;
-            right: 0;
-        }
-    }
-    .challenge__text {
-        margin-top: $scale-5;
-        max-width: 400px
-    }
-    .r-casestudies {
-        .casestudies__text {
-            padding: 30px
-        }
-    }
-    .c-testimonials {
-        padding: $scale-1;
-        @include smakk-breakpoint(large) {
-            padding: $scale-6;
-            p {
-                font-size: 120%;
-                line-height: 32px;
-                margin-top: 0;
-            }
-        }
-    }
-    .c-testimonials--texty {
-        p {
-            font-size: $scale-3;
-            line-height: 1.2;
-            @include smakk-breakpoint(large) {
-                font-size: $scale-5;
-                line-height: 1.1
-            }
-        }
-        .orbit-slide {
-            padding: $scale-2;
-            @include smakk-breakpoint(large) {
-                padding: $scale-6;
-            }
-        }
-        .orbit-bullets {
-            float: left
-        }
-        .c-testimontials__link {
-            float: right;
-            margin-top: 0.8rem;
-            margin-bottom: 0.8rem;
-        }
-    }
-    .c-testimonials__logo {
-        display: block;
-        margin-top: $scale-3;
-    }
-    .r-crazycallout {
 
+  }
+  //Misc
+  .integrations {
+    @extend %inline-list;
+    margin: 0;
+  }
+  .integrations__item {
+    font-size: 16px;
+    color: $c-blue;
+    margin-left: 10px;
+    &:before {
+      color: $c-green;
+      content: '';
+      @include smakk-toggle-item(12px, 12px);
+      transition: all 200ms ease-out;
+      display: inline-block;
+      margin-right: 5px
     }
-    .c-crazycallout__blank {
-
+    a:link {
+      border: 0;
+      color: $c-blue;
+      &:hover {
+        border-bottom: 2px solid $c-green;
+      }
     }
-    .c-crazycallout__bgimage {
-        @include smakk-background-cover();
-        min-height: 50vh;
+    @include smakk-breakpoint(large) {
+      margin-left: 40px;
     }
-    .c-crazycallout__box {
-        padding: $scale-1 $scale-3;
-        @include smakk-breakpoint(medium) {
-            position: absolute;
-            top: 10%;
-            padding: $scale-6;
-            &.on-right {
-                right: 10%
-            }
-            &.on-left {
-                left: 10%
-            }
-        }
+  }
+  .integrations-arrow {
+    font-size: $scale-4;
+    color: $c-green;
+    vertical-align: middle;
+    pointer-events: all;
+    cursor: pointer;
+     @include smakk-breakpoint(large) {
+     margin-left: 80px;
     }
-    //Misc
-    .integrations {
-        @extend %inline-list;
-        margin: 0;
-        @include smakk-breakpoint(large){
-            margin: 15px;
-            margin-left: 5%
-        }
-    }
-    .integrations__item {
-        font-size: 16px;
-        color: $c-blue;
-        margin-left: 10px;
-        &:before {
-            color: $c-green;
-            content: '';
-            @include smakk-toggle-item(12px, 12px);
-            transition: all 200ms ease-out;
-            display: inline-block;
-            margin-right: 5px
-        }
-        a:link {
-            border: 0;
-            color: $c-blue;
-            &:hover{
-                border-bottom: 2px solid $c-green;
-            }
-        }
-        @include smakk-breakpoint(large){
-             margin-left: 40px;
-        }
-    }
-    .integrations-arrow {
-        font-size: $scale-4;
-        color: $c-green;
-        vertical-align: middle;
-        margin-left: 80px;
-        pointer-events: all;
-        cursor: pointer;
-    }
-
+  }
+  .flip {
+    transform: rotate(180deg);
+  }
 }

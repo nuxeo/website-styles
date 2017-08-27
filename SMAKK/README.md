@@ -1,8 +1,6 @@
 # To do
-- Make Plus pseudo element selectable
-- Float logos for large testimonials right
-- Install flexslider (replace orbit??)
-- Case studies
+- Install flexslider for case studies
+- Customers dropdown
 
 # Stuff Added
 
@@ -12,6 +10,7 @@ Discreet elements
 - Buttons
 - Color utility classes
 - Toggles
+- Arrows, icons
 
 ## Molecules
 Moveable components with meaning
@@ -35,7 +34,10 @@ Requires server
 - learn.html
 - why-nuxeo.html
 - download.html
-
+- DAM
+- about-nuxeo
+- product-ecm-dm
+- why-nuxeo
 
 # Foundation components 
 - Flex grid
@@ -50,6 +52,9 @@ Requires server
 - Responsive Menu
 - Top bar
 
+### Containers
+- Tabs
+
 ### Media
 - Orbit
 - Responsive embed
@@ -58,6 +63,3 @@ Requires server
 - Sticky
 - Responsive toggle
 - Smooth scroll
-
-# External JS
-- svg4everybody.js
