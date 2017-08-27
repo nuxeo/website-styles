@@ -20,6 +20,9 @@
     "precompile:styles": "rm -rf ./tmp ./css",
     "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./SMAKK/sass/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
     "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css",
+    "precompile:styles-expanded": "npm run precompile:styles",
+    "compile:styles-expanded": "node-sass --source-map true --source-comments --include-path ./scss/ --include-path ./SMAKK/sass/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/open-sans-fontface/sass --output-style expanded --output ./tmp/ ./scss/",
+    "postcompile:styles-expanded": "npm run postcompile:styles",
     "minify": "html-minifier elements/elements.build.html -o elements/elements.build.min.html --collapse-boolean-attributes --collapse-whitespace --decode-entities --html5 --minify-css --minify-js --process-conditional-comments --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --sort-attributes --sort-class-name --trim-custom-fragments --use-short-doctype",
     "npm_install": "[ `npm run -s package_checksum` = `cat package.md5` ] || npm install && npm run -s package_checksum > package.md5",
     "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'"
