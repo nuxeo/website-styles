@@ -41,6 +41,7 @@
       border-radius: 3px;
       font-family: $nuxeo-font-family;
       margin: 4px;
+      min-width: auto;
       opacity: 0;
       outline: 0;
       padding: 4px 6px;
@@ -177,7 +178,6 @@
   .code-heading {
     color: $header-color;
     font-family: $header-font-family;
-    font-style: $header-font-style;
     font-weight: $header-font-weight;
     line-height: $header-lineheight;
     margin-bottom: -1rem;
@@ -195,21 +195,21 @@
   }
 
   // code-header - Same as h4
-  @if variable-exists(header-sizes) {
-    @each $size, $headers in $header-sizes {
-      @include breakpoint($size) {
-        .code-heading {
-          font-size: rem-calc(map-get($headers, 'h4'));
-        }
-      }
-    }
-  } @else {
-    @each $size, $headers in $header-styles {
-      @include breakpoint($size) {
-        .code-heading {
-          font-size: rem-calc(map-get(map-get($headers, 'h4'), 'font-size'));
-        }
-      }
-    }
-  }
+  // @if variable-exists(header-sizes) {
+  //   @each $size, $headers in $header-sizes {
+  //     @include breakpoint($size) {
+  //       .code-heading {
+  //         font-size: rem-calc(map-get($headers, 'h4'));
+  //       }
+  //     }
+  //   }
+  // } @else {
+  //   @each $size, $headers in $header-styles {
+  //     @include breakpoint($size) {
+  //       .code-heading {
+  //         font-size: rem-calc(map-get(map-get($headers, 'h4'), 'font-size'));
+  //       }
+  //     }
+  //   }
+  // }
 }

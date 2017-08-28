@@ -1,0 +1,47 @@
+// Fonts
+$OpenSansPath: '//www.nuxeo.com/assets/fonts' !default;
+$OpenSansVersion: '1.1.0' !default;
+
+// Variables for use across the mixins
+$nuxeo-font-family: $font-primary;
+
+// Colours
+// $foundation-palette: (
+//   primary: #0067ff,
+//   secondary: #73d2cf,
+//   success: #3adb76,
+//   warning: #ffae00,
+//   alert: #cc4b37,
+// );
+//
+// @include add-foundation-colors;
+//
+$white: #fff;
+$black: #000;
+//
+//
+// $nuxeo-color-darker-gray: #333;
+//
+// $nuxeo-color-accent: #ff452a;
+// $nuxeo-color-accent-yellow: #e8ff7f;
+//
+// $nuxeo-color-light-blue: #ecf3f7;
+// $nuxeo-color-dark-background: #000522;
+
+// Code Block
+$nuxeo-color-code-background: $white;
+$nuxeo-color-code-foreground: $black;
+$nuxeo-color-code-border: #d9e6f0;
+$code-border-radius: 4px;
+
+// Tooltips
+$tooltip-background-color: rgba(0, 0, 0, .8);
+$tooltip-text-color: $white;
+$tooltip-duration: .4s;
+$tooltip-delay: .2s;
+
+$header-color: $c-blue;
+$header-font-family: $font-primary;
+$header-font-weight: 700;
+$header-lineheight: 1.2;
+$header-text-rendering: optimizeLegibility;
