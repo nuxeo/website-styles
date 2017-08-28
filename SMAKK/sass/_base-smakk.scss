@@ -181,6 +181,25 @@
       width: auto;
       border: 0;
     }
+
+    .box {
+      background: $c-grey;
+      padding: $scale-2;
+      @include smakk-box-shadow();
+      margin: $scale-2;
+      label{
+        @include primary-font-extrabold;
+        color: $c-blue;
+        font-size: $scale-3;
+      }
+      input:not([type="submit"]), select, textarea {
+        border: 0;
+        margin-top: 0;
+        font-size: 14px;
+        background: #fff;
+        padding: $scale-0
+      }
+    }
     button,
     a.button {
       -webkit-appearance: none;

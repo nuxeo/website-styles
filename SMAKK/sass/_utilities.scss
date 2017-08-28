@@ -119,8 +119,11 @@
   }
 
   .superhead {
-    // position: absolute;
-    top: -70px;
+    position: absolute;
+    top: -30px;
+    left: 0;
+    font-size: 14px;
+    color: $c-blue
   }
 
   .text-center {
@@ -321,8 +324,8 @@
     &.icon-arrow {
       &:after {
         content: '';
-        background-image: url(/pngs/arrow.png);
-        color: #fff;
+        background-image: url(/svg/arrow.svg);
+        fill: #fff;
         height: 30px;
         width: 30px;
         background-size: contain;
