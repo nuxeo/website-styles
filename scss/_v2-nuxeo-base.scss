@@ -1,8 +1,13 @@
+// SMAKK
+@import 'variables-smakk';
+@import 'mixins-smakk';
+@import 'structures';
+@import 'base-smakk';
+@import 'utilities';
+@import 'shame';
+
 // Settings
-// @import 'settings';
-// Fonts
-$OpenSansPath: '//www.nuxeo.com/assets/fonts' !default;
-$OpenSansVersion: '1.1.0' !default;
+@import 'v2-settings';
 
 // Nuxeo Mixins
 @import 'nuxeo-mixins';
@@ -21,17 +26,9 @@ $OpenSansVersion: '1.1.0' !default;
 // Foundation base
 // @import 'foundation';
 
-// SMAKK
-@import 'variables-smakk';
-@import 'mixins-smakk';
-@import 'structures';
-@import 'base-smakk';
-@import 'utilities';
-@import 'shame';
-
 
 // Optional components that can be included outside of nuxeo-base-styles
-// @import 'components/codeblock';
+@import 'components/codeblock';
 
 @mixin nuxeo-base-styles {
   $flex: true;
