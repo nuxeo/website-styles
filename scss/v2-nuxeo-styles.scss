@@ -2,5 +2,7 @@
 @charset 'utf-8';
 
 // Base
-@import 'nuxeo-v2-base';
+@import 'v2-nuxeo-base';
 @include nuxeo-base-styles;
+
+@include nuxeo-codeblock;
