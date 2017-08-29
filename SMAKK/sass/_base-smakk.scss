@@ -245,10 +245,13 @@
       }
     }
     //svg icons
+    svg {
+      fill: currentColor;
+    }
+
     .icon {
       width: 80px;
       height: 100px;
-      fill: white
     }
     //Toggles
     button.toggle__item,
