@@ -123,14 +123,9 @@
       }
     }
     .r-casestudies & {
-      margin-bottom: 30px;
-      padding: $scale-1;
-      padding-bottom: 10px;
-      position: relative;
       @include smakk-display-flex(column);
-      @include smakk-breakpoint(large) {
-        padding: $scale-4;
-      }
+      align-items: center;
+      margin-bottom: $scale-4
     }
   }
   .c-checker {
@@ -244,9 +239,25 @@
       font-size: 18px
     }
   }
+  .r-casestudies {}
   .casestudies__text {
     padding: 30px;
-    flex-grow: 1
+    flex-basis: 300px;
+    margin-top: auto;
+    width: 100%
+  }
+  .casestudies__logo {
+    margin: auto;
+    width: 100%;
+    @include smakk-display-flex();
+    flex-basis: 200px;
+     @include smakk-breakpoint(medium) {
+           flex-basis: 400px;
+           background: $c-grey;
+    }
+    img {
+      margin: auto
+    }
   }
   .c-testimonials {
     padding: $scale-1;
@@ -309,8 +320,8 @@
   }
   .c-article {
     font-size: 14px;
-    > * {
-     @include primary-font;
+    >* {
+      @include primary-font;
       color: #000;
     }
     .c-article__author {
@@ -323,32 +334,33 @@
       font-size: 1em;
       margin-bottom: $scale-3
     }
-    h2, h3, h4 {
+    h2,
+    h3,
+    h4 {
       @include primary-font-bold;
       font-size: $scale-2;
       margin-bottom: $scale-1
     }
     a {
       &:link {
-      color: $c-blue;
+        color: $c-blue;
         border-bottom: 1px solid $c-green;
       }
       &:visited {
         color: $c-purple
       }
       &:hover {
-         color: $c-green;
+        color: $c-green;
       }
     }
   }
-
   #certification {
     .icon {
       margin-top: $scale-4
     }
     p {
-    font-size: 16px
-      }
+      font-size: 16px
+    }
   }
   //Misc
   .integrations {
