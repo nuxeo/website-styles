@@ -11,7 +11,7 @@
     <!-- UNCOMPRESSED CSS -->
     <link rel="stylesheet" href="stylesheets/foundation.css" />
     <!-- <link rel="stylesheet" href="style.css" /> -->
-    <link rel="stylesheet" href="/css/nuxeo_v2_styles.css" />
+    <link rel="stylesheet" href="/css/v2-nuxeo-styles.css" />
 
     <!-- Javascript -->
     <script srrc=""></script>
@@ -249,7 +249,10 @@
         <div class="small-12 large-6 large-offset-1 columns">
             <p class="underlined is-green">Challenge</p>
             <p class="challenge__text is-blue">Existing ECM or DAM systems are expensive to manage and maintain</p>
-            <picture><source srcset="pngs/1000.jpg" media="(min-width:64em)"><img srcset="pngs/1000x500.jpg"></picture>
+            <picture>
+                <source srcset="pngs/1000.jpg" media="(min-width:64em)">
+                <img srcset="pngs/1000x500.jpg">
+            </picture>
         </div>
         <div class="small-12 large-5 c-solution is-bg-white">
             <p class="underlined is-green">Solution</p>
@@ -263,7 +266,10 @@
         <div class="small-12 large-6 large-offset-5 columns">
             <p class="underlined is-green">Challenge</p>
             <p class="challenge__text is-blue">Existing ECM or DAM systems are expensive to manage and maintain</p>
-            <picture><source srcset="pngs/1000.jpg" media="(min-width:64em)"><img srcset="pngs/1000x500.jpg"></picture>
+            <picture>
+                <source srcset="pngs/1000.jpg" media="(min-width:64em)">
+                <img srcset="pngs/1000x500.jpg">
+            </picture>
         </div>
         <div class="small-12 large-5 c-solution left is-bg-white">
             <p class="underlined is-green">Solution</p>
@@ -352,37 +358,40 @@
     </div>
 
 
-    <!-- CASE STUDY INTERACTIVE -->
+    <!-- CASE STUDY  -->
 
     <div class="row r-casestudies interactive is-bg-white">
-        <div class="small-4 large-4 columns">
+        <div class="small-6 medium-4 large-4 columns">
             <div class="casestudies__logo is-bg-grey">
                 <img src="pngs/600x.jpg" />
             </div>
-            <div class="casestudies__text is-blue is-bg-green show-for-large">
-                <h3>Case study headline.</h3>
-                <p>We have to earn your business every day because you're only as good as your latet contribution. We have to earn your business every day because you're only as good as your latet contribution.</p>
-                <a href="#">learn more</a>
+            <div class="casestudies__text is-blue is-bg-green">
+              <a href="#">
+               <p class="underlined">Job Title</p>
+                <h3>John Jacob Jingleheimer Schmidt</h3>
+                </a>
             </div>
         </div>
-        <div class="small-4 large-4 columns">
+        <div class="small-6 medium-4 large-4 columns">
             <div class="casestudies__logo is-bg-grey">
                 <img src="pngs/electronic-arts.jpg" />
             </div>
-            <div class="casestudies__text is-green is-bg-blue show-for-large">
-                <h3>Case study headline.</h3>
-                <p>We have to earn your business every day because you're only as good as your latet contribution.</p>
-                <a href="#">learn more</a>
+            <div class="casestudies__text is-green is-bg-blue">
+               <a href="#">
+                <p class="underlined">Job Title</p>
+                 <h3>Jane Doe</h3>
+                </a>
             </div>
         </div>
-        <div class="small-4 large-4 columns">
+        <div class="small-6 medium-4 large-4 columns">
             <div class="casestudies__logo is-bg-grey">
                 <img src="pngs/electronic-arts.jpg" />
             </div>
-            <div class="casestudies__text is-white is-bg-aqua show-for-large">
-                <h3>Case study headline.</h3>
-                <p>We have to earn your business every day because you're only as good as your latet contribution.</p>
-                <a href="#">learn more</a>
+            <div class="casestudies__text is-white is-bg-aqua">
+               <a href="#">
+                <p class="underlined">Job Title</p>
+                <h3>Michelle Obama</h3>
+                </a>
             </div>
         </div>
     </div>
@@ -449,7 +458,7 @@
             </div>
             <p class="is-blue">Or install the Nuxeo Platform using your <a class="c-collapsing is-green" data-tab="1d">favorite package manager</a>.</p>
             <div class="r-collapsing__panel paddedt0" data-tab="1d">
-                <div class="small-12 large-6 columns is-bg-grey">
+                <div class="small-12 large-6 columns padded2 is-bg-grey">
                     <h4 class="is-blue">Docker</h4>
                     <div class="is-bg-green padded0">
                         $ docker run -ti --name mynuxeo -p 8080:8080 nuxeo/nuxeo:discover-ft
@@ -474,8 +483,7 @@
                 <h2>LTS 2016</h2>
                 <p>Or install the Nuxeo Platform using your favotite package manager. If you don't want to install Nuxeo locally, you can use our cloud environment with Azure or AWS.</p>
                 <p>Looking for an older version of Nuxeo?<br />
-                    <a href="#" class="is-green">Download it here</a>.
-                </p>
+                    <a href="#" class="is-green">Download it here</a>.</p>
                 <button class="is-bg-blue" href="#">Azure</button> <button class="is-bg-blue" href="#">AWS</button>
             </div>
         </div>
@@ -537,10 +545,8 @@
         </div>
     </div>
 
-    <p class="is-black">Tabs</p>
-
     <!-- TABS -->
-    <div class="row r-thin is-bg-grey">
+    <div class="row padded2 is-bg-grey">
         <div class="small-12 columns">
             <ul class="tabs integrations" data-tabs id="ecm-tabs">
                 <li class="tabs-title is-active"><a data-tabs-target="panel1" href="#panel1" aria-selected="true">Tab 1</a></li>
@@ -574,6 +580,36 @@
 
     </div>
 
+    <div class="row">
+        <div class="small-12 large-5 large-offset-2 columns c-article">
+            <p class="c-article__author">By John Doe</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis id enim rutrum dictum eu sit amet ipsum. Nam blandit et massa sed eleifend. Ut sed posuere elit. Nunc vitae vehicula lectus. Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat. Maecenas et velit ultricies, semper libero ut, viverra magna.</p>
+            <h2>Subheader</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis id enim rutrum dictum eu sit amet ipsum. Nam blandit et massa sed eleifend. Ut sed posuere elit. Nunc vitae vehicula lectus. <strong>Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat.</strong> Maecenas et velit ultricies, semper libero ut, viverra magna.</p>
+            <ul>
+                <li>One</li>
+                <li>ipsum dolor sit </li>
+                <li>la lectus. <a href="#">Donec ultrices aliquam sem sit amet rutrum</a>. Praesent euismod malesuada feugiat. <a href="http://oekreiotrte.com">Maecenas et velit ultricies</a>, semper libero ut, <em>viverra magna.</em> Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat. Maecenas et velit ultricies, semper libero ut, viverra mag.</li>
+                <li>Three</li>
+                <li>Three</li>
+            </ul>
+            <h3>Sub Subheader</h3>
+            <ol>
+                <li>One</li>
+                <li>ipsum dolor sit </li>
+                <li>la lectus. Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat. Maecenas et velit ultricies, semper libero ut, viverra magna. Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat. Maecenas et velit ultricies, semper libero ut, viverra mag.</li>
+                <li>Three</li>
+                <li>Three</li>
+            </ol>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis id enim rutrum dictum eu sit amet ipsum. Nam blandit et massa sed eleifend. Ut sed posuere elit. Nunc vitae vehicula lectus. Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat. Maecenas et velit ultricies, semper libero ut, viverra magna. Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat. Maecenas et velit ultricies, semper libero ut, viverra mag. Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat. Maecenas et velit ultricies, semper libero ut, viverra mag.</p>
+
+            <p>Lorem ipsum dolor sit amet.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae turpis id enim rutrum dictum eu sit amet ipsum. Nam blandit et massa sed eleifend. Ut sed posuere elit. Nunc vitae vehicula lectus. Donec ultrices aliquam sem sit amet rutrum. Praesent euismod malesuada feugiat. Maecenas et velit ultricies, semper libero ut, viverra magna.</p>
+        </div>
+    </div>
+
 
     <div data-include="footer-top"></div>
 
@@ -591,6 +627,7 @@
                 $(this).load(file);
             });
         });
+
     </script>
 
 </body>
