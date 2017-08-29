@@ -1,7 +1,7 @@
 [
-    {
-        "autoprefixer": {
-            "browsers": ["> 3%", "ie >= 9"]
-        }
+  {
+    "autoprefixer": {
+      "browsers": ["> 3%", "ie >= 9"]
     }
+  }
 ]
