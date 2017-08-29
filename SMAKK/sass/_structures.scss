@@ -41,6 +41,11 @@
   .r-challenge2.solution {
     z-index: 100
   }
+
+  .cover {
+    background-size: cover;
+  }
+
   .columns {
     .r-main & {
       min-height: $height-reg;
