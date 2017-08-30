@@ -1,12 +1,12 @@
 @mixin smakk-shame {
-.row {
-  max-width: 1800px;
-}
+  .row {
+    max-width: 1800px;
+  }
   #menu-top {
     background: $c-blue;
     color: white;
     padding: $scale-0 $scale-1;
-    @include smakk-breakpoint(large){
+    @include smakk-breakpoint(large) {
       color: initial;
       background: none;
       padding: 0;
@@ -27,7 +27,7 @@
   .top-bar-right .button {
     margin: 0
   }
-  .menu-icon{
+  .menu-icon {
     border: 0;
     max-width: 30px;
     min-width: 0;
@@ -36,7 +36,7 @@
     margin: 0;
     float: right;
     margin-top: 8px;
-    &:hover{
+    &:hover {
       border: 0;
       background: 0
     }
@@ -44,10 +44,10 @@
   .menu .nav-main {
     position: relative
   }
-
-  .menu a, .menu .button {margin: .3em 0;}
-
-
+  .menu a,
+  .menu .button {
+    margin: .3em 0;
+  }
   .is-dropdown-submenu {
     border: none
   }
@@ -57,10 +57,10 @@
   .dropdown.menu>li.is-dropdown-submenu-parent>a::after,
   .dropdown.menu.vertical>li.opens-left>a::after,
   .dropdown.menu.vertical>li.opens-right>a::after,
-  .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after{
+  .dropdown.menu.medium-horizontal>li.is-dropdown-submenu-parent>a::after {
     content: none
   }
-  .dropdown.menu.large-horizontal > li.opens-right > .is-dropdown-submenu {
+  .dropdown.menu.large-horizontal>li.opens-right>.is-dropdown-submenu {
     top: 58px
   }
   .submenu {
@@ -73,73 +73,103 @@
   .dropdown .is-dropdown-submenu a {
     padding: 0
   }
-
   .is-dropdown-submenu.js-dropdown-active {
-    display: flex; }
-
-    @media print,
-    screen and (min-width: 64em) {
-      .row .row {
-        margin-right: 0;
-        margin-left: 0;
-      }
+    display: flex;
+  }
+  @media print,
+  screen and (min-width: 64em) {
+    .row .row {
+      margin-right: 0;
+      margin-left: 0;
     }
-
-    .orbit-container {
-      height: auto;
-      min-height: 30vh;
-      padding: 0
-    }
-
+  }
+  .orbit--images {
     .orbit-bullets {
-      float: left;
-      display: inline-block
-    }
-    .orbit-bullets button {
-      min-width: 0;
-      background-color: inherit
-    }
-    .orbit-bullets button:hover {
-      background-color: inherit;
-      color: inherit
-    }
-    .orbit-bullets button.is-active {
-      background-color: inherit;
-    }
-  }
-
-    .orbit-slide {
-      padding: $scale-2;
+      padding: $scale-3;
+      margin-top: -30px;
       @include smakk-breakpoint(large) {
-        padding: $scale-6;
+        padding: $scale-3 $scale-6;
+        margin-top: -50px
       }
     }
-.tabs {
-  background: transparent;
-  border: 0
-}
-.tabs-title {
-  @extend .integrations__item;
-  > a,a:link {
-    padding: 0;
-    opacity: .7;
-    font-size: initial;
-    display:  inline-block;
-    border-bottom: 2px solid transparent;
-    &[aria-selected='true'],
-    &:hover{
-      opacity: 1;
-      background: transparent;
-      color: $c-blue !important;
-      border-bottom: 2px solid $c-green;
+  }
+  .orbit-container {
+    height: auto;
+    min-height: 30vh;
+    padding: 0
+  }
+  .orbit-bullets {
+    float: left;
+    display: inline-block
+  }
+  .orbit-bullets button {
+    min-width: 0;
+    background-color: inherit
+  }
+  .orbit-bullets button:hover {
+    background-color: inherit;
+    color: inherit
+  }
+  .orbit-bullets button.is-active {
+    background-color: inherit;
+  }
+  .orbit-slide {
+    padding: $scale-2;
+    @include smakk-breakpoint(large) {
+      padding: $scale-6;
     }
   }
-}
-
-.tabs-panel {
-  padding: 0
-}
-.tabs-content {
-  color: inherit;
-  border: 0
+  .orbit-previous,
+  .orbit-next {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0 !important;
+    svg {
+      fill: $c-green;
+      width: 50px;
+      height: 30px;
+    }
+  }
+  .orbit-previous {
+    transform: rotate(180deg) translateY(30%);
+  }
+  .orbit-previous:hover,
+  .orbit-next:hover,
+  .orbit-previous:active,
+  .orbit-next:active,
+  .orbit-previous:focus,
+  .orbit-next:focus {
+    background: none;
+    border: 0
+  }
+  .tabs {
+    background: transparent;
+    border: 0
+  }
+  .tabs-title {
+    @extend .integrations__item;
+    >a,
+    a:link {
+      padding: 0;
+      opacity: .7;
+      font-size: initial;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      &[aria-selected='true'],
+      &:hover {
+        opacity: 1;
+        background: transparent;
+        color: $c-blue !important;
+        border-bottom: 2px solid $c-green;
+      }
+    }
+  }
+  .tabs-panel {
+    padding: 0
+  }
+  .tabs-content {
+    color: inherit;
+    border: 0
+  }
 }
