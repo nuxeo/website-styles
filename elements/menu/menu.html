@@ -1,0 +1,136 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="nuxeo-menu">
+    <template>
+        <style>
+        /* local DOM styles go here */
+
+        </style>
+        <!-- local DOM goes here -->
+        <div id="menu-top">
+            <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="large">
+                <button class="menu-icon" data-toggle="main-menu"></button>
+                <img src="https://www.nuxeo.com/assets/imgs/logo340x60.png" alt="Nuxeo Logo" class="main-menu__logo hide-for-large "/>
+            </div>
+
+            <div class="top-bar" id="main-menu">
+
+                <ul class="vertical large-horizontal menu" data-responsive-menu="accordion large-dropdown">
+                    <li class="show-for-large"><img src="https://www.nuxeo.com/assets/imgs/logo340x60.png" alt="Nuxeo Logo" class="main-menu__logo"/></li>
+                    <li class="nav-main__item">
+                        <a href="why-nuxeo.html">Why Nuxeo</a>
+                        <ul class="nav-main__submenu vertical  large-horizontal menu">
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Content Platform</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.<br />
+                                    <a href="#">Learn more</a>
+                                </span>
+                            </li>
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Digital Asset Management</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.<br />
+                                    <a href="#">Learn more</a>
+                                </span>
+                            </li>
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Enterprise Content Management</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.</span>
+                            </li>
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">More Management</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-main__item">
+                        <a href="#">Products</a>
+                        <ul class="nav-main__submenu vertical  medium-horizontal menu">
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Product Platform</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.<br />
+                                    <a href="#">Learn more</a>
+                                </span>
+                            </li>
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Product Asset Management</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.<br />
+                                    <a href="#">Learn more</a>
+                                </span>
+                            </li>
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Product Content Management</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.</span>
+                            </li>
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Product Management</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-main__item">
+                        <a href="#">Integrations</a>
+                        <ul class="nav-main__submenu vertical  medium-horizontal menu">
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Product Platform</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.<br />
+                                    <a href="#">Learn more</a>
+                                </span>
+                            </li>
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Product Asset Management</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.<br />
+                                    <a href="#">Learn more</a>
+                                </span>
+                            </li>
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Product Asset Management</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.<br />
+                                    <a href="#">Learn more</a>
+                                </span>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-main__item">
+                        <a href="#" data-options="align:bottom">Services</a>
+
+                    </li>
+                    <li class="nav-main__item">
+                        <a href="#">Customers</a>
+
+                    </li>
+                    <li class="nav-main__item">
+                        <a href="#">About</a>
+
+                    </li>
+                    <li class="nav-main__item">
+                        <a href="learn.html">Learn</a>
+                        <ul class="nav-main__submenu vertical  medium-horizontal menu">
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Product Platform</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.<br />
+                                    <a href="#">Learn more</a>
+                                </span>
+                            </li>
+                            <li class="nav-main__subitem">
+                                <a href="#" class="nav-main__subitem__title">Product Asset Management</a>
+                                <span class="nav-main__subitem__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat ullamcorper iaculis. Morbi placerat finibus nibh, non dapibus tellus condimentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc aliquet turpis diam, sit amet placerat leo porta vel.<br />
+                                    <a href="#">Learn more</a>
+                                </span>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-main__lastitem"><a class="button is-bg-blue">Request a Demo</a> </li>
+                </ul>
+            </div>
+        </div>
+    </template>
+    <script>
+        Polymer({
+            is: 'nuxeo-menu',
+            properties: {
+            }
+        });
+    </script>
+</dom-module>

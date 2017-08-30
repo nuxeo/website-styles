@@ -11,48 +11,15 @@
     <!-- <link rel="stylesheet" href="/SMAKK/style.css" media="screen" title="no title"> -->
 
     <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-    <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js">
-    </script>
+    <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
     <!-- 2. Use an HTML Import to bring in some elements. -->
     <!-- <link rel="import" href="/elements/header/header.html"> -->
     <link rel="import" href="/elements/footer/footer.html">
+    <link rel="import" href="/elements/menu/menu.html">
 </head>
 <body>
-    <div class="row top-bar r-header">
-        <div class="small-12 columns">
-
-            <div class="top-bar" id="responsive-menu">
-                <div class="top-bar-left">
-                    <ul class="dropdown menu nav-main" data-dropdown-menu>
-                        <li class="menu-text">LOGO</li>
-                        <li class="nav-main__item has-submenu">
-                            <a href="#0">Why Nuxeo</a>
-                            <ul class="submenu menu vertical" data-submenu>
-                                <li><a href="#0">One</a></li>
-                                <li><a href="#0">Two</a></li>
-                                <li><a href="#0">Three</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-main__item"><a href="#0">Products</a></li>
-                        <li class="nav-main__item"><a href="#0">Integrations</a></li>
-                        <li class="nav-main__item"><a href="#0">Services</a></li>
-                        <li class="nav-main__item"><a href="#0">Customers</a></li>
-                        <li class="nav-main__item"><a href="#0">About</a></li>
-                        <li class="nav-main__item"><a href="#0">Learn</a></li>
-                    </ul>
-                </div>
-                <div class="top-bar-right">
-                    <ul class="menu">
-                        <li>Icon</li>
-                        <li>Icon</li>
-                        <li>Icon</li>
-                        <li><a type="button" class="button is-bg-blue">Request a Demo</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+    <nuxeo-menu></nuxeo-menu>
 
     <div class="row r-main">
         <div class="large-6 small-12 columns has-bg-image" style="background-image:url('/SMAKK/pngs/1000.jpg')">
