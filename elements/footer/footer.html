@@ -8,6 +8,12 @@
             fill: currentColor;
         }
 
+        @media print, screen and (min-width: 40em) {
+            .medium-text-right {
+                text-align: right;
+            }
+        }
+
         :host {
             display: block;
         }
@@ -15,6 +21,7 @@
         :host {
             background-color: #fff;
             color: #1067ff;
+            font-family: "Open Sans", "Arial", sans-serif;
             font-size: 12px;
             font-stretch: normal;
             font-style: normal;
@@ -24,6 +31,20 @@
             -webkit-font-smoothing: auto;
         }
 
+        :host .row {
+            position: relative;
+            background: #fff;
+            max-width: 1800px;
+            margin-right: auto;
+            margin-left: auto;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+            box-sizing: inherit;
+        }
+
+        /* Footer specific */
         :host a {
             color: #1067ff;
             text-decoration: none;
@@ -38,7 +59,7 @@
             border: none;
         }
 
-        :host .content-wrapper ::content > .column > a {
+        :host .content-wrapper ::content > .columns > a {
             border-top: 4px solid #1067ff;
             font-weight: 700;
             padding-bottom: 1rem;
@@ -48,7 +69,7 @@
             letter-spacing: normal;
         }
 
-        :host #copyright-social > .column {
+        :host #copyright-social > .columns {
             margin-top: 2rem;
         }
         :host #copyright-social {
@@ -78,63 +99,63 @@
         }
         </style>
         <!-- local DOM goes here -->
-        <div class="row content-wrapper">
-            <content>
-                <div class="column small-12 medium-4 large-2">
-                    <a href="https://nuxeo.com/why-nuxeo/">Why Nuxeo</a>
-                    <div class="row small-up-1">
-                        <div class="column"><a href="/about/">About</a></div>
-                        <div class="column"><a href="/careers/">Careers</a></div>
-                        <div class="column"><a href="/about/leadership/">Executive Team</a></div>
-                        <div class="column"><a href="/media-center/">Press</a></div>
+        <content>
+            <div class="row content-wrapper">
+                <div class="columns small-12 medium-4 large-2">
+                    <a href="https://www.nuxeo.com/why-nuxeo/">Why Nuxeo</a>
+                    <div class="row collapse small-up-1">
+                        <div class="columns"><a href="https://www.nuxeo.com/about/">About</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/careers/">Careers</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/about/leadership/">Executive Team</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/media-center/">Press</a></div>
                     </div>
                 </div>
-                <div class="column small-12 medium-8 large-4">
+                <div class="columns small-12 medium-8 large-4">
                     <a href="https://nuxeo.com/products/content-management-platform/">Platform</a>
-                    <div class="row small-up-1 medium-up-2">
-                        <div class="column"><a href="/products/">Overview</a></div>
-                        <div class="column"><a href="/products/content-management-platform/">Content Management Platform</a></div>
-                        <div class="column"><a href="/products/nuxeo-cloud/">Cloud</a></div>
-                        <div class="column"><a href="/products/studio/">Studio</a></div>
-                        <div class="column"><a href="/products/mobile/">Mobile</a></div>
-                        <div class="column"><a href="/products/drive-desktop-sync/">Sync</a></div>
-                        <div class="column"><a href="/products/nuxeo-vision/">Vision</a></div>
-                        <div class="column"><a href="/products/digital-asset-management/">Digital Asset Management</a></div>
-                        <div class="column"><a href="/products/document-management/">Document Management</a></div>
-                        <div class="column"><a href="/products/knowledge-management/">Knowledge Management</a></div>
-                        <div class="column"><a href="/products/case-management/">Case Asset Management</a></div>
-                        <div class="column"><a href="/about/what-is-new/">What's New</a></div>
+                    <div class="row collapse small-up-1 medium-up-2">
+                        <div class="columns"><a href="https://www.nuxeo.com/products/">Overview</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/content-management-platform/">Content Management Platform</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/nuxeo-cloud/">Cloud</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/studio/">Studio</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/mobile/">Mobile</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/drive-desktop-sync/">Sync</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/nuxeo-vision/">Vision</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/digital-asset-management/">Digital Asset Management</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/document-management/">Document Management</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/knowledge-management/">Knowledge Management</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/case-management/">Case Asset Management</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/about/what-is-new/">What's New</a></div>
                     </div>
                 </div>
-                <div class="column small-12 medium-8 large-4">
+                <div class="columns small-12 medium-8 large-4">
                     <a href="#">Integrations</a>
-                    <div class="row small-up-1 medium-up-2">
-                        <div class="column"><a href="/integration/live-connect/">EFSS</a></div>
-                        <div class="column"><a href="/integration/adobe-creative-suite/">Adobe CC</a></div>
-                        <div class="column"><a href="/integration/mongodb/">MongoDB</a></div>
-                        <div class="column"><a href="/integration/elasticsearch/">Elasticsearch</a></div>
-                        <div class="column"><a href="/integration/amazon-rekognition/">Amazon Rekognition</a></div>
-                        <div class="column"><a href="/integration/google-vision/">Google Vision</a></div>
-                        <div class="column"><a href="/integration/document-capture-ephesoft/">Document Capture</a></div>
-                        <div class="column"><a href="/integration/salesforce-connector/">Salesforce Connector</a></div>
-                        <div class="column"><a href="/integration/cmis/">CMIS</a></div>
+                    <div class="row collapse small-up-1 medium-up-2">
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/live-connect/">EFSS</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/adobe-creative-suite/">Adobe CC</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/mongodb/">MongoDB</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/elasticsearch/">Elasticsearch</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/amazon-rekognition/">Amazon Rekognition</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/google-vision/">Google Vision</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/document-capture-ephesoft/">Document Capture</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/salesforce-connector/">Salesforce Connector</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/cmis/">CMIS</a></div>
 
                     </div>
                 </div>
-                <div class="column small-12 medium-4 large-2">
+                <div class="columns small-12 medium-4 large-2">
                     <a href="#">Learn</a>
-                    <div class="row small-up-1">
-                        <div class="column"><a href="https://university.nuxeo.com/store">University</a></div>
-                        <div class="column"><a href="/about/certification-2017/">Certification</a></div>
-                        <div class="column"><a href="https://answers.nuxeo.com/general">Answers</a></div>
-                        <div class="column"><a href="https://doc.nuxeo.com/">Documentation</a></div>
-                        <div class="column"><a href="/learn/">Learn</a></div>
+                    <div class="row collapse small-up-1">
+                        <div class="columns"><a href="https://university.nuxeo.com/store">University</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/about/certification-2017/">Certification</a></div>
+                        <div class="columns"><a href="https://answers.nuxeo.com/general">Answers</a></div>
+                        <div class="columns"><a href="https://doc.nuxeo.com/">Documentation</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/learn/">Learn</a></div>
                     </div>
                 </div>
-            </content>
-        </div>
+            </div>
+        </content>
         <div id="copyright-social" class="row small-up-1 medium-up-2">
-            <div class="column copyright">
+            <div class="columns copyright">
                 {{year}} &copy; NUXEO
                 <span class="separator">|</span>
                 <template is="dom-if" if="{{showLicense}}">
@@ -143,7 +164,7 @@
                 </template>
                 <a href="https://nuxeo.com/legal/privacy-policy/">Privacy Policy</a>
             </div>
-            <div class="column medium-text-right social">
+            <div class="columns medium-text-right social">
                 <a href="https://www.facebook.com/Nuxeo">
                     <?xml version="1.0" encoding="UTF-8"?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.768 7.465H14.5V5.56c0-.896.594-1.105 1.012-1.105H18.5V.513L14.171.5C10.244.5 9.5 3.438 9.5 5.32v2.144h-3v4h3v12h5v-12h3.851l.417-3.999z"/><path fill="none" d="M0 0h24v24H0z"/></svg>
