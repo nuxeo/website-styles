@@ -9,6 +9,9 @@
   .r-cards {
     font-size: .9rem;
   }
+  .r-cards--spaced {
+    justify-content: space-between
+  }
   .r-collapsing__panel {
     display: none;
     width: 100%;
@@ -93,6 +96,9 @@
         p {
           font-size: $scale-3;
         }
+      }
+      #careers & {
+        min-height: 0
       }
     }
     .spaced-by-4 & {
