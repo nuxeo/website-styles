@@ -1261,7 +1261,7 @@ input[type='submit'] {
   -webkit-appearance: none;
   font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 600;
-  border: 2px solid transparent;
+  border: 2px solid transparent !important;
   -webkit-appearance: none;
   -moz-appearance: none;
   border-radius: 50px;
@@ -1320,15 +1320,17 @@ input.button--callout[type='submit']:hover {
 /* line 248, sass/_base-smakk.scss */
 svg {
   fill: currentColor;
+  height: 1em;
+  width: auto;
 }
 
-/* line 252, sass/_base-smakk.scss */
+/* line 254, sass/_base-smakk.scss */
 .icon {
   width: 80px;
   height: 100px;
 }
 
-/* line 257, sass/_base-smakk.scss */
+/* line 259, sass/_base-smakk.scss */
 button.toggle__item,
 .toggle__item {
   list-style-type: none;
@@ -1364,7 +1366,7 @@ button.toggle__item:hover.is-blue, button.toggle__item.is-active.is-blue,
   border-color: #0067FF;
 }
 
-/* line 263, sass/_base-smakk.scss */
+/* line 265, sass/_base-smakk.scss */
 .toggle__item--large {
   width: 20px;
   height: 20px;
@@ -1388,7 +1390,7 @@ button.toggle__item:hover.is-blue, button.toggle__item.is-active.is-blue,
   border-color: #0067FF;
 }
 
-/* line 267, sass/_base-smakk.scss */
+/* line 269, sass/_base-smakk.scss */
 .nav-main__item {
   color: #fff;
   font-size: 20px;
@@ -1404,14 +1406,14 @@ button.toggle__item:hover.is-blue, button.toggle__item.is-active.is-blue,
   border-bottom: none;
 }
 
-/* line 270, sass/_base-smakk.scss */
+/* line 272, sass/_base-smakk.scss */
 .main-menu__logo {
   max-width: 120px;
   margin-right: 1.777em;
   vertical-align: -webkit-baseline-middle;
 }
 
-/* line 275, sass/_base-smakk.scss */
+/* line 277, sass/_base-smakk.scss */
 ul.nav-main__submenu {
   right: 0;
   background: #0067FF;
@@ -1421,24 +1423,24 @@ ul.nav-main__submenu {
   flex-wrap: wrap;
 }
 
-/* line 283, sass/_base-smakk.scss */
+/* line 285, sass/_base-smakk.scss */
 a.nav-main__subitem__title {
   font-size: 14px;
 }
 
-/* line 286, sass/_base-smakk.scss */
+/* line 288, sass/_base-smakk.scss */
 .nav-main__subitem__text {
   display: none;
 }
 
-/* line 289, sass/_base-smakk.scss */
+/* line 291, sass/_base-smakk.scss */
 .nav-main__subitem__text a {
   display: none;
   padding: 0;
 }
 
 @media (min-width: 64em) {
-  /* line 297, sass/_base-smakk.scss */
+  /* line 299, sass/_base-smakk.scss */
   .nav-main__item {
     color: #0067FF;
     font-size: 14px;
@@ -1455,25 +1457,25 @@ a.nav-main__subitem__title {
   }
 }
 @media screen and (min-width: 64em) and (min-width: 1150px) {
-  /* line 297, sass/_base-smakk.scss */
+  /* line 299, sass/_base-smakk.scss */
   .nav-main__item {
     font-size: 16px;
   }
 }
 
 @media (min-width: 64em) {
-  /* line 303, sass/_base-smakk.scss */
+  /* line 305, sass/_base-smakk.scss */
   .nav-main__lastitem {
     margin-left: auto;
   }
 
-  /* line 306, sass/_base-smakk.scss */
+  /* line 308, sass/_base-smakk.scss */
   .nav-main__subitem {
     padding: 1.333em 3.157em;
     max-width: 50%;
   }
 
-  /* line 310, sass/_base-smakk.scss */
+  /* line 312, sass/_base-smakk.scss */
   a.nav-main__subitem__title {
     color: #73d2cf;
     font-size: 3.157em;
@@ -1481,7 +1483,7 @@ a.nav-main__subitem__title {
     font-weight: 700;
   }
 
-  /* line 316, sass/_base-smakk.scss */
+  /* line 318, sass/_base-smakk.scss */
   .nav-main__subitem__text {
     color: #fff;
     display: block;
@@ -1489,7 +1491,7 @@ a.nav-main__subitem__title {
     margin: 1em 0;
   }
 
-  /* line 322, sass/_base-smakk.scss */
+  /* line 324, sass/_base-smakk.scss */
   .nav-main__subitem__text a {
     display: inline-block;
     margin-top: 0.75em;
@@ -1508,7 +1510,7 @@ a.nav-main__subitem__title {
     border-bottom: none;
   }
 }
-/* line 329, sass/_base-smakk.scss */
+/* line 331, sass/_base-smakk.scss */
 .nav-footer {
   list-style-type: none;
   display: inline-block;
@@ -1516,7 +1518,7 @@ a.nav-main__subitem__title {
   padding: 0;
 }
 
-/* line 332, sass/_base-smakk.scss */
+/* line 334, sass/_base-smakk.scss */
 .nav-footer__item {
   color: #1F28BF;
   font-size: 0.75em;

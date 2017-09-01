@@ -204,7 +204,7 @@
     a.button {
       -webkit-appearance: none;
       @include primary-font-semibold;
-      @include smakk-borders(2px, solid, rgba(0, 0, 0, 0));
+      border: 2px solid rgba(0, 0, 0, 0) !important;
       -webkit-appearance: none;
       -moz-appearance: none;
       border-radius: $radius;
