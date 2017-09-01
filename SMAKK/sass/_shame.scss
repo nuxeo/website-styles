@@ -41,6 +41,9 @@
       background: 0
     }
   }
+  .menu.large-horizontal {
+    flex-wrap: nowrap;
+  }
   .menu .nav-main {
     position: relative
   }

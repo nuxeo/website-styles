@@ -59,27 +59,32 @@
 }
 
 /* line 44, sass/_shame.scss */
+.menu.large-horizontal {
+  flex-wrap: nowrap;
+}
+
+/* line 47, sass/_shame.scss */
 .menu .nav-main {
   position: relative;
 }
 
-/* line 47, sass/_shame.scss */
+/* line 50, sass/_shame.scss */
 .menu a,
 .menu .button {
   margin: .3em 0;
 }
 
-/* line 51, sass/_shame.scss */
+/* line 54, sass/_shame.scss */
 .is-dropdown-submenu {
   border: none;
 }
 
-/* line 54, sass/_shame.scss */
+/* line 57, sass/_shame.scss */
 .is-dropdown-submenu-parent {
   position: static;
 }
 
-/* line 57, sass/_shame.scss */
+/* line 60, sass/_shame.scss */
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after,
 .dropdown.menu.vertical > li.opens-left > a::after,
 .dropdown.menu.vertical > li.opens-right > a::after,
@@ -87,17 +92,17 @@
   content: none;
 }
 
-/* line 63, sass/_shame.scss */
+/* line 66, sass/_shame.scss */
 .dropdown.menu.large-horizontal > li.opens-right > .is-dropdown-submenu {
   top: 58px;
 }
 
-/* line 66, sass/_shame.scss */
+/* line 69, sass/_shame.scss */
 .submenu {
   padding-left: 1.777em;
 }
 
-/* line 69, sass/_shame.scss */
+/* line 72, sass/_shame.scss */
 .is-submenu-item {
   color: #fff;
   font-size: 14px;
@@ -114,78 +119,78 @@
   border-bottom: none;
 }
 
-/* line 73, sass/_shame.scss */
+/* line 76, sass/_shame.scss */
 .dropdown .is-dropdown-submenu a {
   padding: 0;
 }
 
-/* line 76, sass/_shame.scss */
+/* line 79, sass/_shame.scss */
 .is-dropdown-submenu.js-dropdown-active {
   display: flex;
 }
 
 @media print, screen and (min-width: 64em) {
-  /* line 81, sass/_shame.scss */
+  /* line 84, sass/_shame.scss */
   .row .row {
     margin-right: 0;
     margin-left: 0;
   }
 }
-/* line 87, sass/_shame.scss */
+/* line 90, sass/_shame.scss */
 .orbit--images .orbit-bullets {
   padding: 1.777em;
   margin-top: -30px;
 }
 @media (min-width: 64em) {
-  /* line 87, sass/_shame.scss */
+  /* line 90, sass/_shame.scss */
   .orbit--images .orbit-bullets {
     padding: 1.777em 4.209em;
     margin-top: -50px;
   }
 }
 
-/* line 96, sass/_shame.scss */
+/* line 99, sass/_shame.scss */
 .orbit-container {
   height: auto;
   min-height: 30vh;
   padding: 0;
 }
 
-/* line 101, sass/_shame.scss */
+/* line 104, sass/_shame.scss */
 .orbit-bullets {
   float: left;
   display: inline-block;
 }
 
-/* line 105, sass/_shame.scss */
+/* line 108, sass/_shame.scss */
 .orbit-bullets button {
   min-width: 0;
   background-color: inherit;
 }
 
-/* line 109, sass/_shame.scss */
+/* line 112, sass/_shame.scss */
 .orbit-bullets button:hover {
   background-color: inherit;
   color: inherit;
 }
 
-/* line 113, sass/_shame.scss */
+/* line 116, sass/_shame.scss */
 .orbit-bullets button.is-active {
   background-color: inherit;
 }
 
-/* line 116, sass/_shame.scss */
+/* line 119, sass/_shame.scss */
 .orbit-slide {
   padding: 1.333em;
 }
 @media (min-width: 64em) {
-  /* line 116, sass/_shame.scss */
+  /* line 119, sass/_shame.scss */
   .orbit-slide {
     padding: 4.209em;
   }
 }
 
-/* line 122, sass/_shame.scss */
+/* line 125, sass/_shame.scss */
 .orbit-previous,
 .orbit-next {
   min-width: 0;
@@ -193,7 +198,7 @@
   padding: 0;
   border: 0 !important;
 }
-/* line 128, sass/_shame.scss */
+/* line 131, sass/_shame.scss */
 .orbit-previous svg,
 .orbit-next svg {
   fill: #73d2cf;
@@ -201,12 +206,12 @@
   height: 30px;
 }
 
-/* line 134, sass/_shame.scss */
+/* line 137, sass/_shame.scss */
 .orbit-previous {
   transform: rotate(180deg) translateY(30%);
 }
 
-/* line 137, sass/_shame.scss */
+/* line 140, sass/_shame.scss */
 .orbit-previous:hover,
 .orbit-next:hover,
 .orbit-previous:active,
@@ -217,13 +222,13 @@
   border: 0;
 }
 
-/* line 146, sass/_shame.scss */
+/* line 149, sass/_shame.scss */
 .tabs {
   background: transparent;
   border: 0;
 }
 
-/* line 152, sass/_shame.scss */
+/* line 155, sass/_shame.scss */
 .tabs-title > a,
 .tabs-title a:link {
   padding: 0;
@@ -232,7 +237,7 @@
   display: inline-block;
   border-bottom: 2px solid transparent;
 }
-/* line 159, sass/_shame.scss */
+/* line 162, sass/_shame.scss */
 .tabs-title > a[aria-selected='true'], .tabs-title > a:hover,
 .tabs-title a:link[aria-selected='true'],
 .tabs-title a:link:hover {
@@ -242,12 +247,12 @@
   border-bottom: 2px solid #73d2cf;
 }
 
-/* line 168, sass/_shame.scss */
+/* line 171, sass/_shame.scss */
 .tabs-panel {
   padding: 0;
 }
 
-/* line 171, sass/_shame.scss */
+/* line 174, sass/_shame.scss */
 .tabs-content {
   color: inherit;
   border: 0;
@@ -1433,10 +1438,10 @@ a.nav-main__subitem__title {
 }
 
 @media (min-width: 64em) {
-  /* line 295, sass/_base-smakk.scss */
+  /* line 297, sass/_base-smakk.scss */
   .nav-main__item {
     color: #0067FF;
-    font-size: 16px;
+    font-size: 14px;
   }
   /* line 151, sass/_mixins-smakk.scss */
   .nav-main__item a {
@@ -1448,19 +1453,27 @@ a.nav-main__subitem__title {
   .nav-main__item a:hover {
     border-bottom: none;
   }
+}
+@media screen and (min-width: 64em) and (min-width: 1150px) {
+  /* line 297, sass/_base-smakk.scss */
+  .nav-main__item {
+    font-size: 16px;
+  }
+}
 
-  /* line 298, sass/_base-smakk.scss */
+@media (min-width: 64em) {
+  /* line 303, sass/_base-smakk.scss */
   .nav-main__lastitem {
     margin-left: auto;
   }
 
-  /* line 301, sass/_base-smakk.scss */
+  /* line 306, sass/_base-smakk.scss */
   .nav-main__subitem {
     padding: 1.333em 3.157em;
     max-width: 50%;
   }
 
-  /* line 305, sass/_base-smakk.scss */
+  /* line 310, sass/_base-smakk.scss */
   a.nav-main__subitem__title {
     color: #73d2cf;
     font-size: 3.157em;
@@ -1468,7 +1481,7 @@ a.nav-main__subitem__title {
     font-weight: 700;
   }
 
-  /* line 311, sass/_base-smakk.scss */
+  /* line 316, sass/_base-smakk.scss */
   .nav-main__subitem__text {
     color: #fff;
     display: block;
@@ -1476,7 +1489,7 @@ a.nav-main__subitem__title {
     margin: 1em 0;
   }
 
-  /* line 317, sass/_base-smakk.scss */
+  /* line 322, sass/_base-smakk.scss */
   .nav-main__subitem__text a {
     display: inline-block;
     margin-top: 0.75em;
@@ -1495,7 +1508,7 @@ a.nav-main__subitem__title {
     border-bottom: none;
   }
 }
-/* line 324, sass/_base-smakk.scss */
+/* line 329, sass/_base-smakk.scss */
 .nav-footer {
   list-style-type: none;
   display: inline-block;
@@ -1503,7 +1516,7 @@ a.nav-main__subitem__title {
   padding: 0;
 }
 
-/* line 327, sass/_base-smakk.scss */
+/* line 332, sass/_base-smakk.scss */
 .nav-footer__item {
   color: #1F28BF;
   font-size: 0.75em;
