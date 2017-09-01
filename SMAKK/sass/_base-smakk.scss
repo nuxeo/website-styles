@@ -290,10 +290,15 @@
       display: none;
       padding: 0
     }
+
+
     //NAV ON LARGE
     @include smakk-breakpoint(large) {
       .nav-main__item {
-        @include smakk-nav-links($c-blue, 16px);
+        @include smakk-nav-links($c-blue, 14px);
+        @media screen and (min-width: 1150px) {
+          font-size: 16px
+        }
       }
       .nav-main__lastitem {
         margin-left: auto
