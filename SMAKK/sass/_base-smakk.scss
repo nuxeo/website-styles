@@ -74,19 +74,16 @@
       max-width: 500px;
       font-size: 18px;
       cite {
-        margin-top: $scale-5;
         font-style: normal;
-        display: block
+        display: block;
+        margin-top: $scale-2
       }
-      &:after {
-        content: '';
-        position: absolute;
+      svg {
+        fill: currentColor;
+        display: block;
         height: 25px;
-        width: 95px;
-        bottom: 55px;
-        background-image: url(svg/quotation-mark.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
+        margin-bottom: -$scale-2;
+      margin-top: $scale-1;
       }
     }
     a,
