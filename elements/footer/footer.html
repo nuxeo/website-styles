@@ -18,20 +18,21 @@
             display: block;
         }
 
-        :host {
+        :host ::content {
             background-color: #fff;
             color: #1067ff;
             font-family: "Open Sans", "Arial", sans-serif;
             font-size: 12px;
             font-stretch: normal;
             font-style: normal;
+            font-weight: bold;
             letter-spacing: 1.5px;
             padding-bottom: 3rem;
             padding-top: 6rem;
             -webkit-font-smoothing: auto;
         }
 
-        :host .row {
+        :host ::content .row {
             position: relative;
             background: #fff;
             max-width: 1800px;
@@ -45,6 +46,7 @@
         }
 
         /* Footer specific */
+        :host ::content .content-wrapper a,
         :host a {
             color: #1067ff;
             text-decoration: none;
@@ -54,12 +56,13 @@
             border: none;
         }
 
+        :host ::content a:hover,
         :host a:hover {
             color: #003ea9;
             border: none;
         }
 
-        :host .content-wrapper ::content > .columns > a {
+        :host ::content .row.content-wrapper > .columns > a {
             border-top: 4px solid #1067ff;
             font-weight: 700;
             padding-bottom: 1rem;
@@ -102,50 +105,50 @@
         <content>
             <div class="row content-wrapper">
                 <div class="columns small-12 medium-4 large-2">
-                    <a href="{{url_locale 'about' lang}}">{{_ About}}</a>
+                    <a href="https://www.nuxeo.com/about/">About</a>
                     <div class="row collapse small-up-1">
-                        <div class="columns"><a href="{{url_locale 'why-nuxeo' lang}}">{{_ Why Nuxeo?}}</a></div>
-                        <div class="columns"><a href="{{url_locale 'about/careers' lang}}">{{_ Careers}}</a></div>
-                        <div class="columns"><a href="{{url_locale 'about/leadership' lang}}">{{_ Executive Team}}</a></div>
-                        <div class="columns"><a href="{{url_locale 'media-center' lang}}">{{_ Press}}</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/why-nuxeo/">Why Nuxeo?</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/about/careers/">Careers</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/about/leadership/">Executive Team</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/media-center/">Press</a></div>
                     </div>
                 </div>
                 <div class="columns small-12 medium-8 large-4">
-                    <a href="{{url_locale 'products' lang}}">{{_ Products}}</a>
+                    <a href="https://www.nuxeo.com/products/">Products</a>
                     <div class="row collapse small-up-1 medium-up-2">
-                        <div class="columns"><a href="{{url_locale 'products/content-management-platform' lang}}">{{_ Content Services Platform}}</a></div>
-                        <div class="columns"><a href="{{url_locale 'products/cloud-hosting' lang}}">Cloud</a></div>
-                        <div class="columns"><a href="{{url_locale 'products/studio' lang}}">Studio</a></div>
-                        <div class="columns"><a href="{{url_locale 'products/mobile' lang}}">Mobile</a></div>
-                        <div class="columns"><a href="{{url_locale 'products/drive-desktop-sync' lang}}">{{_ Desktop Syn}}</a></div>
-                        <div class="columns"><a href="{{url_locale 'products/nuxeo-vision-service' lang}}">Nuxeo Vision</a></div>
-                        <div class="columns"><a href="{{url_locale 'products/digital-asset-management' lang}}">Digital Asset Management</a></div>
-                        <div class="columns"><a href="{{url_locale 'products/document-management' lang}}">{{_ Document Management}}</a></div>
-                        <div class="columns"><a href="{{url_locale 'products/knowledge-management' lang}}">{{_ Knowledge Management}}</a></div>
-                        <div class="columns"><a href="{{url_locale 'products/case-management' lang}}">{{_ Case Management}}</a></div>
-                        <div class="columns"><a href="{{url_locale 'about/what-is-new' lang}}">What's New</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/content-management-platform/">Content Services Platform</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/cloud-hosting/">Cloud</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/studio/">Studio</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/mobile/">Mobile</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/drive-desktop-sync/">Desktop Syn</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/nuxeo-vision-service/">Nuxeo Vision</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/digital-asset-management/">Digital Asset Management</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/document-management/">Document Management</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/knowledge-management/">Knowledge Management</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/products/case-management/">Case Management</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/about/what-is-new/">What's New</a></div>
                     </div>
                 </div>
                 <div class="columns small-12 medium-8 large-4">
-                    <a href="{{url_locale 'integration/adobe-creative-suite' lang}}">Integrations</a>
+                    <a href="https://www.nuxeo.com/integration/adobe-creative-suite/">Integrations</a>
                     <div class="row collapse small-up-1 medium-up-2">
-                        <div class="columns"><a href="{{url_locale 'integration/live-connect' lang}}">Cloud File Sharing</a></div>
-                        <div class="columns"><a href="{{url_locale 'integration/adobe-creative-suite' lang}}">Adobe CC</a></div>
-                        <div class="columns"><a href="{{url_locale 'integration/mongodb' lang}}">MongoDB</a></div>
-                        <div class="columns"><a href="{{url_locale 'integration/elasticsearch' lang}}">Elasticsearch</a></div>
-                        <div class="columns"><a href="{{url_locale 'integration/amazon-rekognition' lang}}">Amazon Rekognition</a></div>
-                        <div class="columns"><a href="{{url_locale 'integration/google-vision' lang}}/">Google Vision</a></div>
-                        <div class="columns"><a href="{{url_locale 'integration/document-capture-ephesoft' lang}}">Document Capture</a></div>
-                        <div class="columns"><a href="{{url_locale 'integration/salesforce-connector' lang}}">Salesforce</a></div>
-                        <div class="columns"><a href="{{url_locale 'integration/cmis' lang}}/">CMIS</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/live-connect/">Cloud File Sharing</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/adobe-creative-suite/">Adobe CC</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/mongodb/">MongoDB</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/elasticsearch/">Elasticsearch</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/amazon-rekognition/">Amazon Rekognition</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/google-vision/">Google Vision</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/document-capture-ephesoft/">Document Capture</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/salesforce-connector/">Salesforce</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/integration/cmis/">CMIS</a></div>
 
                     </div>
                 </div>
                 <div class="columns small-12 medium-4 large-2">
-                    <a href="{{url_locale 'learn' lang}}">{{_ Learn}}</a>
+                    <a href="https://www.nuxeo.com/learn/">Learn</a>
                     <div class="row collapse small-up-1">
                         <div class="columns"><a href="https://university.nuxeo.com/store">University</a></div>
-                        <div class="columns"><a href="{{url_locale 'about/certification-2017' lang}}">Certification</a></div>
+                        <div class="columns"><a href="https://www.nuxeo.com/about/certification-2017/">Certification</a></div>
                         <div class="columns"><a href="https://answers.nuxeo.com/general">Answers</a></div>
                         <div class="columns"><a href="https://doc.nuxeo.com/">Documentation</a></div>
                         <div class="columns"><a href="https://www.nuxeo.com/learn/">Learn</a></div>
