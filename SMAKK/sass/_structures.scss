@@ -108,7 +108,7 @@
     }
     .spaced-by-3 & {
       @include smakk-breakpoint(large) {
-        max-width: calc(33.3333% - 20px);
+        max-width: calc(33.3333% - 15px);
       }
     }
     .spaced-by-2 & {
