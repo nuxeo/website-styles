@@ -108,7 +108,7 @@
     }
     .spaced-by-3 & {
       @include smakk-breakpoint(large) {
-        max-width: calc(33.3333% - 20px);
+        max-width: calc(33.3333% - 15px);
       }
     }
     .spaced-by-2 & {
@@ -164,7 +164,7 @@
   }
   .c-card__title {
     @extend .h4;
-    word-break: break-all;
+    word-break: break-word;
     &:link {
       text-decoration: none
     }
@@ -293,6 +293,11 @@
   .c-crazycallout__bgimage {
     @include smakk-background-cover();
     min-height: 50vh;
+
+    img {
+      width: 100%;
+      min-height: 50vh;
+    }
   }
   .c-crazycallout__box {
     padding: $scale-1 $scale-3;
