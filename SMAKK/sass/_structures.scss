@@ -197,7 +197,7 @@
       max-width: none
     }
     @include smakk-breakpoint(large) {
-      padding-bottom: 250px;
+      padding-bottom: 50px;
       picture>img {
         margin: auto;
         position: static;
