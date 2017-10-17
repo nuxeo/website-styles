@@ -241,6 +241,10 @@
         border: 2px solid $c-blue !important;
       }
     }
+
+    &.button--expanded {
+      width: 100%;
+    }
   }
   //svg icons
   svg {
