@@ -1,0 +1,58 @@
+/* Tsoulcie & Lkemen for Nuxeo, Jan 2010 */
+
+H1 {
+    color: #343434;
+    font: bold 14px "Lucida Grande", sans-serif;
+    padding: 0;
+    margin: 2px 0 15px 0;
+    border-bottom: 1px dotted #8B8B8B;
+}
+
+H2 {
+    color: #999;
+    font: bold 11px "Lucida Grande", sans-serif;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+
+.news_container {
+    width: 100px;
+    color: #343434;
+}
+
+.news_block {
+    background: transparent url(/nuxeo/img/theme_galaxy/news_bg.png) 0 repeat-x;
+    padding: 5px 10px;
+}
+
+.news {
+    font: normal 11px "Lucida Grande", sans-serif;
+    padding-bottom: 15px;
+    color: #494949;
+}
+
+p {
+    color: #494949;
+    font: normal 11px "Lucida Grande", sans-serif;
+    margin: 5px 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    padding: 3px 0 0;
+}
+
+a {
+    font: normal 11px "Lucida Grande", sans-serif;
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    text-decoration: underline;
+}

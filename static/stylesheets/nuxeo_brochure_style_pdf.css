@@ -1,0 +1,234 @@
+/* Tsoulcie & Lkemen for Nuxeo, July-Sept 2009, revised April 2010
+Combines websitetoolbar.css and print.css */
+
+/*  all media  */
+@media all {
+
+/* Structure */
+
+body {
+  background-image: none;
+  border:0;
+  padding:0;
+  margin:0;
+  font: normal 12px 'Lucida Grande', Verdana, sans-serif;   
+
+}
+
+a {
+  outline:0;
+  border:0px;
+}
+
+a.lightbox-fullsize {
+display:none;
+}
+
+.brochure_sheet {
+  border-top:7px solid #f9d036;
+  margin: 0;
+  width: 100%;
+  }
+
+.brochure_sheet td {
+  text-align: left;
+}
+
+.brochure_sheet .brochure_header {
+  background-color:#151515;
+  border-bottom: 1px solid #fff;
+  padding: 10px;
+  text-align: right;
+ }
+ 
+.brochure_sheet .brochure_content {
+  padding:15px;
+  padding-bottom: 40px;
+ }
+
+.brochure_sheet .brochure_column {
+  background-color: #f1f2f3;
+  text-align: left;
+  padding:10px;
+  font-size: 85%;
+} 
+
+.brochure_box {
+ border:1px solid #cbcbcb;
+ margin:10px;
+ margin-bottom: 20px;
+ padding:0;
+ background-color:white;
+}
+
+.brochure_box h5, .brochure_box h6 {
+  margin:0;
+  padding:5px 10px;
+}
+
+.brochure_box h5 {
+  background-color: #cbcbcb;
+}
+
+.brochure_box h6 {
+  padding-bottom: 0px;
+  }
+
+
+.brochure_box div {
+  padding:10px;
+}
+
+/* Content */ 
+
+div#main-position {
+  float: none;
+  }
+  
+.left_article_column {
+  padding: 0;
+}
+
+#main p {
+padding-right: 0;
+margin-bottom: 0.5em;
+}
+
+/* For double columns */
+.right_article_column, .right_column_product, .right_solution_column {
+  display:none;
+}
+
+.border-left {
+  border:none;
+}
+
+.twocolumns_container td:first-child {
+  width:100% !important;
+}
+
+  /* for news pdf */
+  
+  table.news_sheet {
+   margin: 0 auto;
+  }
+  
+  div.news-footer {
+    margin-top:1em;
+    border-top:2px solid #666;
+    font-weight: bold;
+  }
+    
+
+/* Nuxeo Style ends */
+
+
+/* Control page rendring: please refer to doc/doc.txt */
+
+}
+/* All media ends */
+
+/* For printing */
+
+@media print
+{
+/* Tsoulcie & Lkemen for Nuxeo, Jan 2010 */
+
+body {
+  background-image: none;
+  background-color: #fff;
+  font: normal 9pt 'Lucida Grande', Verdana, sans-serif;   
+  color:black;
+  margin: 0;
+ } 
+ 
+a, a:link, a:visited, a:hover, a:active {
+  color:#0066cc;
+  text-decoration: none;
+  border-width:0px;
+  outline:none; 
+}
+
+a.lightbox-fullsize {
+display:none;
+}
+
+ul li {
+list-style-image:none;
+} 
+ 
+.brochure_sheet {
+  font-size: 80%;
+  font: normal 9pt 'Lucida Grande', Verdana, sans-serif;   
+  width:100%;
+} 
+ 
+#topmenu-position, #searchbox, #sidemenu-position, #sidemenu, #links_in_column, #blogRollBar, #siteMap, #footer, .right_article_column, .right_column_product, .right_solution_column, div.pdf-download {
+   display:none;
+ }
+
+#logo img {
+ display:visible;
+} 
+
+div#columns {
+  padding:0;
+}
+
+.brochure_sheet .brochure_column {
+  font-size: 85%;
+} 
+
+
+div#path {
+  border:none;
+  border-left: none;
+  border-right: none;
+}
+
+.brochure_content, .brochure_column {
+  padding-bottom: 40px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/* blockquote {
+  display: none;
+} */
+
+.object-left {
+ float:left;
+}
+
+.object-right {
+ float:right;
+}
+
+.newstitleblock {
+  padding-top:1em;
+}
+
+.newstitleblock H1, .newstitleblock .chapo {
+  font: bold 9pt 'Lucida Grande', Verdana, sans-serif;   
+  text-align: center;
+  color:black;
+}
+
+}
+
+@page {
+    size: a4 portrait;
+    margin: 2em 1em;
+    padding:0 0 0 0;
+    font: normal 9pt 'Lucida Grande', Verdana, sans-serif;  
+    @top-left {
+       content: element(header);
+    }
+    @bottom-right {
+        content: element(footer);
+      }    
+}
+
+@page :first { margin-top:0;  }
