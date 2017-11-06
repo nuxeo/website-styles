@@ -241,6 +241,10 @@
         border: 2px solid $c-blue !important;
       }
     }
+
+    &.button--expanded {
+      width: 100%;
+    }
   }
   //svg icons
   svg {
@@ -268,9 +272,10 @@
     @include smakk-nav-links(#fff, 20px);
   }
   .main-menu__logo {
-    max-width: 120px;
+    font-size: 22px;
     margin-right: $scale-3;
-    vertical-align: -webkit-baseline-middle;
+    max-width: 120px;
+    vertical-align: baseline-middle;
   }
   ul.nav-main__submenu {
     right: 0;
