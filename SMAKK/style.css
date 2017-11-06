@@ -400,6 +400,13 @@
 #careers .r-cards--spaced .columns {
   min-height: 0;
 }
+
+@media all and (max-width: 480px) {
+    #careers {
+        flex-direction: column;
+    }
+}
+
 @media (min-width: 64em) {
   /* line 104, sass/_structures.scss */
   .spaced-by-4 .columns {
