@@ -270,6 +270,7 @@
   //Navigation ON SMALL
   .nav-main__item {
     @include smakk-nav-links(#fff, 20px);
+    margin: .3em 0;
   }
   .main-menu__logo {
     font-size: 22px;

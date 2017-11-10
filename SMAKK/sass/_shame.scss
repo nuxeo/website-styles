@@ -52,9 +52,8 @@
   .menu .nav-main {
     position: relative
   }
-  .menu a,
-  .menu .button {
-    margin: .3em 0;
+  .btn-request-demo {
+    margin: 0;
   }
   .is-dropdown-submenu {
     border: none
@@ -69,7 +68,7 @@
     content: none
   }
   .dropdown.menu.large-horizontal>li.opens-right>.is-dropdown-submenu {
-    top: 58px
+    top: 50px
   }
   .submenu {
     padding-left: $scale-3
