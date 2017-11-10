@@ -98,9 +98,6 @@
         border-bottom: 2px solid $c-blue;
       }
     }
-    .is-bg-green & {
-      border-bottom: 2px solid $c-blue;
-    }
   }
   a:hover {
     color: inherit;
@@ -255,7 +252,6 @@
 
   .icon {
     width: 80px;
-    height: 100px;
   }
   //Toggles
   button.toggle__item,
