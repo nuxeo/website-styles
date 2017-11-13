@@ -268,6 +268,13 @@
     @include smakk-nav-links(#fff, 20px);
     margin: .3em 0;
   }
+  .nav-main__item {
+    button {
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
   .main-menu__logo {
     font-size: 22px;
     max-width: 120px;
