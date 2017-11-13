@@ -423,7 +423,9 @@
 }
 
 @media all and (max-width: 1023px) {
-  .r-cards--spaced .columns {
-    margin: 10px 10px;
+  .r-cards--spaced {
+    .columns {
+      margin: 10px 10px;
+    }
   }
 }
