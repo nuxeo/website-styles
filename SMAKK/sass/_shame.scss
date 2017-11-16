@@ -53,7 +53,9 @@
     position: relative
   }
   .btn-request-demo {
-    margin: 0;
+    a {
+      margin: 0 0.75em !important;
+    }
   }
   .is-dropdown-submenu {
     border: none
