@@ -26,7 +26,7 @@
     "npm_install": "[ `npm run -s package_checksum` = `cat package.md5` ] || npm install && npm run -s package_checksum > package.md5",
     "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'",
     "version": "npm run npm_install && cp -r static/satellite/latest static/satellite/`node -e \"console.log(require('./package.json').version);\"`",
-    "spostversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags"
   },
   "author": "Andrew Goodricke <github@andrewgoodricke.com> (http://www.nuxeo.com)",
   "dependencies": {
