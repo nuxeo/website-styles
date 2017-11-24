@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Nuxeo Email Signature Wizard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="//www.nuxeo.com/assets/icons/favicon-32x32.png?v=2">
+        <!-- Place favicon.ico in the root directory -->
+
+        <!-- Compressed CSS -->
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0=" crossorigin="anonymous" /> -->
+        <link rel="stylesheet" href="/satellite/latest/css/v2-nuxeo-styles.css">
+        <style>
+        .is-email-type {
+            cursor: pointer;
+        }
+        </style>
+
+        <script src="/satellite/latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+        <script src="/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+        <!-- 2. Use an HTML Import to bring in some elements. -->
+        <link rel="import" href="/satellite/latest/elements/elements.html">
+    </head>
+    <body>
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+        <nuxeo-menu site-name="Email Signature" site-url="/wizard/email/"></nuxeo-menu>
+
+        <div class="row is-blue align-center">
+            <div class="columns small-12 medium-10 large-8 ">
+                <div class="row">
+                    <div id="inputs" class="columns small-12 medium-6">
+                        <label>Name
+                            <input id="name" name="name" type="text" placeholder="e.g. Tony Parker" required autofocus>
+                        </label>
+                        <label>Position
+                            <input id="position" name="position" type="text" placeholder="e.g. Chief Revinue Officer" required>
+                        </label>
+                        <label>Phone Number label (optional)
+                            <input id="phone_label" name="phone_label" type="text" placeholder="e.g. +1.123.456.7890">
+                        </label>
+                        <label>Phone Number (optional)
+                            <input id="phone" name="phone" type="phone" placeholder="e.g. +11234567890">
+                        </label>
+                    </div>
+                    <div class="columns small-12 medium-6 result" style="display:none;">
+                        <p><strong>Implementation intructions:</strong></p>
+                        <div class="row" id="email-types">
+                            <div id="is-gmail" class="columns small-4 text-center is-email-type">
+                                Gmail
+                                <img src="//res.cloudinary.com/nuxeo/image/upload/c_pad,h_150,w_150/static/gmail.png" alt="Gmail">
+                            </div>
+                            <div id="is-apple" class="columns small-4 text-center is-email-type">
+                                Apple Mail App
+                                <img src="//res.cloudinary.com/nuxeo/image/upload/c_pad,h_150,w_150/static/apple-mail.png" alt="Apple Mail App">
+                            </div>
+                            <div id="is-thunderbird" class="columns small-4 text-center is-email-type">
+                                Thunderbird
+                                <img src="//res.cloudinary.com/nuxeo/image/upload/c_pad,h_150,w_150/static/thunderbird.png" alt="Thunderbird">
+                            </div>
+                        </div>
+                        <div id="gmail" class="email-type" style="display:none;">
+                            <ol>
+                                <li>Create a new email, activate advanced text (instead of plain text)</li>
+                                <li>Go to settings</li>
+                                <li>View <a class="signature-source" target="_blank" href="source.html?">your signature here</a></li>
+                                <li>Copy the signature - <em>Copy it like any text (don't copy the code)</em>
+                                </li>
+                                <ul>
+                                    <li>Windows/Linux: <kbd>ctrl + a</kbd> then <kbd>ctrl + c</kbd></li>
+                                    <li>Mac: <kbd>cmd + a</kbd> then <kbd>cmd + c</kbd></li>
+                                </ul>
+                                <li>Paste in signature area</li>
+                                <li>Save and done!</li>
+                            </ol>
+                        </div>
+                        <div id="apple" class="email-type" style="display:none;">
+                            <ul>
+                                <li><strong>For Mavericks:</strong> See&nbsp;<a href="http://matt.coneybeare.me/how-to-make-an-html-signature-in-apple-mail-for-mavericks-os-x-10-dot-9/" target="_blank">How to make a n html signature in Apple Mail for Mavericks</a> Basically:</li>
+                                <ol>
+                                    <li>Create a new signature, quit mail</li>
+                                    <li>Go to&nbsp;~/Library/Mail/V2/MailData/Signatures/, find your new signature</li>
+                                    <li>Open it with a text editor</li>
+                                    <li>Replace all the &lt;body ..... &lt;/body&gt; part with the new template code. <button class="copy-html is-bg-green" data-clipboard-target="#code">Click here to copy signature to your clipboard</button></li>
+                                    <li>Save</li>
+                                    <li>Then lock the file form the finder</li>
+                                </ol>
+                                <li><strong><em>OR</em></strong> you can do the same than for Gmail : copy/paste the signature from browser to Mail</li>
+                            </ul>
+                            <ul>
+                                <li><strong>For Mountain Lion:</strong> <a href="http://code.coneybeare.net/how-to-make-and-html-signature-in-apple-mail">http://code.coneybeare.net/how-to-make-and-html-signature-in-apple-mail</a></li>
+                            </ul>
+                            <ul>
+                                <li><strong>Older versions:</strong></li>
+                                <ol>
+                                    <li>Go to preferences, create a new signature</li>
+                                    <li>Quit Mail (important!!)</li>
+                                    <li>View <a class="signature-source" target="_blank" href="source.html?">your signature here</a></li>
+                                    <li>Save as a webarchive in your Library/Mail/Signature and <strong>replace the newest existing signature</strong></li>
+                                    <li>Go back to to Mail and it should work :)</li>
+                                    <li>You can then edit directly into your signature the fields like your name, title etc...(be careful with Twitter)</li>
+                                </ol>
+                            </ul>
+                        </div>
+                        <div id="thunderbird" class="email-type" style="display:none;">
+                            <ol>
+                                <li>Go to "Account settings" and select your Nuxeo account</li>
+                                <li>Choose "Signature text (with HTML)" or "Attach signature from a file"</li>
+                                <li><button class="copy-html is-bg-green" data-clipboard-target="#code">Click here to copy signature to your clipboard</button></li>
+                                <li>Paste HTML text</li>
+                            </ol>
+                        </div>
+                        <div>
+                            Preview:
+                            <div id="html"></div>
+                            HTML code:
+                            <textarea id="code" name="code" rows="8" cols="80" readonly="true"></textarea>
+                            <button class="copy-html is-bg-green" data-clipboard-target="#code">Copy to clipboard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <script src="js/vendor/modernizr-3.5.0.min.js"></script> -->
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js" integrity="sha256-+JMHsXRyeTsws/tzbIh5YHQxRdKCuNjmvNcTFtY6DLc=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha256-Daf8GuI2eLKHJlOWLRR/zRy9Clqcj4TUSumbxYH9kGI=" crossorigin="anonymous"></script>
+        <script src="email.js"></script>
+    </body>
+</html>

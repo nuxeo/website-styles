@@ -5,16 +5,20 @@
         <style>
         /* local DOM styles go here */
         :host {
+        }
+
+        :host .header-banner-container {
             background-color: #091f3f;
             background-size: cover;
             color: white;
             display: block;
+            font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
             height: 300px;
             padding-top: 30px;
             text-align: center;
         }
 
-        :host[background-id='1'] {
+        :host .header-banner-container[background-id='1'] {
             background-image: url('//www.nuxeo.com/assets/imgs/backgrounds/ea-background.png');
         }
 
@@ -29,9 +33,11 @@
         }
         </style>
         <!-- local DOM goes here -->
-        <h1>[[title]]</h1>
-        <div class="content">
-            <content></content>
+        <div class="header-banner-container" style="background-image: url('{{backgroundUrl}}');">
+            <h1>[[title]]</h1>
+            <div class="content">
+                <slot></slot>
+            </div>
         </div>
     </template>
     <script>
@@ -40,6 +46,10 @@
         properties: {
             title: String,
             backgroundId: {
+                type: String,
+                reflectToAttribute: true
+            },
+            backgroundUrl: {
                 type: String,
                 reflectToAttribute: true
             }

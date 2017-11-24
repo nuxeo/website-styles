@@ -1,6 +1,8 @@
 // Styling for Nuxeo websites
 @charset 'utf-8';
 
+@import '../SMAKK/stylesheets/foundation';
+
 // Base
 @import 'v2-nuxeo-base';
 @include nuxeo-base-styles;

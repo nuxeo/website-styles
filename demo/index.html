@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- 0. Include a reset or normalise. -->
-    <link rel="stylesheet" href="/css/nuxeo_normalize.css" media="screen" title="no title">
-    <link rel="stylesheet" href="/SMAKK/stylesheets/foundation.css" media="screen" title="no title">
+    <link rel="stylesheet" href="/css/v2-nuxeo-styles.css" media="screen" title="no title">
     <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-    <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js">
-    </script>
+    <script src="/build/es5-bundled/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+    <script src="/build/es5-bundled/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
     <!-- 2. Use an HTML Import to bring in some elements. -->
-    <link rel="import" href="/elements/header/header.html">
-    <link rel="import" href="/elements/footer/footer.html">
+    <link rel="import" href="/build/es5-bundled/elements/elements.html">
 </head>
 <body>
     <nuxeo-header show-nuxeo-menu>

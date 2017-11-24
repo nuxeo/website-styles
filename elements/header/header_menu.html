@@ -1,6 +1,5 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
-<!-- site-name="Elements" menu-items='[{title: "Milestones", url: "/milestones"}, {title: "Continuous", url: "/continuous"}, {title: "Login", url: "/login"}]' -->
 <dom-module id="nuxeo-menu">
     <template>
         <style>
@@ -11,25 +10,80 @@
             display: -webkit-flex;
             display: -ms-flexbox;
             display: flex;
+            font-family: 'Open Sans', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
             min-height: 48px;
             -webkit-justify-content: space-between;
                 -ms-flex-pack: justify;
                     justify-content: space-between;
         }
 
+        :host ul {
+            -webkit-align-items: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        :host li {
+            margin: .3em 0;
+            display: list-item;
+            text-align: left;
+        }
+
         :host a {
             color: white;
-            text-transform: uppercase;
+            text-decoration: none;
+            transition: color .2s ease;
+            margin-right: 11px;
+            font-weight: 700;
+            padding-top: 11px;
+            padding-bottom: 11px;
+        }
+
+        :host .active a {
+            color: #0067ff;
+        }
+
+        :host a:hover {
+            color: #73d2cf;
         }
 
         :host .menu-home a {
-            font-weight: 600;
             letter-spacing: 1px;
+            position: relative;
+            text-transform: uppercase;
         }
 
-        :host .menu-home a img {
-            margin-left: 7px;
-            margin-right: 14px;
+        :host .menu-home a svg {
+            display: inline-block;
+            height: 22px;
+            width: 22px;
+            margin-right: 7px;
+            padding-top: 11px;
+            padding-bottom: 11px;
+            padding-left: 22px;
+        }
+
+        :host .menu-home a svg .nsvglogo-accent {
+            fill: #0067ff;
+            transition: fill .2s ease;
+        }
+        :host .menu-home a:hover svg .nsvglogo-accent {
+            fill: #73d2cf;
+        }
+
+        :host .menu-home a .menu-home-text {
+            position: relative;
+            top: -14px;
+        }
+
+        :host .nuxeo-satellite-right-menu li {
+            padding-top: 13px;
         }
 
         /* Responsive menu */
@@ -54,6 +108,7 @@
                 -webkit-flex-direction: column;
                     -ms-flex-direction: column;
                         flex-direction: column;
+                list-style-type: none;
             }
 
             :host .responsive-toggle,
@@ -100,8 +155,8 @@
             <ul>
                 <li class="menu-home">
                     <a href="[[siteUrl]]">
-                        <img class="nuxeo-satellite-icon" src="//www.nuxeo.com/assets/icons/favicon-16x16.png" width="16" height="16" alt="[[siteName]]">
-                        [[siteName]]
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path class="nsvglogo-accent" d="M0,0 5,0 24,19 24,24 19,24 0,5M0,24 0,19 19,0 24,0 24,5 5,24z"></path></svg>
+                        <span class="menu-home-text">[[siteName]]</span>
                     </a>
                 </li>
                 <template is="dom-repeat" items="{{menuItems}}">
