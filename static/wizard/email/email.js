@@ -55,7 +55,6 @@ $(document).ready(function () {
 
         if (required_satisfied && templates_loaded) {
             signature_style = $input_div.find('input[name="signature_style"]:checked').val();
-            console.log('signature_style', signature_style);
             compiled = templates[signature_style](data);
             $code.text(compiled);
             $html.html(compiled);
