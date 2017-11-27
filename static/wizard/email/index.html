@@ -46,7 +46,7 @@
                         <label for="plain">Plain</label>
                     </div>
                     <div class="columns small-12 medium-6 result" style="display:none;">
-                        <p><strong>Implementation intructions:</strong></p>
+                        <p><strong>Select implementation instructions:</strong></p>
                         <div class="row" id="email-types">
                             <div id="is-gmail" class="columns small-4 text-center is-email-type">
                                 Gmail
@@ -65,12 +65,11 @@
                             <ol>
                                 <li>View <a class="signature-source" target="_blank" href="source.html?">your signature here</a></li>
                                 <li>Go to your Gmail settings</li>
-                                <li></li>
-                                <li>Copy the signature from the preview on step 1 - <em>Copy it like any text (don't copy the code)</em>
+                                <li>Copy the signature from the preview on step 1<br><em>Copy it like any text (don't copy the code)</em>
                                 </li>
                                 <ul>
-                                    <li>Windows/Linux: <kbd>ctrl + a</kbd> then <kbd>ctrl + c</kbd></li>
-                                    <li>Mac: <kbd>cmd + a</kbd> then <kbd>cmd + c</kbd></li>
+                                    <li><strong>Windows/Linux:</strong> <kbd>ctrl + a</kbd> then <kbd>ctrl + c</kbd></li>
+                                    <li><strong>Mac:</strong> <kbd>cmd + a</kbd> then <kbd>cmd + c</kbd></li>
                                 </ul>
                                 <li>Paste in signature area</li>
                                 <li>Save and done!</li>
@@ -79,16 +78,18 @@
                         <div id="apple" class="email-type" style="display:none;">
                             <ul>
                                 <li><strong>Apple Email App:</strong> See&nbsp;<a href="https://support.apple.com/guide/mail/include-a-signature-mail11943/mac" target="_blank">How to make an HTML signature in Apple Mail</a></li>
-                                
+                                <li>Use the "Copy to clipboard" button below for the HTML source</li>
+                            </ul>
                         </div>
                         <div id="thunderbird" class="email-type" style="display:none;">
                             <ol>
                                 <li>Go to "Account settings" and select your Nuxeo account</li>
                                 <li>Choose "Signature text (with HTML)" or "Attach signature from a file"</li>
-                                <li><button class="copy-html is-bg-green" data-clipboard-target="#code">Click here to copy signature to your clipboard</button></li>
+                                <li>Use the "Copy to clipboard" button below for the HTML source</li>
                                 <li>Paste HTML text</li>
                             </ol>
                         </div>
+                        <hr>
                         <div>
                             Preview:
                             <div id="html"></div>
