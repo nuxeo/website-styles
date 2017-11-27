@@ -28,6 +28,7 @@ coverage
 build/Release
 
 # Dependency directories
+/bower_components
 node_modules
 jspm_packages
 
@@ -46,12 +47,11 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-# Bower
-/bower_components
-
 # css generation
 /tmp
 /css
+
+/build
 
 # package cache
 package.md5
@@ -64,3 +64,5 @@ SMAKK/test.html
 SMAKK/Untitled-1.html
 
 .idea/
+
+/static/satellite/latest

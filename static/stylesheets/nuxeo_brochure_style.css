@@ -1,0 +1,150 @@
+/* Tsoulcie & Lkemen for Nuxeo, July-Sept 2009, revised April 2010
+Combines websitetoolbar.css and print.css */
+
+/*  all media  */
+@media all {
+
+/* Structure */
+
+body {
+  background-image: none;
+}
+
+.brochure_sheet {
+  border: 1px solid #000;
+  border-top:7px solid #f9d036;
+  margin: 20px auto;
+  width: 1000px;
+  }
+
+.brochure_sheet td {
+  text-align: left;
+}
+
+.brochure_sheet .brochure_header {
+  background-color:#151515;
+  border-bottom: 1px solid #fff;
+  padding: 10px;
+  text-align: right;
+ 
+ }
+
+.brochure_sheet .brochure_column {
+  background-color: #f1f2f3;
+  text-align: left;
+  padding:10px;
+  font-size: 85%;
+} 
+
+.brochure_box {
+ border:1px solid #cbcbcb;
+ margin:10px;
+ margin-bottom: 20px;
+ padding:0;
+ background-color:white;
+}
+
+.brochure_box h5, .brochure_box h6 {
+  margin:0;
+  padding:5px 10px;
+}
+
+.brochure_box h5 {
+  background-color: #cbcbcb;
+}
+
+.brochure_box h6 {
+  padding-bottom: 0px;
+  }
+
+
+.brochure_box div {
+  padding:10px;
+}
+
+/* Content */ 
+
+div#main-position {
+  float: none;
+  }
+  
+.left_article_column {
+  padding: 0;
+}
+
+#main p {
+padding-right: 0;
+}
+
+/* For double columns */
+.right_article_column, .right_column_product, .right_solution_column {
+  display:none;
+}
+
+.border-left {
+  border:none;
+}
+
+.twocolumns_container td:first-child {
+  width:100% !important;
+}
+
+/* Nuxeo Style ends */
+}
+/* All media ends */
+
+/* For printing */
+
+@media print
+{
+/* Tsoulcie & Lkemen for Nuxeo, Jan 2010 */
+
+body {
+  background-image: none;
+  background-color: #fff;
+  font: normal 10pt 'Lucida Grande', Verdana, serif;   
+  color:black;
+  margin: 10%
+ } 
+ 
+.brochure_sheet {
+  font-size: 80%;
+  width:100%;
+} 
+ 
+#topmenu-position, #searchbox, #sidemenu-position, #sidemenu, #links_in_column, #blogRollBar, #siteMap, #footer, .right_article_column, .right_column_product, .right_solution_column {
+   display:none;
+ }
+
+#logo img {
+ display:visible;
+} 
+
+div#columns {
+  padding:0;
+}
+
+a, a:link, a:visited, a:hover {
+ color:black;
+ text-decoration: underline;
+}
+
+div#path {
+  border:1pt solid #000;
+  border-left: none;
+  border-right: none;
+}
+
+#productTabs ul {
+  border-bottom:4px solid #000;
+}
+
+#productTabs ul li.selected {
+  border:1pt solid #000;
+}
+
+ul li {
+list-style-image:none;
+}
+
+}

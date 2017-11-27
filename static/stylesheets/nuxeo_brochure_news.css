@@ -1,0 +1,24 @@
+/* Tsoulcie & Lkemen for Nuxeo, July-Sept 2009, revised April 2010
+Combines websitetoolbar.css and print.css */
+
+/*  all media  */
+@media all {
+
+.brochure_sheet {
+  border-top: none;
+  border-bottom: 2px solid black;
+}
+
+}
+
+
+@media print
+{
+
+
+}
+
+@page {
+    margin: 4em 2em;
+
+}

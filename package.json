@@ -2,7 +2,7 @@
   "name": "nuxeo-website-styles",
   "description": "Styles to be used on Nuxeo websites",
   "private": true,
-  "version": "4.4.17",
+  "version": "5.0.0",
   "main": "",
   "config": {
     "browser": "chromium-browser"
@@ -10,51 +10,43 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "predev": "npm run npm_install",
-    "dev": "npm run server & nodemon --exec 'npm run compile:styles && browser-sync reload'",
-    "server": "browser-sync start --server . --startPath demo --browser=$npm_package_config_browser",
-    "postinstall": "npm run compile && npm run minify",
+    "dev": "npm run server & nodemon --exec 'npm run compile && browser-sync reload'",
+    "server": "browser-sync start --server ./static --browser=$npm_package_config_browser",
+    "postinstall": "npm run compile",
     "precompile": "bower install --allow-root",
-    "compile": "npm run compile:elements",
-    "compile:elements": "vulcanize --inline-css --inline-scripts --strip-comments elements/elements.html | crisper --html elements/elements.build.html --js elements/elements.build.js",
-    "postcompile:elements": "uglifyjs --compress --mangle -o elements/elements.min.js -- elements/elements.build.js && sed -i.bak 's/elements.build.js/elements.min.js/g' elements/elements.build.html && rm elements/elements.build.html.bak",
+    "compile": "npm run compile:elements & p1=$!; npm run compile:styles & p2=$!; wait \"$p1\" \"$p2\"",
+    "postcompile": "rm -rf static/satellite/latest && mkdir -p static/satellite/latest && cp -r build/es5-bundled/* static/satellite/latest && cp -r css static/satellite/latest",
+    "compile:elements": "polymer build",
     "precompile:styles": "rm -rf ./tmp ./css",
     "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./SMAKK/sass/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/open-sans-fontface/sass --output-style compressed --output ./tmp/ ./scss/",
     "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css",
     "precompile:styles-expanded": "npm run precompile:styles",
     "compile:styles-expanded": "node-sass --source-map true --source-comments --include-path ./scss/ --include-path ./SMAKK/sass/ --include-path ./node_modules/foundation-sites/scss/ --include-path ./node_modules/open-sans-fontface/sass --output-style expanded --output ./tmp/ ./scss/",
     "postcompile:styles-expanded": "npm run postcompile:styles",
-    "minify": "html-minifier elements/elements.build.html -o elements/elements.build.min.html --collapse-boolean-attributes --collapse-whitespace --decode-entities --html5 --minify-css --minify-js --process-conditional-comments --remove-attribute-quotes --remove-comments --remove-empty-attributes --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-style-link-type-attributes --remove-tag-whitespace --sort-attributes --sort-class-name --trim-custom-fragments --use-short-doctype",
     "npm_install": "[ `npm run -s package_checksum` = `cat package.md5` ] || npm install && npm run -s package_checksum > package.md5",
-    "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'"
+    "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'",
+    "version": "npm run npm_install && cp -r static/satellite/latest static/satellite/`node -e \"console.log(require('./package.json').version);\"`",
+    "postversion": "git push && git push --tags"
   },
-  "author": {
-    "name": "Andrew Goodricke",
-    "email": "github@andrewgoodricke.com",
-    "url": "http://www.nuxeo.com"
-  },
+  "author": "Andrew Goodricke <github@andrewgoodricke.com> (http://www.nuxeo.com)",
   "dependencies": {
     "autoprefixer": "^6.7.3",
     "bower": "^1.8.0",
-    "crisper": "^2.0.2",
     "foundation-sites": "6.4.2",
     "html-minifier": "^3.4.3",
     "node-sass": "^4.5.0",
     "open-sans-fontface": "^1.4.0",
+    "polymer-cli": "^1.5.7",
     "postcss-cli": "^2.6.0",
-    "sass-lint": "^1.10.2",
-    "uglify-js": "^2.8.12",
-    "vulcanize": "^1.15.3"
+    "sass-lint": "^1.10.2"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "eslint": "^3.13.1",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.12.1"
   },
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:nuxeo/website-styles.git"
-  },
+  "repository": "git@github.com:nuxeo/website-styles.git",
   "bugs": {
     "url": "git@github.com:nuxeo/website-styles.git/issues"
   }

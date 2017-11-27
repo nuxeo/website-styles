@@ -1,0 +1,10 @@
+{
+  "entrypoint": "elements/elements.html",
+  "builds": [
+    {
+      "preset": "es5-bundled",
+      "addServiceWorker": false,
+      "addPushManifest": false
+    }
+  ]
+}
