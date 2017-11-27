@@ -36,18 +36,14 @@
             <div class="columns small-12 medium-10 large-8 ">
                 <div class="row">
                     <div id="inputs" class="columns small-12 medium-6">
-                        <label>Name
-                            <input id="name" name="name" type="text" placeholder="e.g. Tony Parker" required autofocus>
-                        </label>
-                        <label>Position
-                            <input id="position" name="position" type="text" placeholder="e.g. Chief Revinue Officer" required>
-                        </label>
-                        <label>Phone Number label (optional)
-                            <input id="phone_label" name="phone_label" type="text" placeholder="e.g. +1.123.456.7890">
-                        </label>
-                        <label>Phone Number (optional)
-                            <input id="phone" name="phone" type="phone" placeholder="e.g. +11234567890">
-                        </label>
+                        <input id="name" name="name" type="text" placeholder="Name e.g. Tony Parker" required autofocus>
+                        <input id="position" name="position" type="text" placeholder="Position e.g. Chief Revinue Officer" required>
+                        <input id="phone" name="phone" type="phone" placeholder="Phone e.g. +1.123.456.7890">
+                        <input id="phone_label" name="phone_label" type="text" placeholder="Phone Link Text - if different">
+                        <input type="radio" id="standard" name="signature_style" value="standard" checked="checked" />
+                        <label for="standard">Standard</label>
+                        <input type="radio" id="plain" name="signature_style" value="plain" />
+                        <label for="plain">Plain</label>
                     </div>
                     <div class="columns small-12 medium-6 result" style="display:none;">
                         <p><strong>Implementation intructions:</strong></p>
@@ -97,7 +93,7 @@
                             Preview:
                             <div id="html"></div>
                             HTML code:
-                            <textarea id="code" name="code" rows="8" cols="80" readonly="true"></textarea>
+                            <textarea id="code" name="code" rows="1" cols="80" readonly="true"></textarea>
                             <button class="copy-html is-bg-green" data-clipboard-target="#code">Copy to clipboard</button>
                         </div>
                     </div>
