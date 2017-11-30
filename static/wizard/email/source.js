@@ -23,7 +23,12 @@ $(document).ready(function () {
         'name',
         'position',
         'phone_label',
-        'phone'
+        'phone',
+        'linkedin',
+        'twitter',
+        'facebook',
+        'gplus',
+        'github'
     ];
 
     var param_data = {};
