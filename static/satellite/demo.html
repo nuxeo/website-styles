@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nuxeo Elements and Styles Demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 0. Include a reset or normalise. -->
+    <link rel="stylesheet" href="/css/v2-nuxeo-styles.css" media="screen" title="no title">
+    <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
+    <script src="latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+    <script src="latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+    <!-- 2. Use an HTML Import to bring in some elements. -->
+    <link rel="import" href="latest/elements/elements.html">
+</head>
+<body>
+    <nuxeo-header show-nuxeo-menu>
+        <nuxeo-banner background-id="1" title="New Title">Lorem ipsum dolor sit amet, cu facer noster mea. Doming iracundia voluptatum in his. Vel an impetus democritum. Te quo sapientem iracundia. Ubique nostrud dolorum ut est.
+        </nuxeo-banner>
+        <nuxeo-menu site-name="Elements" site-url="/demo/" menu-items='[{"title": "Milestones", "url": "/milestones", "pathname": "/demo/"}, {"title": "Continuous", "url": "/continuous"}]' menu-items-right='[{"title": "Login", "url": "/login"}]'>
+        </nuxeo-menu>
+    </nuxeo-header>
+
+    <div class="row content">
+        <h1>Page Title</h1>
+        <p>
+            Ut nam democritum definitiones signiferumque, facer consequat theophrastus eum id. Pro at vero atqui, eam mucius appareat similique no. Ea unum quidam euismod mel. Pro no laudem instructior, dico adversarium mei ad, ad quo aliquid denique officiis. Eam primis vocibus invidunt ex, nec ut veniam instructior signiferumque.
+        </p>
+        <p>
+            Veniam feugait ne has, sit id nihil causae vocibus. Ut deleniti officiis oporteat usu, est ex homero cetero indoctum. Exerci invenire salutatus et has, ei quo dolorum eleifend eloquentiam, porro atomorum pertinacia ex mel. Simul mucius quo te, qui ei tale dolorum. Qui graeco sanctus omittam an, no est mundi praesent percipitur. Idque expetendis conclusionemque te pri, equidem menandri his cu, eu natum omnes salutandi sea. In mei sumo animal aperiam, cu libris nemore periculis qui, usu feugait atomorum expetendis in.
+        </p>
+        <pre><code class="javascript hljs"><span class="hljs-keyword">var</span> Nuxeo = <span class="hljs-built_in">require</span>(<span class="hljs-string">'nuxeo'</span>);
+        <span class="hljs-keyword">var</span> nuxeo = <span class="hljs-keyword">new</span> Nuxeo({ ... });
+        </code></pre>
+        <p>
+            Nulla omnium vidisse ea nec. Et pro diam lorem movet, ea quis decore sea. Est at invidunt recusabo, ad cum iisque mediocrem. Et detraxit percipitur ius. Sit in meis laudem propriae, vero zril vidisse vis et. Liber iracundia vis id, in his ubique vituperatoribus.
+        </p>
+    </div>
+
+    <nuxeo-footer year="2017"></nuxeo-footer>
+
+    <script>
+    // To ensure that elements are ready on polyfilled browsers,
+    // wait for WebComponentsReady.
+    document.addEventListener('WebComponentsReady', function() {
+        // var input = document.querySelector('paper-input');
+        // var button = document.querySelector('paper-button');
+        // var greeting = document.getElementById("greeting");
+        // button.addEventListener('click', function() {
+        //   greeting.textContent = 'Hello, ' + input.value;
+        // });
+    });
+    </script>
+</body>
+</html>
