@@ -14,7 +14,8 @@
     "server": "browser-sync start --server ./static --startPath satellite/demo.html --browser=$npm_package_config_browser",
     "postinstall": "npm run compile",
     "precompile": "bower install --allow-root",
-    "compile": "npm run compile:elements & p1=$!; npm run compile:styles & p2=$!; wait \"$p1\" \"$p2\"",
+    "compile_parallel": "npm run compile:elements & p1=$!; npm run compile:styles & p2=$!; wait \"$p1\" \"$p2\"",
+    "compile": "npm run compile:elements && npm run compile:styles",
     "postcompile": "rm -rf static/satellite/latest && mkdir -p static/satellite/latest && cp -r build/es5-bundled/* static/satellite/latest && cp -r css static/satellite/latest",
     "compile:elements": "polymer build",
     "precompile:styles": "rm -rf ./tmp ./css",
@@ -25,7 +26,7 @@
     "postcompile:styles-expanded": "npm run postcompile:styles",
     "npm_install": "[ `npm run -s package_checksum` = `cat package.md5` ] || npm install && npm run -s package_checksum > package.md5",
     "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'",
-    "version": "npm run npm_install && cp -r static/satellite/latest static/satellite/`node -e \"console.log(require('./package.json').version);\"`",
+    "version": "npm run npm_install && cp -r static/satellite/latest static/satellite/`node -e \"console.log(require('./package.json').version);\"` && git add static/satellite && git commit -m \"Satellite release `node -e \"console.log(require('./package.json').version);\"` added\"",
     "postversion": "git push && git push --tags"
   },
   "author": "Andrew Goodricke <github@andrewgoodricke.com> (http://www.nuxeo.com)",
