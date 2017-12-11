@@ -1,5 +1,5 @@
 {
-  "ignore": ["node_modules/*", "css/*", "tmp/*", "static/satellite/*", "static/images/*", "build/*"],
+  "ignore": ["node_modules/*", "css/*", "tmp/*", "static/satellite/**/*", "static/images/*", "build/*"],
   "ext": "js, scss, html, yml",
   "no_delay": "200ms"
 }

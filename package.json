@@ -8,10 +8,10 @@
     "browser": "chromium-browser"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "eslint --fix *.js **/*.js",
     "predev": "npm run npm_install",
     "dev": "npm run server & nodemon --exec 'npm run compile && browser-sync reload'",
-    "server": "browser-sync start --server ./static --browser=$npm_package_config_browser",
+    "server": "browser-sync start --server ./static --startPath satellite/demo.html --browser=$npm_package_config_browser",
     "postinstall": "npm run compile",
     "precompile": "bower install --allow-root",
     "compile": "npm run compile:elements & p1=$!; npm run compile:styles & p2=$!; wait \"$p1\" \"$p2\"",
@@ -41,9 +41,9 @@
     "sass-lint": "^1.10.2"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.8",
-    "eslint": "^3.13.1",
-    "nodemon": "^1.12.1"
+    "browser-sync": "^2.18.13",
+    "eslint": "^4.13.0",
+    "nodemon": "^1.12.5"
   },
   "license": "MIT",
   "repository": "git@github.com:nuxeo/website-styles.git",
