@@ -1,12 +1,16 @@
 @font-face {
   font-family: 'Neue Haas Grotes';
-  src: url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-55Rg.otf') format('opentype');
+  src: local('Neue Haas Grotes'),
+  local('Neue Haas Grotes Display Std'),
+  url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-55Rg.otf') format('opentype');
 }
 
 @font-face {
   font-family: 'Neue Haas Grotes';
   font-weight: bold;
-  src: url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-55Blk.otf') format('opentype');
+  src: local('Neue Haas Grotes Black'),
+  local('Neue Haas Grotes Display Black'),
+  url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-95Blk.otf') format('opentype');
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
@@ -26,7 +30,7 @@ $scale-1: 1em;
 $scale-0: .75em;
 
 //Fonts
-$font-primary: 'Neue Haas Grotes', 'Open Sans', 'Arial', sans-serif !default;
+$font-primary: "Neue Haas Grotes", "Open Sans", Arial, sans-serif;
 
 // Colors
 $c-green: #73d2cf;
