@@ -56,11 +56,14 @@
   h3.smaller {
     @include smakk-fluid-type(37.5em, 80em, $h4-min, $h4-max);
     margin-bottom: 20px;
-    line-height: 1.2
+    line-height: 1.2;
+    letter-spacing: normal;
   }
   p {
     @include primary-font-semibold;
     font-size: 16px;
+    letter-spacing: $body-letter-spacing;
+
     @include smakk-breakpoint(large) {
       @include primary-font-bold;
       font-size: 18px;
@@ -92,6 +95,8 @@
     border-bottom: 2px solid;
     text-decoration: none !important;
     color: inherit;
+    letter-spacing: $body-letter-spacing;
+
     .is-blue & {
       border-bottom: 2px solid $c-green;
       &:hover {
@@ -214,6 +219,7 @@
     padding: 0.88889rem $scale-6 0.94444rem $scale-6;
     color: #fff;
     transition: all 300ms ease-out;
+    letter-spacing: $body-letter-spacing;
     &:hover {
       background: white;
       color: $c-blue;
