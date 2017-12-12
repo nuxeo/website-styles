@@ -239,7 +239,7 @@
     max-width: 80%;
     font-size: $scale-2;
     line-height: 1.2;
-    @include primary-font-bold;
+    @include primary-font-semibold;
     @include smakk-breakpoint(large) {
       max-width: 400px;
       font-size: 18px
@@ -336,7 +336,7 @@
       color: #000;
     }
     .c-article__author {
-      @include primary-font-bold;
+      @include primary-font-semibold;
       font-size: 18px;
       margin-top: $scale-4;
       margin-bottom: $scale-2

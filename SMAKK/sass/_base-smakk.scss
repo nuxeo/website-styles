@@ -3,7 +3,7 @@
   html,
   body {
     font-size: 14px;
-    @include primary-font-bold;
+    @include primary-font-semibold;
     color: #fff;
     background: $c-grey;
     overflow-x: hidden
