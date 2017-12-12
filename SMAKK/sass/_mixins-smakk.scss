@@ -131,7 +131,7 @@ $h4-max: $mod_2 * $scale-4;
 
 @mixin primary-font-semibold {
     font-family: $font-primary;
-    font-weight: 600
+    font-weight: 400;
 }
 
 @mixin primary-font-bold {
