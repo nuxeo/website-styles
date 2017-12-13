@@ -152,6 +152,8 @@ $h4-max: $mod_2 * $scale-4;
         color: $color;
         text-decoration: none;
         border-bottom: none;
+        font-weight: bold;
+
         &:hover {
             border-bottom: none
         }

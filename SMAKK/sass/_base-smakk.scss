@@ -62,7 +62,6 @@
     @include primary-font-semibold;
     font-size: 16px;
     @include smakk-breakpoint(large) {
-      @include primary-font-bold;
       font-size: 18px;
       line-height: 24px;
     }
@@ -198,7 +197,7 @@
   button,
   a.button {
     -webkit-appearance: none;
-    @include primary-font-semibold;
+    @include primary-font-bold;
     border: 2px solid rgba(0, 0, 0, 0) !important;
     -webkit-appearance: none;
     -moz-appearance: none;

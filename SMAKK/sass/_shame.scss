@@ -77,7 +77,6 @@
   }
   .is-submenu-item {
     @include smakk-nav-links(#fff, 14px);
-    font-weight: 600
   }
   .dropdown .is-dropdown-submenu a {
     padding: 0
