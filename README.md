@@ -74,7 +74,7 @@ Element | Description | Parameters | Sub elements | Sub element parameters
 `<nuxeo-footer></nuxeo-footer>` | Nuxeo standard footer | `year`: the year to display<br />`show-license`: if set to true show CC Licence logo | | `footer-items`: footer link items to display
 
 ## Standard usage
-See [Usage example](#Usage-without-Node) setup.
+See [Usage example](#usage-without-node) setup.
 
 ### Header
 ```
