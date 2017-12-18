@@ -34,7 +34,7 @@ In SCSS import and include the appropriate styles:
 Copy elements into some assets location in your project
 e.g. npm scripts
 ```
-"postcopy_assets": "cp node_modules/nuxeo-website-styles/bower_components/webcomponentsjs/webcomponents-lite.min.js ./site/assets/js/ && cp node_modules/nuxeo-website-styles/elements/*.min.js ./site/assets/ && cp node_modules/nuxeo-website-styles/elements/*.build.min.html ./site/assets/"
+"postcopy_assets": "cp -r node_modules/nuxeo-website-styles/satellite/latest/* ./site/assets/"
 ```
 
 #### Include elements
@@ -46,10 +46,17 @@ e.g.
 ```
 
 #### Usage without Node
-In the header directly include the elements from Nuxeo website (your website URL must comply with the CORS policy):
+In the header of your page:
 ```
-<script src="https://www.nuxeo.com/assets/js/webcomponents-lite.min.js"></script>
-<link rel="import" href="https://www.nuxeo.com/assets/elements.build.min.html" />
+<!-- 0. Include Nuxeo Font. -->
+<link rel="stylesheet" href="https://static.nuxeo.com/satellite/nuxeo-font.css" media="screen" title="Nuxeo Font">
+
+<!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
+<script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+<script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+
+<!-- 2. Use an HTML Import to bring in some elements. -->
+<link rel="import" href="https://static.nuxeo.com/satellite/latest/elements/elements.html">
 ```
 
 ## Available mixins
@@ -64,7 +71,21 @@ nuxeo-codeblock | Codeblock with HighlightJS styling and copy button
 Element | Description | Parameters | Sub elements | Sub element parameters
 -----------|------------|------------|------------|------------
 `<nuxeo-header></nuxeo-header>` | Nuxeo standard header | `show-nuxeo-menu`: if set to true show corporate website menu | `<nuxeo-banner></nuxeo-banner>`<br />_____<br />`<nuxeo-menu></nuxeo-menu>` | `background-id`: the background image id to use (currently only "1")<br />`title`: the title to display (h1)<br />_____<br />`site-name`: the site name<br />`site-url`: the homepage URL<br />`menu-items`: menu items to display on the left<br />`menu-items-right`: menu items to display on the right (not visible on mobile version)
-`<nuxeo-footer></nuxeo-footer>` | Nuxeo standard footer | `year`: the year to display<br />`show-license`: if set to true show CC Licence logo | `<nuxeo-footer-column></nuxeo-footer-column>` | `column-items`: column items to display
+`<nuxeo-footer></nuxeo-footer>` | Nuxeo standard footer | `year`: the year to display<br />`show-license`: if set to true show CC Licence logo | | `footer-items`: footer link items to display
+
+## Standard usage
+See [Usage example](#Usage-without-Node) setup.
+
+### Header
+```
+<nuxeo-header></nuxeo-header>
+```
+
+### Footer
+```
+<nuxeo-footer year="2018" show-license="true"></nuxeo-footer>
+```
+
 
 # Development (Local)
 ## Requirements

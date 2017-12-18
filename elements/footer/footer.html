@@ -556,7 +556,7 @@
             padding-top: 6rem;
         }
 
-        #footer-slot-content .row {
+        #nuxeo-footer-container .row {
             background: #fff;
             position: relative;
             max-width: 1800px;
@@ -570,7 +570,7 @@
         }
 
         /* Footer specific */
-        #footer-slot-content .content-wrapper a,
+        #nuxeo-footer-container .content-wrapper a,
         :host a {
             font-family: "Neue Haas Grotesk", "Neue Haas Grotes", "Open Sans", Arial, sans-serif;
             font-size: 12px;
@@ -587,13 +587,13 @@
             border: none;
         }
 
-        #footer-slot-content a:hover,
+        #nuxeo-footer-container a:hover,
         :host a:hover {
             color: #003ea9;
             border: none;
         }
 
-        :host #footer-slot-content .row.content-wrapper > .columns > a {
+        :host #nuxeo-footer-container .row.content-wrapper > .columns > a {
             border-top: 4px solid #1067ff;
             font-weight: 700;
             padding-bottom: 1rem;
@@ -641,60 +641,18 @@
         </style>
         <!-- local DOM goes here -->
         <div id="nuxeo-footer-container">
-            <slot id="footer-slot-content">
-                <div class="row content-wrapper">
-                    <div class="columns small-12 medium-4 large-2">
-                        <a href="https://www.nuxeo.com/about/">About</a>
-                        <div class="row collapse small-up-1">
-                            <div class="columns"><a href="https://www.nuxeo.com/about/why-nuxeo/">Why Nuxeo?</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/about/careers/">Careers</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/about/leadership/">Executive Team</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/media-center/">Press</a></div>
+            <div class="row content-wrapper">
+                <template is="dom-repeat" items="{{footerItems}}" as="section">
+                    <div class$="columns small-12 [[_footerSectionClasses(section.isWide)]]">
+                        <a href="{{section.mainURL}}">{{section.mainLink}}</a>
+                        <div class$="row collapse small-up-1 [[_footerItemsClasses(section.isWide)]]">
+                            <template is="dom-repeat" items="{{section.sublinks}}" as="item">
+                                <div class="columns"><a href="{{item.url}}">{{item.link}}</a></div>
+                            </template>
                         </div>
                     </div>
-                    <div class="columns small-12 medium-8 large-4">
-                        <a href="https://www.nuxeo.com/products/">Products</a>
-                        <div class="row collapse small-up-1 medium-up-2">
-                            <div class="columns"><a href="https://www.nuxeo.com/products/content-management-platform/">Content Services Platform</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/products/cloud-hosting/">Cloud</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/products/studio/">Studio</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/products/mobile/">Mobile</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/products/drive-desktop-sync/">Desktop Sync</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/products/nuxeo-vision-service/">Nuxeo Vision</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/products/digital-asset-management/">Digital Asset Management</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/products/document-management/">Document Management</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/products/knowledge-management/">Knowledge Management</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/products/case-management/">Case Management</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/about/what-is-new/">What's New</a></div>
-                        </div>
-                    </div>
-                    <div class="columns small-12 medium-8 large-4">
-                        <a href="https://www.nuxeo.com/integration/adobe-creative-suite/">Integrations</a>
-                        <div class="row collapse small-up-1 medium-up-2">
-                            <div class="columns"><a href="https://www.nuxeo.com/integration/live-connect/">Cloud File Sharing</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/integration/adobe-creative-suite/">Adobe CC</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/integration/mongodb/">MongoDB</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/integration/elasticsearch/">Elasticsearch</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/integration/amazon-rekognition/">Amazon Rekognition</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/integration/google-vision/">Google Vision</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/integration/document-capture-ephesoft/">Document Capture</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/integration/salesforce-connector/">Salesforce</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/integration/cmis/">CMIS</a></div>
-
-                        </div>
-                    </div>
-                    <div class="columns small-12 medium-4 large-2">
-                        <a href="https://www.nuxeo.com/learn/">Learn</a>
-                        <div class="row collapse small-up-1">
-                            <div class="columns"><a href="https://university.nuxeo.com/store">University</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/about/certification-2017/">Certification</a></div>
-                            <div class="columns"><a href="https://answers.nuxeo.com/general">Answers</a></div>
-                            <div class="columns"><a href="https://doc.nuxeo.com/">Documentation</a></div>
-                            <div class="columns"><a href="https://www.nuxeo.com/learn/">Learn</a></div>
-                        </div>
-                    </div>
-                </div>
-            </slot>
+                </template>
+            </div>
             <div id="copyright-social" class="row small-up-1 medium-up-2">
                 <div class="columns copyright">
                     {{year}} &copy; NUXEO
@@ -731,7 +689,164 @@
             is: 'nuxeo-footer',
             properties: {
                 year: Number,
-                showLicense: Boolean
+                showLicense: Boolean,
+                footerItems: {
+                    type: Array,
+                    value: [
+                        {
+                            mainURL: 'https://www.nuxeo.com/about/',
+                            mainLink: 'About',
+                            sublinks: [
+                                {
+                                    url: 'https://www.nuxeo.com/about/why-nuxeo/',
+                                    link: 'Why Nuxeo?'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/about/careers/',
+                                    link: 'Careers'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/about/leadership/',
+                                    link: 'Executive Team'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/media-center/',
+                                    link: 'Press'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/contact/',
+                                    link: 'Contact Us'
+                                }
+                            ]
+                        },
+                        {
+                            mainURL: 'https://www.nuxeo.com/products/',
+                            mainLink: 'Products',
+                            isWide: true,
+                            sublinks: [
+                                {
+                                    url: 'https://www.nuxeo.com/products/content-management-platform/',
+                                    link: 'Content Services Platform'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/products/cloud-hosting/',
+                                    link: 'Cloud'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/products/studio/',
+                                    link: 'Studio'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/products/mobile/',
+                                    link: 'Mobile'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/products/drive-desktop-sync/',
+                                    link: 'Desktop Sync'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/products/nuxeo-vision-service/',
+                                    link: 'Nuxeo Vision'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/products/digital-asset-management/',
+                                    link: 'Digital Asset Management'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/products/document-management/',
+                                    link: 'Document Management'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/products/knowledge-management/',
+                                    link: 'Knowledge Management'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/products/case-management/',
+                                    link: 'Case Management'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/about/what-is-new/',
+                                    link: "What's New"
+                                }
+                            ]
+                        },
+                        {
+                            mainURL: 'https://www.nuxeo.com/integration/adobe-creative-suite/',
+                            mainLink: 'Integrations',
+                            isWide: true,
+                            sublinks: [
+                                {
+                                    url: 'https://www.nuxeo.com/integration/live-connect/',
+                                    link: 'Cloud File Sharing'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/integration/adobe-creative-suite/',
+                                    link: 'Adobe CC'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/integration/mongodb/',
+                                    link: 'MongoDB'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/integration/elasticsearch/',
+                                    link: 'Elasticsearch'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/integration/amazon-rekognition/',
+                                    link: 'Amazon Rekognition'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/integration/google-vision/',
+                                    link: 'Google Vision'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/integration/document-capture-ephesoft/',
+                                    link: 'Document Capture'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/integration/salesforce-connector/',
+                                    link: 'Salesforce'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/integration/cmis/',
+                                    link: 'CMIS'
+                                }
+                            ]
+                        },
+                        {
+                            mainURL: 'https://www.nuxeo.com/learn/',
+                            mainLink: 'Learn',
+                            sublinks: [
+                                {
+                                    url: 'https://university.nuxeo.com/store',
+                                    link: 'University'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/about/certification-2017/',
+                                    link: 'Certification'
+                                },
+                                {
+                                    url: 'https://answers.nuxeo.com/general',
+                                    link: 'Answers'
+                                },
+                                {
+                                    url: 'https://doc.nuxeo.com/',
+                                    link: 'Documentation'
+                                },
+                                {
+                                    url: 'https://www.nuxeo.com/learn/',
+                                    link: 'Learn'
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            _footerSectionClasses: function (isWide) {
+                return isWide ? 'medium-8 large-4' : 'medium-4 large-2';
+            },
+            _footerItemsClasses: function (isWide) {
+                return isWide ? 'medium-up-2' : '';
             }
         });
     </script>

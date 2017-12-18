@@ -13,22 +13,7 @@
     <!-- <link rel="stylesheet" href="latest/css/v2-nuxeo-styles.css" media="screen" title="no title"> -->
 
     <!-- 0. Include Nuxeo Font. -->
-    <style>
-        @font-face {
-            font-family: 'Neue Haas Grotesk';
-            src: local('Neue Haas Grotesk'),
-            local('Neue Haas Grotesk Display Std'),
-            url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-55Rg.otf') format('opentype');
-        }
-
-        @font-face {
-            font-family: 'Neue Haas Grotesk';
-            font-weight: bold;
-            src: local('Neue Haas Grotesk Black'),
-            local('Neue Haas Grotesk Display Black'),
-            url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-95Blk.otf') format('opentype');
-        }
-    </style>
+    <link rel="stylesheet" href="nuxeo-font.css" media="screen" title="Nuxeo Font">
 
     <!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
     <script src="latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
@@ -41,8 +26,7 @@
     <nuxeo-header show-nuxeo-menu>
         <nuxeo-banner background-id="1" title="New Title">Lorem ipsum dolor sit amet, cu facer noster mea. Doming iracundia voluptatum in his. Vel an impetus democritum. Te quo sapientem iracundia. Ubique nostrud dolorum ut est.
         </nuxeo-banner>
-        <nuxeo-menu site-name="Elements" site-url="/demo/" menu-items='[{"title": "Milestones", "url": "/milestones", "pathname": "/demo/"}, {"title": "Continuous", "url": "/continuous"}]' menu-items-right='[{"title": "Login", "url": "/login"}]'>
-        </nuxeo-menu>
+        <nuxeo-menu site-name="Elements" site-url="/demo/"></nuxeo-menu>
     </nuxeo-header>
 
     <div class="row content">
