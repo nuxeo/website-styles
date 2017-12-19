@@ -34,21 +34,18 @@
   h1,
   .h1 {
     @include smakk-fluid-type(37.5em, 80em, $h1-min, $h1-max);
-    letter-spacing: -2px;
     line-height: 1.1;
   }
   h2,
   .h2,
   h1.smaller {
     @include smakk-fluid-type(37.5em, 80em, $h2-min, $h2-max);
-    letter-spacing: -1px;
     line-height: 1.2
   }
   h3,
   .h3,
   h2.smaller {
     @include smakk-fluid-type(37.5em, 80em, $h3-min, $h3-max);
-    letter-spacing: -1px;
     line-height: 1.3
   }
   h4,
