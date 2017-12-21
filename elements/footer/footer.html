@@ -237,6 +237,26 @@
           padding-right: 0.9375rem;
           padding-left: 0.9375rem; }
 
+        @media print, screen and (max-width: 40em) {
+            :host .show-for-medium,
+            :host .show-for-medium a,
+            :host #nuxeo-footer-container .columns a.show-for-medium {
+                display: none;
+
+            }
+
+            :host #nuxeo-footer-container div.row.content-wrapper > .columns > a,
+            :host #nuxeo-footer-container div.content-wrapper a {
+                border-top: 0;
+                font-weight: 700;
+                padding-bottom: 0;
+                padding-top: .7rem;
+                margin-top: 0;
+                font-size: 18px;
+                letter-spacing: normal;
+            }
+        }
+
         @media print, screen and (min-width: 40em) {
           /*.medium-1 {
             -ms-flex: 0 0 8.33333%;
@@ -644,10 +664,10 @@
             <div class="row content-wrapper">
                 <template is="dom-repeat" items="{{footerItems}}" as="section">
                     <div class$="columns small-12 [[_footerSectionClasses(section.isWide)]]">
-                        <a href="{{section.mainURL}}">{{section.mainLink}}</a>
+                        <a href="{{section.mainURL}}" class$="[[_footerSectionMobileVisibility(section.showForMobile)]]">{{section.mainLink}}</a>
                         <div class$="row collapse small-up-1 [[_footerItemsClasses(section.isWide)]]">
                             <template is="dom-repeat" items="{{section.sublinks}}" as="item">
-                                <div class="columns"><a href="{{item.url}}">{{item.link}}</a></div>
+                                <div class$="columns [[_footerSectionMobileVisibility(item.showForMobile)]]"><a href="{{item.url}}">{{item.link}}</a></div>
                             </template>
                         </div>
                     </div>
@@ -694,10 +714,12 @@
                     type: Array,
                     value: [
                         {
+                            showForMobile: true,
                             mainURL: 'https://www.nuxeo.com/about/',
                             mainLink: 'About',
                             sublinks: [
                                 {
+                                    showForMobile: true,
                                     url: 'https://www.nuxeo.com/about/why-nuxeo/',
                                     link: 'Why Nuxeo?'
                                 },
@@ -716,10 +738,16 @@
                                 {
                                     url: 'https://www.nuxeo.com/contact/',
                                     link: 'Contact Us'
+                                },
+                                {
+                                    showForMobile: true,
+                                    url: 'https://www.nuxeo.com/customers/',
+                                    link: 'Customers'
                                 }
                             ]
                         },
                         {
+                            showForMobile: true,
                             mainURL: 'https://www.nuxeo.com/products/',
                             mainLink: 'Products',
                             isWide: true,
@@ -767,10 +795,16 @@
                                 {
                                     url: 'https://www.nuxeo.com/about/what-is-new/',
                                     link: "What's New"
+                                },
+                                {
+                                    showForMobile: true,
+                                    url: 'https://www.nuxeo.com/integration/adobe-creative-suite/',
+                                    link: 'Nuxeo Services'
                                 }
                             ]
                         },
                         {
+                            showForMobile: true,
                             mainURL: 'https://www.nuxeo.com/integration/adobe-creative-suite/',
                             mainLink: 'Integrations',
                             isWide: true,
@@ -830,12 +864,14 @@
                                     link: 'Answers'
                                 },
                                 {
+                                    showForMobile: true,
                                     url: 'https://doc.nuxeo.com/',
                                     link: 'Documentation'
                                 },
                                 {
-                                    url: 'https://www.nuxeo.com/learn/',
-                                    link: 'Learn'
+                                    showForMobile: true,
+                                    url: 'https://www.nuxeo.com/resources-center/',
+                                    link: 'Resources Center'
                                 }
                             ]
                         }
@@ -847,6 +883,9 @@
             },
             _footerItemsClasses: function (isWide) {
                 return isWide ? 'medium-up-2' : '';
+            },
+            _footerSectionMobileVisibility: function (showForMobile) {
+                return showForMobile ? '' : 'show-for-medium';
             }
         });
     </script>
