@@ -55,7 +55,9 @@
     margin-bottom: 20px;
     line-height: 1.2
   }
-  p {
+  p,
+  ol,
+  ul {
     @include primary-font-semibold;
     font-size: 16px;
     @include smakk-breakpoint(large) {
@@ -211,29 +213,40 @@
     padding: 0.88889rem $scale-6 0.94444rem $scale-6;
     color: #fff;
     transition: all 300ms ease-out;
+
     &:hover {
       background: white;
-      color: $c-blue;
       border: 2px solid $c-blue;
+      color: $c-blue;
     }
+
     &.button--ghost {
-      border: 1px solid #fff !important;
       background: rgba(0, 0, 0, 0);
+      border: 1px solid #fff !important;
+
       &:hover {
         background: white;
-        color: $c-blue;
         border: 1px solid $c-blue !important;
+        color: $c-blue;
       }
     }
+
     &.button--callout {
       background: #fff;
-      color: $c-blue !important;
       border: 2px solid #fff !important;
+      color: $c-blue !important;
+
       &:hover {
         background: $c-blue;
-        color: white !important;
         border: 2px solid $c-blue !important;
+        color: white !important;
       }
+    }
+
+    &.button--on-white:hover {
+      background: white;
+      border: 1px solid $c-blue !important;
+      color: $c-blue;
     }
 
     &.button--expanded {
