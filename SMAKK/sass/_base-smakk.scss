@@ -91,11 +91,10 @@
     border-bottom: 2px solid;
     text-decoration: none !important;
     color: inherit;
-    .is-blue & {
-      border-bottom: 2px solid $c-green;
-      &:hover {
-        border-bottom: 2px solid $c-blue;
-      }
+    transition: border-bottom .2s ease;
+
+    .is-bg-green &:hover {
+      border-bottom: 2px solid $c-blue;
     }
   }
   a:hover {
