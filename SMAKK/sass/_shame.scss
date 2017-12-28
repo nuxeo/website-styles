@@ -81,9 +81,13 @@
   .dropdown .is-dropdown-submenu a {
     padding: 0
   }
+
   .is-dropdown-submenu.js-dropdown-active {
+    align-items: stretch;
     display: flex;
+    flex-flow: row wrap;
   }
+
   @media print,
   screen and (min-width: 64em) {
     .row .row {
