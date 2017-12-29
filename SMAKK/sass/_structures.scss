@@ -3,15 +3,27 @@
   //r- for row
   //c- for column/card
   .row {
+    background: #fff;
     position: relative;
-    background: #fff
   }
+
   .r-cards {
     font-size: .9rem;
+
+    .columns {
+      position: relative;
+
+      .read-more {
+        bottom: 1.5em;
+        position: absolute;
+      }
+    }
   }
+
   .r-cards--spaced {
-    justify-content: space-between
+    justify-content: space-between;
   }
+
   .r-collapsing__panel {
     display: none;
     width: 100%;
