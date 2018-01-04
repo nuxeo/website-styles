@@ -98,9 +98,15 @@
       }
     }
     .r-cards--spaced & {
-      @include smakk-box-shadow();
+      @include smakk-box-shadow;
+      @include smakk-breakpoint(small) {
+        max-width: none;
+      }
+
       margin: 10px 0;
       max-width: calc(50% - 20px);
+
+
       #certification & {
         min-height: 200px;
         margin-bottom: $scale-4;
@@ -108,13 +114,9 @@
         p {
           font-size: $scale-3;
         }
-
-        @include smakk-breakpoint(small) {
-          max-width: none;
-        }
       }
       #careers & {
-        min-height: 0
+        min-height: 0;
       }
     }
     .spaced-by-4 & {
