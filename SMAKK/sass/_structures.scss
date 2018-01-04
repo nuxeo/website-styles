@@ -108,6 +108,10 @@
         p {
           font-size: $scale-3;
         }
+
+        @include smakk-breakpoint(small) {
+          max-width: none;
+        }
       }
       #careers & {
         min-height: 0

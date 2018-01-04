@@ -2,11 +2,12 @@
 //Points from foundation
 
 @mixin smakk-breakpoint($point) {
-   @if $point == large {
-     @media (min-width: 64em) { @content ; }
-  }
-    @else if $point == medium {
-     @media (min-width: 40em) { @content ; }
+  @if $point == large {
+    @media (min-width: 64em) { @content ; }
+  } @else if $point == medium {
+    @media (min-width: 40em) { @content ; }
+  } @else if $point == small {
+    @media (max-width: 40em) { @content ; }
   }
 }
 
