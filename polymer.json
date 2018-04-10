@@ -2,9 +2,13 @@
   "entrypoint": "elements/elements.html",
   "builds": [
     {
+      "bundle": true,
       "preset": "es5-bundled",
       "addServiceWorker": false,
-      "addPushManifest": false
+      "addPushManifest": false,
+      "js": {"minify": true, "compile": true},
+      "css": {"minify": true},
+      "html": {"minify": true}
     }
   ]
 }
