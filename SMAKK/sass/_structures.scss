@@ -99,7 +99,7 @@
     .r-cards--spaced & {
       @include smakk-box-shadow;
       @include smakk-breakpoint(small) {
-        max-width: none;
+        max-width: calc(100% - 20px);;
       }
 
       margin: 10px 0;
