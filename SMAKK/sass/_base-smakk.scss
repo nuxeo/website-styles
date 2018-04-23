@@ -115,6 +115,12 @@
     @include primary-font-semibold;
     display: block;
   }
+
+  input:not([type="submit"]),
+  select {
+    font-style: italic;
+  }
+
   input:not([type="submit"]),
   select,
   textarea {
@@ -128,6 +134,7 @@
     @include primary-font-semibold;
     padding: 2px;
     background: rgba(0, 0, 0, 0);
+
     &::placeholder,
     option,
     label {
