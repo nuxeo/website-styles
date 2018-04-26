@@ -126,11 +126,11 @@
   textarea {
     width: 100%;
     border: 0;
-    border-bottom: 2px solid $c-blue;
+    border-bottom: 1px solid $c-navy;
     border-radius: 0;
     margin-top: $scale-5;
     margin-bottom: $scale-2;
-    color: $c-green;
+    color: $c-navy;
     @include primary-font-semibold;
     padding: 2px;
     background: rgba(0, 0, 0, 0);
@@ -138,7 +138,7 @@
     &::placeholder,
     option,
     label {
-      color: $c-green;
+      color: lighten($c-navy, 20%);
       @include primary-font-semibold
     }
   }
