@@ -94,6 +94,12 @@ $h3-max: $mod_2 * $scale-5;
 $h4-min: $mod_1 * $scale-5;
 $h4-max: $mod_2 * $scale-4;
 
+$h5-min: $mod_1 * $scale-4;
+$h5-max: $mod_2 * $scale-3;
+
+$h6-min: $mod_1 * $scale-3;
+$h6-max: $mod_2 * $scale-2;
+
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }

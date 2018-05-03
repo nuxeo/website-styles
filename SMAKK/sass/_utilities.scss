@@ -8,22 +8,22 @@
     display: inline-block;
     padding: 0;
     li {
-      display: inline-block
+      display: inline-block;
     }
   }
 
   %display-flex,
   .display-flex {
-    @include smakk-display-flex
+    @include smakk-display-flex;
   }
 
   .is-flex-col {
-    @include smakk-flex-direction(column)
+    @include smakk-flex-direction(column);
   }
 
-  //Light desktop and mobile
+  //Light
   .padded0 {
-    padding: $scale-1
+    padding: $scale-1;
   }
 
   //Heavy on dekstop, light on mobile
@@ -42,7 +42,7 @@
     }
   }
 
-  //padded heavy on desktop and mobile
+  //padded heavy
   .padded3 {
     padding: $scale-7 $scale-4;
     @include smakk-breakpoint(large) {
@@ -53,19 +53,24 @@
   //Padded light top and bottom
   .paddedt0 {
     padding-top: $scale-2 !important;
-    padding-bottom: $scale-2 !important
+    padding-bottom: $scale-2 !important;
   }
 
   //padded medium top and bottom
   .paddedt1 {
     padding-top: $scale-4;
-    padding-bottom: $scale-4
+    padding-bottom: $scale-4;
   }
 
   //padded heavy top and bottom
   .paddedt3 {
     padding-top: $scale-7;
-    padding-bottom: $scale-7
+    padding-bottom: $scale-7;
+  }
+
+  // padded bottom medium
+  .paddedb2 {
+    padding-bottom: $scale-4;
   }
 
   //a11y
@@ -82,13 +87,13 @@
   // Fonts
   %is-bold,
   .is-bold {
-    font-weight: 700
+    font-weight: 700;
   }
 
   %is-bigger,
   .is-bigger {
     font-size: $scale-2;
-    line-height: 32px
+    line-height: 32px;
   }
 
   %is-smaller,
@@ -104,7 +109,7 @@
       position: relative;
       margin: 0;
       margin-bottom: 3em;
-      font-size: 14px
+      font-size: 14px;
     }
     &:after {
       content: '';
@@ -114,7 +119,7 @@
       border: 2px solid;
       position: absolute;
       top: 40px;
-      left: 0
+      left: 0;
     }
   }
 
@@ -123,7 +128,7 @@
     top: -30px;
     left: 0;
     font-size: 14px;
-    color: $c-blue
+    color: $c-blue;
   }
 
   .text-center {
@@ -158,7 +163,7 @@
     display: inline;
 
     img {
-      padding: 0 .5em;
+      padding: 0 0.5em;
     }
   }
 
@@ -170,7 +175,7 @@
 
   %is-bg-green,
   .is-bg-green {
-    background-color: $c-green
+    background-color: $c-green;
   }
 
   %is-blue,
@@ -190,7 +195,7 @@
 
   %is-bg-navy,
   .is-bg-navy {
-    background-color: $c-navy
+    background-color: $c-navy;
   }
 
   %is-grey,
@@ -200,7 +205,7 @@
 
   %is-bg-grey,
   .is-bg-grey {
-    background-color: $c-grey
+    background-color: $c-grey;
   }
 
   %is-grey-2,
@@ -210,7 +215,7 @@
 
   %is-bg-grey-2,
   .is-bg-grey-2 {
-    background-color: $c-grey-2
+    background-color: $c-grey-2;
   }
 
   %is-grey-3,
@@ -220,7 +225,7 @@
 
   %is-bg-grey-3,
   .is-bg-grey-3 {
-    background-color: $c-grey-3
+    background-color: $c-grey-3;
   }
 
   %is-red,
@@ -230,7 +235,7 @@
 
   %is-bg-red,
   .is-bg-red {
-    background-color: $c-red
+    background-color: $c-red;
   }
 
   %is-purple,
@@ -240,7 +245,7 @@
 
   %is-bg-purple,
   .is-bg-purple {
-    background-color: $c-purple
+    background-color: $c-purple;
   }
 
   %is-aqua,
@@ -250,7 +255,7 @@
 
   %is-bg-aqua,
   .is-bg-aqua {
-    background-color: $c-aqua
+    background-color: $c-aqua;
   }
 
   %is-orange,
@@ -260,7 +265,7 @@
 
   %is-bg-orange,
   .is-bg-orange {
-    background-color: $c-orange
+    background-color: $c-orange;
   }
 
   %is-white,
@@ -270,7 +275,7 @@
 
   %is-bg-white,
   .is-bg-white {
-    background-color: #fff
+    background-color: #fff;
   }
 
   %is-black,
@@ -280,11 +285,11 @@
 
   %is-bg-black,
   .is-bg-black {
-    background-color: #000
+    background-color: #000;
   }
 
   .has-bg-image {
-    @include smakk-background-cover()
+    @include smakk-background-cover();
   }
 
   .has-icon {
@@ -322,20 +327,19 @@
         width: 30px;
         background-size: contain;
         position: absolute;
-          right: 30px;
+        right: 30px;
         bottom: 22px;
-        font-size: $scale-5
+        font-size: $scale-5;
       }
       &.down {
         &:after {
           transform: rotate(90deg);
-            font-size: $scale-3;
-            @include smakk-breakpoint(large){
-                font-size: $scale-5
-            }
+          font-size: $scale-3;
+          @include smakk-breakpoint(large) {
+            font-size: $scale-5;
+          }
         }
       }
     }
-
   }
 }

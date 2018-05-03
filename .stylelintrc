@@ -1,0 +1,12 @@
+defaultSeverity: warning
+plugins:
+  - stylelint-scss
+extends:
+  - stylelint-config-standard
+  - stylelint-config-sass-guidelines
+rules:
+  at-rule-no-unknown: null
+  scss/at-rule-no-unknown: true
+  max-nesting-depth: 3
+  declaration-colon-newline-after: null
+  function-parentheses-space-inside: never-single-line

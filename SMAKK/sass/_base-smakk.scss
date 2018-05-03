@@ -2,20 +2,24 @@
   //Typography
   html,
   body {
-    font-size: 14px;
     @include primary-font-semibold;
-    color: #fff;
+
     background: $c-grey;
-    overflow-x: hidden
+    color: #fff;
+    font-size: 14px;
+    overflow-x: hidden;
   }
+
   .cf:before,
   .cf:after {
-    content: " ";
+    content: ' ';
     display: table;
   }
+
   .cf:after {
     clear: both;
   }
+
   h1,
   h2,
   h3,
@@ -25,82 +29,135 @@
   .h3,
   .h4 {
     @include primary-font-extrabold;
+
     margin: 0;
     margin-bottom: 20px;
+
     @include smakk-breakpoint(large) {
       margin-bottom: 40px;
     }
   }
+
   h1,
   .h1 {
     @include smakk-fluid-type(37.5em, 80em, $h1-min, $h1-max);
+
     line-height: 1.1;
   }
+
   h2,
   .h2,
   h1.smaller {
     @include smakk-fluid-type(37.5em, 80em, $h2-min, $h2-max);
-    line-height: 1.2
+
+    line-height: 1.2;
   }
+
   h3,
   .h3,
   h2.smaller {
     @include smakk-fluid-type(37.5em, 80em, $h3-min, $h3-max);
-    line-height: 1.3
+
+    line-height: 1.3;
   }
+
   h4,
   .h4,
   h3.smaller {
     @include smakk-fluid-type(37.5em, 80em, $h4-min, $h4-max);
+
+    line-height: 1.2;
     margin-bottom: 20px;
-    line-height: 1.2
   }
+
+  h5,
+  .h5,
+  h4.smaller {
+    @include primary-font-extrabold;
+    @include smakk-fluid-type(37.5em, 80em, $h5-min, $h5-max);
+
+    line-height: 1.2;
+    margin-bottom: 1em;
+  }
+
+  h6,
+  .h6,
+  h5.smaller {
+    @include primary-font-extrabold;
+    @include smakk-fluid-type(37.5em, 80em, $h6-min, $h6-max);
+
+    line-height: 1.2;
+    margin-bottom: 1em;
+  }
+
   p,
   ol,
   ul {
     @include primary-font-semibold;
+
     font-size: 16px;
+
+    .smaller > &,
+    &.smaller {
+      font-size: 1em;
+      line-height: 1.4em;
+    }
+
     @include smakk-breakpoint(large) {
       font-size: 18px;
       line-height: 24px;
     }
   }
+
+  //svg icons
+  svg {
+    fill: currentColor;
+    height: 1em;
+    width: auto;
+  }
+
   blockquote {
-    position: relative;
     @include primary-font-semibold;
+
+    font-size: 18px;
     margin: $scale-2 0;
     max-width: 500px;
-    font-size: 18px;
+    position: relative;
+
     cite {
-      font-style: normal;
       display: block;
-      margin-top: $scale-2
+      font-style: normal;
+      margin-top: $scale-2;
     }
+
     svg {
-      fill: currentColor;
       display: block;
       height: 25px;
       margin-bottom: -$scale-2;
       margin-top: $scale-1;
     }
   }
+
   a,
   a:link,
   a:visited {
     @include primary-font-bold;
+
     border-bottom: 2px solid;
-    text-decoration: none !important;
     color: inherit;
-    transition: border-bottom .2s ease;
+    text-decoration: none !important;
+    transition: border-bottom 0.2s ease;
 
     .is-bg-green &:hover {
       border-bottom: 2px solid $c-blue;
     }
   }
+
   a:hover {
     color: inherit;
     border-bottom: 2px solid $c-green;
   }
+
   a.h1,
   a.h2,
   a.h3,
@@ -109,6 +166,7 @@
   a.no-decoration {
     border-bottom: 0 !important;
   }
+
   //Forms , inputs buttons
   label {
     color: $c-green;
@@ -116,39 +174,44 @@
     display: block;
   }
 
-  input:not([type="submit"]),
+  input:not([type='submit']),
   select {
     font-style: italic;
   }
 
-  input:not([type="submit"]),
+  input:not([type='submit']),
   select,
   textarea {
-    width: 100%;
+    @include primary-font-semibold;
+
+    background: rgba(0, 0, 0, 0);
     border: 0;
     border-bottom: 1px solid $c-navy;
     border-radius: 0;
-    margin-top: $scale-5;
-    margin-bottom: $scale-2;
     color: $c-navy;
-    @include primary-font-semibold;
+    margin-bottom: $scale-2;
+    margin-top: $scale-5;
     padding: 2px;
-    background: rgba(0, 0, 0, 0);
+    width: 100%;
 
     &::placeholder,
     option,
     label {
+      @include primary-font-semibold;
+
       color: lighten($c-navy, 20%);
-      @include primary-font-semibold
     }
   }
+
   .select--styled {
     position: relative;
+
     select {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
     }
+
     &:after {
       content: '';
       position: absolute;
@@ -163,13 +226,15 @@
       pointer-events: none;
     }
   }
+
   input[type='radio'],
   input[type='checkbox'] {
     width: auto;
-    margin-top: $scale-0
+    margin-top: $scale-0;
   }
-  input[type="checkbox"]+label,
-  input[type="radio"]+label {
+
+  input[type='checkbox'] + label,
+  input[type='radio'] + label {
     display: inline-block;
     margin-left: 0.44444rem;
     margin-right: 0.88889rem;
@@ -183,23 +248,29 @@
   }
 
   .box {
-    background: $c-grey;
-    padding: $scale-2;
     @include smakk-box-shadow();
+
+    background: $c-grey;
     margin: $scale-2;
-    label{
+    padding: $scale-2;
+
+    label {
       @include primary-font-extrabold;
       color: $c-blue;
       font-size: $scale-3;
     }
-    input:not([type="submit"]), select, textarea {
-      border: 0;
-      margin-top: 0;
-      font-size: 14px;
+
+    input:not([type='submit']),
+    select,
+    textarea {
       background: #fff;
-      padding: $scale-0
+      border: 0;
+      font-size: 14px;
+      margin-top: 0;
+      padding: $scale-0;
     }
   }
+
   button,
   a.button {
     -webkit-appearance: none;
@@ -208,16 +279,16 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     border-radius: $radius;
-    font-size: 14px;
+    color: #fff;
     cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
     margin: 0 $scale-0 $scale-2;
     min-width: 190px;
+    padding: 0.88889rem $scale-6 0.94444rem $scale-6;
     position: relative;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    padding: 0.88889rem $scale-6 0.94444rem $scale-6;
-    color: #fff;
     transition: all 300ms ease-out;
 
     &:hover {
@@ -259,12 +330,6 @@
       width: 100%;
     }
   }
-  //svg icons
-  svg {
-    fill: currentColor;
-    height: 1em;
-    width: auto;
-  }
 
   .icon {
     width: 80px;
@@ -282,7 +347,7 @@
   //Navigation ON SMALL
   .nav-main__item {
     @include smakk-nav-links(#fff, 20px);
-    margin: .3em 0;
+    margin: 0.3em 0;
   }
   .nav-main__item {
     button {
@@ -305,7 +370,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     flex-direction: row;
-    flex-wrap: wrap
+    flex-wrap: wrap;
   }
   a.nav-main__subitem__title {
     font-size: 14px;
@@ -315,20 +380,19 @@
   }
   .nav-main__subitem__text a {
     display: none;
-    padding: 0
+    padding: 0;
   }
-
 
   //NAV ON LARGE
   @include smakk-breakpoint(large) {
     .nav-main__item {
       @include smakk-nav-links($c-blue, 14px);
       @media screen and (min-width: 1150px) {
-        font-size: 16px
+        font-size: 16px;
       }
     }
     .nav-main__lastitem {
-      margin-left: auto
+      margin-left: auto;
     }
     .nav-main__subitem {
       padding: $scale-2 $scale-5;
@@ -338,7 +402,7 @@
       color: $c-green;
       font-size: $scale-5;
       padding: 0 !important;
-      font-weight: 700
+      font-weight: 700;
     }
     .nav-main__subitem__text {
       color: #fff;
@@ -358,7 +422,7 @@
     @include smakk-inline-list;
   }
   .nav-footer__item {
-    @include smakk-nav-links($c-navy, $scale-0)
+    @include smakk-nav-links($c-navy, $scale-0);
   }
 
   .pointer {
