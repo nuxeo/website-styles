@@ -108,17 +108,17 @@
     * & {
       position: relative;
       margin: 0;
-      margin-bottom: 3em;
+      margin-bottom: 1.3em;
       font-size: 14px;
     }
     &:after {
       content: '';
-      width: 25px;
+      width: 80px;
       height: 3px;
       border-radius: 20%;
       border: 2px solid;
       position: absolute;
-      top: 40px;
+      top: 60px;
       left: 0;
     }
   }
