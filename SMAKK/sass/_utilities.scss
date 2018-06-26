@@ -108,7 +108,8 @@
     * & {
       position: relative;
       margin: 0;
-      margin-bottom: 1.3em;
+      margin-bottom: 3em;
+      font-size: 14px;
     }
     &:after {
       content: '';
@@ -118,6 +119,24 @@
       border: 2px solid;
       position: absolute;
       top: 60px;
+      left: 0;
+    }
+  }
+
+  .underlined-challenge {
+    * & {
+      position: relative;
+      margin: 0;
+      margin-bottom: 1.3em;
+    }
+    &:after {
+      content: '';
+      width: 25px;
+      height: 3px;
+      border-radius: 20%;
+      border: 2px solid;
+      position: absolute;
+      top: 40px;
       left: 0;
     }
   }
