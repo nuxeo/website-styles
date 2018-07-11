@@ -47,6 +47,8 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
+.cache
+
 # css generation
 /tmp
 /css
@@ -66,3 +68,5 @@ SMAKK/Untitled-1.html
 .idea/
 
 /static/satellite/latest
+
+/static/roi
