@@ -24,8 +24,8 @@ const param_names = ['numberofsystems', 'easytofind', 'timetofind', 'frequencyto
 
 const param_transformations = {
   easytofind: function(value) {
-    console.log('value', value);
-    console.log('is_true', value === 'Yes');
+    // console.log('value', value);
+    // console.log('is_true', value === 'Yes');
     return value === 'Yes' ? 1 : 0;
   },
   timetofind: function(value) {
@@ -96,20 +96,20 @@ if (all_required) {
 
   const daily_salary = param_data.avgsalary / working_days_per_year;
 
-  console.log('raw_param_data', param_data);
-  console.log('param_data', param_data);
-  console.log('switch_time', switch_time);
-  console.log('switch_multiplier', switch_multiplier);
-  console.log('seconds_per_day_saved', seconds_per_day_saved);
-  console.log('days_per_year_saved', days_per_year_saved);
-  console.log('daily_salary', daily_salary);
+  // console.log('raw_param_data', param_data);
+  // console.log('param_data', param_data);
+  // console.log('switch_time', switch_time);
+  // console.log('switch_multiplier', switch_multiplier);
+  // console.log('seconds_per_day_saved', seconds_per_day_saved);
+  // console.log('days_per_year_saved', days_per_year_saved);
+  // console.log('daily_salary', daily_salary);
 
   const saving = days_per_year_saved * daily_salary;
   const existing_cost = days_per_year_existing * daily_salary;
   const new_cost = existing_cost - saving;
-  console.log('saving', saving);
-  console.log('existing_cost', existing_cost);
-  console.log('new_cost', new_cost);
+  // console.log('saving', saving);
+  // console.log('existing_cost', existing_cost);
+  // console.log('new_cost', new_cost);
 
   let productivity = days_per_year_saved / (working_days_per_year * param_data.numberofstaff);
   productivity = (productivity * 100).toFixed(1);
