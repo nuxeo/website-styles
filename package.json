@@ -27,6 +27,7 @@
     "postcompile:styles-expanded": "npm run postcompile:styles",
     "npm_install": "[ `npm run -s package_checksum` = `cat package.md5` ] || npm install && npm run -s package_checksum > package.md5",
     "build:roi": "rm static/roi/*; parcel build --no-cache src_roi/index.html -d static/roi --public-url /roi/",
+    "dev:roi": "parcel --no-cache src_roi/index.html -p 3000",
     "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'",
     "version": "npm run npm_install && npm start && cp -r static/satellite/latest static/satellite/`node -e \"console.log(require('./package.json').version);\"` && git add static/satellite && git commit -m \"Satellite release `node -e \"console.log(require('./package.json').version);\"` added\"",
     "postversion": "git push && git push --tags"

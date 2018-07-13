@@ -80,36 +80,41 @@ const nuxeo_speed_to_find = 30;
 const hours_per_day = 8;
 const working_days_per_year = 260;
 
+const seconds_per_day_to_days_per_year = seconds_per_day => {
+  const seconds_per_year = seconds_per_day * working_days_per_year;
+  const days_per_year = seconds_per_year / 60 / 60 / hours_per_day;
+  return days_per_year;
+};
+
 if (all_required) {
-  const switch_time = 30 - 20 * param_data.easytofind;
-  const switch_multiplier = (param_data.numberofsystems - 1) * switch_time;
+  const switch_multiplier = param_data.numberofsystems * (param_data.easytofind ? 10 : 20);
   const frequency_per_day = param_data.frequencytofind * hours_per_day;
-  const seconds_per_day_saved =
-    (param_data.timetofind + switch_multiplier - nuxeo_speed_to_find) * param_data.numberofstaff * frequency_per_day;
-  const seconds_per_year_saved = seconds_per_day_saved * working_days_per_year;
-  const days_per_year_saved = seconds_per_year_saved / 60 / 60 / hours_per_day;
+
+  const seconds_per_day_new = nuxeo_speed_to_find * param_data.numberofstaff * frequency_per_day;
+  const days_per_year_new = seconds_per_day_to_days_per_year(seconds_per_day_new);
 
   const seconds_per_day_existing =
     (param_data.timetofind + switch_multiplier) * param_data.numberofstaff * frequency_per_day;
-  const seconds_per_year_existing = seconds_per_day_existing * working_days_per_year;
-  const days_per_year_existing = seconds_per_year_existing / 60 / 60 / hours_per_day;
+  const days_per_year_existing = seconds_per_day_to_days_per_year(seconds_per_day_existing);
 
   const daily_salary = param_data.avgsalary / working_days_per_year;
 
   // console.log('raw_param_data', param_data);
   // console.log('param_data', param_data);
-  // console.log('switch_time', switch_time);
   // console.log('switch_multiplier', switch_multiplier);
-  // console.log('seconds_per_day_saved', seconds_per_day_saved);
-  // console.log('days_per_year_saved', days_per_year_saved);
+  // console.log('days_per_year_new', days_per_year_new);
+  // console.log('days_per_year_existing', days_per_year_existing);
   // console.log('daily_salary', daily_salary);
 
+  const cost_existing = days_per_year_existing * daily_salary;
+  const cost_new = days_per_year_new * daily_salary;
+
+  const days_per_year_saved = days_per_year_existing - days_per_year_new;
   const saving = days_per_year_saved * daily_salary;
-  const existing_cost = days_per_year_existing * daily_salary;
-  const new_cost = existing_cost - saving;
+
+  // console.log('cost_existing', cost_existing);
+  // console.log('cost_new', cost_new);
   // console.log('saving', saving);
-  // console.log('existing_cost', existing_cost);
-  // console.log('new_cost', new_cost);
 
   let productivity = days_per_year_saved / (working_days_per_year * param_data.numberofstaff);
   productivity = (productivity * 100).toFixed(1);
@@ -140,7 +145,7 @@ if (all_required) {
       datasets: [
         {
           label: '$',
-          data: [existing_cost, new_cost, saving],
+          data: [cost_existing, cost_new, saving],
           // yAxisID: '$ Per Year',
           backgroundColor: [
             getColour(colours.red, 0.9),
