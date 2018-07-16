@@ -10,3 +10,4 @@ rules:
   max-nesting-depth: 3
   declaration-colon-newline-after: null
   function-parentheses-space-inside: never-single-line
+  selector-max-id: 2

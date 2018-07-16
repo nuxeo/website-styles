@@ -1,3 +1,8 @@
+$white: #fff;
+$typeform-bg: #419ac2;
+$typeform-button: #ff9e00;
+$typeform-button-hover: #ffb133;
+
 body {
   font-family: Arial, sans-serif;
 }
@@ -7,8 +12,8 @@ body {
 }
 
 .full-height {
-  background-color: #419ac2;
-  background-image: url(https://images.typeform.com/images/ECWAEwYY74eh/background/default);
+  background-color: $typeform-bg;
+  background-image: url('https://images.typeform.com/images/ECWAEwYY74eh/background/default');
   background-size: cover;
   min-height: 100vh;
 }
@@ -18,18 +23,18 @@ body {
 }
 
 .button {
-  color: white;
+  color: $white;
 }
 
 .move-along {
-  color: white;
+  color: $white;
   font-size: 11px;
   margin-top: 2rem;
   text-align: center;
 
   .button {
-    background-color: #ff9e00;
-    border: 1px solid #ff9e00;
+    background-color: $typeform-button;
+    border: 1px solid $typeform-button;
     border-radius: 4px;
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
     font-size: 18px;
@@ -42,8 +47,8 @@ body {
     transition: background-color 150ms ease-in;
 
     &:hover {
-      background-color: #ffb133;
-      border: 1px solid #ffb133;
+      background-color: $typeform-button-hover;
+      border: 1px solid $typeform-button-hover;
     }
   }
 
@@ -54,7 +59,7 @@ body {
 }
 
 p {
-  color: white;
+  color: $white;
   font-size: 24px;
   font-weight: 400;
   line-height: 1.48em;

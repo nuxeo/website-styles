@@ -242,6 +242,7 @@ if (!getUrlParameter('return')) {
 
   // typeform
   (function() {
+    /* eslint no-unused-vars: 0 */
     var qs,
       js,
       q,
