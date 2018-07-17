@@ -87,7 +87,7 @@ const seconds_per_day_to_days_per_year = seconds_per_day => {
 };
 
 if (all_required) {
-  const switch_multiplier = (param_data.numberofsystems - 1) * (param_data.easytofind ? 10 : 20) || 1;
+  const switch_multiplier = (param_data.numberofsystems - 1) * (param_data.easytofind ? 10 : 20);
   const frequency_per_day = param_data.frequencytofind * hours_per_day;
 
   const seconds_per_day_new = nuxeo_speed_to_find * param_data.numberofstaff * frequency_per_day;
