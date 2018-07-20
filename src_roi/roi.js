@@ -141,7 +141,7 @@ if (all_required) {
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Existing Cost', 'New Cost', 'Potential Saving'],
+      labels: ['Existing Cost', 'Cost after Modernization', 'Potential Saving'],
       datasets: [
         {
           label: '$',
