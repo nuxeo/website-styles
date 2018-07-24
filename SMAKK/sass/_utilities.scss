@@ -235,6 +235,16 @@
     background-color: $c-grey;
   }
 
+  %is-grey-1,
+  .is-grey-1 {
+    color: $c-grey-1;
+  }
+
+  %is-bg-grey-1,
+  .is-bg-grey-1 {
+    background-color: $c-grey-1;
+  }
+
   %is-grey-2,
   .is-grey-2 {
     color: $c-grey-2;
