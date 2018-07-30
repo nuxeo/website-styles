@@ -1,218 +1,201 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
 
 <dom-module id="nuxeo-menu">
-    <template>
-        <style>
-        /* local DOM styles go here */
-        :host {
-            background: #000522;
-            color: white;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-            font-family: "Neue Haas Grotesk", "Neue Haas Grotes", "Open Sans", Arial, sans-serif;
-            min-height: 48px;
-            -webkit-justify-content: space-between;
-                -ms-flex-pack: justify;
-                    justify-content: space-between;
-        }
+  <template>
+    <style>
+    /* local DOM styles go here */
+    :host {
+      background: #000522;
+      color: white;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      font-family: "Neue Haas Grotesk", "Neue Haas Grotes", "Open Sans", Arial, sans-serif;
+      min-height: 48px;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
 
-        :host * {
-            -webkit-box-sizing: content-box;
-            -moz-box-sizing: content-box;
-            box-sizing: content-box;
-        }
+    :host * {
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+    }
 
-        :host ul {
-            -webkit-align-items: center;
-                -ms-flex-align: center;
-                    align-items: center;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
+    :host ul {
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
 
-        :host li {
-            margin: .3em 0;
-            display: list-item;
-            text-align: left;
-        }
+    :host li {
+      margin: 4px 0;
+      display: list-item;
+      text-align: left;
+    }
 
-        :host a {
-            color: white;
-            text-decoration: none;
-            transition: color .2s ease;
-            margin-right: 11px;
-            font-weight: 700;
-            padding-top: 11px;
-            padding-bottom: 11px;
-        }
+    :host a {
+      color: white;
+      font-size: 14px;
+      text-decoration: none;
+      margin-right: 11px;
+      padding-top: 11px;
+      padding-bottom: 11px;
+      text-transform: capitalize;
+      transition: color .2s ease;
+    }
 
-        :host .active a {
-            color: #0067ff;
-        }
+    :host .active a {
+      color: #0067ff;
+    }
 
-        :host a:hover {
-            color: #73d2cf;
-        }
+    :host a:hover {
+      color: #73d2cf;
+    }
 
-        :host .menu-home a {
-            letter-spacing: 1px;
-            position: relative;
-            text-transform: uppercase;
-        }
+    :host .nuxeo-satellite-left-menu li,
+    :host .nuxeo-satellite-right-menu li {
+      padding-top: 13px;
+    }
 
-        :host .menu-home a svg {
-            display: inline-block;
-            height: 22px;
-            width: 22px;
-            margin-right: 7px;
-            padding-top: 11px;
-            padding-bottom: 11px;
-            padding-left: 22px;
-        }
+    :host li.menu-home {
+      padding-top: 10px;
+    }
 
-        :host .menu-home a svg .nsvglogo-x {
-            fill: #0067ff;
-            transition: fill .2s ease;
-        }
-        :host .menu-home a:hover svg .nsvglogo-x {
-            fill: #73d2cf;
-        }
+    :host .menu-home a {
+      font-size: 20px;
+      font-weight: 700;
+      margin-left: 1em;
+      margin-right: 1em;
+    }
 
-        :host .menu-home a .menu-home-text {
-            position: relative;
-            top: -1.1em;
-        }
+    /* Responsive menu */
+    :host .responsive-toggle {
+      display: none;
+    }
 
-        :host .nuxeo-satellite-right-menu li {
-            padding-top: 13px;
-        }
+    @media (max-width: 900px) {
+      :host .responsive-toggle {
+        display: block;
+      }
 
-        /* Responsive menu */
-        :host .responsive-toggle {
-            display: none;
-        }
+      :host .responsive-toggle a:hover {
+        color: white;
+      }
 
-        @media (max-width: 900px) {
-            :host .responsive-toggle {
-                display: block;
-            }
+      :host .nuxeo-satellite-left-menu {
+        width: 100%;
+      }
 
-            :host .responsive-toggle a:hover {
-                color: white;
-            }
+      :host .nuxeo-satellite-left-menu ul {
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        list-style-type: none;
+      }
 
-            :host .nuxeo-satellite-left-menu {
-                width: 100%;
-            }
+      :host .responsive-toggle,
+      :host .nuxeo-satellite-left-menu li {
+        height: 48px;
+        line-height: 48px;
+      }
 
-            :host .nuxeo-satellite-left-menu ul {
-                -webkit-flex-direction: column;
-                    -ms-flex-direction: column;
-                        flex-direction: column;
-                list-style-type: none;
-            }
+      :host .nuxeo-satellite-left-menu li {
+        width: 100%;
+      }
 
-            :host .responsive-toggle,
-            :host .nuxeo-satellite-left-menu li {
-                height: 48px;
-                line-height: 48px;
-            }
+      :host .nuxeo-satellite-left-menu a {
+        display: block;
+      }
 
-            :host .nuxeo-satellite-left-menu li {
-                width: 100%;
-            }
+      :host .nuxeo-satellite-left-menu li:not(:first-of-type),
+      :host .nuxeo-satellite-right-menu {
+        display: none;
+      }
 
-            :host .nuxeo-satellite-left-menu a {
-                display: block;
-            }
+      :host.responsive {
+        position: relative;
+      }
 
-            :host .nuxeo-satellite-left-menu li:not(:first-of-type),
-            :host .nuxeo-satellite-right-menu {
-                display: none;
-            }
+      :host.responsive .responsive-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 10;
+      }
 
-            :host.responsive {
-                position: relative;
-            }
+      :host.responsive .nuxeo-satellite-left-menu li {
+        display: block;
+      }
 
-            :host.responsive .responsive-toggle {
-                position: absolute;
-                right: 0;
-                top: 0;
-                z-index: 10;
-            }
-
-            :host.responsive .nuxeo-satellite-left-menu li {
-                display: block;
-            }
-
-            :host .menu-home::after {
-                content: '';
-            }
-        }
-        </style>
-        <!-- local DOM goes here -->
-        <div class="nuxeo-satellite-left-menu">
-            <ul>
-                <li class="menu-home">
-                    <a href="[[siteUrl]]">
-                        <svg viewBox="0 0 5 5" xmlns="http://www.w3.org/2000/svg"><path class="nsvglogo-x" d="M0,0 1,0 5,4 5,5 4,5 0,1M0,5 0,4 4,0 5,0 5,1 1,5z"/></svg>
-                        <span class="menu-home-text">[[siteName]]</span>
-                    </a>
-                </li>
-                <template is="dom-repeat" items="{{menuItems}}">
-                    <li class$="{{_isActive(item.pathname)}}">
-                        <a href="{{item.url}}">{{item.title}}</a>
-                    </li>
-                </template>
-            </ul>
-        </div>
-        <div class="nuxeo-satellite-right-menu">
-            <ul>
-                <template is="dom-repeat" items="{{menuItemsRight}}">
-                    <li class$="{{_isActive(item.pathname)}}">
-                        <a href="{{item.url}}">{{item.title}}</a>
-                    </li>
-                </template>
-            </ul>
-        </div>
-        <div class="responsive-toggle">
-            <a href="javascript:void(0);" on-tap="openResponsiveMenu">&#9776;</a>
-        </div>
-    </template>
-    <script>
-    Polymer({
-        is: 'nuxeo-menu',
-        properties: {
-            siteName: {
-                type: String,
-                value: 'Nuxeo'
-            },
-            siteUrl: {
-                type: String,
-                value: '/'
-            },
-            menuItems: Array,
-            menuItemsRight: Array
-        },
-        _isActive: function(pathname) {
-            if (new RegExp('^' + pathname + '(.+\..+)?').test(window.location.pathname)) {
-                return 'active';
-            }
-            return '';
-        },
-        openResponsiveMenu: function() {
-            if (this.className.indexOf('responsive') === -1) {
-                this.className += ' responsive';
-            } else {
-                this.className = this.className.replace(' responsive', '');
-            }
-        }
-    });
-    </script>
+      :host .menu-home::after {
+        content: '';
+      }
+    }
+  </style>
+  <!-- local DOM goes here -->
+  <div class="nuxeo-satellite-left-menu">
+    <ul>
+      <li class="menu-home">
+        <a href="[[siteUrl]]">
+          <span class="menu-home-text">[[siteName]]</span>
+        </a>
+      </li>
+      <template is="dom-repeat" items="{{menuItems}}">
+        <li class$="{{_isActive(item.pathname)}}">
+          <a href="{{item.url}}">{{item.title}}</a>
+        </li>
+      </template>
+    </ul>
+  </div>
+  <div class="nuxeo-satellite-right-menu">
+    <ul>
+      <template is="dom-repeat" items="{{menuItemsRight}}">
+        <li class$="{{_isActive(item.pathname)}}">
+          <a href="{{item.url}}">{{item.title}}</a>
+        </li>
+      </template>
+    </ul>
+  </div>
+  <div class="responsive-toggle">
+    <a href="javascript:void(0);" on-tap="openResponsiveMenu">&#9776;</a>
+  </div>
+</template>
+<script>
+  Polymer({
+    is: 'nuxeo-menu',
+    properties: {
+      siteName: {
+        type: String,
+        value: 'Nuxeo'
+      },
+      siteUrl: {
+        type: String,
+        value: '/'
+      },
+      menuItems: Array,
+      menuItemsRight: Array
+    },
+    _isActive: function(pathname) {
+      if (new RegExp('^' + pathname + '(.+\..+)?').test(window.location.pathname)) {
+        return 'active';
+      }
+      return '';
+    },
+    openResponsiveMenu: function() {
+      if (this.className.indexOf('responsive') === -1) {
+        this.className += ' responsive';
+      } else {
+        this.className = this.className.replace(' responsive', '');
+      }
+    }
+  });
+</script>
 </dom-module>
