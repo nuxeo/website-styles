@@ -54,6 +54,7 @@ jspm_packages
 /css
 
 /build
+/dist
 
 # package cache
 package.md5
