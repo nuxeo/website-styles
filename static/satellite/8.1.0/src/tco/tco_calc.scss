@@ -1,0 +1,127 @@
+@import '../../SMAKK/sass/variables-smakk';
+$white: #fff;
+$typeform-bg: $c-green;
+$typeform-button: #ff9e00;
+$typeform-button-hover: #ffb133;
+
+$track-color: $c-grey;
+$thumb-color: $c-blue;
+$track-border-width: 0;
+
+@import 'inputrange';
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.full-height {
+  background-color: $typeform-bg;
+  background-image: url('https://images.typeform.com/images/RUDWjfmEccmv/background/default');
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.hide {
+  display: none;
+}
+
+.button {
+  color: $white;
+}
+
+.move-along {
+  color: $white;
+  font-size: 11px;
+  margin-top: 2rem;
+  text-align: center;
+
+  .button {
+    background-color: $typeform-button;
+    border: 1px solid $typeform-button;
+    border-radius: 4px;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: 700;
+    height: 40px;
+    margin: 0;
+    margin-right: 0.6rem;
+    min-width: 40px;
+    padding: 7px 8px 9px;
+    transition: background-color 150ms ease-in;
+
+    &:hover {
+      background-color: $typeform-button-hover;
+      border: 1px solid $typeform-button-hover;
+    }
+  }
+
+  .command {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+p {
+  color: $white;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.48em;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 1em;
+}
+
+.section {
+  color: $c-blue;
+  font-weight: 700;
+  margin-top: 1rem;
+
+  label {
+    color: $c-navy;
+  }
+
+  .value {
+    align-content: center;
+  }
+}
+
+svg {
+  // border: 1px solid black;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 1em;
+  width: 100%;
+
+  .axis {
+    line,
+    path {
+      stroke: rgba(0, 0, 0, 0.6);
+    }
+
+    text {
+      fill: $white;
+    }
+  }
+}
+
+#typeform {
+  height: calc(100vh - 3px);
+
+  &.full-height {
+    min-height: calc(100vh - 3px);
+  }
+}
+
+@media (max-width: 800px) {
+  .chart {
+    display: none !important;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
