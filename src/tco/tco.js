@@ -1,5 +1,4 @@
 /* eslint-env browser */
-/* global Chart */
 'use strict';
 
 const d3 = require('d3');
@@ -31,7 +30,10 @@ const colours = {
   orange: '241, 88, 24' // rgb(241, 88, 24)
 };
 
-const svg = d3.select('#tco-graph');
+const svg = d3
+  .select('#tco-graph')
+  .append('svg')
+  .attr('viewBox', '0 0 600 300');
 
 // const raw_param_data = {};
 // const param_data = {};
@@ -190,6 +192,7 @@ const render = () => {
         return d ? `${d} removed` : 'Current Situation';
       })
     );
+  console.log('here1');
 
   // Update the y axis
   y.domain([0, calcs[0].total]);
@@ -197,6 +200,7 @@ const render = () => {
     .transition()
     .call(d3.axisLeft(y).tickFormat(d => `$${human_number(d)}`));
 
+  console.log('here2');
   const update = g.selectAll('.bar').data(calcs, d => d.id);
   const enter = update
     .enter()
@@ -222,6 +226,7 @@ const render = () => {
     .attr('height', d => height - y(d.total));
   update.merge(enter);
   update.exit().remove();
+  console.log('here3');
 };
 
 const sliders = d3.select('#sliders');
