@@ -34,9 +34,9 @@
       left: 0;
     }
     p {
-      font-size: 18px;
+      font-size: 16px;
       @include smakk-breakpoint(large) {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
     .r-collapsing--challenge & {
