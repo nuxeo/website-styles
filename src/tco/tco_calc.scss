@@ -1,19 +1,26 @@
+@import '../../SMAKK/sass/variables-smakk';
 $white: #fff;
-$typeform-bg: #419ac2;
+$typeform-bg: $c-green;
 $typeform-button: #ff9e00;
 $typeform-button-hover: #ffb133;
+
+$track-color: $c-grey;
+$thumb-color: $c-blue;
+$track-border-width: 0;
+
+@import 'inputrange';
 
 body {
   font-family: Arial, sans-serif;
 }
 
 .container {
-  padding: 10vh 1rem;
+  padding: 1rem;
 }
 
 .full-height {
   background-color: $typeform-bg;
-  background-image: url('https://images.typeform.com/images/ECWAEwYY74eh/background/default');
+  background-image: url('https://images.typeform.com/images/RUDWjfmEccmv/background/default');
   background-size: cover;
   min-height: 100vh;
 }
@@ -68,11 +75,37 @@ p {
   padding-top: 1em;
 }
 
-.chart {
+.section {
+  color: $c-blue;
+  font-weight: 700;
+  margin-top: 1rem;
+
+  label {
+    color: $c-navy;
+  }
+
+  .value {
+    align-content: center;
+  }
+}
+
+svg {
+  // border: 1px solid black;
   margin: 0 auto;
   max-width: 800px;
   padding-top: 1em;
   width: 100%;
+
+  .axis {
+    line,
+    path {
+      stroke: rgba(0, 0, 0, 0.6);
+    }
+
+    text {
+      fill: $white;
+    }
+  }
 }
 
 #typeform {

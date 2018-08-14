@@ -7,10 +7,13 @@
   "config": {
     "browser": "chromium-browser"
   },
+  "engines": {
+    "browsers": "> 0.5%, last 2 versions, Firefox ESR, not dead"
+  },
   "scripts": {
     "test": "eslint --fix *.js **/*.js",
     "start": "npm run compile",
-    "poststart": "npm run build:roi",
+    "poststart": "npm run build:calcs",
     "predev": "npm run npm_install",
     "dev": "npm run server & nodemon --exec 'npm run compile && browser-sync reload'",
     "server": "browser-sync start --server ./static --startPath satellite/demo.html --browser=$npm_package_config_browser",
@@ -26,14 +29,15 @@
     "compile:styles-expanded": "node-sass --source-map true --source-comments --include-path ./scss/ --include-path ./SMAKK/sass/ --include-path ./node_modules/foundation-sites/scss/ --output-style expanded --output ./tmp/ ./scss/",
     "postcompile:styles-expanded": "npm run postcompile:styles",
     "npm_install": "[ `npm run -s package_checksum` = `cat package.md5` ] || npm install && npm run -s package_checksum > package.md5",
-    "build:roi": "rm -rf static/roi static/tco; parcel build --no-cache src/**/index.html -d static",
-    "dev:roi": "parcel --no-cache -p 3000 src/**/index.html",
+    "build:calcs": "rm -rf static/roi static/tco; parcel build --no-cache src/tco/index.html -d static/tco; parcel build --no-cache src/roi/index.html -d static/roi",
+    "dev:calcs": "parcel --no-cache -p 3000 src/**/index.html",
     "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'",
     "version": "npm run npm_install && npm start && cp -r static/satellite/latest static/satellite/`node -e \"console.log(require('./package.json').version);\"` && git add static/satellite && git commit -m \"Satellite release `node -e \"console.log(require('./package.json').version);\"` added\"",
     "postversion": "git push && git push --tags"
   },
   "author": "Andrew Goodricke <github@andrewgoodricke.com> (http://www.nuxeo.com)",
   "dependencies": {
+    "d3": "^5.5.0",
     "foundation-sites": "6.4.2"
   },
   "devDependencies": {

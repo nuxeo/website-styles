@@ -2,23 +2,9 @@
 /* global Chart */
 'use strict';
 
+const getUrlParameter = require('../common/get_url_param');
+
 const human_number = value => value.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-
-const getUrlParameter = function getUrlParameter(sParam) {
-  const sPageURL = decodeURIComponent(window.location.search.substring(1));
-  const sURLVariables = sPageURL.split('&');
-  let sParameterName;
-  let i;
-
-  for (i = 0; i < sURLVariables.length; i++) {
-    sParameterName = sURLVariables[i].split('=');
-
-    if (sParameterName[0] === sParam) {
-      return sParameterName[1] === void 0 ? true : sParameterName[1];
-    }
-  }
-  return void 0;
-};
 
 const param_names = ['numberofsystems', 'easytofind', 'timetofind', 'frequencytofind', 'avgsalary', 'numberofstaff'];
 
@@ -126,10 +112,10 @@ if (all_required) {
     return 'rgba(' + colour + ', ' + opacity + ')';
   };
   const colours = {
-    blue: '0, 103, 255',
-    purple: '133, 0, 255',
-    red: '255, 0, 68',
-    orange: '241, 88, 24'
+    blue: '0, 103, 255', // rgba(0, 103, 255, 1)
+    purple: '133, 0, 255', // rgba(133, 0, 255, 1)
+    red: '255, 0, 68', // rgba(255, 0, 68, 1)
+    orange: '241, 88, 24' // rgba(241, 88, 24, 1)
   };
 
   const ctx = document.getElementById('myChart').getContext('2d');
