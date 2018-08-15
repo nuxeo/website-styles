@@ -3,6 +3,7 @@
 
 const d3 = require('d3');
 
+const clone = obj => JSON.parse(JSON.stringify(obj));
 const human_number = value => value.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
 const getUrlParameter = require('../common/get_url_param');
@@ -35,6 +36,10 @@ const svg = d3
   .append('svg')
   .attr('viewBox', '0 0 600 300');
 
+d3.select('#tco-graph')
+  .append('p')
+  .attr('class', 'is-white text-center unpad')
+  .text('Servers Removed');
 // const raw_param_data = {};
 // const param_data = {};
 // let param_value;
@@ -91,51 +96,43 @@ const getInputs = () => {
 };
 
 const tco_calcs = (inputs, number_removed) => {
+  // const inputs = Object.assign({}, inputs_source);
   const { software, server, storage, staff, infrastructure } = inputs;
-  const reduction_multiplier = (100 - number_removed) / 100;
+  const totals = [];
 
   // Software
-  software.num_systems = Math.max(1, software.num_systems - number_removed);
-  software.sub_total = software.num_systems * software.avg_cost;
+  const software_num_systems = Math.max(1, software.num_systems - number_removed);
+  totals.push(software_num_systems * software.avg_cost);
 
   // server
-  server.num = Math.max(1, server.num - number_removed);
-  server.sub_total = server.num * server.avg_cost + server.avg_software_cost;
+  const server_num = Math.max(1, server.num - number_removed);
+  const reduction_multiplier = (100 - (server.num - server_num)) / 100;
+  totals.push(server_num * server.avg_cost + server.avg_software_cost);
 
   // storage
-  if (number_removed) {
-    storage.internal_cost = storage.internal_cost * reduction_multiplier;
-    storage.cloud_cost = storage.cloud_cost * reduction_multiplier;
-  }
-  storage.sub_total = storage.internal_cost + storage.cloud_cost;
+  const storage_cloud_cost = number_removed
+    ? ((software.num_systems - server_num / 16) / software.num_systems) * storage.cloud_cost
+    : storage.cloud_cost;
+  totals.push(storage.internal_cost * reduction_multiplier + storage_cloud_cost);
 
   // staff
-  staff.num = Math.max(1, staff.num - number_removed);
-  staff.sub_total = staff.num * staff.avg_salary;
+  const staff_num = Math.max(1, staff.num - number_removed);
+  totals.push(staff_num * staff.avg_salary);
 
   // infrastructure
-  if (number_removed) {
-    infrastructure.network_cost = infrastructure.network_cost * reduction_multiplier;
-    infrastructure.security_cost = infrastructure.security_cost * reduction_multiplier;
-    infrastructure.datacentre_cost = infrastructure.datacentre_cost * reduction_multiplier;
-    infrastructure.power_cost = infrastructure.power_cost * reduction_multiplier;
-  }
-  infrastructure.sub_total =
-    infrastructure.network_cost +
-    infrastructure.security_cost +
-    infrastructure.datacentre_cost +
-    infrastructure.power_cost;
+  totals.push(
+    infrastructure.network_cost * reduction_multiplier +
+      infrastructure.security_cost * reduction_multiplier +
+      infrastructure.datacentre_cost * reduction_multiplier +
+      infrastructure.power_cost * reduction_multiplier
+  );
 
-  const calculations = {
-    software,
-    server,
-    storage,
-    staff,
-    infrastructure
+  const total = totals.reduce((sum, sub_total) => sum + sub_total, 0);
+
+  return {
+    id: number_removed,
+    total
   };
-  calculations.total = Object.keys(calculations).reduce((sum, key) => sum + calculations[key].sub_total, 0);
-  calculations.id = number_removed;
-  return calculations;
 };
 
 const config = {
@@ -174,14 +171,13 @@ g.append('g')
 
 const render = () => {
   const inputs = getInputs();
-  const calcs = [];
-
   // console.log(tco_calcs(inputs, 0));
-  for (let systems_removed = 0; systems_removed < Math.min(6, inputs.software.num_systems); systems_removed++) {
-    // console.log(systems_removed);
-    calcs.push(tco_calcs(inputs, systems_removed));
-  }
-  console.log('calcs', calcs);
+
+  const calcs = Array(Math.min(5, inputs.software.num_systems))
+    .fill(clone(inputs))
+    .map(tco_calcs);
+
+  // console.log('calcs', calcs);
 
   // Update the x axis
   x.domain(calcs.map(d => d.id));
@@ -192,7 +188,6 @@ const render = () => {
         return d ? `${d} removed` : 'Current Situation';
       })
     );
-  console.log('here1');
 
   // Update the y axis
   y.domain([0, calcs[0].total]);
@@ -200,7 +195,6 @@ const render = () => {
     .transition()
     .call(d3.axisLeft(y).tickFormat(d => `$${human_number(d)}`));
 
-  console.log('here2');
   const update = g.selectAll('.bar').data(calcs, d => d.id);
   const enter = update
     .enter()
@@ -226,25 +220,31 @@ const render = () => {
     .attr('height', d => height - y(d.total));
   update.merge(enter);
   update.exit().remove();
-  console.log('here3');
+};
+
+const updateSliderValue = function() {
+  // const { id, value } = this;
+  const id = this.id;
+  const value = +this.value;
+  const display = d3.select(`#${id}_value`);
+
+  const prefix = display.classed('money') ? '$' : '';
+
+  display.text(prefix + human_number(value));
 };
 
 const sliders = d3.select('#sliders');
 sliders
   .selectAll('input[type=range]')
   .on('input', function() {
-    // const { id, value } = this;
-    const id = this.id;
-    const value = +this.value;
-    const display = d3.select(`#${id}_value`);
-
-    const prefix = display.classed('money') ? '$' : '';
-
-    display.text(prefix + human_number(value));
+    updateSliderValue.call(this);
 
     render();
   })
-  .dispatch('input');
+  .each(updateSliderValue);
+
+// Init the graph
+render();
 
 if (!getUrlParameter('return')) {
   const goNext = function(e) {

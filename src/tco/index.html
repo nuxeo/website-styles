@@ -36,72 +36,86 @@
           <div class="section grid-x grid-margin-x align-middle">
             <div class="cell small-12">Software</div>
 
-            <label class="cell small-12 medium-5" for="software_num_systems">Num Line of business or ECM systems</label>
-            <input class="cell small-10 medium-5" type="range" id="software_num_systems" name="software_num_systems" min="1" max="10" value="1"/>
+            <label class="cell small-12 medium-5" for="software_num_systems">Number of Information Systems</label>
+            <input class="cell small-10 medium-5" type="range" id="software_num_systems" name="software_num_systems"
+              min="1" max="20" value="5"/>
             <span class="cell small-2 value" id="software_num_systems_value"></span>
 
-            <label class="cell small-12 medium-5" for="software_avg_cost">Avg Maintenance/Subscription Cost for LOB/ECM systems</label>
-            <input class="cell small-10 medium-5" type="range" id="software_avg_cost" name="software_avg_cost" min="500" max="250000" value="500" step="500"/>
+            <label class="cell small-12 medium-5" for="software_avg_cost">Avg annual maintenance/subscription for information systems</label>
+            <input class="cell small-10 medium-5" type="range" id="software_avg_cost" name="software_avg_cost"
+              min="1000" max="50000" value="10000" step="1000"/>
             <span class="cell small-2 value money" id="software_avg_cost_value"></span>
           </div>
           <div class="section grid-x grid-margin-x align-middle">
             <div class="cell small-12">Servers</div>
 
-            <label class="cell small-12 medium-5" for="server_num">Num servers</label>
-            <input class="cell small-10 medium-5" type="range" id="server_num" name="server_num" min="1" max="50" value="1"/>
+            <label class="cell small-12 medium-5" for="server_num">Number of servers</label>
+            <input class="cell small-10 medium-5" type="range" id="server_num" name="server_num"
+              min="1" max="20" value="5"/>
             <span class="cell small-2 value" id="server_num_value"></span>
 
-            <label class="cell small-12 medium-5" for="server_avg_cost">Avg Server Maintenance</label>
-            <input class="cell small-10 medium-5" type="range" id="server_avg_cost" name="server_avg_cost" min="0" max="250000" value="500" step="500"/>
+            <label class="cell small-12 medium-5" for="server_avg_cost">Avg annual server maintenance</label>
+            <input class="cell small-10 medium-5" type="range" id="server_avg_cost" name="server_avg_cost"
+              min="1000" max="10000" value="2500" step="500"/>
             <span class="cell small-2 value money" id="server_avg_cost_value"></span>
 
-            <label class="cell small-12 medium-5" for="server_avg_software_cost">Avg Server Software Maintenance</label>
-            <input class="cell small-10 medium-5" type="range" id="server_avg_software_cost" name="server_avg_software_cost" min="0" max="250000" value="500" step="500"/>
+            <label class="cell small-12 medium-5" for="server_avg_software_cost">Avg annual server software maintenance</label>
+            <input class="cell small-10 medium-5" type="range" id="server_avg_software_cost" name="server_avg_software_cost"
+              min="500" max="10000" value="1000" step="500"/>
             <span class="cell small-2 value money" id="server_avg_software_cost_value"></span>
           </div>
           <div class="section grid-x grid-margin-x align-middle">
             <div class="cell small-12">Storage</div>
 
-            <label class="cell small-12 medium-5" for="storage_internal_cost">Internal</label>
-            <input class="cell small-10 medium-5" type="range" id="storage_internal_cost" name="storage_internal_cost" min="0" max="250000" value="500" step="500"/>
+            <label class="cell small-12 medium-5" for="storage_internal_cost">Annual internal storage cost</label>
+            <input class="cell small-10 medium-5" type="range" id="storage_internal_cost" name="storage_internal_cost"
+              min="1000" max="20000" value="5000" step="500"/>
             <span class="cell small-2 value money" id="storage_internal_cost_value"></span>
 
-            <label class="cell small-12 medium-5" for="storage_cloud_cost">Cloud</label>
-            <input class="cell small-10 medium-5" type="range" id="storage_cloud_cost" name="storage_cloud_cost" min="0" max="250000" value="500" step="500"/>
+            <label class="cell small-12 medium-5" for="storage_cloud_cost">Annual cloud storage cost</label>
+            <input class="cell small-10 medium-5" type="range" id="storage_cloud_cost" name="storage_cloud_cost"
+              min="1000" max="20000" value="2500" step="500"/>
             <span class="cell small-2 value money" id="storage_cloud_cost_value"></span>
           </div>
           <div class="section grid-x grid-margin-x align-middle">
             <div class="cell small-12">Staffing</div>
 
-            <label class="cell small-12 medium-5" for="staff_num">Num support staff</label>
-            <input class="cell small-10 medium-5" type="range" id="staff_num" name="staff_num" min="1" max="50" value="1"/>
+            <label class="cell small-12 medium-5" for="staff_num">Number of staff supporting information systems</label>
+            <input class="cell small-10 medium-5" type="range" id="staff_num" name="staff_num"
+              min="1" max="10" value="2"/>
             <span class="cell small-2 value" id="staff_num_value"></span>
 
-            <label class="cell small-12 medium-5" for="staff_avg_salary">Avg support salary $</label>
-            <input class="cell small-10 medium-5" type="range" id="staff_avg_salary" name="staff_avg_salary" min="10000" max="150000" value="50000" step="5000"/>
+            <label class="cell small-12 medium-5" for="staff_avg_salary">Avg annual salary for support staff</label>
+            <input class="cell small-10 medium-5" type="range" id="staff_avg_salary" name="staff_avg_salary"
+              min="35000" max="150000" value="50000" step="5000"/>
             <span class="cell small-2 value money" id="staff_avg_salary_value"></span>
           </div>
           <div class="section grid-x grid-margin-x align-middle">
             <div class="cell small-12">Infrastructure</div>
 
-            <label class="cell small-12 medium-5" for="infrastructure_network_cost">Network</label>
-            <input class="cell small-10 medium-5" type="range" id="infrastructure_network_cost" name="infrastructure_network_cost" min="0" max="250000" value="500" step="500"/>
+            <label class="cell small-12 medium-5" for="infrastructure_network_cost">Annual network costs</label>
+            <input class="cell small-10 medium-5" type="range" id="infrastructure_network_cost" name="infrastructure_network_cost"
+              min="1000" max="20000" value="2000" step="1000"/>
             <span class="cell small-2 value money" id="infrastructure_network_cost_value"></span>
 
-            <label class="cell small-12 medium-5" for="infrastructure_security_cost">Security</label>
-            <input class="cell small-10 medium-5" type="range" id="infrastructure_security_cost" name="infrastructure_security_cost" min="0" max="250000" value="500" step="500"/>
+            <label class="cell small-12 medium-5" for="infrastructure_security_cost">Annual security costs (eg anti-virus)</label>
+            <input class="cell small-10 medium-5" type="range" id="infrastructure_security_cost" name="infrastructure_security_cost"
+              min="1000" max="20000" value="2000" step="1000"/>
             <span class="cell small-2 value money" id="infrastructure_security_cost_value"></span>
 
-            <label class="cell small-12 medium-5" for="infrastructure_datacentre_cost">Datacentre</label>
-            <input class="cell small-10 medium-5" type="range" id="infrastructure_datacentre_cost" name="infrastructure_datacentre_cost" min="0" max="250000" value="500" step="500"/>
+            <label class="cell small-12 medium-5" for="infrastructure_datacentre_cost">Annual data-centre costs</label>
+            <input class="cell small-10 medium-5" type="range" id="infrastructure_datacentre_cost" name="infrastructure_datacentre_cost"
+              min="0" max="100000" value="10000" step="5000"/>
             <span class="cell small-2 value money" id="infrastructure_datacentre_cost_value"></span>
 
-            <label class="cell small-12 medium-5" for="infrastructure_power_cost">Power</label>
-            <input class="cell small-10 medium-5" type="range" id="infrastructure_power_cost" name="infrastructure_power_cost" min="0" max="250000" value="500" step="500"/>
+            <label class="cell small-12 medium-5" for="infrastructure_power_cost">Annual power/heating  costs</label>
+            <input class="cell small-10 medium-5" type="range" id="infrastructure_power_cost" name="infrastructure_power_cost"
+              min="0" max="50000" value="10000" step="5000"/>
             <span class="cell small-2 value money" id="infrastructure_power_cost_value"></span>
           </div>
         </div>
         <div id="tco-graph" class="cell small-12 large-6">
+          <h3 class="is-white text-center">Total Cost of Ownership</h3>
         </div>
       </div>
       <div class="grid-x align-center">
