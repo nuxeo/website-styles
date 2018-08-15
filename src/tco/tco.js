@@ -4,7 +4,9 @@
 const d3 = require('d3');
 
 const clone = obj => JSON.parse(JSON.stringify(obj));
-const human_number = value => value.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+const humanNumber = value => value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+const toPercentage = value => `${humanNumber((value * 100).toFixed(2))}%`;
+const toMoney = value => `$${humanNumber(value.toFixed(0))}`;
 
 const getUrlParameter = require('../common/get_url_param');
 
@@ -31,15 +33,20 @@ const colours = {
   orange: '241, 88, 24' // rgb(241, 88, 24)
 };
 
-const svg = d3
-  .select('#tco-graph')
-  .append('svg')
-  .attr('viewBox', '0 0 600 300');
+const tco_graph = d3.select('#tco-graph');
 
-d3.select('#tco-graph')
+const svg = tco_graph.append('svg').attr('viewBox', '0 0 600 300');
+
+tco_graph
   .append('p')
   .attr('class', 'is-white text-center unpad')
   .text('Servers Removed');
+
+// Define the div for the tooltip
+const tooltip = tco_graph
+  .append('div')
+  .attr('class', 'd3-tooltip')
+  .style('opacity', 0);
 // const raw_param_data = {};
 // const param_data = {};
 // let param_value;
@@ -95,7 +102,7 @@ const getInputs = () => {
   };
 };
 
-const tco_calcs = (inputs, number_removed) => {
+const calc_tco = (inputs, number_removed) => {
   // const inputs = Object.assign({}, inputs_source);
   const { software, server, storage, staff, infrastructure } = inputs;
   const totals = [];
@@ -135,6 +142,14 @@ const tco_calcs = (inputs, number_removed) => {
   };
 };
 
+const calc_saving = (calc, hasSaving, calcs) => {
+  if (hasSaving) {
+    calc.saving = calcs[0].total - calc.total;
+    calc.saving_percentage = 1 - calc.total / calcs[0].total;
+  }
+  return calc;
+};
+
 const config = {
   width: 600,
   height: 300,
@@ -169,13 +184,24 @@ g.append('g')
   .attr('class', 'axis axis--y')
   .style('font-size', '14px');
 
+const setBars = bar => {
+  bar
+    .attr('stroke-dashoffset', d => height - y(d.total))
+    .attr('stroke-dasharray', d => `${(height - y(d.total)) * 2 + x.bandwidth()}, ${x.bandwidth()}`)
+    .attr('x', d => x(d.id))
+    .attr('y', d => y(d.total))
+    .attr('width', x.bandwidth())
+    .attr('height', d => height - y(d.total));
+};
+
 const render = () => {
   const inputs = getInputs();
-  // console.log(tco_calcs(inputs, 0));
+  // console.log(calc_tco(inputs, 0));
 
   const calcs = Array(Math.min(5, inputs.software.num_systems))
     .fill(clone(inputs))
-    .map(tco_calcs);
+    .map(calc_tco)
+    .map(calc_saving);
 
   // console.log('calcs', calcs);
 
@@ -193,8 +219,9 @@ const render = () => {
   y.domain([0, calcs[0].total]);
   g.select('.axis--y')
     .transition()
-    .call(d3.axisLeft(y).tickFormat(d => `$${human_number(d)}`));
+    .call(d3.axisLeft(y).tickFormat(d => toMoney(d)));
 
+  // Add/remove/amend bars
   const update = g.selectAll('.bar').data(calcs, d => d.id);
   const enter = update
     .enter()
@@ -203,23 +230,54 @@ const render = () => {
     .attr('fill', getColour(colours.blue, 0.3))
     .attr('stroke', getColour(colours.blue, 1))
     .attr('stroke-width', 3)
-    .attr('stroke-dashoffset', d => height - y(d.total))
-    .attr('stroke-dasharray', d => `${(height - y(d.total)) * 2 + x.bandwidth()}, ${x.bandwidth()}`)
-    .attr('x', d => x(d.id))
-    .attr('y', d => y(d.total))
-    .attr('width', x.bandwidth())
-    .attr('height', d => height - y(d.total));
+    .style('cursor', 'pointer')
+    .on('mouseover', function(d) {
+      const barCoords = this.getBoundingClientRect();
+      const bar = {
+        left: barCoords.left + window.scrollX,
+        top: barCoords.top + window.scrollY,
+        width: barCoords.width,
+        height: barCoords.height
+      };
 
-  update
-    .transition()
-    .attr('stroke-dashoffset', d => height - y(d.total))
-    .attr('stroke-dasharray', d => `${(height - y(d.total)) * 2 + x.bandwidth()}, ${x.bandwidth()}`)
-    .attr('x', d => x(d.id))
-    .attr('y', d => y(d.total))
-    .attr('width', x.bandwidth())
-    .attr('height', d => height - y(d.total));
-  update.merge(enter);
+      const text = [];
+      if (d.saving) {
+        text.push(`Total Cost of Ownership: ${toMoney(d.total)}`);
+        text.push(`Saving: <strong>${toMoney(d.saving)}</strong>`);
+        text.push(`Percentage Saved: <strong>${toPercentage(d.saving_percentage)}</strong>`);
+      } else {
+        text.push(`Total Cost of Ownership: <strong>${toMoney(d.total)}</strong>`);
+      }
+      tooltip
+        .transition()
+        .duration(200)
+        .style('opacity', 0.9);
+
+      // Add Tooltip text
+      tooltip.html(text.join('<br>'));
+
+      // Tooltip Centred
+      const tooltip_width = tooltip.node().getBoundingClientRect().width;
+      const tooltip_left = bar.left + (bar.width - tooltip_width) / 2;
+
+      // Tooltip top of the rect
+      const tooltip_top = bar.top + 10;
+
+      tooltip.style('left', `${tooltip_left}px`).style('top', `${tooltip_top}px`);
+    })
+    .on('mouseout', function(d) {
+      tooltip
+        .transition()
+        .duration(500)
+        .style('opacity', 0);
+    })
+    .call(setBars);
+
   update.exit().remove();
+
+  update.transition().call(setBars);
+
+  update.merge(enter);
 };
 
 const updateSliderValue = function() {
@@ -230,7 +288,7 @@ const updateSliderValue = function() {
 
   const prefix = display.classed('money') ? '$' : '';
 
-  display.text(prefix + human_number(value));
+  display.text(prefix + humanNumber(value));
 };
 
 const sliders = d3.select('#sliders');

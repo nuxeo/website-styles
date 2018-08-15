@@ -1,5 +1,6 @@
 @import '../../SMAKK/sass/variables-smakk';
 $white: #fff;
+$black: #000;
 $typeform-bg: $c-green;
 $typeform-button: #ff9e00;
 $typeform-button-hover: #ffb133;
@@ -113,6 +114,33 @@ svg {
     text {
       fill: $white;
     }
+  }
+}
+
+.d3-tooltip {
+  background: $c-grey-3;
+  border: solid 2px $black;
+  color: $white;
+  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  // font: 12px sans-serif;
+  padding: 0.25em 0.5em;
+  pointer-events: none;
+  position: absolute;
+  text-align: right;
+  // width: 60px;
+  // height: 28px;
+  //
+  &::before {
+    border-bottom: 5px solid $black;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    content: '';
+    height: 0;
+    left: calc(50% - 0.5em + 2px);
+    position: absolute;
+    top: -0.5em;
+    width: 0;
   }
 }
 
