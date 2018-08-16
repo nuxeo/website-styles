@@ -4,7 +4,8 @@
 const d3 = require('d3');
 
 const clone = obj => JSON.parse(JSON.stringify(obj));
-const humanNumber = value => value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+const humanNumber = value =>
+  value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 const toPercentage = value => `${humanNumber((value * 100).toFixed(2))}%`;
 const toMoney = value => `$${humanNumber(value.toFixed(0))}`;
 
@@ -21,7 +22,9 @@ const staff_num = d3.select('#staff_num');
 const staff_avg_salary = d3.select('#staff_avg_salary');
 const infrastructure_network_cost = d3.select('#infrastructure_network_cost');
 const infrastructure_security_cost = d3.select('#infrastructure_security_cost');
-const infrastructure_datacentre_cost = d3.select('#infrastructure_datacentre_cost');
+const infrastructure_datacentre_cost = d3.select(
+  '#infrastructure_datacentre_cost'
+);
 const infrastructure_power_cost = d3.select('#infrastructure_power_cost');
 
 const getColour = (colour, opacity) => `rgba(${colour}, ${opacity})`;
@@ -39,7 +42,7 @@ const svg = tco_graph.append('svg').attr('viewBox', '0 0 600 300');
 
 tco_graph
   .append('p')
-  .attr('class', 'is-white text-center unpad')
+  .attr('class', 'is-blue text-center unpad')
   .text('Servers Removed');
 
 // Define the div for the tooltip
@@ -108,7 +111,10 @@ const calc_tco = (inputs, number_removed) => {
   const totals = [];
 
   // Software
-  const software_num_systems = Math.max(1, software.num_systems - number_removed);
+  const software_num_systems = Math.max(
+    1,
+    software.num_systems - number_removed
+  );
   totals.push(software_num_systems * software.avg_cost);
 
   // server
@@ -118,9 +124,12 @@ const calc_tco = (inputs, number_removed) => {
 
   // storage
   const storage_cloud_cost = number_removed
-    ? ((software.num_systems - server_num / 16) / software.num_systems) * storage.cloud_cost
+    ? ((software.num_systems - server_num / 16) / software.num_systems) *
+      storage.cloud_cost
     : storage.cloud_cost;
-  totals.push(storage.internal_cost * reduction_multiplier + storage_cloud_cost);
+  totals.push(
+    storage.internal_cost * reduction_multiplier + storage_cloud_cost
+  );
 
   // staff
   const staff_num = Math.max(1, staff.num - number_removed);
@@ -146,6 +155,9 @@ const calc_saving = (calc, hasSaving, calcs) => {
   if (hasSaving) {
     calc.saving = calcs[0].total - calc.total;
     calc.saving_percentage = 1 - calc.total / calcs[0].total;
+  } else {
+    calc.saving = 0;
+    calc.saving_percentage = 0;
   }
   return calc;
 };
@@ -170,7 +182,21 @@ const x = d3
   .scaleBand()
   .rangeRound([0, width])
   .padding(config.xPadding);
+
 const y = d3.scaleLinear().rangeRound([height, 0]);
+
+const customYAxis = g => {
+  g.call(
+    d3
+      .axisRight(y)
+      .tickSize(width)
+      .tickFormat('')
+  );
+  g.select('.domain').remove();
+  g.selectAll('.tick:not(:first-of-type) line')
+    .attr('stroke', '#777')
+    .attr('stroke-dasharray', '2,2');
+};
 
 const g = svg
   .append('g')
@@ -183,15 +209,35 @@ g.append('g')
 g.append('g')
   .attr('class', 'axis axis--y')
   .style('font-size', '14px');
+g.append('g').attr('class', 'axis axis--y-right');
 
 const setBars = bar => {
   bar
     .attr('stroke-dashoffset', d => height - y(d.total))
-    .attr('stroke-dasharray', d => `${(height - y(d.total)) * 2 + x.bandwidth()}, ${x.bandwidth()}`)
+    .attr(
+      'stroke-dasharray',
+      d => `${(height - y(d.total)) * 2 + x.bandwidth()}, ${x.bandwidth()}`
+    )
     .attr('x', d => x(d.id))
     .attr('y', d => y(d.total))
     .attr('width', x.bandwidth())
     .attr('height', d => height - y(d.total));
+};
+const setSaving = bar => {
+  bar
+    .attr('x', d => x(d.id))
+    .attr('y', d => height - y(d.saving) - 3)
+    .attr('width', x.bandwidth())
+    .attr('height', 0)
+    .text(d => toPercentage(d.saving_percentage));
+  // if (d.visible) {
+  //   bar
+  //     .attr('x', d => x(d.id))
+  //     .attr('y', 0)
+  //     .attr('width', x.bandwidth())
+  //     .attr('height', d => height - y(d.saving) - 3);
+  // } else {
+  // }
 };
 
 const render = () => {
@@ -221,16 +267,15 @@ const render = () => {
     .transition()
     .call(d3.axisLeft(y).tickFormat(d => toMoney(d)));
 
+  // Horizontal axis lines
+  g.select('.axis--y-right').call(customYAxis);
+
   // Add/remove/amend bars
   const update = g.selectAll('.bar').data(calcs, d => d.id);
   const enter = update
     .enter()
     .append('rect')
     .attr('class', 'bar')
-    .attr('fill', getColour(colours.blue, 0.3))
-    .attr('stroke', getColour(colours.blue, 1))
-    .attr('stroke-width', 3)
-    .style('cursor', 'pointer')
     .on('mouseover', function(d) {
       const barCoords = this.getBoundingClientRect();
       const bar = {
@@ -244,10 +289,26 @@ const render = () => {
       if (d.saving) {
         text.push(`Total Cost of Ownership: ${toMoney(d.total)}`);
         text.push(`Saving: <strong>${toMoney(d.saving)}</strong>`);
-        text.push(`Percentage Saved: <strong>${toPercentage(d.saving_percentage)}</strong>`);
+        text.push(
+          `Percentage Saved: <strong>${toPercentage(
+            d.saving_percentage
+          )}</strong>`
+        );
+
+        const saving = d3.select(svg.selectAll('.bar--saving').nodes()[d.id]);
+        const saving_y = saving.attr('y');
+        const saving_height = saving.attr('height');
+
+        saving
+          .classed('swapped', true)
+          .attr('y', saving_height)
+          .attr('height', saving_y);
       } else {
-        text.push(`Total Cost of Ownership: <strong>${toMoney(d.total)}</strong>`);
+        text.push(
+          `Total Cost of Ownership: <strong>${toMoney(d.total)}</strong>`
+        );
       }
+
       tooltip
         .transition()
         .duration(200)
@@ -263,9 +324,22 @@ const render = () => {
       // Tooltip top of the rect
       const tooltip_top = bar.top + 10;
 
-      tooltip.style('left', `${tooltip_left}px`).style('top', `${tooltip_top}px`);
+      tooltip
+        .style('left', `${tooltip_left}px`)
+        .style('top', `${tooltip_top}px`);
     })
-    .on('mouseout', function(d) {
+    .on('mouseout', () => {
+      svg.selectAll('.bar--saving.swapped').each(function() {
+        const saving = d3.select(this);
+        const saving_y = saving.attr('y');
+        const saving_height = saving.attr('height');
+
+        saving
+          .classed('swapped', false)
+          .attr('y', saving_height)
+          .attr('height', saving_y);
+      });
+
       tooltip
         .transition()
         .duration(500)
@@ -278,6 +352,21 @@ const render = () => {
   update.transition().call(setBars);
 
   update.merge(enter);
+
+  // --------------------------------------
+  // Add/remove/amend bars
+  const update_saving = g.selectAll('.bar--saving').data(calcs, d => d.id);
+  const enter_saving = update_saving
+    .enter()
+    .append('rect')
+    .attr('class', 'bar--saving')
+    .call(setSaving);
+
+  update_saving.exit().remove();
+
+  update_saving.transition().call(setSaving);
+
+  update_saving.merge(enter_saving);
 };
 
 const updateSliderValue = function() {
@@ -320,7 +409,8 @@ if (!getUrlParameter('return')) {
   document.getElementById('next').addEventListener('click', goNext);
   document.addEventListener('keyup', goNext);
 
-  const typeform_url = 'https://nuxeosurveys.typeform.com/to/g5A71P' + window.location.search;
+  const typeform_url =
+    'https://nuxeosurveys.typeform.com/to/g5A71P' + window.location.search;
   document.getElementById('typeform').setAttribute('data-url', typeform_url);
 
   document.querySelectorAll('.no-return').forEach(function(e) {

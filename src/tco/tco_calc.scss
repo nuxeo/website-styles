@@ -19,6 +19,10 @@ body {
   color: $white;
 }
 
+.is-blue {
+  color: $c-blue;
+}
+
 .unpad {
   padding: 0;
 }
@@ -112,7 +116,39 @@ svg {
     }
 
     text {
-      fill: $white;
+      fill: $c-blue;
+    }
+
+    &.axis--y-right {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+  }
+
+  .bar {
+    cursor: pointer;
+    fill: rgba($c_blue, 0.3);
+    // .attr('fill', getColour(colours.blue, 0.3))
+    stroke: $c-blue;
+    stroke-width: 3px;
+    transition: fill 0.2s ease;
+
+    &:hover {
+      fill: $c_blue;
+    }
+  }
+
+  .bar--saving {
+    fill: $c-orange;
+    stroke: $c-orange;
+    stroke-width: 3px;
+    transition: height 0.4s ease-in, y 0.4s ease-in;
+  }
+
+  &:hover {
+    .axis--y-right {
+      opacity: 1;
+      transition: opacity 0.2s ease;
     }
   }
 }
