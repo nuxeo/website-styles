@@ -6,7 +6,7 @@ const debugLib = require('debug');
 const debug = debugLib('tco');
 
 const { calcTco, calcSaving } = require('./tco_calc');
-const { getInputs, serialiseInputs } = require('./tco_inputs');
+const { initInputs, getInputs, serialiseInputs } = require('./tco_inputs');
 
 const clone = obj => JSON.parse(JSON.stringify(obj));
 const humanNumber = value => value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -14,6 +14,8 @@ const toPercentage = value => `${humanNumber((value * 100).toFixed(2))}%`;
 const toMoney = value => `$${humanNumber(value.toFixed(0))}`;
 
 const getUrlParameter = require('../common/get_url_param');
+
+initInputs();
 
 const getColour = (colour, opacity) => `rgba(${colour}, ${opacity})`;
 
