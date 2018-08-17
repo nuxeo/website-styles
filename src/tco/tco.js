@@ -83,7 +83,8 @@ const tooltip = tco_graph
 const g = svg
   .append('g')
   .attr('transform', `translate(${margin.left},${margin.top})`)
-  .style('font-family', 'Helvetica Neue",Helvetica,Roboto,Arial,sans-serif');
+  .style('font-family', 'Helvetica Neue",Helvetica,Roboto,Arial,sans-serif')
+  .style('font-size', '14px');
 g.append('g')
   .attr('class', 'axis axis--x')
   .style('font-size', '14px')
@@ -107,11 +108,27 @@ const setBars = bar => {
 };
 const setSaving = bar => {
   bar
+    .select('rect')
     .attr('x', d => x(d.id))
     .attr('y', d => height - y(d.saving) - 3)
     .attr('width', x.bandwidth())
-    .attr('height', 0)
-    .text(d => toPercentage(d.saving_percentage));
+    .attr('height', 0);
+  bar
+    .select('.text-percentage')
+    .attr('x', d => x(d.id) + x.bandwidth() / 2)
+    // Don't move until 10% and 1 px per % up to 20%
+    .attr('y', d => Math.min(10, Math.max(d.saving_percentage - 0.1, 0) * 100) + 10)
+    .attr('text-anchor', 'middle')
+    // Only show > 4.5% Saving
+    .text(d => (d.saving_percentage > 0.045 ? toPercentage(d.saving_percentage) : ''));
+  bar
+    .select('.text-saving')
+    .attr('x', d => x(d.id) + x.bandwidth() / 2)
+    // Don't move until 10% and 1 px per % up to 20%
+    .attr('y', d => Math.min(10, Math.max(d.saving_percentage - 0.1, 0) * 100) + 23)
+    .attr('text-anchor', 'middle')
+    // Only show > 10% Saving
+    .text(d => (d.saving_percentage > 0.1 ? 'saving' : ''));
 };
 
 const render = () => {
@@ -161,13 +178,12 @@ const render = () => {
 
       const text = [];
       if (d.saving) {
-        text.push(`Total Cost of Ownership: ${toMoney(d.total)}`);
+        text.push(`TCO: ${toMoney(d.total)}`);
         text.push(`Saving: <strong>${toMoney(d.saving)}</strong>`);
-        text.push(
-          `Percentage Saved: <strong>${toPercentage(d.saving_percentage)}</strong>`
-        );
 
-        const saving = d3.select(svg.selectAll('.bar--saving').nodes()[d.id]);
+        const saving = d3
+          .select(svg.selectAll('.bar--saving').nodes()[d.id])
+          .select('rect');
         const saving_y = saving.attr('y');
         const saving_height = saving.attr('height');
 
@@ -176,7 +192,7 @@ const render = () => {
           .attr('y', saving_height)
           .attr('height', saving_y);
       } else {
-        text.push(`Total Cost of Ownership: <strong>${toMoney(d.total)}</strong>`);
+        text.push(`TCO: ${toMoney(d.total)}`);
       }
 
       tooltip
@@ -197,7 +213,7 @@ const render = () => {
       tooltip.style('left', `${tooltip_left}px`).style('top', `${tooltip_top}px`);
     })
     .on('mouseout', () => {
-      svg.selectAll('.bar--saving.swapped').each(function() {
+      svg.selectAll('.bar--saving .swapped').each(function() {
         const saving = d3.select(this);
         const saving_y = saving.attr('y');
         const saving_height = saving.attr('height');
@@ -221,20 +237,23 @@ const render = () => {
 
   update.merge(enter);
 
-  // --------------------------------------
   // Add/remove/amend bars
-  const update_saving = g.selectAll('.bar--saving').data(calcs, d => d.id);
-  const enter_saving = update_saving
+  const update_saving_g = g.selectAll('.bar--saving').data(calcs, d => d.id);
+  const enter_saving_g = update_saving_g
     .enter()
-    .append('rect')
-    .attr('class', 'bar--saving')
-    .call(setSaving);
+    .append('g')
+    .attr('class', 'bar--saving');
 
-  update_saving.exit().remove();
+  enter_saving_g.append('rect');
+  enter_saving_g.append('text').attr('class', 'text-percentage');
+  enter_saving_g.append('text').attr('class', 'text-saving');
+  enter_saving_g.call(setSaving);
 
-  update_saving.transition().call(setSaving);
+  update_saving_g.transition().call(setSaving);
 
-  update_saving.merge(enter_saving);
+  update_saving_g.merge(enter_saving_g);
+
+  update_saving_g.exit().remove();
 };
 
 const updateSliderValue = function() {

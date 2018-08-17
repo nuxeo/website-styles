@@ -185,10 +185,24 @@ svg {
   }
 
   .bar--saving {
-    fill: $c-aqua;
-    stroke: $c-aqua;
-    stroke-width: 3px;
-    transition: height 0.4s ease-in, y 0.4s ease-in;
+    rect {
+      fill: $c-aqua;
+      stroke: $c-aqua;
+      stroke-width: 3px;
+      transition: height 0.4s ease-in, y 0.4s ease-in;
+
+      &.swapped ~ text {
+        opacity: 1;
+        transition-delay: 0.3s;
+      }
+    }
+
+    text {
+      fill: $white;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      transition-delay: 0;
+    }
   }
 
   &:hover {
