@@ -61,8 +61,9 @@ body {
   font-size: 11px;
   margin-top: 2rem;
   text-align: center;
-  text-shadow: 0 0 8px $c-green, 0 0 8px $c-green, 0 0 8px $c-green, 0 0 8px $c-green,
-    0 0 8px $c-green, 0 0 8px $c-green, 0 0 8px $c-green, 0 0 8px $c-green;
+  text-shadow: 0 0 8px $typeform-bg, 0 0 8px $typeform-bg, 0 0 8px $typeform-bg,
+    0 0 8px $typeform-bg, 0 0 8px $typeform-bg, 0 0 8px $typeform-bg, 0 0 8px $typeform-bg,
+    0 0 8px $typeform-bg;
 
   .button {
     background-color: $typeform-button;
@@ -91,7 +92,7 @@ body {
 }
 
 #tco-graph {
-  background: $c-green;
+  background: $typeform-bg;
 }
 
 p {
@@ -110,7 +111,7 @@ p {
   padding: 2px 0;
 
   > span {
-    background-color: $c-green;
+    background-color: $typeform-bg;
     box-decoration-break: clone;
     display: inline;
     padding: 0.45rem;
@@ -118,7 +119,7 @@ p {
 }
 
 .section {
-  background: $c-green;
+  background: $typeform-bg;
   color: $c-blue;
   font-weight: 700;
   margin-bottom: 1rem;
