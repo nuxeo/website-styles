@@ -61,6 +61,8 @@ body {
   font-size: 11px;
   margin-top: 2rem;
   text-align: center;
+  text-shadow: 0 0 8px $c-green, 0 0 8px $c-green, 0 0 8px $c-green, 0 0 8px $c-green,
+    0 0 8px $c-green, 0 0 8px $c-green, 0 0 8px $c-green, 0 0 8px $c-green;
 
   .button {
     background-color: $typeform-button;
@@ -88,7 +90,6 @@ body {
   }
 }
 
-#sliders,
 #tco-graph {
   background: $c-green;
 }
@@ -117,16 +118,33 @@ p {
 }
 
 .section {
+  background: $c-green;
   color: $c-blue;
   font-weight: 700;
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 
   label {
     color: $c-navy;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+  }
+
+  .input-row:hover label {
+    color: $c-blue;
   }
 
   .value {
     align-content: center;
+  }
+}
+
+#tco-lead {
+  margin-top: 4rem;
+
+  > p {
+    color: $c-navy;
+    font-size: 1.5rem;
+    line-height: 1.5;
   }
 }
 

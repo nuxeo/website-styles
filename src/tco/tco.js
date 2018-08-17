@@ -72,7 +72,7 @@ const svg = tco_graph
 tco_graph
   .append('p')
   .attr('class', 'is-blue text-center unpad')
-  .text('Servers Removed');
+  .text('Systems Removed');
 
 // Define the div for the tooltip
 const tooltip = tco_graph
