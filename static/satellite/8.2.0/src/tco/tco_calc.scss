@@ -1,0 +1,260 @@
+@import '../../SMAKK/sass/variables-smakk';
+$white: #fff;
+$black: #000;
+$typeform-bg: $c-green;
+$typeform-button: #ff9e00;
+$typeform-button-hover: #ffb133;
+
+$track-color: $c-grey;
+$thumb-color: $c-blue;
+$track-border-width: 0;
+
+@import 'inputrange';
+
+input[type='range'] {
+  outline: 1px dashed transparent;
+  outline-offset: 12px;
+  transition: outline 0.2s ease;
+
+  &:focus {
+    outline: 1px dashed $c-blue;
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.is-white {
+  color: $white;
+}
+
+.is-blue {
+  color: $c-blue;
+}
+
+.unpad {
+  padding: 0;
+}
+
+.container {
+  padding: 1rem;
+}
+
+.full-height {
+  background-color: $typeform-bg;
+  background-image: url('https://images.typeform.com/images/RUDWjfmEccmv/background/default');
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.hide {
+  display: none;
+}
+
+.button {
+  color: $white;
+}
+
+.move-along {
+  color: $c-blue;
+  font-size: 11px;
+  margin-top: 2rem;
+  text-align: center;
+  text-shadow: 0 0 8px $typeform-bg, 0 0 8px $typeform-bg, 0 0 8px $typeform-bg,
+    0 0 8px $typeform-bg, 0 0 8px $typeform-bg, 0 0 8px $typeform-bg, 0 0 8px $typeform-bg,
+    0 0 8px $typeform-bg;
+
+  .button {
+    background-color: $typeform-button;
+    border: 1px solid $typeform-button;
+    border-radius: 4px;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: 700;
+    height: 40px;
+    margin: 0;
+    margin-right: 0.6rem;
+    min-width: 40px;
+    padding: 7px 8px 9px;
+    transition: background-color 150ms ease-in;
+
+    &:hover {
+      background-color: $typeform-button-hover;
+      border: 1px solid $typeform-button-hover;
+    }
+  }
+
+  .command {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
+
+#tco-graph {
+  background: $typeform-bg;
+}
+
+p {
+  color: $c-blue;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.48em;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 1em;
+}
+
+.block-bg {
+  line-height: 1.4;
+  margin: 1em;
+  padding: 2px 0;
+
+  > span {
+    background-color: $typeform-bg;
+    box-decoration-break: clone;
+    display: inline;
+    padding: 0.45rem;
+  }
+}
+
+.section {
+  background: $typeform-bg;
+  color: $c-blue;
+  font-weight: 700;
+  margin-bottom: 1rem;
+
+  label {
+    color: $c-navy;
+    line-height: 1.4;
+    transition: color 0.2s ease;
+  }
+
+  .input-row:hover label {
+    color: $c-blue;
+  }
+
+  .value {
+    align-content: center;
+  }
+}
+
+#tco-lead {
+  margin-top: 4rem;
+
+  > p {
+    color: $c-navy;
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}
+
+svg {
+  // border: 1px solid black;
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 1em;
+  width: 100%;
+
+  .axis {
+    line,
+    path {
+      stroke: rgba(0, 0, 0, 0.6);
+    }
+
+    text {
+      fill: $c-navy;
+    }
+
+    &.axis--y-right {
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+  }
+
+  .bar {
+    cursor: pointer;
+    fill: rgba($c_blue, 0.3);
+    // .attr('fill', getColour(colours.blue, 0.3))
+    stroke: $c-blue;
+    stroke-width: 3px;
+    transition: fill 0.2s ease;
+
+    &:hover {
+      fill: $c_blue;
+    }
+  }
+
+  .bar--saving {
+    rect {
+      fill: $c-aqua;
+      stroke: $c-aqua;
+      stroke-width: 3px;
+      transition: height 0.4s ease-in, y 0.4s ease-in;
+
+      &.swapped ~ text {
+        opacity: 1;
+        transition-delay: 0.3s;
+      }
+    }
+
+    text {
+      fill: $white;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      transition-delay: 0;
+    }
+  }
+
+  &:hover {
+    .axis--y-right {
+      opacity: 1;
+      transition: opacity 0.2s ease;
+    }
+  }
+}
+
+.d3-tooltip {
+  background: $c-grey-3;
+  border: solid 2px $black;
+  color: $white;
+  font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+  font-size: 14px;
+  // font: 12px sans-serif;
+  padding: 0.25em 0.5em;
+  pointer-events: none;
+  position: absolute;
+  text-align: right;
+  // width: 60px;
+  // height: 28px;
+  //
+  &::before {
+    border-bottom: 5px solid $black;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    content: '';
+    height: 0;
+    left: calc(50% - 0.5em + 2px);
+    position: absolute;
+    top: -0.5em;
+    width: 0;
+  }
+}
+
+#typeform {
+  height: calc(100vh - 3px);
+
+  &.full-height {
+    min-height: calc(100vh - 3px);
+  }
+}
+
+@media (max-width: 800px) {
+  .chart {
+    display: none !important;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
