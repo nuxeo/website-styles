@@ -4,10 +4,7 @@ const calcTco = (inputs, number_removed) => {
   const totals = [];
 
   // Software
-  const software_num_systems = Math.max(
-    1,
-    software.num_systems - number_removed
-  );
+  const software_num_systems = Math.max(1, software.num_systems - number_removed);
   totals.push(software_num_systems * software.avg_cost);
 
   // server
@@ -20,9 +17,7 @@ const calcTco = (inputs, number_removed) => {
     ? ((software.num_systems - server_num / 16) / software.num_systems) *
       storage.cloud_cost
     : storage.cloud_cost;
-  totals.push(
-    storage.internal_cost * reduction_multiplier + storage_cloud_cost
-  );
+  totals.push(storage.internal_cost * reduction_multiplier + storage_cloud_cost);
 
   // staff
   const staff_num = Math.max(1, staff.num - number_removed);

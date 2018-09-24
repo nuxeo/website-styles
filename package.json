@@ -11,7 +11,7 @@
     "browsers": "> 0.5%, last 2 versions, Firefox ESR, not dead"
   },
   "scripts": {
-    "test": "eslint --fix *.js **/*.js",
+    "test": "eslint --cache --fix .",
     "start": "npm run compile",
     "poststart": "npm run build:calcs",
     "predev": "npm run npm_install",

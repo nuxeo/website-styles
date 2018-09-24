@@ -6,7 +6,14 @@ const getUrlParameter = require('../common/get_url_param');
 
 const human_number = value => value.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
-const param_names = ['numberofsystems', 'easytofind', 'timetofind', 'frequencytofind', 'avgsalary', 'numberofstaff'];
+const param_names = [
+  'numberofsystems',
+  'easytofind',
+  'timetofind',
+  'frequencytofind',
+  'avgsalary',
+  'numberofstaff'
+];
 
 const param_transformations = {
   easytofind: function(value) {
@@ -58,7 +65,9 @@ for (let i = 0; i < param_names.length; i++) {
   }
   raw_param_data[param] = param_value;
   param_data[param] =
-    typeof param_transformations[param] === 'function' ? param_transformations[param](param_value) : param_value;
+    typeof param_transformations[param] === 'function'
+      ? param_transformations[param](param_value)
+      : param_value;
   // document.getElementById(param).innerHTML = param_value + ' (' + param_data[param] + ')';
 }
 
@@ -73,15 +82,21 @@ const seconds_per_day_to_days_per_year = seconds_per_day => {
 };
 
 if (all_required) {
-  const switch_multiplier = (param_data.numberofsystems - 1) * (param_data.easytofind ? 10 : 20);
+  const switch_multiplier =
+    (param_data.numberofsystems - 1) * (param_data.easytofind ? 10 : 20);
   const frequency_per_day = param_data.frequencytofind * hours_per_day;
 
-  const seconds_per_day_new = nuxeo_speed_to_find * param_data.numberofstaff * frequency_per_day;
+  const seconds_per_day_new =
+    nuxeo_speed_to_find * param_data.numberofstaff * frequency_per_day;
   const days_per_year_new = seconds_per_day_to_days_per_year(seconds_per_day_new);
 
   const seconds_per_day_existing =
-    (param_data.timetofind + switch_multiplier) * param_data.numberofstaff * frequency_per_day;
-  const days_per_year_existing = seconds_per_day_to_days_per_year(seconds_per_day_existing);
+    (param_data.timetofind + switch_multiplier) *
+    param_data.numberofstaff *
+    frequency_per_day;
+  const days_per_year_existing = seconds_per_day_to_days_per_year(
+    seconds_per_day_existing
+  );
 
   const daily_salary = param_data.avgsalary / working_days_per_year;
 
@@ -102,7 +117,8 @@ if (all_required) {
   // console.log('cost_new', cost_new);
   // console.log('saving', saving);
 
-  let productivity = days_per_year_saved / (working_days_per_year * param_data.numberofstaff);
+  let productivity =
+    days_per_year_saved / (working_days_per_year * param_data.numberofstaff);
   productivity = (productivity * 100).toFixed(1);
 
   document.getElementById('saving').innerHTML = '$' + human_number(saving);
@@ -219,7 +235,8 @@ if (!getUrlParameter('return')) {
   document.getElementById('next').addEventListener('click', goNext);
   document.addEventListener('keyup', goNext);
 
-  const typeform_url = 'https://nuxeosurveys.typeform.com/to/g5A71P' + window.location.search;
+  const typeform_url =
+    'https://nuxeosurveys.typeform.com/to/g5A71P' + window.location.search;
   document.getElementById('typeform').setAttribute('data-url', typeform_url);
 
   document.querySelectorAll('.no-return').forEach(function(e) {

@@ -129,6 +129,7 @@
       margin: 0;
       margin-bottom: 1.3em;
     }
+
     &:after {
       content: '';
       width: 80px;
@@ -136,7 +137,7 @@
       border-radius: 20%;
       border: 2px solid;
       position: absolute;
-      top: 60px;
+      top: 2em;
       left: 0;
     }
   }
