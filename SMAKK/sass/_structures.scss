@@ -445,4 +445,15 @@
       margin: 10px 10px!important;
     }
   }
+  .integrations {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    .integrations__item {
+      margin-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
 }
