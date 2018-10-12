@@ -110,7 +110,6 @@ h1 {
   font-family: $font-primary;
   font-weight: bold;
   line-height: 1.2;
-  margin-left: 0.5em;
 }
 
 .by-nuxeo {
@@ -120,7 +119,11 @@ h1 {
   font-weight: bold;
   height: 16px;
   margin-top: 25px;
-  padding-left: 10px;
+  padding-left: 18px;
+
+  img {
+    margin-left: 2px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -172,7 +175,6 @@ p {
 
   .value {
     align-content: center;
-    color: $white;
   }
 }
 
