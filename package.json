@@ -17,7 +17,7 @@
     "predev": "npm run npm_install",
     "dev": "npm run server & nodemon --exec 'npm run compile && browser-sync reload'",
     "server": "browser-sync start --server ./static --startPath satellite/demo.html --browser=$npm_package_config_browser",
-    "precompile": "bower install --allow-root",
+    "precompile": "./node_modules/.bin/bower install --allow-root",
     "compile_parallel": "npm run compile:elements & p1=$!; npm run compile:styles & p2=$!; wait \"$p1\" \"$p2\"",
     "compile": "npm run compile:elements && npm run compile:styles",
     "postcompile": "rm -rf static/satellite/latest && mkdir -p static/satellite/latest && cp -r build/es5-bundled/* static/satellite/latest && cp -r css static/satellite/latest",
