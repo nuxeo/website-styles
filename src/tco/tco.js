@@ -71,7 +71,7 @@ const svg = tco_graph
 
 tco_graph
   .append('p')
-  .attr('class', 'is-blue text-center unpad')
+  .attr('class', 'is-white text-center unpad')
   .text('Systems Removed');
 
 // Define the div for the tooltip
