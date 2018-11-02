@@ -1,18 +1,16 @@
 @font-face {
+  font-display: swap;
   font-family: 'Neue Haas Grotesk';
-  font-display: auto;
-  src: local('Neue Haas Grotesk'),
-  local('Neue Haas Grotesk Display Std'),
-  url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-55Rg.otf') format('opentype');
+  src: local('Neue Haas Grotesk'), local('Neue Haas Grotesk Display Std'),
+    url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-55Rg.otf') format('opentype');
 }
 
 @font-face {
+  font-display: swap;
   font-family: 'Neue Haas Grotesk';
-  font-display: auto;
   font-weight: bold;
-  src: local('Neue Haas Grotesk Black'),
-  local('Neue Haas Grotesk Display Black'),
-  url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-95Blk.otf') format('opentype');
+  src: local('Neue Haas Grotesk Black'), local('Neue Haas Grotesk Display Black'),
+    url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-95Blk.otf') format('opentype');
 }
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
@@ -29,23 +27,23 @@ $scale-4: 2em;
 $scale-3: 1.777em;
 $scale-2: 1.333em;
 $scale-1: 1em;
-$scale-0: .75em;
+$scale-0: 0.75em;
 
 //Fonts
-$font-primary: "Neue Haas Grotesk", "Open Sans", Arial, sans-serif!important;
+$font-primary: 'Neue Haas Grotesk', 'Open Sans', Arial, sans-serif !important;
 
 // Colors
 $c-green: #73d2cf;
-$c-blue: #0067FF;
-$c-navy: #1F28BF;
-$c-grey: #F5F5F5;
-$c-grey-1: #BCBFBF;
+$c-blue: #0067ff;
+$c-navy: #1f28bf;
+$c-grey: #f5f5f5;
+$c-grey-1: #bcbfbf;
 $c-grey-2: #808285;
 $c-grey-3: #4a4a4a;
-$c-red: #FF0044;
-$c-purple: #8500FF;
-$c-aqua: #00ADED;
-$c-orange: #F15818;
+$c-red: #ff0044;
+$c-purple: #8500ff;
+$c-aqua: #00aded;
+$c-orange: #f15818;
 
 //Etc
 $radius: 50px;
