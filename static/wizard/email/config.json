@@ -1,0 +1,14 @@
+{
+  "flare": {
+    "nyc": {
+      "tagline": "Nuxeo NYC moved! Check out our new address!",
+      "link": "https://www.nuxeo.com/blog/nuxeo-dumbo/",
+      "has_move_image": true
+    },
+    "paris": {
+      "tagline": "Nuxeo Paris a déménagé ! Découvrez notre nouvelle adresse !",
+      "link": "https://www.nuxeo.com/fr/contact/",
+      "has_move_image": true
+    }
+  }
+}
