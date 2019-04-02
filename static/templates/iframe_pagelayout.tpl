@@ -164,8 +164,8 @@
         </div>
 
     {literal}
-        <script src="//munchkin.marketo.net/munchkin.js" type="text/javascript"></script>
-        <script>mktoMunchkin("498-JDO-611");</script>
+      <script type="text/javascript">document.write(unescape("%3Cscript src='https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));</script>
+      <script>Munchkin.init('498-JDO-611');</script>
     {/literal}
   </body>
 </html>

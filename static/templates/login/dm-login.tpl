@@ -11,7 +11,7 @@
           padding: 0 0 10px;
           margin: 0 0 0 0;
         }
-        
+
         h2 {
           color: #343434;
           font: bold 14px "Lucida Grande", sans-serif;
@@ -19,50 +19,50 @@
           margin: 2px 0 15px 0;
           border-bottom: 1px dotted #8B8B8B;
         }
-        
-    
+
+
         .news_container {
           width: 100px;
           color: #343434;
         }
-    
+
         .news_block {
           background: transparent url(/nuxeo/img/theme_galaxy/news_bg.png) 0 repeat-x;
           padding: 5px 10px;
         }
-    
+
         .news {
           font: normal 11px "Lucida Grande", sans-serif;
           padding-bottom: 15px;
           color: #494949;
         }
-    
+
         p {
           color: #494949;
           font: normal 11px "Lucida Grande", sans-serif;
           margin: 5px 0;
         }
-    
+
         ul {
           margin: 0;
           padding: 0;
           list-style: none;
         }
-    
+
         li {
           padding: 3px 0 0;
         }
-    
+
         a {
           font: normal 11px "Lucida Grande", sans-serif;
           text-decoration: none;
           color: #000;
         }
-    
+
         a:hover {
           text-decoration: underline;
         }
-        
+
         .button, .button:visited {
           /*-moz-border-radius:6px 6px 6px 6px;
           -webkit-border-radius: 6px;
@@ -97,20 +97,20 @@
           color: #2b2a54;
           font-size: 11px;
           text-decoration: none;
-          vertical-align: middle; 
+          vertical-align: middle;
           }
-          
+
           .button:hover {
            /* background-color:#000;*/
           border-top-color: #edd900;
           background: #edd900;
-          color: #000000; 
+          color: #000000;
           }
-          
+
           .button:active {
            border-top-color: #dec000;
            background: #dec000;
-           }          
+           }
 
            .links  a.small:hover {
            text-decoration: none;
@@ -119,17 +119,17 @@
            .button span {
             font-weight:bold;
             }
-            
+
            .small {
             width:110px;
             }
-            
+
            .links span {
             display:block;
             float:left;
             width:170px;
             }
-            
+
             .links .small {
               float:right;
               margin:0 0 8px;
@@ -138,19 +138,19 @@
               display:block;
               font-weight:bold;
               }
-              
+
             .links p {
               width:310px;
               }
-    
+
         -->
       </style>
-  
+
       <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript">
       </script>
       <script language="javascript" src="https://blogs.nuxeo.com/media/js/jgfeed.js" type="text/javascript">
       </script>
-  
+
       <script type="text/javascript">
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
       document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -164,20 +164,20 @@
           }
       </script>
 
-      <script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script>
-			<script>mktoMunchkin("498-JDO-611");</script>
-			
+      <script type="text/javascript">document.write(unescape("%3Cscript src='https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));</script>
+      <script>Munchkin.init('498-JDO-611');</script>
+
     {/literal}
   </head>
 
   <body>
-    
+
     <div class="news_block">
-      
+
       <h1>Welcome to Nuxeo DM.</h1>
-    
+
       <h2>Next Steps</h2>
-    
+
         <div class="news links">
           <p><span>Customization & configuration environment</span><a class="button small" target="_blank" href="http://www.nuxeo.com/en/subscription/connect/studio?utm_source=dm&utm_medium=login-page&utm_campaign=products" onclick="javascript:pageTracker._trackPageview('/external/studio/');">Nuxeo Studio<br/>Trial Offer</a></p>
           <div style="clear:both;"></div>
@@ -186,13 +186,13 @@
           <p><span>Improve your experience </span><a class="button small" target="_blank" href="http://www.nuxeo.org/xwiki/bin/view/Main/Downloads#HDesktopIntegration?utm_source=dm&utm_medium=login-page&utm_campaign=products" onclick="javascript:pageTracker._trackPageview('/external/addons/');">Browser addons</a></p>
           <div style="clear:both;"></div>
         </div>
-        
+
         <div class="news">
         For more information about Nuxeo ECM offerings: <a href="mailto:contact@nuxeo.com">contact@nuxeo.com</a>.
         </div>
-        
+
         <h2>Engage</h2>
-    
+
         <div class="news links">
           <p><span>Start conversations with users </span><a class="button small" target="_blank" href="http://www.nuxeo.org/discussions/index.jspa?utm_source=dm&utm_medium=login-page&utm_campaign=products" onclick="javascript:pageTracker._trackPageview('/external/forums/');">Discussion Forums</a></p>
           <div style="clear:both;"></div>
@@ -201,8 +201,8 @@
           <p><span>Meet with us</span><a class="button small" target="_blank" href="http://www.nuxeo.com/en/about/events?utm_source=dm&utm_medium=login-page&utm_campaign=products" onclick="javascript:pageTracker._trackPageview('/external/events/');">Events</a></p>
           <div style="clear:both;"></div>
         </div>
-        
-    
+
+
         <!--)<div class="news">
 	  {def $rel=ezhttp('rel','get')}
           rel={$rel}<br>
@@ -212,8 +212,8 @@
           Your Nuxeo DM is way too old.
           {/if}
         </div>-->
-    
-    
+
+
     <h2>Hot News</h2>
     {*NEWS LIST*}
         {def $foldernode = fetch( 'content', 'node', hash('node_id', 66 ) )
@@ -225,7 +225,7 @@
                                                        'attribute_filter', array( array( 'news/publish_date', '<=', $curdate ) ),
                                                        'sort_by', array( 'attribute', false(),'news/publish_date' ) ) )
         }
-    
+
         {if $children|count()}
             <div class="content-view-children">
                 {foreach $children as $child}
@@ -244,9 +244,9 @@
                 {/foreach}
             </div>
         {/if}
-    
+
     {*End of the news list*}
     </div>
-    
+
   </body>
 </html>

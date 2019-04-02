@@ -5,12 +5,12 @@
     <style type="text/css">
      @import url("http://static.nuxeo.com/stylesheets/login.css");
     </style>
-  
+
       <script language="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" type="text/javascript">
       </script>
       <script language="javascript" src="https://blogs.nuxeo.com/media/js/jgfeed.js" type="text/javascript">
       </script>
-  
+
       <script type="text/javascript">
       var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
       document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -24,20 +24,18 @@
           }
       </script>
 
-    <script src="http://munchkin.marketo.net/munchkin.js"
-type="text/javascript"></script>
-<script>mktoMunchkin("498-JDO-611");</script>
-
+      <script type="text/javascript">document.write(unescape("%3Cscript src='https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));</script>
+      <script>Munchkin.init('498-JDO-611');</script>
     {/literal}
   </head>
 
   <body>
-    
+
     <div class="news_block">
-    
+
       <!--
       <h1>Improve your experience</h1>
-    
+
         <div class="news">
           To improve your user experience, you may download:
           <ul>
@@ -47,14 +45,14 @@ type="text/javascript"></script>
               Firefox Extension </a></li>
           </ul>
         </div>
-     
+
       <h1>User Guide</h1>
-    
+
         <div class="news">
           <a href="http://doc.nuxeo.org/xwiki/bin/view/Main/QuickStart_DAM/" onclick="window.open(this.href); return false;">Latest version of the user guide for Nuxeo DAM.</a>
         </div>
     -->
-   
+
     {*NEWS LIST*}
         {def $foldernode = fetch( 'content', 'node', hash('node_id', 66 ) )
              $curdate=currentdate()
@@ -65,7 +63,7 @@ type="text/javascript"></script>
                                                        'attribute_filter', array( array( 'news/publish_date', '<=', $curdate ) ),
                                                        'sort_by', array( 'attribute', false(),'news/publish_date' ) ) )
         }
-    
+
         {if $children|count()}
             <div class="content-view-children">
                 {foreach $children as $child}
@@ -84,7 +82,7 @@ type="text/javascript"></script>
                 {/foreach}
             </div>
         {/if}
-    
+
     {*End of the news list*}
     </div>
 

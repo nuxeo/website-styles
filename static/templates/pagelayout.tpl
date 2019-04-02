@@ -301,16 +301,16 @@ window.analytics.page();
 <!-- Pardot, Google Analytics & Feedback widget javascripts -->
 
 <!-- Marketo -->
-<script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script>
+<script type="text/javascript">document.write(unescape("%3Cscript src='https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));</script>
 <script>
 {* register to marketo service *}
-mktoMunchkin("498-JDO-611");
+Munchkin.init('498-JDO-611');
 
 {if and( $module_result.node_id, array('lending_page','lending_page_without_download')|contains($module_result.content_info['class_identifier']))}
         fn = '{ezhttp('lpFirstName','session')}';
         ln = '{ezhttp('lpLastName','session')}';
         em = '{ezhttp('lpEmail','session')}';
-    mktoMunchkinFunction('associateLead',
+    Munchkin.munchkinFunction('associateLead',
      {ldelim}
         Email: em,
         FirstName: fn,
