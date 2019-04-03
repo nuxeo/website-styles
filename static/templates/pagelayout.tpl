@@ -301,7 +301,7 @@ window.analytics.page();
 <!-- Pardot, Google Analytics & Feedback widget javascripts -->
 
 <!-- Marketo -->
-<script type="text/javascript">document.write(unescape("%3Cscript src='https://munchkin.marketo.net/munchkin.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript" src="https://munchkin.marketo.net/munchkin.js"></script>
 <script>
 {* register to marketo service *}
 Munchkin.init('498-JDO-611');
