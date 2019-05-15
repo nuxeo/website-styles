@@ -1,19 +1,4 @@
-@font-face {
-  font-display: swap;
-  font-family: 'Neue Haas Grotesk';
-  src: local('Neue Haas Grotesk'), local('Neue Haas Grotesk Display Std'),
-    url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-55Rg.otf') format('opentype');
-}
-
-@font-face {
-  font-display: swap;
-  font-family: 'Neue Haas Grotesk';
-  font-weight: bold;
-  src: local('Neue Haas Grotesk Black'), local('Neue Haas Grotesk Display Black'),
-    url('https://static.nuxeo.com/fonts/NHaasGroteskDSStd-95Blk.otf') format('opentype');
-}
-
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@import url('https://use.typekit.net/hmq3qbr.css');
 
 // Variables for use across the mixins
 $btn-bg-color: lightblue !default;
@@ -30,7 +15,7 @@ $scale-1: 1em;
 $scale-0: 0.75em;
 
 //Fonts
-$font-primary: 'Neue Haas Grotesk', 'Open Sans', Arial, sans-serif !important;
+$font-primary: 'neue-haas-grotesk-display', Helvetica, Arial, sans-serif !important;
 
 // Colors
 $c-green: #73d2cf;
