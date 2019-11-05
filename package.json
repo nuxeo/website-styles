@@ -17,11 +17,8 @@
     "predev": "npm run npm_install",
     "dev": "npm run server & nodemon --exec 'npm run compile && browser-sync reload'",
     "server": "browser-sync start --server ./static --startPath satellite/demo.html --browser=$npm_package_config_browser",
-    "precompile": "bower install --allow-root",
-    "compile_parallel": "npm run compile:elements & p1=$!; npm run compile:styles & p2=$!; wait \"$p1\" \"$p2\"",
-    "compile": "npm run compile:elements && npm run compile:styles",
-    "postcompile": "rm -rf static/satellite/latest && mkdir -p static/satellite/latest && cp -r build/es5-bundled/* static/satellite/latest && cp -r css static/satellite/latest",
-    "compile:elements": "polymer build",
+    "compile": "npm run compile:styles",
+    "xpostcompile": "rm -rf static/satellite/latest && mkdir -p static/satellite/latest && cp -r build/es5-bundled/* static/satellite/latest && cp -r css static/satellite/latest",
     "precompile:styles": "rm -rf ./tmp ./css",
     "compile:styles": "node-sass --source-map true --source-map-contents --include-path ./scss/ --include-path ./SMAKK/sass/ --include-path ./node_modules/foundation-sites/scss/ --output-style compressed --output ./tmp/ ./scss/",
     "postcompile:styles": "postcss --use autoprefixer -c postcss.json -d css/ tmp/*.css",
@@ -32,8 +29,8 @@
     "build:calcs": "rm -rf static/roi static/tco; parcel build --no-cache --no-source-maps -d static/tco --public-url /tco src/tco/index.html; parcel build --no-cache --no-source-maps -d static/roi --public-url /roi src/roi/index.html; parcel build --no-cache --no-source-maps -d static/roi/start --public-url /roi/start src/roi/start/index.html",
     "dev:calcs": "parcel --no-cache -p 3000 src/**/index.html",
     "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'",
-    "version": "npm run npm_install && npm start && cp -r static/satellite/latest static/satellite/`node -e \"console.log(require('./package.json').version);\"` && git add static/satellite && git commit -m \"Satellite release `node -e \"console.log(require('./package.json').version);\"` added\"",
-    "postversion": "git push && git push --tags"
+    "xversion": "npm run npm_install && npm start && cp -r static/satellite/latest static/satellite/`node -e \"console.log(require('./package.json').version);\"` && git add static/satellite && git commit -m \"Satellite release `node -e \"console.log(require('./package.json').version);\"` added\"",
+    "xpostversion": "git push && git push --tags"
   },
   "author": "Andrew Goodricke <github@andrewgoodricke.com> (http://www.nuxeo.com)",
   "dependencies": {
@@ -42,7 +39,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
-    "bower": "^1.8.0",
     "browser-sync": "^2.18.13",
     "eslint": "^5.1.0",
     "eslint-config-prettier": "^2.9.0",
@@ -51,7 +47,6 @@
     "node-sass": "^4.9.2",
     "nodemon": "^1.12.5",
     "parcel-bundler": "^1.9.4",
-    "polymer-cli": "^1.7.7",
     "postcss-cli": "^2.6.0",
     "prettier": "^1.12.1",
     "sass": "^1.14.3",
