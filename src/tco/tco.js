@@ -67,11 +67,11 @@ const tco_graph = d3.select('#tco-graph');
 
 const svg = tco_graph
   .append('svg')
-  .attr('viewBox', `0 0 ${config.width} ${config.height}`);
+  .attr('viewBox', `0 -1 ${config.width} ${config.height + 1} `);
 
 tco_graph
   .append('p')
-  .attr('class', 'is-white text-center unpad')
+  .attr('class', 'text-center unpad')
   .text('Systems Removed');
 
 // Define the div for the tooltip
@@ -83,7 +83,6 @@ const tooltip = tco_graph
 const g = svg
   .append('g')
   .attr('transform', `translate(${margin.left},${margin.top})`)
-  .style('font-family', 'Helvetica Neue",Helvetica,Roboto,Arial,sans-serif')
   .style('font-size', '14px');
 g.append('g')
   .attr('class', 'axis axis--x')

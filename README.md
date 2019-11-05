@@ -2,8 +2,6 @@
 
 Please use [EditorConfig plugin for your code editor/IDE](http://editorconfig.org/#download).
 
-[Helpful reference for styles](STYLES.md#styles)
-
 ## Using the package
 
 ### Include with npm

@@ -1,58 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Nuxeo ROI Calculator Results</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Nuxeo ROI Calculator Results</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <link rel="apple-touch-icon" sizes="57x57" href="https://www.nuxeo.com/assets/icons/apple-touch-icon.png?v=3">
-  <link rel="android-touch-icon" href="https://www.nuxeo.com/assets/icons/android-chrome-192x192.png" />
-  <link rel="icon" type="image/png" href="https://www.nuxeo.com/assets/icons/favicon-32x32.png?v=2" sizes="32x32">
-  <link rel="icon" type="image/png" href="https://www.nuxeo.com/assets/icons/android-chrome-192x192.png" sizes="192x192">
-  <link rel="icon" type="image/png" href="https://www.nuxeo.com/assets/icons/favicon-16x16.png?v=2" sizes="16x16">
-  <link rel="manifest" href="https://www.nuxeo.com/assets/icons/manifest.json">
-  <link rel="mask-icon" href="https://www.nuxeo.com/assets/icons/safari-pinned-tab.svg" color="#5bbad5">
-  <link rel="shortcut icon" href="https://www.nuxeo.com/assets/icons/favicon.ico?v=2">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-TileImage" content="https://www.nuxeo.com/assets/icons/mstile-144x144.png">
-  <meta name="theme-color" content="#2199e8">
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="https://www.nuxeo.com/assets/icons/apple-touch-icon.png?v=3"
+    />
+    <link
+      rel="android-touch-icon"
+      href="https://www.nuxeo.com/assets/icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.nuxeo.com/assets/icons/favicon-32x32.png?v=2"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.nuxeo.com/assets/icons/android-chrome-192x192.png"
+      sizes="192x192"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.nuxeo.com/assets/icons/favicon-16x16.png?v=2"
+      sizes="16x16"
+    />
+    <link rel="manifest" href="https://www.nuxeo.com/assets/icons/manifest.json" />
+    <link
+      rel="mask-icon"
+      href="https://www.nuxeo.com/assets/icons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="https://www.nuxeo.com/assets/icons/favicon.ico?v=2" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta
+      name="msapplication-TileImage"
+      content="https://www.nuxeo.com/assets/icons/mstile-144x144.png"
+    />
+    <meta name="theme-color" content="#2199e8" />
 
-  <!-- Compressed CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.2/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="./survey_calc.scss" />
+    <!-- Compressed CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.2/css/foundation.min.css"
+      integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./survey_calc.scss" />
+  </head>
+  <body>
+    <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve your
+        experience and security.
+      </p>
+    <![endif]-->
 
-</head>
-<body>
-  <!--[if lte IE 9]>
-  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
+    <div id="results" class="container full-height">
+      <div class="row align-center">
+        <div class="columns small-12 medium-8">
+          <div id="info">
+            <p>
+              By improving the way in which you manage your information you could
+              potentially save <strong id="saving"></strong> per year with an overall
+              productivity increase of <strong id="productivity"></strong>.
+            </p>
 
-  <div id="results" class="container full-height">
-    <div class="row align-center">
-      <div class="columns small-12 medium-8">
-        <div id="info">
-          <p>
-            By improving the way in which you manage your information you could potentially save <strong id="saving"></strong> per year with an overall productivity increase of <strong id="productivity"></strong>.
-          </p>
-
-          <canvas id="myChart" class="chart" width="800" height="200"></canvas>
-          <p class="no-return hide">
-            To learn more about how we've calculated these numbers and how you can make these savings a reality, simply enter your contact details below and a member of our team will get in touch.
-          </p>
-        </div>
-        <div id="info_missing" class="hide">
-          <p>Some information didn't get passed through correctly unfortunately. Enter your contact details below and a member of our team will get in touch to work through your numbers.</p>
+            <canvas id="myChart" class="chart" width="800" height="200"></canvas>
+            <p class="no-return hide">
+              To learn more about how we've calculated these numbers and how you can make
+              these savings a reality, simply enter your contact details below and a
+              member of our team will get in touch.
+            </p>
+          </div>
+          <div id="info_missing" class="hide">
+            <p>Some information didn't get passed through correctly unfortunately.</p>
+            <p>
+              <a href="start/">Start again</a> or enter your contact details below and a
+              member of our team will get in touch to work through your numbers.
+            </p>
+          </div>
         </div>
       </div>
+      <div class="move-along no-return hide">
+        <button id="next" type="button" class="button">Enter your details</button>
+        press&nbsp;<span class="command">Enter</span>
+      </div>
     </div>
-    <div class="move-along no-return hide"><button id="next" type="button" class="button">Enter your details</button> press&nbsp;<span class="command">Enter</span></div>
-  </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js" integrity="sha256-CfcERD4Ov4+lKbWbYqXD6aFM9M51gN4GUEtDhkWABMo=" crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"
+      integrity="sha256-CfcERD4Ov4+lKbWbYqXD6aFM9M51gN4GUEtDhkWABMo="
+      crossorigin="anonymous"
+    ></script>
 
-  <div id="typeform" class="typeform-widget hide full-height" data-url=""></div>
+    <div id="typeform" class="typeform-widget hide full-height" data-url=""></div>
 
-  <script type="text/javascript" src="./roi.js"></script>
-</body>
+    <script type="text/javascript" src="./roi.js"></script>
+  </body>
 </html>
