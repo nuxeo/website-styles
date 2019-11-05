@@ -136,7 +136,7 @@ if (all_required) {
 
   const ctx = document.getElementById('myChart').getContext('2d');
   Chart.defaults.global.defaultColor = '#fff';
-  Chart.defaults.global.defaultFontColor = 'rgba(255, 255, 255, 1)';
+  Chart.defaults.global.defaultFontColor = 'rgba(0, 0, 0, 1)';
   Chart.defaults.global.defaultFontFamily = 'Arial, sans-serif';
   Chart.defaults.global.defaultFontSize = 16;
 
@@ -209,7 +209,7 @@ if (all_required) {
         }
       },
       gridlines: {
-        color: 'rgba(255, 255, 255, 1)'
+        color: 'rgba(0, 0, 0, 0.8)'
       }
     }
   });

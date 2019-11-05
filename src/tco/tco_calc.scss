@@ -1,13 +1,34 @@
 @import '../../SMAKK/sass/variables-smakk';
+@import url('https://use.typekit.net/hmq3qbr.css');
+
 $white: #fff;
 $black: #000;
-$typeform-bg: $c-green;
+$typeform-bg: $white;
 $typeform-button: #ff9e00;
 $typeform-button-hover: #ffb133;
 
-$track-color: $c-grey;
+$track-color: $c-grey-1;
 $thumb-color: $c-blue;
+
+$thumb-radius: 10px;
+$thumb-height: 20px;
+$thumb-width: 20px;
+$thumb-shadow-size: 1px;
+$thumb-shadow-blur: 2px;
+$thumb-shadow-color: rgba(0, 0, 0, 0.6);
+$thumb-border-width: 0;
+// $thumb-border-color: #eceff1;
+
+// $track-width: 100%;
+$track-height: 7px;
+$track-shadow-size: 0;
+$track-shadow-blur: 0;
+// $track-shadow-color: rgba(0, 0, 0, .2);
 $track-border-width: 0;
+// $track-border-color: #cfd8dc;
+
+$track-radius: 0;
+// $contrast: 5%;
 
 @import 'inputrange';
 
@@ -25,16 +46,8 @@ body {
   font-family: $font-primary;
 }
 
-.is-white {
-  color: $white;
-}
-
 .is-blue {
   color: $c-blue;
-}
-
-.is-navy {
-  color: $c-navy;
 }
 
 .unpad {
@@ -47,9 +60,6 @@ body {
 
 .full-height {
   background-color: $typeform-bg;
-  background-image: url('https://images.typeform.com/images/RUDWjfmEccmv/background/default');
-  background-size: cover;
-  min-height: 100vh;
 }
 
 .hide {
@@ -61,12 +71,17 @@ body {
 }
 
 .move-along {
-  color: $c-blue;
+  color: $black;
   font-size: 11px;
   margin-top: 2rem;
   text-align: center;
-  text-shadow: 0 0 8px $typeform-bg, 0 0 8px $typeform-bg, 0 0 8px $typeform-bg,
-    0 0 8px $typeform-bg, 0 0 8px $typeform-bg, 0 0 8px $typeform-bg, 0 0 8px $typeform-bg,
+  text-shadow: 0 0 8px $typeform-bg,
+ 0 0 8px $typeform-bg,
+ 0 0 8px $typeform-bg,
+    0 0 8px $typeform-bg,
+ 0 0 8px $typeform-bg,
+ 0 0 8px $typeform-bg,
+ 0 0 8px $typeform-bg,
     0 0 8px $typeform-bg;
 
   .button {
@@ -75,7 +90,7 @@ body {
     border-radius: 4px;
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     height: 40px;
     margin: 0;
     margin-right: 0.6rem;
@@ -90,7 +105,7 @@ body {
   }
 
   .command {
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
   }
 }
@@ -135,9 +150,9 @@ h1 {
 }
 
 p {
-  color: $c-blue;
+  color: $black;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.48em;
   margin: 0 auto;
   max-width: 800px;
@@ -158,13 +173,10 @@ p {
 }
 
 .section {
-  background: $typeform-bg;
-  color: $c-blue;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1.5rem;
 
   label {
-    color: $c-navy;
     line-height: 1.4;
     transition: color 0.2s ease;
   }
@@ -175,6 +187,7 @@ p {
 
   .value {
     align-content: center;
+    color: $c-blue;
   }
 }
 
@@ -182,7 +195,6 @@ p {
   margin-top: 4rem;
 
   > p {
-    color: $c-navy;
     font-size: 1.2rem;
     line-height: 1.5;
   }
@@ -199,10 +211,6 @@ svg {
     line,
     path {
       stroke: rgba(0, 0, 0, 0.6);
-    }
-
-    text {
-      fill: $c-navy;
     }
 
     &.axis--y-right {
@@ -226,8 +234,8 @@ svg {
 
   .bar--saving {
     rect {
-      fill: $c-aqua;
-      stroke: $c-aqua;
+      fill: $typeform-button;
+      stroke: $typeform-button;
       stroke-width: 3px;
       transition: height 0.4s ease-in, y 0.4s ease-in;
 
