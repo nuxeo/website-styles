@@ -1,0 +1,25 @@
+@font-face {
+  font-display: swap;
+  font-family: 'neue-haas-grotesk-display';
+  font-style: normal;
+  font-weight: 500;
+  src: url('https://static.nuxeo.com/fonts/neue-haas-grotesk-display-roman-regular.woff2')
+    format('woff2'),
+    url('https://static.nuxeo.com/fonts/neue-haas-grotesk-display-roman-regular.woff')
+    format('woff'),
+    url('https://static.nuxeo.com/fonts/neue-haas-grotesk-display-roman-regular.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'neue-haas-grotesk-display';
+  font-style: normal;
+  font-weight: 600;
+  src: url('https://static.nuxeo.com/fonts/neue-haas-grotesk-display-medium-regular.woff2')
+    format('woff2'),
+    url('https://static.nuxeo.com/fonts/neue-haas-grotesk-display-medium-regular.woff')
+    format('woff'),
+    url('https://static.nuxeo.com/fonts/neue-haas-grotesk-display-medium-regular.otf')
+    format('opentype');
+}
