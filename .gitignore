@@ -55,13 +55,11 @@ jspm_packages
 
 /build
 /dist
+demo/build
 
 # package cache
 package.md5
 
-# Vulcanized, crispered and uglyfied
-/elements/*.build*
-/elements/*.min.js
 .sass-cache
 SMAKK/test.html
 SMAKK/Untitled-1.html
@@ -70,3 +68,4 @@ SMAKK/Untitled-1.html
 
 /static/roi
 /static/tco
+/static/components

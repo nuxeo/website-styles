@@ -1,0 +1,57 @@
+$space: 1rem;
+@mixin flex-width($columns) {
+  flex: 0 0 calc(#{(100 / 12) * $columns}% - #{$space});
+  max-width: calc(#{(100 / 12) * $columns}% - #{$space});
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+
+.small-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.row {
+  &.small-up-2 .column {
+    @include flex-width(6);
+  }
+}
+
+// Medium
+@media (min-width: 40em) {
+  .medium-8 {
+    @include flex-width(8);
+  }
+
+  .medium-4 {
+    @include flex-width(4);
+  }
+
+  .row {
+    &.medium-up-3 .column {
+      @include flex-width(4);
+    }
+  }
+}
+
+// Large
+@media (min-width: 64em) {
+  .large-10 {
+    @include flex-width(10);
+  }
+
+  .large-2 {
+    @include flex-width(2);
+  }
+
+  .row {
+    &.large-up-6 .column {
+      @include flex-width(2);
+    }
+  }
+}
