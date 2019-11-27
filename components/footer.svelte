@@ -192,15 +192,8 @@
           </a>
           <a target="_blank" rel="noopener" href="https://www.instagram.com/nuxeo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <defs>
-                <style>
-                  .cls-1 {
-                    fill: none;
-                  }
-                </style>
-              </defs>
-              <rect class="cls-1" x="16" y="7" width="1" height="1"></rect>
-              <path class="cls-1"
+              <rect fill="none" x="16" y="7" width="1" height="1"></rect>
+              <path fill="none"
               d="M16.17,5H7.83A2.83,2.83,0,0,0,5,7.83v8.34A2.83,2.83,0,0,0,7.83,19h8.34A2.83,2.83,0,0,0,19,16.17V7.83A2.83,2.83,0,0,0,16.17,5ZM7,9.52H6V7.83A1.82,1.82,0,0,1,7,6.21Zm2-.64a5,5,0,0,0-.46.64H8V6H9Zm3,5.62a3,3,0,1,1,3-3A3,3,0,0,1,12,14.5Zm6-5H15.45A4,4,0,0,0,12,7.5a3.91,3.91,0,0,0-2,.56V6h6.17A1.83,1.83,0,0,1,18,7.83Z"></path>
               <path d="M8,9.52h.54A5,5,0,0,1,9,8.88V6H8Z"></path>
               <circle cx="12" cy="11.5" r="3"></circle>
