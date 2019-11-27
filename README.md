@@ -37,43 +37,6 @@ In SCSS import and include the appropriate styles:
 @include 'nuxeo-typography';
 ```
 
-### Polymer elements
-
-#### Copy elements
-
-Copy elements into some assets location in your project
-e.g. npm scripts
-
-```
-"postcopy_assets": "cp -r node_modules/nuxeo-website-styles/satellite/latest/* ./site/assets/"
-```
-
-#### Include elements
-
-In the header include the elements
-e.g.
-
-```
-<script src="/assets/js/webcomponents-lite.min.js"></script>
-<link rel="import" href="/assets/elements.build.min.html" />
-```
-
-#### Usage without Node
-
-In the header of your page:
-
-```
-<!-- 0. Include Nuxeo Font. -->
-<link rel="stylesheet" href="https://static.nuxeo.com/satellite/nuxeo-font.css" media="screen" title="Nuxeo Font">
-
-<!-- 1. Load webcomponents-lite.min.js for polyfill support. -->
-<script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/custom-elements-es5-adapter.js"></script>
-<script src="https://static.nuxeo.com/satellite/latest/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-
-<!-- 2. Use an HTML Import to bring in some elements. -->
-<link rel="import" href="https://static.nuxeo.com/satellite/latest/elements/elements.html">
-```
-
 ## Available mixins
 
 | Mixin name       | Description                                        |
@@ -82,35 +45,31 @@ In the header of your page:
 | nuxeo-typography | Standard typography styles                         |
 | nuxeo-codeblock  | Codeblock with HighlightJS styling and copy button |
 
-## Available elements
+### Svelte Web Components
 
-| Element                         | Description           | Parameters                                                                           | Sub elements                                                                 | Sub element parameters                                                                                                                                                                                                                                                                                                                      |
-| ------------------------------- | --------------------- | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `<nuxeo-header></nuxeo-header>` | Nuxeo standard header | `show-nuxeo-menu`: if set to true show corporate website menu                        | `<nuxeo-banner></nuxeo-banner>`<br />**\_**<br />`<nuxeo-menu></nuxeo-menu>` | `background-id`: the background image id to use (currently only "1")<br />`title`: the title to display (h1)<br />**\_**<br />`site-name`: the site name<br />`site-url`: the homepage URL<br />`menu-items`: menu items to display on the left<br />`menu-items-right`: menu items to display on the right (not visible on mobile version) |
-| `<nuxeo-footer></nuxeo-footer>` | Nuxeo standard footer | `year`: the year to display<br />`show-license`: if set to true show CC Licence logo |                                                                              | `footer-items`: footer link items to display                                                                                                                                                                                                                                                                                                |
-
-## Standard usage
-
-See [Usage example](#usage-without-node) setup.
-
-### Header
+In the header of your page:
 
 ```
-<nuxeo-header></nuxeo-header>
+<link rel="stylesheet" href="https://static.nuxeo.com/fonts/nhg-min.css" />
+<script defer src="https://static.nuxeo.com/components/bundle.min.js"></script>
 ```
 
-### Footer
+#### Footer
 
-```
-<nuxeo-footer year="2018" show-license="true"></nuxeo-footer>
-```
+`<nx-footer></nx-footer>` will insert the standard Nuxeo footer
+
+Properties:
+
+- `year`: Manually set the year
+- `showlicense`: Adds a creative commons license and link
+- `nolinks`: Removes the main links section
 
 # Development (Local)
 
 ## Requirements
 
 - [git](https://git-scm.com/) &mdash; make sure your Privacy & Security settings allow to download applications from anywhere
-- [Node.js](https://github.com/creationix/nvm#install-script) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v6.9)
+- [Node.js](https://github.com/creationix/nvm#install-script) &mdash; Stable: See [Release schedule](https://github.com/nodejs/LTS#lts_schedule)(version >= v12.13.0)
   - `nvm install lts/*` will get the [latest Long Term Support](https://github.com/nodejs/LTS#lts-schedule1) version
   - Test with `node --version`
   - _Remember:_ Run `nvm use` at the start of your session.
