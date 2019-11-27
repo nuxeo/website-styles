@@ -1,0 +1,155 @@
+body {
+	background: white;  
+}
+
+.applogin-banner {
+	display:none; 
+}
+
+#header {
+	font-size: 14px;
+	font-family: 'Open Sans',Arial,sans-serif;
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+	padding: 20px 40px;
+	box-sizing: border-box;
+	height: 60px;
+}
+
+.labelCorp {
+	border: 0 none;
+	font-family: 'Open Sans',Arial,sans-serif;
+	padding: 0;
+	margin: 0;
+	text-align: right;
+	float: right;
+	height: 20px;
+	font-size: 10px;
+}
+
+.labelCorp a,  .labelCorp a:visited {
+	text-decoration: underline;
+	font: 700 1.2em Aregular,Arial,sans-serif;
+	line-height: 25px;
+	color: #777777;
+}
+
+.row {
+	border: 0 none;
+	font-size: 14px;
+	font-family: 'Open Sans',Arial,sans-serif;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.logo {
+	border: 0 none;
+	font-size: 14px;
+	font-family: 'Open Sans',Arial,sans-serif;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+}
+
+.logo img {
+	height: 20px;
+}
+
+.label {
+	border: 0 none;
+	font-size: 14px;
+	font-family: 'Open Sans',Arial,sans-serif;
+	margin: 0;
+	position: relative;
+	padding: 3px 0 0 10px;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.label p {
+	border: 0 none;
+	padding: 0;
+	font: 500 22px Helvetica,Aregular,Arial,sans-serif;
+	line-height: 20px;
+	letter-spacing: -.5px;
+	margin: 0;
+}
+
+#okta-sign-in {
+	margin-top: 30px;
+}
+
+.login-copyright {
+	width: 362px;
+	height: 11px;
+	font-family: Arial;
+	font-size: 10px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: -0.27px;
+	color: #9e9e9e;
+	position: fixed;
+	left: 60px;
+	bottom: 12px;
+}
+
+@media only screen and (min-width: 900px) {
+	.login-bg-image {
+		background-image: url(https://static.nuxeo.com/nos/sign-up.svg);
+		background-position: unset;
+		background-color: white;
+		height: 100%;
+		width: 33%;
+	}
+
+	#okta-login-container {
+		margin-left: 33%;
+	}
+}
+
+#okta-sign-in.auth-container.main-container {
+	border: none;
+	box-shadow: none;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #4b4b4b;
+}
+
+#okta-sign-in .focused-input, #okta-sign-in .link.help:focus {
+	box-shadow: unset;
+}
+
+#okta-sign-in.auth-container .link, #okta-sign-in.auth-container .link:active, 
+#okta-sign-in.auth-container .link:hover, #okta-sign-in.auth-container .link:link, 
+#okta-sign-in.auth-container .link:visited {
+	color: #4b4b4b;
+}
+
+.okta-form-label label{
+	color: #4b4b4b;
+}
+
+#okta-sign-in input[type=button], #okta-sign-in input[type=submit] , #okta-sign-in a.button-primary {
+	background: #0053cc;
+}
+
+#okta-sign-in.auth-container input[type=button], #okta-sign-in.auth-container input[type=submit] ,
+#okta-sign-in.auth-container a.button-primary, #okta-sign-in.auth-container .link-button {
+	height: 36px;
+	line-height: 36px;
+	border-radius: 18px;
+	font-family: Arial,Helvetica,sans-serif;
+	font-weight: bold;
+}
+
+#okta-sign-in .social-auth-google-button.link-button {
+	color: #4b4b4b;
+}
+
+#okta-sign-in.auth-container .okta-form-input-field input {
+	font-family: Arial,Helvetica,sans-serif;
+}
