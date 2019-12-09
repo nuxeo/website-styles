@@ -1,0 +1,16 @@
+@import './settings';
+
+// Import fonts
+@import '../../static/fonts/nhg-min';
+
+@media all and (max-width: $menu-breakpoint) {
+  html.no-scroll {
+    // For desktop
+    overflow: hidden;
+
+    body {
+      height: 100%;
+      overflow: visible;
+    }
+  }
+}
