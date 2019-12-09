@@ -54,6 +54,7 @@
   header {
     background: $c-black;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.15);
+    font-family: $font-primary;
     height: $header-height;
     padding: 0 20px;
 

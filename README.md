@@ -37,6 +37,18 @@ In SCSS import and include the appropriate styles:
 @include 'nuxeo-typography';
 ```
 
+### Fonts
+
+```
+<link rel="stylesheet" href="https://static.nuxeo.com/fonts/nhg-min.css" />
+```
+
+or for all weights
+
+```
+<link rel="stylesheet" href="https://static.nuxeo.com/fonts/nhg.css" />
+```
+
 ## Available mixins
 
 | Mixin name       | Description                                        |
@@ -50,9 +62,15 @@ In SCSS import and include the appropriate styles:
 In the header of your page:
 
 ```
-<link rel="stylesheet" href="https://static.nuxeo.com/fonts/nhg-min.css" />
-<script defer src="https://static.nuxeo.com/components/bundle.min.js"></script>
+<link rel="stylesheet" href="https://static.nuxeo.com/components/v1/global.css" />
+<script defer src="https://static.nuxeo.com/components/v1/bundle.min.js"></script>
 ```
+
+#### Header
+
+`<nx-header name="Roadmap" homelabel="Roadmap Home"></nx-header>` Inserts the standard header.
+
+insert `<nx-header--menu-item href="/URL">Link Text</nx-header--menu-item>` within `<nx-header>` to include extra links.
 
 #### Footer
 
