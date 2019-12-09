@@ -12,8 +12,8 @@
   },
   "scripts": {
     "test": "eslint --cache --fix .",
-    "start": "npm run compile",
-    "poststart": "npm run build:calcs && npm run build:components",
+    "start": "npm run build:components && npm run compile",
+    "poststart": "npm run build:calcs",
     "predev": "npm run npm_install",
     "dev": "npm run server & nodemon --exec 'npm run compile && browser-sync reload'",
     "server": "browser-sync start --server ./static --startPath satellite/demo.html --browser=$npm_package_config_browser",
