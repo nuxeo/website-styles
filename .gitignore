@@ -28,7 +28,6 @@ coverage
 build/Release
 
 # Dependency directories
-/bower_components
 node_modules
 jspm_packages
 
@@ -68,4 +67,4 @@ SMAKK/Untitled-1.html
 
 /static/roi
 /static/tco
-/static/components
+/static/components/v1

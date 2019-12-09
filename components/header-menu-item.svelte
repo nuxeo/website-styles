@@ -19,7 +19,7 @@
     transition: all 0.2s ease;
 
     &.end-of-section {
-      border-bottom: 1px solid $c-grey;
+      border-bottom: 1px solid $c-grey-1;
     }
 
     &:hover {
@@ -28,6 +28,14 @@
 
     &.is-grey {
       color: $c-grey-1;
+
+      &:hover {
+        color: $c-black;
+      }
+    }
+
+    &.is-red {
+      color: $c-red;
 
       &:hover {
         color: $c-black;

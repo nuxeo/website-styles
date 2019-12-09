@@ -7,7 +7,9 @@ import sveltePreprocess from 'svelte-preprocess';
 const production = !process.env.ROLLUP_WATCH;
 
 const source = 'components';
-const output_js = production ? 'static/components/bundle.min.js' : 'demo/build/bundle.js';
+const output_js = production
+  ? 'static/components/v1/bundle.min.js'
+  : 'demo/build/bundle.js';
 
 const preprocess = sveltePreprocess({
   scss: {
