@@ -44,7 +44,7 @@
   }
 
   .is-bg-grey {
-    background: #f5f5f5;
+    background: $c-grey;
   }
 
   svg {
@@ -77,7 +77,7 @@
 
   .container {
     margin: 0 auto;
-    max-width: 1600px;
+    max-width: $max-width;
   }
 
   .footer-icon {

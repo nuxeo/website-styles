@@ -20,15 +20,42 @@
     />
 
     <link rel="stylesheet" href="https://static.nuxeo.com/fonts/nhg-min.css" />
+    <style media="screen">
+      @media all and (max-width: 800px) {
+        html.no-scroll {
+          /* For desktop */
+          overflow: hidden;
+
+          body {
+            height: 100%;
+            overflow: visible;
+          }
+        }
+      }
+    </style>
     <script defer src="/build/bundle.js"></script>
   </head>
 
   <body>
-    <nx-footer nolinks></nx-footer>
+    <nx-header name="Benchmarks" homelabel="Benchmarks Home">
+      <nx-header--menu-item href="/milestones">Milestones</nx-header--menu-item>
+      <nx-header--menu-item href="/milestones">Continuous</nx-header--menu-item>
+      <nx-header--menu-item href="/misc">Misc</nx-header--menu-item>
+      <nx-header--menu-item href="/workbench">Workbench</nx-header--menu-item>
+      <nx-header--menu-item href="/custom" classes="end-of-section"
+        >Custom</nx-header--menu-item
+      >
+      <nx-header--menu-item href="/infra">Infrastructure</nx-header--menu-item>
+      <nx-header--menu-item href="/scenarios">Scenarios</nx-header--menu-item>
+    </nx-header>
 
     <hr />
 
     <nx-footer></nx-footer>
+
+    <hr />
+
+    <nx-footer nolinks></nx-footer>
 
     <hr />
 
