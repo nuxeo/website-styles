@@ -226,7 +226,7 @@
         <div class="drop-menu__items drop-menu__items--main {menu_main_class}">
           <div class="nav-container">
             <ul>
-              <nx-header--menu-item href="/" classes="end-of-section is-grey">{homelabel}</nx-header--menu-item>
+              <nx-header--menu-item href="/" classes="end-of-section">{homelabel}</nx-header--menu-item>
               <slot></slot>
             </ul>
           </div>
