@@ -54,6 +54,7 @@
   }
 
   footer {
+    color: $c-black;
     padding: 50px 20px;
 
     &,
