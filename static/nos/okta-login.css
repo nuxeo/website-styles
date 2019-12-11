@@ -92,7 +92,7 @@ body {
 	font-style: normal;
 	line-height: normal;
 	letter-spacing: -0.27px;
-	color: #9e9e9e;
+	color: black;
 	position: fixed;
 	left: 60px;
 	bottom: 12px;
@@ -101,8 +101,8 @@ body {
 @media only screen and (min-width: 900px) {
 	.login-bg-image {
 		background-image: url(https://static.nuxeo.com/nos/sign-up.svg);
-		background-position: unset;
-		background-color: white;
+		background-position: right;
+		background-color: #fbfbfb;
 		height: 100%;
 		width: 33%;
 	}
