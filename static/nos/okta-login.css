@@ -87,7 +87,23 @@ body {
 }
 
 #okta-sign-in .auth-header {
-	padding-top: 0px;
+	padding-top: 29px;
+	padding-bottom: 0px;
+}
+
+#okta-sign-in .beacon-container {
+    bottom: -26px;
+    width: 50px;
+    height: 50px;
+}
+
+#okta-sign-in .auth-content {
+    padding-top: 25px;
+}
+
+#okta-sign-in .radial-progress-bar .circle {
+    width: 57px;
+    height: 57px;
 }
 
 .login-copyright {
