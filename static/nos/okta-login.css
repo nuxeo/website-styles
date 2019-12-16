@@ -79,11 +79,15 @@ body {
 }
 
 #okta-sign-in {
-	margin-top: 30px;
+	margin: auto;
 }
 
 #okta-login-container.login-container {
 	margin-top: 0;
+}
+
+#okta-sign-in .auth-header {
+	padding-top: 0px;
 }
 
 .login-copyright {
