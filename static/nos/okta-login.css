@@ -82,6 +82,10 @@ body {
 	margin-top: 30px;
 }
 
+#okta-login-container.login-container {
+	margin-top: 0;
+}
+
 .login-copyright {
 	width: 362px;
 	height: 11px;
