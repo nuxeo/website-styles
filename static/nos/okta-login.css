@@ -177,3 +177,8 @@ body {
 #okta-sign-in.auth-container .okta-form-input-field input {
 	font-family: Arial,Helvetica,sans-serif;
 }
+
+#okta-sign-in .social-auth-button.social-auth-general-idp-button.social-auth-nuxeo-idp-button {
+    background:  url(https://static.nuxeo.com/nos/nuxeo-x-120.png) no-repeat 0.5rem;
+    background-size: 2rem;
+}
