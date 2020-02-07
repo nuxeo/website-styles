@@ -170,7 +170,7 @@ body {
 	font-weight: bold;
 }
 
-#okta-sign-in .social-auth-google-button.link-button {
+#okta-sign-in .primary-auth-container .link-button {
 	color: #4b4b4b;
 }
 
@@ -179,6 +179,8 @@ body {
 }
 
 #okta-sign-in .social-auth-button.social-auth-general-idp-button.social-auth-nuxeo-idp-button {
-    background:  url(https://static.nuxeo.com/nos/nuxeo-x-120.png) no-repeat 0.5rem;
+    background-image: url(https://static.nuxeo.com/nos/nuxeo-x-120.png);
+    background-repeat: no-repeat;
+    background-position: 0.5rem;
     background-size: 2rem;
 }
