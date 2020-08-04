@@ -139,7 +139,7 @@
           position: absolute;
           top: 50px;
           width: 100%;
-          z-index: 1;
+          z-index: 2;
 
           ul {
             margin: 0;
