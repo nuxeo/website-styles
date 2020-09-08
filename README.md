@@ -19,11 +19,11 @@ Add the following in your `package.json`:
 
 #### Add path to SCSS compiler
 
-In compiling the SCSS you need to include the path `--include-path ./node_modules/nuxeo-website-styles/scss/`
+In compiling the SCSS you need to include the path `--load-path ./node_modules/nuxeo-website-styles/scss/`
 e.g. npm scripts
 
 ```
-"build_css": "node-sass --source-map true --source-map-contents --include-path ./client/scss/ --include-path ./node_modules/nuxeo-website-styles/scss/ --output-style compressed --output ./client/css/ ./client/scss/"
+"build_css": "sass --embed-sources --load-path client/scss/ --load-path node_modules/nuxeo-website-styles/scss/ --style compressed client/scss/:client/css/"
 ```
 
 #### Include styles
