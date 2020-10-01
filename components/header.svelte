@@ -60,6 +60,7 @@
 
     .container {
       display: flex;
+      font-size: 16px;
       justify-content: space-between;
       margin: 0 auto;
       max-width: $max-width;
@@ -98,14 +99,8 @@
     display: none;
   }
 
-
   // Navigation Large
   @media all and (min-width: $menu-breakpoint) {
-    $spacing: 20px;
-    $font-size-small: 14px;
-    $font-size-sub: 20px;
-    $font-size-primary: 30px;
-
     .hamburger {
       display: none;
     }
@@ -152,9 +147,6 @@
   // Navigation Small
   @media all and (max-width: $menu-breakpoint) {
     $container-padding: 40px;
-    $spacing: 2.6vh;
-    $font-size-sub: 6.2vw;
-    $font-size-primary: 9vw;
 
     // .hamburger.open {
     //   margin-right: 7px;
