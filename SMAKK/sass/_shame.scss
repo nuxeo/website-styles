@@ -89,13 +89,6 @@
     flex-flow: row wrap;
   }
 
-  @media print,
-  screen and (min-width: 64em) {
-    .row .row {
-      margin-right: 0;
-      margin-left: 0;
-    }
-  }
   .orbit--images {
     .orbit-bullets {
       padding: $scale-3;
