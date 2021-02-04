@@ -1,7 +1,7 @@
 @import './settings';
 
 // Import fonts
-@import '../../static/fonts/nhg-min';
+@import 'fonts';
 
 @media all and (max-width: $menu-breakpoint) {
   html.no-scroll {

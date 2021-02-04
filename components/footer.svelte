@@ -25,7 +25,7 @@
   a {
     color: $c-black;
     display: block;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.6;
   }
 
@@ -40,7 +40,7 @@
 
   .strong {
     font-size: 16px;
-    font-weight: $weight-medium;
+    font-weight: $weight-bold;
   }
 
   .is-bg-grey {
@@ -60,6 +60,10 @@
     &,
     * {
       font-family: $font-primary;
+
+      @supports (font-variation-settings: normal) {
+        font-family: $font-primary-var;
+      }
     }
   }
 
@@ -165,7 +169,7 @@
         <div class="has-top-bar has-top-bar--for-small">
           <strong>{year} &copy; Nuxeo</strong>
           <a href="https://www.nuxeo.com/legal/privacy-policy/">Privacy Policy</a>
-          <a href="https://www.nuxeo.com/about/gdpr/">GDPR</a>
+          <a href="https://www.nuxeo.com/about/data-privacy/">Data Privacy</a>
           {#if showlicense !== false}
             <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0;vertical-align: sub;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a>
           {/if}

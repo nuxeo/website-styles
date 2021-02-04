@@ -16,7 +16,12 @@ const preprocess = sveltePreprocess({
     includePaths: [source]
   },
   postcss: {
-    plugins: [require('autoprefixer')]
+    plugins: [
+      require('autoprefixer'),
+      require('cssnano')({
+        preset: 'default'
+      })
+    ]
   }
 });
 
@@ -44,7 +49,7 @@ export default {
     // https://github.com/rollup/rollup-plugin-commonjs
     resolve({
       browser: true,
-      dedupe: importee => importee === 'svelte' || importee.startsWith('svelte/')
+      dedupe: (importee) => importee === 'svelte' || importee.startsWith('svelte/')
     }),
     commonjs(),
 

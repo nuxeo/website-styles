@@ -8,6 +8,10 @@
 <style lang="scss">
   @import './style/settings';
 
+  li {
+    font-size: 14px;
+  }
+
   a {
     border: 0;
     color: $c-black;
@@ -18,6 +22,10 @@
     padding: 0.7em 1em;
     text-decoration: none;
     transition: all 0.2s ease;
+
+    @supports (font-variation-settings: normal) {
+      font-family: $font-primary-var;
+    }
 
     &.end-of-section {
       border-bottom: 1px solid $c-grey-1;

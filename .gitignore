@@ -68,3 +68,8 @@ SMAKK/Untitled-1.html
 /static/roi
 /static/tco
 /static/components/v1
+
+*.orig.*
+/login/*.css
+/login/*.map
+/login/src/index.jsp

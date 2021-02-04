@@ -41,7 +41,7 @@
   .menu-item {
     color: $c-white;
     display: inline-block;
-    font-weight: $weight-medium;
+    font-weight: $weight-bold;
     line-height: $header-height;
     padding: 0 1.5em;
     position: relative;
@@ -57,6 +57,10 @@
     font-family: $font-primary;
     height: $header-height;
     padding: 0 20px;
+
+    @supports (font-variation-settings: normal) {
+      font-family: $font-primary-var;
+    }
 
     .container {
       display: flex;
