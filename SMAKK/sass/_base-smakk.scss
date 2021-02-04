@@ -2,11 +2,10 @@
   //Typography
   html,
   body {
-    @include primary-font-semibold;
+    @include primary-font;
 
     background: $c-grey;
     color: #fff;
-    font-size: 14px;
     overflow-x: hidden;
   }
 
@@ -28,7 +27,7 @@
   .h2,
   .h3,
   .h4 {
-    @include primary-font-extrabold;
+    @include primary-font-bold;
 
     margin: 0;
     margin-bottom: 20px;
@@ -73,7 +72,7 @@
   h5,
   .h5,
   h4.smaller {
-    @include primary-font-extrabold;
+    @include primary-font-bold;
     @include smakk-fluid-type(37.5em, 80em, $h5-min, $h5-max);
 
     line-height: 1.2;
@@ -83,7 +82,7 @@
   h6,
   .h6,
   h5.smaller {
-    @include primary-font-extrabold;
+    @include primary-font-bold;
     @include smakk-fluid-type(37.5em, 80em, $h6-min, $h6-max);
 
     line-height: 1.2;
@@ -93,7 +92,7 @@
   p,
   ol,
   ul {
-    @include primary-font-semibold;
+    @include primary-font;
 
     font-size: 16px;
 
@@ -117,7 +116,7 @@
   }
 
   blockquote {
-    @include primary-font-semibold;
+    @include primary-font;
 
     font-size: 18px;
     margin: $scale-2 0;
@@ -170,7 +169,7 @@
   //Forms , inputs buttons
   label {
     color: $c-blue;
-    @include primary-font-semibold;
+    @include primary-font;
     display: block;
   }
 
@@ -182,7 +181,7 @@
   input:not([type='submit']),
   select,
   textarea {
-    @include primary-font-semibold;
+    @include primary-font;
 
     background: rgba(0, 0, 0, 0);
     border: 0;
@@ -197,7 +196,7 @@
     &::placeholder,
     option,
     label {
-      @include primary-font-semibold;
+      @include primary-font;
 
       color: lighten($c-navy, 20%);
     }
@@ -255,7 +254,7 @@
     padding: $scale-2;
 
     label {
-      @include primary-font-extrabold;
+      @include primary-font-bold;
       color: $c-blue;
       font-size: $scale-3;
     }

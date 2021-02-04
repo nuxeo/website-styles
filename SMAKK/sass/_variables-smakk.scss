@@ -1,5 +1,3 @@
-@import url('https://use.typekit.net/hmq3qbr.css');
-
 // Variables for use across the mixins
 $btn-bg-color: lightblue !default;
 $btn-bg-color-hover: darken($btn-bg-color, 5%);
@@ -14,8 +12,14 @@ $scale-2: 1.333em;
 $scale-1: 1em;
 $scale-0: 0.75em;
 
-//Fonts
-$font-primary: 'neue-haas-grotesk-display', Helvetica, Arial, sans-serif !important;
+// Fonts
+$font-primary: 'Inter', sans-serif;
+$font-primary-var: 'Inter var', sans-serif;
+
+// Weights
+$weight-roman: 400;
+$weight-medium: 500;
+$weight-bold: 600;
 
 // Colors
 $c-green: #73d2cf;

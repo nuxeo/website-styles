@@ -39,13 +39,17 @@
       background-color: lighten($nuxeo-color-code-border, 15%);
       border: 1px solid #d5d5d5;
       border-radius: 3px;
-      font-family: $nuxeo-font-family;
+      font-family: $font-primary;
       margin: 4px;
       min-width: auto;
       opacity: 0;
       outline: 0;
       padding: 4px 6px;
       transition: opacity .4s ease;
+
+      @supports (font-variation-settings: normal) {
+        font-family: $font-primary-var;
+      }
 
       &,
       &:focus,
@@ -177,11 +181,15 @@
   // Code panel
   .code-heading {
     color: $header-color;
-    font-family: $header-font-family;
+    font-family: $font-primary;
     font-weight: $header-font-weight;
     line-height: $header-lineheight;
     margin-bottom: -1rem;
     text-rendering: $header-text-rendering;
+
+    @supports (font-variation-settings: normal) {
+      font-family: $font-primary-var;
+    }
 
     p & {
       margin: 0;

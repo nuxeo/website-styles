@@ -14,7 +14,6 @@
      *    IE on Windows Phone and in iOS.
      */
 html {
-  font-family: sans-serif;
   /* 1 */
   line-height: 1.15;
   /* 2 */
@@ -88,7 +87,7 @@ main {
      * 2. Correct the odd `em` font sizing in all browsers.
      */
 pre {
-  font-family: monospace, monospace;
+  font-family: monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */ }
@@ -148,7 +147,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace;
   /* 1 */
   font-size: 1em;
   /* 2 */ }
@@ -228,7 +227,6 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif;
   /* 1 */
   font-size: 100%;
   /* 1 */
@@ -437,7 +435,6 @@ body {
   margin: 0;
   padding: 0;
   background: #fefefe;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
