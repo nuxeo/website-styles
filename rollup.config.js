@@ -1,3 +1,4 @@
+import { join } from 'path';
 import svelte from 'rollup-plugin-svelte';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -13,7 +14,7 @@ const output_js = production
 
 const preprocess = sveltePreprocess({
   scss: {
-    includePaths: [source]
+    includePaths: [source, join(__dirname, 'node_modules', 'foundation-sites', 'scss')]
   },
   postcss: {
     plugins: [

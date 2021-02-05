@@ -6,6 +6,7 @@
 </script>
 
 <style lang="scss">
+  @import '../scss/settings';
   @import './style/settings';
 
   li {
