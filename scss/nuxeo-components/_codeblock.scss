@@ -1,0 +1,102 @@
+@import 'highlightjs';
+@import 'tooltips';
+
+@include nuxeo-highlightjs;
+@include nuxeo-tooltips;
+
+// Inline code
+code {
+  border-radius: $code-border-radius;
+  overflow-wrap: break-word;
+
+  a > & {
+    border: 1px solid;
+    padding: 0 0.3125rem; // 5px;
+  }
+}
+
+// Code block
+pre {
+  background: $nuxeo-color-code-background;
+  border: solid 2px $nuxeo-color-code-border;
+  border-radius: $code-border-radius;
+  color: $nuxeo-color-code-foreground;
+  font-family: 'Courier 10 Pitch', Courier, monospace;
+  font-size: 15px !important;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+  position: relative;
+  white-space: pre-wrap;
+
+  .copy-area {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .copy-button {
+    background-color: lighten($nuxeo-color-code-border, 15%);
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    font-family: $font-primary;
+    margin: 4px;
+    min-width: auto;
+    opacity: 0;
+    outline: 0;
+    padding: 2px 6px 2px 8px;
+    transition: opacity 0.4s ease;
+
+    &:hover {
+      background-color: $nuxeo-color-code-border;
+    }
+  }
+
+  @supports (font-variation-settings: normal) {
+    .copy-button {
+      font-family: $font-primary-var;
+    }
+  }
+
+  &:hover .copy-button {
+    opacity: 1;
+  }
+
+  > code {
+    background: transparent;
+    border: 0;
+    color: $nuxeo-color-code-foreground;
+
+    > code {
+      background: transparent;
+    }
+  }
+}
+
+// Code panel
+.code-heading {
+  color: $header-color;
+  font-family: $font-primary;
+  font-weight: $header-font-weight;
+  line-height: $header-lineheight;
+  margin-bottom: -1rem;
+  text-rendering: $header-text-rendering;
+
+  p & {
+    margin: 0;
+  }
+
+  // Ignore empty paragraphs added by Markdown
+  ~ p:blank,
+  ~ p:empty {
+    display: none;
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  .code-heading {
+    font-family: $font-primary-var;
+  }
+}

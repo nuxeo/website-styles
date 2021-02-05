@@ -1,0 +1,122 @@
+@mixin nuxeo-tooltips {
+  .copy-url {
+    cursor: pointer;
+  }
+
+  // https://github.com/primer/css/blob/master/src/tooltips/tooltips.scss#L1
+
+  .tooltipped {
+    position: relative;
+
+    // This is the tooltip bubble
+    &::after {
+      background: $tooltip-background-color;
+      border: 0;
+      border-radius: 3px;
+      color: $tooltip-text-color;
+      content: attr(aria-label);
+      display: none;
+      font-size: 0.8rem;
+      letter-spacing: normal;
+      opacity: 0;
+      padding: 5px 8px;
+      pointer-events: none;
+      position: absolute;
+      text-align: center;
+      text-decoration: none;
+      text-shadow: none;
+      text-transform: none;
+      white-space: pre;
+      word-wrap: break-word;
+      z-index: 1000000;
+    }
+
+    // This is the tooltip arrow
+    &::before {
+      border: 5px solid transparent;
+      color: $tooltip-background-color;
+      content: '';
+      display: none;
+      height: 0;
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      width: 0;
+      z-index: 1000001;
+    }
+
+    // // delay animation for tooltip
+    @keyframes tooltip-appear {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    // This will indicate when we'll activate the tooltip
+    &:hover,
+    &:active,
+    &:focus {
+      &::before,
+      &::after {
+        animation-delay: $tooltip-delay;
+        animation-duration: $tooltip-duration;
+        animation-fill-mode: forwards;
+        animation-name: tooltip-appear;
+        animation-timing-function: ease-in;
+        display: inline-block;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // .tooltipped-no-delay:hover,
+  // .tooltipped-no-delay:active,
+  // .tooltipped-no-delay:focus {
+  //   &::before,
+  //   &::after {
+  //     opacity: 1;
+  //     animation: none;
+  //   }
+  // }
+
+  // Tooltipped North
+  .tooltipped-n {
+    &::after {
+      bottom: 100%;
+      margin-bottom: 6px;
+      right: 50%;
+      // Move the tooltip body to the center of the object.
+      transform: translateX(50%);
+    }
+
+    &::before {
+      border-top-color: $tooltip-background-color;
+      bottom: auto;
+      margin-right: -6px;
+      right: 50%;
+      top: -7px;
+    }
+  }
+
+  // Tooltipped South
+  .tooltipped-sw {
+    &::after {
+      margin-right: -15px;
+      margin-top: 5px;
+      right: 50%;
+      top: 100%;
+    }
+
+    &::before {
+      border-bottom-color: $tooltip-background-color;
+      bottom: -5px;
+      margin-right: -5px;
+      right: 50%;
+      top: auto;
+    }
+  }
+}

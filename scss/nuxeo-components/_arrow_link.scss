@@ -1,0 +1,64 @@
+.with-arrow {
+  align-items: center;
+  border: 0 !important;
+  display: flex;
+  justify-content: center;
+
+  .simple-arrow {
+    height: auto;
+    margin-left: 10px;
+  }
+
+  &:hover {
+    .simple-arrow {
+      path {
+        fill: $c-green;
+        stroke: $c-green;
+      }
+    }
+  }
+
+  &.is-green {
+    color: $c-green;
+
+    .simple-arrow {
+      path {
+        fill: $c-green;
+        stroke: $c-green;
+      }
+    }
+
+    &:hover {
+      color: $c-blue;
+
+      .simple-arrow {
+        path {
+          fill: $c-blue;
+          stroke: $c-blue;
+        }
+      }
+    }
+  }
+
+  &.is-navy {
+    color: $c-navy;
+
+    .simple-arrow {
+      path {
+        fill: $c-navy;
+        stroke: $c-navy;
+      }
+    }
+
+    &:hover {
+      color: $c-green;
+
+      .simple-arrow {
+        path {
+          fill: $c-navy;
+          stroke: $c-navy;
+        }
+      }
+    }
+  }
+}

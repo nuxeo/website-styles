@@ -1,0 +1,120 @@
+.boxes {
+  > div {
+    margin-top: 1em;
+    padding: 1em 1em 2em;
+  }
+
+  &:not(.boxes--vanilla) {
+    > div,
+    > a {
+      @include nuxeo-box-shadow();
+    }
+
+    > a:hover {
+      @include nuxeo-box-shadow-hover();
+    }
+  }
+}
+
+// small
+@include breakpoint(small only) {
+  .boxes {
+    > div,
+    > a {
+      display: block;
+      margin-bottom: 2em;
+      padding: 2em 1em 1.5em;
+    }
+  }
+}
+
+// Large
+@include breakpoint(large) {
+  .boxes {
+    &.boxes--2-small {
+      justify-content: center;
+
+      > div,
+      > a {
+        margin: 0 2rem;
+      }
+    }
+  }
+}
+
+// medium ONLY
+@include breakpoint(medium only) {
+  .boxes {
+    &.boxes--2-small {
+      align-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+
+      > div,
+      > a {
+        margin-bottom: 3rem;
+        min-height: 150px;
+        padding: 2em 2em 3em;
+        width: 45%;
+      }
+    }
+  }
+}
+
+@include breakpoint(medium) {
+  .boxes {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: $space-3;
+    }
+
+    > div,
+    > a {
+      margin-top: 0;
+      padding: 0.5rem 1rem 3rem;
+      position: relative;
+      transition: box-shadow 0.2s ease;
+      width: 30%;
+
+      .learn-more {
+        bottom: 1.5rem;
+        position: absolute;
+      }
+    }
+
+    &.boxes--2 {
+      align-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+
+      > div,
+      > a {
+        margin-bottom: 3rem;
+        min-height: 150px;
+        padding: 0.5rem 2rem 3rem;
+        width: 45%;
+      }
+    }
+
+    &.boxes--vanilla {
+      justify-content: space-evenly;
+
+      > div,
+      > a {
+        box-shadow: none;
+        margin: 0;
+        padding: 2em 2em 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.round { border-radius: 50%; }
+
+.quote-block {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  font-weight: $weight-bold;
+  margin-bottom: 20px;
+  padding: 2em;
+  width: 100%;
+
+  .quote-type {
+    align-self: flex-start;
+
+    .border-type {
+      width: 50%;
+
+      hr {
+        border-color: white;
+        border-style: double;
+      }
+    }
+  }
+
+  .quote-content {
+    align-self: center;
+    padding: 2em;
+  }
+}
+
+.block-quote {
+  font-size: $font-size-6;
+  position: relative;
+
+  &::before {
+    background: url('/assets/branded-icons/quote.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    content: '';
+    display: block;
+    height: 1.6em;
+    left: 1em;
+    position: absolute;
+    top: 0.4em;
+    width: 3em;
+  }
+
+  &.block-quote--above::before {
+    background-position: left;
+    left: 0;
+    margin-bottom: 1em;
+    margin-left: 4em;
+    position: relative;
+    top: 0;
+    width: auto;
+  }
+
+  blockquote {
+    font-size: inherit;
+    line-height: 1.4;
+    margin: 0 4em;
+
+    cite {
+      display: block;
+      font-size: $font-size-3;
+      font-style: normal;
+      font-weight: $weight-roman;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+@include breakpoint(small only) {
+  .block-quote blockquote {
+    max-width: none;
+  }
+}

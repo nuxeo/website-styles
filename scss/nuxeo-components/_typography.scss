@@ -1,0 +1,281 @@
+html,
+body {
+  background: $c-white;
+  color: $c-black;
+  font-family: $font-primary;
+  font-weight: $weight-roman;
+  line-height: 1.5;
+
+  @supports (font-variation-settings: normal) {
+    font-family: $font-primary-var;
+  }
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+  @include heading-base;
+
+  margin-bottom: $space-1;
+  margin-top: 0;
+
+  .body & {
+    margin-top: $space-2;
+  }
+}
+
+.h1,
+h1 {
+  @include h1;
+
+  &.display {
+    @include display;
+  }
+}
+
+.h2,
+h2 {
+  @include h2;
+}
+
+.h3,
+h3 {
+  @include h3;
+}
+
+.h4,
+ h4 {
+  @include h4;
+}
+
+.h5,
+h5 {
+  @include h5;
+}
+
+.h6,
+h6 {
+  @include h6;
+}
+
+.is-roman {
+  font-weight: $weight-roman;
+}
+
+b,
+strong,
+.strong,
+.is-bold {
+  font-weight: $weight-bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+%is-small,
+.is-small {
+  font-size: $font-size-2; // 14px
+}
+
+p,
+ol,
+ul,
+span,
+a
+button,
+.button, {
+  &.large,
+  .large & {
+    font-size: $font-size-4; // 18px
+  }
+
+  &.small,
+  .small &, {
+    @extend %is-small;
+  }
+}
+
+p {
+  margin-bottom: $space-1; // 16px
+}
+
+a {
+  border-bottom: 1px $c-black solid;
+  color: inherit;
+  padding-bottom: 0.0781em; // 1.25px @ 1rem
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  .is-bg-green &,
+  .is-bg-blue &,
+  .is-bg-blue-small &,
+  .is-bg-navy &,
+  .is-bg-grey-2 &,
+  .is-bg-grey-3 &,
+  .is-bg-red &,
+  .is-bg-purple &,
+  .is-bg-purple-small &,
+  .is-bg-aqua &,
+  .is-bg-orange &,
+  .is-bg-black &,
+  .is-bg-barely-black &,
+  &.is-white,
+  &.button.is-white {
+    border-bottom-color: $c-white;
+    color: $c-white;
+  }
+
+  .is-black & {
+    border-bottom-color: $c-black;
+    color: $c-black;
+  }
+
+  &.h1,
+  &.h2,
+  &.h3,
+  &.h4,
+  &.columns,
+  &.no-decoration,
+  &.more {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &.more,
+  .more {
+    font-weight: $weight-bold;
+
+    &::after {
+      content: '\2192';
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+      transition: padding-left 0.4s ease, padding-right 0.4s ease;
+    }
+
+    &:hover::after {
+      padding-left: 0.6rem;
+      padding-right: 0;
+      transition: padding-left 0.2s ease, padding-right 0.2s ease;
+    }
+  }
+
+  &:focus,
+  &:hover,
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+button,
+a.button {
+  &,
+  &.button.is-bg-blue {
+    appearance: none;
+    background-color: $c-blue;
+    border: 1px solid transparent;
+    border-radius: $cta-radius;
+    color: $c-white;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: $weight-bold;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    margin: 0 $space-2 $space-2 0;
+    padding: 0.375rem 1.25rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s ease-out;
+
+    &:hover {
+      background-color: darken($c-blue, $hover-darken-percentage);
+      opacity: 1;
+    }
+  }
+
+  .is-bg-green &,
+  .is-bg-blue &,
+  .is-bg-blue-small &,
+  .is-bg-navy &,
+  .is-bg-grey-2 &,
+  .is-bg-grey-3 &,
+  .is-bg-red &,
+  .is-bg-purple &,
+  .is-bg-purple-small &,
+  .is-bg-aqua &,
+  .is-bg-orange &,
+  .is-bg-black &,
+  .is-bg-barely-black &,
+  &.is-bg-white {
+    background-color: $c-white;
+    border-color: $c-black;
+    color: $c-black;
+
+    &:hover {
+      background-color: $c-grey-1;
+      border-color: $c-grey-3;
+    }
+  }
+
+  &.is-bg-black {
+    background-color: $c-black;
+    border-color: transparent;
+    color: $c-white;
+
+    &:hover {
+      background-color: $c-grey-3;
+      border-color: transparent;
+    }
+  }
+
+  &.equal-margin {
+    margin: 0 ($space-2 / 2) $space-2;
+  }
+
+  &.large {
+    padding: 0.75rem 1.875rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.uppercase {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+%list-heading {
+  border-bottom: 1px solid $c-barely-black;
+  display: block;
+  font-weight: $weight-medium;
+  margin-bottom: 0.8em;
+  margin-top: 1.9em;
+  padding-bottom: 0.8em;
+}
+
+.list-heading {
+  @extend %list-heading;
+
+  > p {
+    margin-top: 0;
+  }
+}
+
+.anchor {
+  float: left;
+  margin-top: -3em;
+}
+
+.pointer {
+  cursor: pointer;
+}

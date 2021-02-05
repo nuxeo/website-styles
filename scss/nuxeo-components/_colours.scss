@@ -1,0 +1,208 @@
+// Background colours
+%is-bg-green,
+.is-bg-green {
+  background-color: $c-green;
+}
+
+%is-bg-blue,
+.is-bg-blue {
+  background-color: $c-blue;
+}
+
+%is-bg-navy,
+.is-bg-navy {
+  background-color: $c-navy;
+}
+
+%is-bg-grey,
+.is-bg-grey {
+  background-color: $c-grey;
+}
+
+%is-bg-grey-1,
+.is-bg-grey-1 {
+  background-color: $c-grey-1;
+}
+
+%is-bg-grey-2,
+.is-bg-grey-2 {
+  background-color: $c-grey-2;
+}
+
+%is-bg-grey-3,
+.is-bg-grey-3 {
+  background-color: $c-grey-3;
+}
+
+%is-bg-red,
+.is-bg-red {
+  background-color: $c-red;
+}
+
+%is-bg-purple,
+.is-bg-purple {
+  background-color: $c-purple;
+}
+
+%is-bg-aqua,
+.is-bg-aqua {
+  background-color: $c-aqua;
+}
+
+%is-bg-orange,
+.is-bg-orange {
+  background-color: $c-orange;
+}
+
+%is-bg-light-grey,
+.is-bg-light-grey {
+  background-color: $c-light-grey;
+}
+
+%is-bg-light-blue,
+.is-bg-light-blue {
+  background-color: $c-light-blue;
+}
+
+%is-bg-light-aqua,
+.is-bg-light-aqua {
+  background-color: $c-light-aqua;
+}
+
+%is-bg-white,
+.is-bg-white {
+  background-color: $white;
+}
+
+%is-bg-black,
+.is-bg-black {
+  background-color: $black;
+}
+
+%is-bg-barely-black,
+.is-bg-barely-black {
+  background-color: $c-barely-black;
+}
+
+.is-bg-green,
+.is-bg-blue,
+.is-bg-navy,
+.is-bg-grey-2,
+.is-bg-grey-3,
+.is-bg-red,
+.is-bg-purple,
+.is-bg-aqua,
+.is-bg-orange,
+.is-bg-black,
+.is-bg-barely-black {
+  color: $white;
+}
+
+// Fix for a element color: inherit; in _smakk-base.scss
+// a {
+//   &.is-bg-green,
+//   &.is-bg-blue,
+//   &.is-bg-navy,
+//   &.is-bg-grey-2,
+//   &.is-bg-grey-3,
+//   &.is-bg-red,
+//   &.is-bg-purple,
+//   &.is-bg-aqua,
+//   &.is-bg-orange,
+//   &.is-bg-black,
+//   &.is-bg-barely-black {
+//     color: $white;
+//   }
+// }
+
+// Foreground override colours
+%is-green,
+.is-green {
+  color: $c-green;
+}
+
+%is-blue,
+.is-blue {
+  color: $c-blue;
+}
+
+%is-navy,
+.is-navy {
+  color: $c-navy;
+}
+
+%is-grey,
+.is-grey {
+  color: $c-grey;
+}
+
+%is-grey-1,
+.is-grey-1 {
+  color: $c-grey-1;
+}
+
+%is-grey-2,
+.is-grey-2 {
+  color: $c-grey-2;
+}
+
+%is-grey-3,
+.is-grey-3 {
+  color: $c-grey-3;
+}
+
+%is-red,
+.is-red {
+  color: $c-red;
+}
+
+%is-purple,
+.is-purple {
+  color: $c-purple;
+}
+
+%is-aqua,
+.is-aqua {
+  color: $c-aqua;
+}
+
+%is-orange,
+.is-orange {
+  color: $c-orange;
+}
+
+%is-light-grey,
+.is-light-grey {
+  color: $c-light-grey;
+}
+
+%is-light-aqua,
+.is-light-aqua {
+  color: $c-light-aqua;
+}
+
+%is-white,
+.is-white {
+  color: $c-white;
+}
+
+%is-black,
+.is-black {
+  color: $c-black;
+}
+
+// TODO: Remove and update/remove classes
+%is-barely-black,
+.is-barely-black {
+  color: $c-black;
+}
+
+%dim-white,
+.dim-white {
+  @include background-fade($c-white);
+}
+
+%dim-black,
+.dim-black {
+  @include background-fade($c-black);
+}

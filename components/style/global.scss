@@ -1,7 +1,10 @@
+@charset "utf-8";
+
+@import '../../scss/settings';
 @import './settings';
 
 // Import fonts
-@import '../../scss/components/fonts';
+@import '../../scss/nuxeo-components/nuxeo-fonts';
 
 @media all and (max-width: $menu-breakpoint) {
   html.no-scroll {

@@ -1,8 +1,103 @@
-// This is from open-sans-fontface mixin because everyone uses _mixins.scss so there's a conflict
-@mixin fontdef($OpenSansPath, $OpenSansVersion, $FontType:"Regular") {
-  src:  url('#{$OpenSansPath}/#{$FontType}/OpenSans-#{$FontType}.eot?v=#{$OpenSansVersion}');
-  src:  url('#{$OpenSansPath}/#{$FontType}/OpenSans-#{$FontType}.eot?#iefix&v=#{$OpenSansVersion}') format('embedded-opentype'),
-        url('#{$OpenSansPath}/#{$FontType}/OpenSans-#{$FontType}.woff?v=#{$OpenSansVersion}') format('woff'),
-        url('#{$OpenSansPath}/#{$FontType}/OpenSans-#{$FontType}.ttf?v=#{$OpenSansVersion}') format('truetype'),
-        url('#{$OpenSansPath}/#{$FontType}/OpenSans-#{$FontType}.svg?v=#{$OpenSansVersion}##{$FontType}') format('svg');
+// Converts a colour to work within a background svg
+@function encodecolor($string) {
+  @if type-of($string) == 'color' {
+    $hex: str-slice(ie-hex-str($string), 4);
+    $string: unquote('#{$hex}');
+  }
+  $string: '%23' + $string;
+
+  @return $string;
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+// Fluid Type Mixin
+// https://codepen.io/anon/pen/RZxvMm
+@mixin nuxeo-fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    font-size: $min-font-size;
+
+    @media screen and (min-width: $min-vw) {
+      font-size: calc(
+        #{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} *
+          ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+      );
+    }
+
+    @media screen and (min-width: $max-vw) {
+      font-size: $max-font-size;
+    }
+  } @else {
+    @error 'Detected mixed units. Please use the same units for all parameters. ' + $u1 +', ' + $u2 + ', ' + $u3 +', '+ $u4;
+  }
+}
+
+@mixin nuxeo-box-shadow($y: 2px) {
+  box-shadow: 0 $y 3px -1px rgba(0, 0, 0, 0.1), 0 $y/2 2px -1px rgba(0, 0, 0, 0.06);
+}
+
+@mixin nuxeo-box-shadow-hover($y: 4px) {
+  box-shadow: 0 $y 6px -1px rgba(0, 0, 0, 0.1), 0 $y/2 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+@mixin background-fade($color) {
+  $faded-color: transparentize($color, 0.4);
+
+  background: $faded-color;
+  box-shadow: 0 0 100px 75px $faded-color;
+}
+
+@mixin heading-base {
+  font-weight: $weight-bold;
+  line-height: 1.5;
+}
+
+@mixin h1 {
+  font-size: $font-size-7; // 30px
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+@mixin display {
+  font-size: $font-size-8; // 40px
+  letter-spacing: -1px;
+}
+
+@mixin h2 {
+  font-size: $font-size-6; // 24px
+  letter-spacing: -0.4px;
+}
+
+@mixin h3 {
+  font-size: $font-size-5; // 20px
+  letter-spacing: -0.1px;
+  line-height: 1.4;
+}
+
+@mixin h4 {
+  font-size: $font-size-4; // 18px
+}
+
+@mixin h5 {
+  font-size: $font-size-3; // 16px
+  letter-spacing: -0.1px;
+}
+
+@mixin h6 {
+  font-size: $font-size-2; // 14px
+  letter-spacing: 0.2px;
 }

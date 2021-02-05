@@ -12,48 +12,37 @@
   ],
   "scripts": {
     "test": "eslint --cache --fix .",
-
     "package_checksum": "openssl md5 package.json | grep -oE '[a-zA-Z0-9]+$'",
     "npm_install": "[ `npm run -s package_checksum` = `cat package.md5` ] || npm install && npm run -s package_checksum > package.md5",
-
     "start": "npm run build:components && npm run compile",
-
     "server": "browser-sync start --server ./static --startPath satellite/demo.html --browser=$npm_package_config_browser",
-
     "predev": "npm run npm_install",
     "dev": "npm run server & nodemon --exec 'npm run compile && browser-sync reload'",
-
     "build:components": "rollup -c",
     "dev:components": "npm run server:components & rollup -c -w",
     "server:components": "browser-sync start --server ./demo --watch ./demo",
-
     "compile": "npm run compile:styles",
     "postcompile": "cp -rv css/* static/components/v1",
-
     "precompile:styles": "rm -rf ./tmp ./css",
-    "compile:styles": "sass --embed-sources --style=compressed components/style/:tmp/",
+    "compile:styles": "sass --embed-sources --load-path node_modules/foundation-sites/scss/ --style=compressed components/style/:tmp/",
     "postcompile:styles": "postcss -m --use autoprefixer -c postcss.json -d css/ tmp/*.css",
-
     "precompile:legacy": "npm run precompile:styles",
-    "compile:legacy": "sass --embed-sources --load-path SMAKK/sass/ --load-path node_modules/foundation-sites/scss/ --style compressed scss/:tmp/",
+    "compile:legacy": "sass --embed-sources --load-path node_modules/foundation-sites/scss/ --style compressed scss/:tmp/",
     "postcompile:legacy": "npm run postcompile:styles && cp -rv css static/satellite/latest",
-
     "precompile:legacy-expanded": "npm run precompile:styles",
-    "compile:legacy-expanded": "sass --embed-sources --load-path SMAKK/sass/ --load-path node_modules/foundation-sites/scss/ --style expanded scss/:tmp/",
+    "compile:legacy-expanded": "sass --embed-sources --load-path node_modules/foundation-sites/scss/ --style expanded scss/:tmp/",
     "postcompile:legacy-expanded": "npm run postcompile:legacy",
-
     "xversion": "npm run npm_install && npm start && cp -r static/satellite/latest static/satellite/`node -e \"console.log(require('./package.json').version);\"` && git add static/satellite && git commit -m \"Satellite release `node -e \"console.log(require('./package.json').version);\"` added\"",
     "xpostversion": "git push && git push --tags",
-
     "login:server": "browser-sync start --server ./login --watch ./login",
     "login:dev": "npm run login:server & nodemon --ext scss --exec 'npm run login:styles && browser-sync reload'",
-
     "login:styles": "sass --embed-sources login/src/:login/",
     "postlogin:styles": "postcss login/*.css -mr"
   },
   "author": "Andrew Goodricke <github@andrewgoodricke.com> (http://www.nuxeo.com)",
   "dependencies": {
-    "foundation-sites": "6.4.2"
+    "foundation-sites": "6.6.3",
+    "postcss": "^8.2.4"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",

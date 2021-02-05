@@ -1,0 +1,67 @@
+svg {
+  fill: currentColor;
+  height: 1em;
+  width: auto;
+}
+
+.flip-h {
+  filter: FlipH;
+  transform: scaleX(-1);
+}
+
+.flip-v {
+  filter: FlipV;
+  transform: scaleY(-1);
+}
+
+.rotate-180 {
+  transform: rotate(0.5turn);
+}
+
+.rotate-cw {
+  transform: rotate(90deg);
+}
+
+.rotate-ccw {
+  transform: rotate(-90deg);
+}
+
+// Icons
+.svg-small,
+.svg-medium,
+.svg-large,
+.svg-xlarge,
+.svg-xxlarge,
+.svg-xxxlarge {
+  line-height: 1;
+}
+
+.svg-small {
+  font-size: 1.5rem; // 24px
+  height: 1.5rem;
+}
+
+.svg-medium {
+  font-size: 2.25rem; // 36px
+  height: 2.25rem;
+}
+
+.svg-large {
+  font-size: 3rem; // 48px
+  height: 3rem;
+}
+
+.svg-xlarge {
+  font-size: 5rem; // 80px
+  height: 5rem;
+}
+
+.svg-xxlarge {
+  font-size: 6.25rem; // 100px
+  height: 6.25rem;
+}
+
+.svg-xxxlarge {
+  font-size: 7.5rem; // 120px
+  height: 7.5rem;
+}

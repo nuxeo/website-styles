@@ -1,0 +1,37 @@
+.cookie-banner {
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.cookie-banner__container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1400px;
+
+  @include breakpoint(800px down) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  p {
+    font-weight: $weight-roman;
+    margin: 0.88889rem 0 0.94444rem;
+  }
+
+  .button.close-button {
+    font-size: 1rem;
+    margin: 0 0 0 2rem;
+    white-space: nowrap;
+
+    @include breakpoint(800px down) {
+      margin: 2rem 0;
+    }
+  }
+}
