@@ -84,7 +84,8 @@
   font-family: 'Inter';
   font-style: italic;
   font-weight: 500;
-  src: url('https://rsms.me/inter/font-files/Inter-MediumItalic.woff2?v=3.15') format('woff2'),
+  src: url('https://rsms.me/inter/font-files/Inter-MediumItalic.woff2?v=3.15')
+      format('woff2'),
     url('https://rsms.me/inter/font-files/Inter-MediumItalic.woff?v=3.15') format('woff');
 }
 
@@ -102,8 +103,10 @@
   font-family: 'Inter';
   font-style: italic;
   font-weight: 600;
-  src: url('https://rsms.me/inter/font-files/Inter-SemiBoldItalic.woff2?v=3.15') format('woff2'),
-    url('https://rsms.me/inter/font-files/Inter-SemiBoldItalic.woff?v=3.15') format('woff');
+  src: url('https://rsms.me/inter/font-files/Inter-SemiBoldItalic.woff2?v=3.15')
+      format('woff2'),
+    url('https://rsms.me/inter/font-files/Inter-SemiBoldItalic.woff?v=3.15')
+      format('woff');
 }
 
 // @font-face {
@@ -175,7 +178,8 @@ Usage:
   font-named-instance: 'Regular';
   font-style: normal;
   font-weight: 100 900;
-  src: url('https://rsms.me/inter/font-files/Inter-roman.var.woff2?v=3.15') format('woff2');
+  src: url('https://rsms.me/inter/font-files/Inter-roman.var.woff2?v=3.15')
+    format('woff2');
 }
 
 @font-face {
@@ -184,26 +188,27 @@ Usage:
   font-named-instance: 'Italic';
   font-style: italic;
   font-weight: 100 900;
-  src: url('https://rsms.me/inter/font-files/Inter-italic.var.woff2?v=3.15') format('woff2');
+  src: url('https://rsms.me/inter/font-files/Inter-italic.var.woff2?v=3.15')
+    format('woff2');
 }
 
-/* --------------------------------------------------------------------------
-[EXPERIMENTAL] Multi-axis, single variable font.
+// /* --------------------------------------------------------------------------
+// [EXPERIMENTAL] Multi-axis, single variable font.
 
-Slant axis is not yet widely supported (as of February 2019) and thus this
-multi-axis single variable font is opt-in rather than the default.
+// Slant axis is not yet widely supported (as of February 2019) and thus this
+// multi-axis single variable font is opt-in rather than the default.
 
-When using this, you will probably need to set font-variation-settings
-explicitly, e.g.
+// When using this, you will probably need to set font-variation-settings
+// explicitly, e.g.
 
-  * { font-variation-settings: 'slnt' 0deg }
-  .italic { font-variation-settings: 'slnt' 10deg }
+//   * { font-variation-settings: 'slnt' 0deg }
+//   .italic { font-variation-settings: 'slnt' 10deg }
 
-  @font-face {
-  font-display: swap;
-  font-family: 'Inter var experimental';
-  font-style: oblique 0deg 10deg;
-  font-weight: 100 900;
-  src: url('https://rsms.me/inter/font-files/Inter.var.woff2?v=3.15') format('woff2');
-}
-*/
+//   @font-face {
+//   font-display: swap;
+//   font-family: 'Inter var experimental';
+//   font-style: oblique 0deg 10deg;
+//   font-weight: 100 900;
+//   src: url('https://rsms.me/inter/font-files/Inter.var.woff2?v=3.15') format('woff2');
+// }
+// */

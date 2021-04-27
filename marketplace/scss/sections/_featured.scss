@@ -1,0 +1,35 @@
+.featured-grid {
+  gap: rem-calc(40);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(#{rem-calc(200)}, 1fr));
+}
+
+.package--featured {
+  @include nuxeo-box-shadow();
+
+  align-items: center;
+  background: $c-white;
+  color: $c-black;
+  display: flex;
+  flex-direction: column;
+  padding: rem-calc(26 30);
+  text-align: center;
+  text-decoration: none;
+  transition-duration: var(--motion-speed);
+  transition-property: box-shadow, opacity;
+  transition-timing-function: ease;
+
+  &:hover,
+  &:focus {
+    @include nuxeo-box-shadow-hover();
+  }
+
+  &:hover {
+    opacity: $hover-opacity;
+  }
+
+  .package-desc {
+    font-size: $font-size-4;
+    font-weight: $weight-bold;
+  }
+}

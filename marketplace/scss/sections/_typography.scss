@@ -1,0 +1,186 @@
+html,
+body,
+input,
+textarea {
+  color: $c-black;
+  font-family: $font-primary;
+  line-height: 1.5;
+
+  @supports (font-variation-settings: normal) {
+    font-family: $font-primary-var;
+  }
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading-base;
+
+  margin-block-end: $space-1;
+  margin-block-start: 0;
+}
+
+.h1,
+h1 {
+  @include h1;
+
+  // &.display {
+  //   @include display;
+  // }
+}
+
+.h2,
+h2 {
+  @include h2;
+}
+
+.h3,
+h3 {
+  @include h3;
+}
+
+.h4,
+h4 {
+  @include h4;
+}
+
+.h5,
+h5 {
+  @include h5;
+}
+
+strong,
+.strong {
+  font-weight: $weight-bold;
+}
+
+a {
+  transition: opacity var(--motion-speed) ease;
+
+  &.more,
+  .more {
+    color: $c-black;
+    font-weight: $weight-bold;
+    text-decoration: none;
+
+    &::after {
+      content: '\2192';
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+      transition: padding-left 0.4s ease, padding-right 0.4s ease;
+    }
+
+    &:hover::after {
+      padding-left: 0.6rem;
+      padding-right: 0;
+      transition: padding-left 0.2s ease, padding-right 0.2s ease;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    opacity: $hover-opacity;
+  }
+}
+
+input[type='submit'],
+input[type='button'],
+.button {
+  background: $c-blue;
+  border-radius: $cta-radius;
+  color: $c-white;
+  display: inline-block;
+  font-weight: $weight-bold;
+  padding: rem-calc(6 20);
+  text-decoration: none;
+  transition: background-color var(--motion-speed) ease;
+
+  &:hover,
+  &:focus {
+    background-color: darken($c-blue, $hover-darken-percentage);
+    opacity: 1;
+  }
+
+  &.cancel {
+    background: $c-white;
+    color: $c-black;
+    box-shadow: inset 0px 0px 0px 1px currentColor;
+  }
+}
+
+code,
+tt {
+  font-family: Courier, monospace;
+  padding: rem-calc(26 35);
+  margin: 0;
+  font-size: rem-calc(15);
+  background-color: $c-black;
+}
+
+code::before,
+code::after,
+tt::before,
+tt::after {
+  letter-spacing: -0.2em;
+  content: '\00a0';
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem-calc(9);
+  margin-block-start: rem-calc(9);
+}
+
+.tag {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: $c-black;
+  display: inline-block;
+  font-size: $font-size-0;
+  font-weight: $weight-bold;
+  letter-spacing: 1px;
+  padding: rem-calc(4 6);
+  text-transform: uppercase;
+  transition-duration: var(--motion-speed);
+  transition-property: background, color;
+  transition-timing-function: ease;
+  white-space: nowrap;
+
+  &.tag--sub-additional {
+    color: $c-purple;
+  }
+
+  &.tag--sub-required {
+    color: $c-blue;
+  }
+
+  &.tag--sub-no {
+    color: $c-grey-3;
+  }
+
+  &.tag--deprecated {
+    color: $c-red;
+  }
+
+  &.tag--supported {
+    color: $c-green-strong;
+  }
+
+  &.tag--unsupported {
+    color: $c-orange;
+  }
+
+  &.tag--category {
+    color: $c-grey-3;
+  }
+}

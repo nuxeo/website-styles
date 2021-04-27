@@ -1,0 +1,21 @@
+.hotfixes {
+  font-size: $font-size-4;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: rem-calc(9);
+
+  a {
+    text-decoration: none;
+    padding: rem-calc(7 10);
+    border: 1px solid $c-grey-0;
+    color: $c-grey-3;
+    white-space: nowrap;
+
+    &.selected {
+      background: $c-light-blue;
+      border-color: $c-light-blue;
+      color: $c-blue;
+    }
+  }
+}

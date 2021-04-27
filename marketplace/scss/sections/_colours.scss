@@ -1,0 +1,26 @@
+%is-bg-black,
+.is-bg-black {
+  background-color: $c-black;
+}
+
+%is-bg-grey,
+.is-bg-grey {
+  background-color: $c-grey;
+}
+
+// .is-bg-green,
+// .is-bg-blue,
+// .is-bg-navy,
+// .is-bg-grey-2,
+// .is-bg-grey-3,
+// .is-bg-red,
+// .is-bg-purple,
+// .is-bg-aqua,
+// .is-bg-orange,
+.is-bg-black {
+  color: $c-white;
+}
+
+.is-blue {
+  color: $c-blue;
+}

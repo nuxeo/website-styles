@@ -1,0 +1,72 @@
+$logo-size: $font-size-2; // 14px
+
+footer {
+  background: $c-black;
+  padding-block: rem-calc(87 193);
+
+  a {
+    color: $c-white;
+    font-weight: $weight-bold;
+    text-decoration: none;
+  }
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: rem-calc(20);
+
+  @include breakpoint(small only) {
+  }
+}
+
+.footer-icon {
+  font-size: $logo-size;
+  height: $logo-size;
+  line-height: 1;
+
+  a {
+    display: inline-block;
+    line-height: 1;
+  }
+
+  svg {
+    fill: currentColor;
+    height: 1em;
+    width: auto;
+  }
+
+  .nsvglogo {
+    fill: $c-white;
+  }
+
+  .nsvglogo-x {
+    fill: $c-green;
+  }
+}
+
+.button.button--university {
+  background-color: transparent;
+  border: 1px solid $c-white;
+  color: $c-white;
+  font-size: $font-size-2;
+  margin: 0 0 0 1rem;
+  padding: 0.4375rem 0.625rem;
+
+  &:hover {
+    background-color: rgba($c-white, 0.2);
+    border: 1px solid $c-white;
+  }
+
+  @include breakpoint(small only) {
+    display: none;
+  }
+
+  svg {
+    font-size: $font-size-4;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+  }
+}

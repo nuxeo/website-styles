@@ -1,0 +1,103 @@
+// .cookie {
+//   background-color: $c-black;
+//   position: fixed;
+//   width: 100%;
+//   bottom: 0;
+//   padding: 0 20px;
+//   z-index: 99;
+// }
+// .cookie .close-button {
+//   background: none;
+//   position: absolute;
+//   right: 0;
+//   margin-right: 20px;
+//   height: 100%;
+//   border-style: none;
+//   cursor: pointer;
+//   font-size: 200%;
+// }
+// .cookie .close-button:focus {
+//   outline: 0;
+// }
+// .cookie p {
+//   height: 100%;
+//   margin: 10px 0;
+// }
+
+.cookie-banner {
+  background: $c-black;
+  border-top: 1px solid $c-white;
+  bottom: 0;
+  color: $c-white;
+  left: 0;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  z-index: $z-top;
+  transition: opacity var(--motion-speed-slow) ease;
+
+  &.faded {
+    opacity: 0;
+  }
+}
+
+.cookie-banner__container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1400px;
+
+  @include breakpoint(800px down) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  p {
+    font-weight: $weight-roman;
+    margin: 0.88889rem 0 0.94444rem;
+  }
+
+  a {
+    color: $c-white;
+    border-bottom: 1px solid $c-white;
+    transition: opacity var(--motion-speed) ease;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      opacity: $hover-opacity;
+    }
+  }
+
+  .button.close-button {
+    font-size: 1rem;
+    margin: 0 0 0 2rem;
+    white-space: nowrap;
+    appearance: none;
+    background-color: $c-blue;
+    border-radius: $cta-radius;
+    color: $c-white;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: $weight-bold;
+    letter-spacing: 0.1px;
+    line-height: 1.5;
+    padding: rem-calc(6 20);
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color var(--motion-speed) ease;
+
+    &:hover,
+    &:focus {
+      background-color: darken($c-blue, $hover-darken-percentage);
+      border: 0;
+    }
+
+    @include breakpoint(800px down) {
+      margin: 2rem 0;
+    }
+  }
+}

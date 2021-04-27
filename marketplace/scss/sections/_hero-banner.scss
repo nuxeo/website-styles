@@ -1,0 +1,15 @@
+.hero-banner {
+  background-color: $c-black;
+  background-image: url('../images/x-galaxy.min.svg');
+  background-size: 20%;
+  color: $c-white;
+  // height: 10rem;
+  text-align: center;
+  padding-block: rem-calc(77);
+}
+
+.bg-fade {
+  @include background-fade($c-black);
+
+  display: inline-block;
+}

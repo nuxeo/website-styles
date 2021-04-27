@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+/*
+lk@nuxeo.com - nuxeo @ 2012 July
+mhuang@nuxeo.com - nuxeo @ 2017 November
+agoodricke@nuxeo.com - nuxeo @ 2021 April
+*/
+
+@import '../../scss/settings';
+@import './mixins';
+
+$nos-header-height: 57px;
+
+/* Fonts */
+@import '../../scss/nuxeo-components/nuxeo-fonts';
+/* Typography */
+@import './sections/typography';
+/* Colours */
+@import './sections/colours';
+/* Layout */
+@import './sections/layout';
+/* Hero Banner */
+@import './sections/hero-banner';
+/* Sidebar */
+@import './sections/sidebar';
+/* Search */
+@import './sections/search';
+/* Hotfixes */
+@import './sections/hotfixes';
+/* Featured */
+@import './sections/featured';
+/* Package Listing */
+@import './sections/package-listing';
+/* Footer */
+@import './sections/footer';
+/* Cookie Banner */
+@import './sections/cookie-banner';
+
+iframe {
+  height: 310px;
+}
+
+iframe body {
+  margin: 0.6em;
+}
+
+textarea {
+  border: 1px solid #dedede;
+  // font: normal 12px 'Helvetica', Arial, sans-serif;
+  margin: 0 auto;
+  padding: 0.4em;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-top;
+  border-bottom: 1px solid #eee;
+  /*box-shadow: 0 0 4px rgba(0,0,0,0.3);*/
+}
+
+@media (min-width: 48em) {
+  header {
+    padding: 0 0.3rem 0 1rem;
+  }
+  header img {
+    width: 5rem;
+  }
+}
+
+@media (min-width: 64em) {
+  header {
+    padding: 0 2rem;
+  }
+  header img {
+    width: 6.5rem;
+  }
+}
+
+.registration {
+  text-align: right;
+  flex: 2;
+}
+
+.signIn input[type='text'],
+.signIn input[type='password'],
+.signIn input[type='submit'] {
+  max-width: 10em;
+  display: inline-block;
+  padding: 0.5em 1em;
+  line-height: 20px;
+}
+
+.signOut > span {
+  padding-left: 1em;
+}
+
+/*-- =Forms Add / Edit Package --*/
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='url'],
+input[type='number'],
+input[type='password'],
+select,
+textarea {
+  width: 100%;
+  display: block;
+  // line-height: 20px;
+  padding: 12px 13px;
+  border: #d6dadc 1px solid;
+  font-size: 1em;
+  color: #444;
+  font-weight: 400;
+  outline: none 0;
+  resize: none;
+  border-radius: 0;
+  transition: all 0.1s;
+  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+  background-color: #fafbfc;
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  cursor: pointer;
+}
+
+label.boxOrRadio {
+  cursor: pointer;
+}
+
+.mainBox.one-col form {
+  max-width: 60em;
+  margin: 0 auto;
+}
+
+.mainBox.one-col form.smallForm {
+  max-width: 45em;
+}
+
+#packageEditForm h4 {
+  border-bottom: 1px solid #eee;
+  padding: 0 0 0.3em 0;
+  font-size: 1.8em;
+}
+
+span.info {
+  font-size: small;
+  background-color: lightgray;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.uploadTable {
+  border-collapse: separate;
+  border-spacing: rem-calc(9 9);
+  margin-bottom: rem-calc(9);
+
+  td {
+    vertical-align: top;
+  }
+
+  .labelColumn {
+    font-weight: bold;
+    width: 130px;
+  }
+
+  select {
+    width: 230px;
+  }
+
+  .mceLayout {
+    width: 500px !important;
+  }
+
+  input[name='associatedResourcesLabels'] {
+    margin-bottom: rem-calc(9);
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem-calc(9);
+  }
+}

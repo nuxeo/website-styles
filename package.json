@@ -37,7 +37,10 @@
     "login:server": "browser-sync start --server ./login --watch ./login",
     "login:dev": "npm run login:server & nodemon --ext scss --exec 'npm run login:styles && browser-sync reload'",
     "login:styles": "sass --embed-sources login/src/:login/",
-    "postlogin:styles": "postcss login/*.css -mr"
+    "postlogin:styles": "postcss login/*.css -mr",
+    "marketplace:dev": "nodemon --ext scss --exec 'npm run marketplace:styles'",
+    "marketplace:styles": "sass --embed-sources --load-path node_modules/foundation-sites/scss/ marketplace/scss/:nos-marketplace-css",
+    "postmarketplace:styles": "postcss nos-marketplace-css/marketplace-*.css --use autoprefixer -mr"
   },
   "author": "Andrew Goodricke <github@andrewgoodricke.com> (http://www.nuxeo.com)",
   "dependencies": {

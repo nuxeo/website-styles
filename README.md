@@ -130,6 +130,20 @@ The broswer defaults to `chromium-browser` but can be changed with the following
 npm config set Nuxeo-website:browser firefox
 ```
 
+## Marketplace Styling
+
+Create a symlink within this repo to your instance. E.g.
+
+```
+ln -s /my/marketplace/connect/nuxeo-connect-marketplace/src/main/resources/skin/resources/css ./nos-marketplace-css
+```
+
+Then:
+
+```
+npm run marketplace:dev
+```
+
 ## Contributing
 
 Please keep the [available mixins table](#available-mixins) and [available elements table](#available-elements) up to date if you add or amend mixins and/or elements.

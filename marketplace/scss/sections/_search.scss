@@ -1,0 +1,46 @@
+.search-submit {
+  margin-block-end: rem-calc(32);
+  position: relative;
+
+  input[type='search'] {
+    display: block;
+    font-size: $font-size-1;
+    padding: rem-calc(10 10 10 56);
+    width: 100%;
+
+    &:focus {
+      outline: 1px solid $c-black;
+    }
+  }
+
+  button[type='submit'] {
+    background: transparent;
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    padding-block-start: rem-calc(2);
+    padding-inline: rem-calc(21);
+    position: absolute;
+    top: 0;
+
+    &:hover {
+      opacity: $hover-opacity;
+    }
+
+    &:focus {
+      outline: 1px dotted $c-black;
+    }
+  }
+}
+.search-bar {
+  margin-block-end: rem-calc(32);
+
+  input[type='checkbox'] {
+    vertical-align: sub;
+
+    + label {
+      font-size: $font-size-2;
+      padding-inline-start: rem-calc(11);
+    }
+  }
+}

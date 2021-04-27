@@ -1,3 +1,16 @@
+// Defaults
+:root {
+  --motion-speed: 0.2s;
+  --motion-speed-slow: 0.4s;
+  --motion-speed-notice: 0.8s;
+
+  @media (prefers-reduced-motion) {
+    --motion-speed: 0s;
+    --motion-speed-slow: 0s;
+    --motion-speed-notice: 0s;
+  }
+}
+
 // Variables for use across the mixins
 
 // OLD sizing, do not use.
@@ -13,11 +26,11 @@ $scale-0: 0.75em;
 
 // Sizing
 $space-0: 0.5rem; // 8px
-$space-1: 1rem;   // 16px
+$space-1: 1rem; // 16px
 $space-2: 1.5rem; // 24px
-$space-3: 2rem;   // 32px
-$space-4: 3rem;   // 48px
-$space-5: 4rem;   // 64px
+$space-3: 2rem; // 32px
+$space-4: 3rem; // 48px
+$space-5: 4rem; // 64px
 
 $gutter-foundation: 0.9375rem;
 
@@ -29,25 +42,27 @@ $weight-roman: 400;
 $weight-medium: 500;
 $weight-bold: 600;
 
-$font-size-0: 0.6875rem;// 11px;
-$font-size-1: 0.75rem;  // 12px
+$font-size-0: 0.6875rem; // 11px;
+$font-size-1: 0.75rem; // 12px
 $font-size-2: 0.875rem; // 14px
-$font-size-3: 1rem;     // 16px
+$font-size-3: 1rem; // 16px
 $font-size-4: 1.125rem; // 18px
-$font-size-5: 1.25rem;  // 20px
-$font-size-6: 1.5rem;   // 24px
+$font-size-5: 1.25rem; // 20px
+$font-size-6: 1.5rem; // 24px
 $font-size-7: 1.875rem; // 30px
-$font-size-8: 2.5rem;   // 40px
+$font-size-8: 2.5rem; // 40px
 
 // Colors
 $c-black: #000;
 $c-white: #fff;
 $c-green: #73d2cf;
+$c-green-strong: #2dcb48;
 $c-blue: #06f;
 $c-navy: #1f28bf;
 $c-navy-dark: #1f285c;
 $c-light-grey: #f0f1f1;
 $c-grey: #f5f5f5;
+$c-grey-0: #dadada;
 $c-grey-1: #bcbfbf;
 $c-grey-2: #7f8284;
 $c-grey-3: #4a4a4a;
@@ -64,6 +79,13 @@ $c-form-error: #f43319;
 
 $gutter-padding: 3rem;
 $hover-darken-percentage: 7%;
+$hover-opacity: 0.7;
+
+// z-index levels
+$z-lower: -1;
+$z-base: 0;
+$z-raised: 1;
+$z-top: 2;
 
 //Etc
 $cta-radius: 4px;
@@ -157,7 +179,7 @@ $foundation-palette: (
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
-  alert: #cc4b37
+  alert: #cc4b37,
 );
 $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
@@ -194,7 +216,7 @@ $breakpoints: (
   medium: 640px,
   large: 1024px,
   xlarge: 1200px,
-  xxlarge: 1440px
+  xxlarge: 1440px,
 );
 $print-breakpoint: large;
 $breakpoint-classes: (small medium large);
@@ -206,7 +228,7 @@ $grid-row-width: $global-width;
 $grid-column-count: 12;
 $grid-column-gutter: (
   small: 20px,
-  medium: 30px
+  medium: 30px,
 );
 $grid-column-align-edge: true;
 $grid-column-alias: 'columns';
@@ -225,44 +247,44 @@ $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
     'h1': (
-      'font-size': 24
+      'font-size': 24,
     ),
     'h2': (
-      'font-size': 20
+      'font-size': 20,
     ),
     'h3': (
-      'font-size': 19
+      'font-size': 19,
     ),
     'h4': (
-      'font-size': 18
+      'font-size': 18,
     ),
     'h5': (
-      'font-size': 17
+      'font-size': 17,
     ),
     'h6': (
-      'font-size': 16
-    )
+      'font-size': 16,
+    ),
   ),
   medium: (
     'h1': (
-      'font-size': 48
+      'font-size': 48,
     ),
     'h2': (
-      'font-size': 40
+      'font-size': 40,
     ),
     'h3': (
-      'font-size': 31
+      'font-size': 31,
     ),
     'h4': (
-      'font-size': 25
+      'font-size': 25,
     ),
     'h5': (
-      'font-size': 20
+      'font-size': 20,
     ),
     'h6': (
-      'font-size': 16
-    )
-  )
+      'font-size': 16,
+    ),
+  ),
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
@@ -401,7 +423,7 @@ $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
   default: 0.9rem,
-  large: 1.25rem
+  large: 1.25rem,
 );
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
@@ -450,15 +472,15 @@ $card-margin-bottom: $global-margin;
 $closebutton-position: right top;
 $closebutton-offset-horizontal: (
   small: 0.66rem,
-  medium: 1rem
+  medium: 1rem,
 );
 $closebutton-offset-vertical: (
   small: 0.33em,
-  medium: 0.5rem
+  medium: 0.5rem,
 );
 $closebutton-size: (
   small: 1.5em,
-  medium: 2em
+  medium: 2em,
 );
 $closebutton-lineheight: 1;
 $closebutton-color: $dark-gray;
@@ -489,7 +511,7 @@ $dropdown-radius: $global-radius;
 $dropdown-sizes: (
   tiny: 100px,
   small: 200px,
-  large: 400px
+  large: 400px,
 );
 
 // 18. Dropdown Menu
@@ -603,10 +625,10 @@ $meter-fill-bad: $alert-color;
 // --------------
 
 $offcanvas-sizes: (
-  small: 250px
+  small: 250px,
 );
 $offcanvas-vertical-sizes: (
-  small: 250px
+  small: 250px,
 );
 $offcanvas-background: $light-gray;
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
@@ -751,8 +773,7 @@ $prototype-separator-margin-top: $global-margin;
 // --------------------
 
 $prototype-shadow-breakpoints: $global-prototype-breakpoints;
-$prototype-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
-  0 2px 10px 0 rgba(0, 0, 0, 0.12);
+$prototype-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
 // 41. Prototype Sizing
 // --------------------
@@ -763,7 +784,7 @@ $prototype-sizes: (
   25: 25%,
   50: 50%,
   75: 75%,
-  100: 100%
+  100: 100%,
 );
 
 // 42. Prototype Spacing
@@ -796,7 +817,7 @@ $prototype-text-overflow: ellipsis;
 $responsive-embed-margin-bottom: rem-calc(16);
 $responsive-embed-ratios: (
   default: 4 by 3,
-  widescreen: 16 by 9
+  widescreen: 16 by 9,
 );
 
 // 47. Reveal
@@ -936,7 +957,7 @@ $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
   small: 20px,
-  medium: 30px
+  medium: 30px,
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
