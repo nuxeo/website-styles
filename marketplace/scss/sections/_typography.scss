@@ -98,6 +98,7 @@ input[type='button'],
   background: $c-blue;
   border-radius: $cta-radius;
   color: $c-white;
+  cursor: pointer;
   display: inline-block;
   font-weight: $weight-bold;
   padding: rem-calc(6 20);
@@ -126,14 +127,6 @@ tt {
   background-color: $c-black;
 }
 
-code::before,
-code::after,
-tt::before,
-tt::after {
-  letter-spacing: -0.2em;
-  content: '\00a0';
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -150,11 +143,11 @@ tt::after {
   font-weight: $weight-bold;
   letter-spacing: 1px;
   padding: rem-calc(4 6);
+  text-align: center;
   text-transform: uppercase;
   transition-duration: var(--motion-speed);
   transition-property: background, color;
   transition-timing-function: ease;
-  white-space: nowrap;
 
   &.tag--sub-additional {
     color: $c-purple;

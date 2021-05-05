@@ -19,6 +19,8 @@ $nos-header-height: 57px;
 @import './sections/colours';
 /* Layout */
 @import './sections/layout';
+/* Tooltips */
+@import './sections/tooltips';
 /* Hero Banner */
 @import './sections/hero-banner';
 /* Sidebar */
@@ -124,8 +126,6 @@ textarea {
 
 input[type='radio'],
 input[type='checkbox'] {
-  margin-left: 0.9em;
-  margin-right: 0.9em;
   cursor: pointer;
 }
 
@@ -133,13 +133,13 @@ label.boxOrRadio {
   cursor: pointer;
 }
 
-.mainBox.one-col form {
-  max-width: 60em;
-  margin: 0 auto;
-}
+.mainBox {
+  margin-block: rem-calc(80 30);
+  min-height: calc(100vh - #{rem-calc(420)});
 
-.mainBox.one-col form.smallForm {
-  max-width: 45em;
+  h1 {
+    margin-inline: rem-calc(9);
+  }
 }
 
 #packageEditForm h4 {
@@ -160,16 +160,15 @@ span.info {
 .uploadTable {
   border-collapse: separate;
   border-spacing: rem-calc(9 9);
-  margin-bottom: rem-calc(9);
 
   td {
     vertical-align: top;
   }
 
-  .labelColumn {
-    font-weight: bold;
-    width: 130px;
-  }
+  // .labelColumn {
+  //   font-weight: bold;
+  //   width: 130px;
+  // }
 
   select {
     width: 230px;
@@ -187,5 +186,10 @@ span.info {
     display: flex;
     flex-wrap: wrap;
     gap: rem-calc(9);
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 70vh;
   }
 }

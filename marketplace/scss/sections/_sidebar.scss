@@ -2,33 +2,110 @@
   font-size: $font-size-2;
   font-weight: $weight-bold;
   text-transform: uppercase;
-  padding-block: 1rem 0.5rem;
+  padding-block: rem-calc(22 8);
+  order: -2;
 }
 
 .sidebar-section {
-  ul {
-    list-style: none;
+  display: flex;
+  flex-direction: column;
 
-    a {
-      color: $c-black;
-      display: inline-block;
-      font-size: $font-size-2;
-      padding-block: 0.5rem;
-      text-decoration: none;
-      transition: opacity var(--motion-speed) ease;
+  $limit: 6;
+  $section-limit: $limit + 1;
+  $active-limit: $limit;
+  $section-item-padding: rem-calc(8);
 
-      &:hover,
-      &:focus {
-        opacity: $hover-opacity;
-      }
+  &:not(.sidebar-section--limit) .show-hide {
+    display: none;
+  }
 
-      &.active {
-        color: $c-blue;
-      }
+  a {
+    color: $c-black;
+    display: block;
+    font-size: $font-size-2;
+    padding-block: $section-item-padding;
+    text-decoration: none;
+    transition: opacity var(--motion-speed) ease, height var(--motion-speed-slow) ease,
+      padding var(--motion-speed-slow) ease;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      opacity: $hover-opacity;
     }
+
+    &.active {
+      order: -1;
+      color: $c-blue;
+    }
+  }
+
+  a:nth-of-type(n + #{$section-limit}):not(.active),
+  &.has-active a:nth-of-type(n + #{$active-limit}):not(.active) {
+    height: 0;
+    padding: 0;
+    opacity: 0;
   }
 
   &:first-of-type .section-title {
     padding-block-start: 0;
+  }
+
+  .show-hide {
+    order: 2;
+  }
+
+  input.show-hide.show-hide {
+    position: absolute;
+    left: 0;
+    opacity: 0.01;
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border: none;
+
+    + label.show-hide {
+      font-size: $font-size-2;
+      cursor: pointer;
+      padding-block: 0.5rem;
+      text-decoration: underline;
+
+      &::before {
+        content: '↓';
+        display: inline-block;
+      }
+
+      &::after {
+        content: ' More';
+      }
+    }
+
+    &:checked {
+      + label.show-hide {
+        &::before {
+          content: '↑';
+        }
+
+        &::after {
+          content: ' Fewer';
+        }
+      }
+
+      ~ a {
+        height: rem-calc(37);
+        padding-block: $section-item-padding;
+        opacity: inherit;
+
+        &:hover,
+        &:focus {
+          opacity: $hover-opacity;
+        }
+      }
+    }
+
+    &:focus + label {
+      outline: 1px dotted currentColor;
+      outline-offset: 2px;
+    }
   }
 }

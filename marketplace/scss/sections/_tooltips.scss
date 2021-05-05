@@ -1,0 +1,118 @@
+// Based on https://github.com/primer/css/blob/master/src/tooltips/tooltips.scss#L1
+.tooltipped {
+  position: relative;
+  border-bottom: 1px dotted black;
+  cursor: help;
+
+  // This is the tooltip bubble
+  &::after {
+    background: $tooltip-background-color;
+    border: 0;
+    border-radius: 3px;
+    color: $tooltip-text-color;
+    content: attr(aria-label);
+    font-size: 0.8rem;
+    letter-spacing: normal;
+    padding: 5px 8px;
+    pointer-events: none;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: pre;
+    word-wrap: break-word;
+    z-index: 1000000;
+
+    width: max-content;
+    max-width: 35em;
+    word-wrap: break-word;
+    white-space: pre-line;
+    border-collapse: separate;
+  }
+
+  // This is the tooltip arrow
+  &::before {
+    border: 5px solid transparent;
+    color: $tooltip-background-color;
+    content: '';
+    height: 0;
+    pointer-events: none;
+    width: 0;
+    z-index: 1000001;
+  }
+
+  &::before,
+  &::after {
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: var(--motion-speed-slow);
+    transition-timing-function: ease;
+    transition-delay: var(--motion-speed-slow); // persist briefly
+  }
+
+  // This will indicate when we'll activate the tooltip
+  &:hover,
+  &:active,
+  &:focus {
+    &::before,
+    &::after {
+      opacity: 1;
+      transition-delay: 0s;
+    }
+  }
+
+  // Tooltipped location: NE
+  &.tooltipped-ne {
+    &::after {
+      bottom: 100%;
+      margin-bottom: 6px;
+      margin-left: -30px;
+      left: 50%;
+    }
+
+    &::before {
+      border-top-color: $tooltip-background-color;
+      bottom: auto;
+      margin-right: -6px;
+      right: 50%;
+      top: -7px;
+    }
+  }
+
+  // Tooltipped to the left
+  &.tooltipped-w {
+    &::after {
+      right: 100%;
+      bottom: 50%;
+      // stylelint-disable-next-line primer/spacing
+      margin-right: 6px;
+      transform: translateY(50%);
+
+      right: 100%;
+    }
+
+    &::before {
+      top: 50%;
+      bottom: 50%;
+      left: -7px;
+      // stylelint-disable-next-line primer/spacing
+      margin-top: -6px;
+      // stylelint-disable-next-line primer/borders
+      border-left-color: $tooltip-background-color;
+    }
+
+    &.tooltipped--light {
+      &::after {
+        background: $c-white;
+        color: $c-barely-black;
+      }
+
+      &::before {
+        border-left-color: $c-white;
+        color: $c-white;
+      }
+    }
+  }
+}

@@ -10,6 +10,10 @@
   gap: rem-calc(24);
 }
 
+.content {
+  padding-block-end: rem-calc(100);
+}
+
 .package-page-img {
   background: $c-white;
   line-height: 0;
@@ -101,10 +105,19 @@ a {
   }
 }
 
+$screenshot-height: rem-calc(367);
+
 .screenshots-container {
   display: flex;
   justify-content: stretch;
   column-gap: rem-calc(7);
+  min-height: $screenshot-height;
+  margin-block: rem-calc(35);
+
+  img {
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfkDAkPKTSXV33cAAAA/ElEQVQoz32QMS+DURiFn9tIWHQiYmo6ddChq5DGRIRfwcKGRGKyGiQWYfMjbGLTrYtBuuggEo2UwSJCab7H0Pt9PiQ9w8373nNO8p4TSFFiLVTscc0pX/zDFU646qKIHP5hQ79o2xTnIo083yiqmmTvi8hWSpfxLnpXPInTkTigC6xPUY5bh4fo2gaYBSiEyhwQWKZGmzOqHEQnVYARP3sALPHEIyXq1ABISMPuFrIDZ9yJN7yJVAaCMbyI3/vZtGHo/cQ8xlfzuBSZzzfRJAv44eagze7vMvcQRxNE+tS5QToAISdaoMo7TVoAPDNJl2mG4B5phWEKbhn/BgwCr/NHkCihAAAAAElFTkSuQmCC'),
+      zoom-in;
+  }
 
   @include breakpoint(medium down) {
     display: block;
@@ -126,7 +139,7 @@ a {
     background: $c-grey-0;
     // width: clamp(#{rem-calc(100)}, 32vw, #{rem-calc(582)});
     width: 100%;
-    height: rem-calc(367);
+    height: $screenshot-height;
     object-fit: contain;
   }
 
@@ -163,8 +176,6 @@ a {
     height: rem-calc(93);
     object-fit: cover;
     margin-bottom: rem-calc(7);
-    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAADdcAAA3XAUIom3gAAAAHdElNRQfkDAkPKTSXV33cAAAA/ElEQVQoz32QMS+DURiFn9tIWHQiYmo6ddChq5DGRIRfwcKGRGKyGiQWYfMjbGLTrYtBuuggEo2UwSJCab7H0Pt9PiQ9w8373nNO8p4TSFFiLVTscc0pX/zDFU646qKIHP5hQ79o2xTnIo083yiqmmTvi8hWSpfxLnpXPInTkTigC6xPUY5bh4fo2gaYBSiEyhwQWKZGmzOqHEQnVYARP3sALPHEIyXq1ABISMPuFrIDZ9yJN7yJVAaCMbyI3/vZtGHo/cQ8xlfzuBSZzzfRJAv44eagze7vMvcQRxNE+tS5QToAISdaoMo7TVoAPDNJl2mG4B5phWEKbhn/BgwCr/NHkCihAAAAAElFTkSuQmCC'),
-      zoom-in;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -249,6 +260,7 @@ pre {
   hyphens: none;
   line-height: 1.7;
   overflow-x: auto;
+  position: relative;
   text-align: left;
   white-space: pre-wrap;
   word-break: break-word;
@@ -260,6 +272,31 @@ pre {
 
   .nobreak {
     white-space: nowrap;
+  }
+
+  .copy-area {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .copy-button {
+    background-color: $c-white;
+    border: 1px solid $c-grey-0;
+    border-radius: $cta-radius;
+    cursor: pointer;
+    margin: rem-calc(4);
+    opacity: 0;
+    padding: rem-calc(4 6 0);
+    transition: opacity var(--motion-speed-slow) ease;
+
+    &:hover {
+      background-color: $nuxeo-color-code-border;
+    }
+  }
+
+  &:hover .copy-button {
+    opacity: 1;
   }
 }
 
@@ -273,5 +310,17 @@ pre {
   a {
     color: $c-blue;
     font-weight: $weight-bold;
+  }
+}
+
+.details {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-block-start: rem-calc(24);
+    margin-block-end: rem-calc(10);
   }
 }

@@ -34,9 +34,16 @@
     -webkit-box-orient: vertical;
   }
 
+  .package-extra {
+    a {
+      text-decoration: underline;
+    }
+  }
+
   .package-author,
   .package-owner,
-  .package-description {
+  .package-description,
+  .package-extra {
     font-size: $font-size-2;
   }
 }
