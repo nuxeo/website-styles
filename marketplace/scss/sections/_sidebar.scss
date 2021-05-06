@@ -65,7 +65,7 @@
     border: none;
 
     + label.show-hide {
-      font-size: $font-size-2;
+      font-size: $font-size-1;
       cursor: pointer;
       padding-block: 0.5rem;
       text-decoration: underline;
@@ -73,6 +73,8 @@
       &::before {
         content: '↓';
         display: inline-block;
+        font-size: $font-size-2;
+        vertical-align: top;
       }
 
       &::after {
@@ -84,6 +86,7 @@
       + label.show-hide {
         &::before {
           content: '↑';
+          vertical-align: baseline;
         }
 
         &::after {

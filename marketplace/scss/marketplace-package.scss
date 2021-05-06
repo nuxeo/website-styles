@@ -150,9 +150,6 @@ $screenshot-height: rem-calc(367);
 
 .screenshot-list {
   box-sizing: content-box;
-  // display: flex;
-  // flex-direction: column;
-  // row-gap: rem-calc(7);
   width: rem-calc(170);
   max-height: rem-calc(367);
   overflow-x: hidden; // Just in case
@@ -187,6 +184,11 @@ $screenshot-height: rem-calc(367);
 #fancybox-wrap,
 #fancybox-content {
   box-sizing: initial;
+}
+
+// Scroll fix for tiny vertical
+#fancybox-content {
+  overflow-y: auto !important;
 }
 
 .box-section {
@@ -302,6 +304,7 @@ pre {
 
 .install-info {
   text-align: center;
+  margin: rem-calc(53);
 
   > * {
     margin-top: rem-calc(27);
@@ -314,6 +317,8 @@ pre {
 }
 
 .details {
+  margin-block: rem-calc(35);
+
   h1,
   h2,
   h3,
