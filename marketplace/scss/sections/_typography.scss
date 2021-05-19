@@ -118,15 +118,6 @@ input[type='button'],
   }
 }
 
-code,
-tt {
-  font-family: Courier, monospace;
-  padding: rem-calc(26 35);
-  margin: 0;
-  font-size: rem-calc(15);
-  background-color: $c-black;
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;

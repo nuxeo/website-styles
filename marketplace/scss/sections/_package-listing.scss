@@ -30,7 +30,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box; // See: https://stackoverflow.com/a/19049457
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
   }
 
