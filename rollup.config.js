@@ -8,57 +8,98 @@ import sveltePreprocess from 'svelte-preprocess';
 const production = !process.env.ROLLUP_WATCH;
 
 const source = 'components';
-const output_js = production
+const output_main_js = production
   ? 'static/components/v1/bundle.min.js'
   : 'demo/build/bundle.js';
+const output_hyland_heritage_js = production
+  ? 'static/components/v1/hyland-heritage.min.js'
+  : 'demo/build/hyland-heritage.js';
 
 const preprocess = sveltePreprocess({
   scss: {
-    includePaths: [source, join(__dirname, 'node_modules', 'foundation-sites', 'scss')]
+    includePaths: [source, join(__dirname, 'node_modules', 'foundation-sites', 'scss')],
   },
   postcss: {
     plugins: [
       require('autoprefixer'),
       require('cssnano')({
-        preset: 'default'
-      })
-    ]
-  }
+        preset: 'default',
+      }),
+    ],
+  },
 });
 
-export default {
-  input: `${source}/main.js`,
-  output: {
-    sourcemap: true,
-    format: 'iife',
-    name: 'app',
-    file: output_js
+export default [
+  {
+    input: `${source}/main.js`,
+    output: {
+      sourcemap: true,
+      format: 'iife',
+      name: 'app',
+      file: output_main_js,
+    },
+    plugins: [
+      svelte({
+        // enable run-time checks when not in production
+        dev: !production,
+        customElement: true,
+        generate: 'dom',
+        preprocess,
+      }),
+
+      // If you have external dependencies installed from
+      // npm, you'll most likely need these plugins. In
+      // some cases you'll need additional configuration —
+      // consult the documentation for details:
+      // https://github.com/rollup/rollup-plugin-commonjs
+      resolve({
+        browser: true,
+        dedupe: (importee) => importee === 'svelte' || importee.startsWith('svelte/'),
+      }),
+      commonjs(),
+
+      // If we're building for production (npm run build
+      // instead of npm run dev), minify
+      production && terser(),
+    ],
+    watch: {
+      clearScreen: false,
+    },
   },
-  plugins: [
-    svelte({
-      // enable run-time checks when not in production
-      dev: !production,
-      customElement: true,
-      generate: 'dom',
-      preprocess
-    }),
+  {
+    input: `${source}/hyland-heritage.js`,
+    output: {
+      sourcemap: true,
+      format: 'iife',
+      name: 'app',
+      file: output_hyland_heritage_js,
+    },
+    plugins: [
+      svelte({
+        // enable run-time checks when not in production
+        dev: !production,
+        customElement: true,
+        generate: 'dom',
+        preprocess,
+      }),
 
-    // If you have external dependencies installed from
-    // npm, you'll most likely need these plugins. In
-    // some cases you'll need additional configuration —
-    // consult the documentation for details:
-    // https://github.com/rollup/rollup-plugin-commonjs
-    resolve({
-      browser: true,
-      dedupe: (importee) => importee === 'svelte' || importee.startsWith('svelte/')
-    }),
-    commonjs(),
+      // If you have external dependencies installed from
+      // npm, you'll most likely need these plugins. In
+      // some cases you'll need additional configuration —
+      // consult the documentation for details:
+      // https://github.com/rollup/rollup-plugin-commonjs
+      resolve({
+        browser: true,
+        dedupe: (importee) => importee === 'svelte' || importee.startsWith('svelte/'),
+      }),
+      commonjs(),
 
-    // If we're building for production (npm run build
-    // instead of npm run dev), minify
-    production && terser()
-  ],
-  watch: {
-    clearScreen: false
-  }
-};
+      // If we're building for production (npm run build
+      // instead of npm run dev), minify
+      production && terser(),
+    ],
+    watch: {
+      clearScreen: false,
+    },
+  },
+];

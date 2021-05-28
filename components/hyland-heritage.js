@@ -1,0 +1,1 @@
+import './hyland-heritage.svelte';

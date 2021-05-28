@@ -63,7 +63,7 @@ In the header of your page:
 
 ```
 <link rel="stylesheet" href="https://static.nuxeo.com/components/v1/global.css" />
-<script defer src="https://static.nuxeo.com/components/v1/bundle.min.js"></script>
+<script async src="https://static.nuxeo.com/components/v1/bundle.min.js"></script>
 ```
 
 #### Header
@@ -81,6 +81,37 @@ Properties:
 - `year`: Manually set the year
 - `showlicense`: Adds a creative commons license and link
 - `nolinks`: Removes the main links section
+
+#### Hyland Heritage Logo component
+
+In the header of your page:
+
+```
+<script async src="https://static.nuxeo.com/components/v1/hyland-heritage.min.js"></script>
+```
+
+Where the component logos should be located in the HTML:
+
+```
+<hyland-logo-heritage>[YOUR HERITAGE LOGO HERE]</hyland-logo-heritage>
+```
+
+Example usage with logo:
+
+```
+<hyland-logo-heritage><img
+    src="https://static.nuxeo.com/images/nuxeo.min.svg"
+    alt="Nuxeo"
+    height="19"
+    width="101"
+/></hyland-logo-heritage>
+```
+
+Optional attributes for `hyland-logo-heritage`:
+
+- `hylandlang`: The locale for the Hyland website (https://www.hyland.com/en/). [Default="en"] e.g. `hylandlang="de"` points to https://www.hyland.com/de/
+- `name`: Only necessary when an inline SVG is used as the logo. e.g. `name="Nuxeo"`
+- `homepath`: Override the heritage logo URL location. [Default="/"] e.g. `homepath="https://doc.nuxeo.com/"`
 
 # Development (Local)
 
