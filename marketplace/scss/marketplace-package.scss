@@ -233,7 +233,7 @@ $screenshot-height: rem-calc(367);
     color: $c-grey-2;
     font-size: $font-size-2;
     font-weight: $weight-bold;
-    padding: rem-calc(0 4);
+    padding-inline: rem-calc(4);
     text-align: left;
     vertical-align: top;
   }
@@ -325,7 +325,6 @@ pre {
 
 code {
   background-color: $c-grey-0;
-  // border-radius: $cta-radius;
   color: $c-black;
   font-family: Courier, monospace;
   font-size: rem-calc(15);
