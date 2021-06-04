@@ -45,7 +45,7 @@
   "author": "Andrew Goodricke <github@andrewgoodricke.com> (http://www.nuxeo.com)",
   "dependencies": {
     "foundation-sites": "6.6.3",
-    "postcss": "^8.2.4"
+    "postcss": "^8.2.10"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^16.0.0",
