@@ -41,10 +41,12 @@ export default [
     plugins: [
       svelte({
         // enable run-time checks when not in production
-        dev: !production,
-        customElement: true,
-        generate: 'dom',
         preprocess,
+        compilerOptions: {
+          generate: 'dom',
+          dev: !production,
+          customElement: true,
+        },
       }),
 
       // If you have external dependencies installed from
@@ -77,10 +79,12 @@ export default [
     plugins: [
       svelte({
         // enable run-time checks when not in production
-        dev: !production,
-        customElement: true,
-        generate: 'dom',
         preprocess,
+        compilerOptions: {
+          generate: 'dom',
+          dev: !production,
+          customElement: true,
+        },
       }),
 
       // If you have external dependencies installed from
