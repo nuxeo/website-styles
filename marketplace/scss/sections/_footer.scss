@@ -22,6 +22,12 @@ footer {
   }
 }
 
+.footer-icons {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
 .footer-icon {
   font-size: $logo-size;
   height: $logo-size;
@@ -44,6 +50,67 @@ footer {
 
   .nsvglogo-x {
     fill: $c-green;
+  }
+}
+*/
+
+.footer-icon {
+  display: block;
+
+  a {
+    transition: color var(--motion-speed) ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  svg {
+    fill: currentColor;
+    height: 1em;
+    line-height: 1;
+    width: auto;
+  }
+
+  &.footer-icon--hyland {
+    a:hover {
+      color: $c-green-hyland;
+    }
+
+    svg {
+      margin-left: -5px;
+      font-size: 28px;
+    }
+  }
+
+  &.footer-icon--nuxeo {
+    a {
+      path {
+        transition: fill var(--motion-speed) ease;
+      }
+
+      .nsvglogo-x {
+        fill: $c-green;
+      }
+
+      .nsvglogo {
+        fill: $c-white;
+      }
+
+      &:hover {
+        .nsvglogo-x {
+          fill: $c-green;
+        }
+
+        .nsvglogo {
+          fill: $c-green;
+        }
+      }
+    }
+
+    svg {
+      font-size: 14px;
+    }
   }
 }
 
