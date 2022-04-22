@@ -69,7 +69,6 @@
         {#if cite}
           <cite>{@html cite}</cite>
         {/if}
-        <slot name="cite"></slot>
       </figcaption>
     </figure>
     <svg aria-hidden="true" class="fancy-quote__closequotes" viewBox="0 0 93 74" xmlns="http://www.w3.org/2000/svg"><use href="#fancy_quote_path" fill="url('#fancy-quote__gradient')"/></svg>
@@ -200,19 +199,22 @@
     margin: 0;
     margin-block-start: 6.3rem;
     line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 
   figcaption {
     color: #333;
-    text-transform: uppercase;
-    font-weight: 800;
+    font-size: 1.75rem;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     column-gap: 4rem;
     row-gap: 2rem;
     flex-wrap: wrap;
+
+    span::before {
+      content: '—';
+    }
 
     cite {
       font-style: normal;
