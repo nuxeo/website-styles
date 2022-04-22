@@ -14,6 +14,9 @@ const output_main_js = production
 const output_hyland_heritage_js = production
   ? 'static/components/v1/hyland-heritage.min.js'
   : 'demo/build/hyland-heritage.js';
+const output_hy_blockquote_js = production
+  ? 'static/components/v1/hy-blockquote.min.js'
+  : 'demo/build/hy-blockquote.js';
 
 const preprocess = sveltePreprocess({
   scss: {
@@ -75,6 +78,44 @@ export default [
       format: 'iife',
       name: 'app',
       file: output_hyland_heritage_js,
+    },
+    plugins: [
+      svelte({
+        // enable run-time checks when not in production
+        preprocess,
+        compilerOptions: {
+          generate: 'dom',
+          dev: !production,
+          customElement: true,
+        },
+      }),
+
+      // If you have external dependencies installed from
+      // npm, you'll most likely need these plugins. In
+      // some cases you'll need additional configuration —
+      // consult the documentation for details:
+      // https://github.com/rollup/rollup-plugin-commonjs
+      resolve({
+        browser: true,
+        dedupe: (importee) => importee === 'svelte' || importee.startsWith('svelte/'),
+      }),
+      commonjs(),
+
+      // If we're building for production (npm run build
+      // instead of npm run dev), minify
+      production && terser(),
+    ],
+    watch: {
+      clearScreen: false,
+    },
+  },
+  {
+    input: `${source}/hy-blockquote.js`,
+    output: {
+      sourcemap: true,
+      format: 'iife',
+      name: 'app',
+      file: output_hy_blockquote_js,
     },
     plugins: [
       svelte({

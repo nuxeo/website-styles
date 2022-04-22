@@ -38,6 +38,10 @@
     "login:dev": "npm run login:server & nodemon --ext scss --exec 'npm run login:styles && browser-sync reload'",
     "login:styles": "sass --embed-sources login/src/:login/",
     "postlogin:styles": "postcss login/*.css -mr",
+    "register:server": "browser-sync start --server ./register --watch ./register",
+    "register:dev": "npm run register:server & nodemon --ext scss --exec 'npm run register:styles && browser-sync reload'",
+    "register:styles": "sass --embed-sources register/src/:register/",
+    "postregister:styles": "postcss register/*.css -mr",
     "marketplace:dev": "nodemon --ext scss --exec 'npm run marketplace:styles'",
     "marketplace:styles": "sass --embed-sources --load-path node_modules/foundation-sites/scss/ marketplace/scss/:nos-marketplace-css",
     "postmarketplace:styles": "postcss nos-marketplace-css/marketplace-*.css --use autoprefixer -mr"
