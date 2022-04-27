@@ -101,7 +101,7 @@
   }
 
   position: relative;
-  margin-block: 3rem;
+  margin-block: 3rem 1rem;
 }
 
 .fancy-quote__container {
