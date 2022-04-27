@@ -101,6 +101,7 @@
   }
 
   position: relative;
+  margin-block: 3rem;
 }
 
 .fancy-quote__container {
