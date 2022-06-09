@@ -2,8 +2,9 @@
 
 <script>
   export let author;
+  export let authorurl = '';
   export let cite = '';
-  export let citeURL = '';
+  export let citeurl = '';
 
   function intersection(node) {
     const quoteClass = 'fancy-quote__container';
@@ -61,11 +62,15 @@
   <div class="fancy-quote__container fancy-quote__container--hide">
     <svg aria-hidden="true" class="fancy-quote__openquotes" viewBox="0 0 93 74" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(180,46,37)"><path id="fancy_quote_path" d="M3.56 39.807V0h39.17v39.807c-1.018 8.165-3.052 17.862-9.665 23.986C26.452 69.917 14.243 74 2.543 74L0 58.69c3.052-.17 10.072-1.225 13.735-4.083 3.662-2.858 5.256-11.057 5.595-14.8H3.56zm50.271 0V0H93v39.807c-1.017 8.165-3.052 17.862-9.665 23.986C76.722 69.917 64.513 74 52.814 74L50.27 58.69c3.052-.17 10.072-1.225 13.735-4.083 3.662-2.858 5.256-11.057 5.595-14.8H53.831z" fill="url('#fancy-quote__gradient')"/></g><defs><linearGradient id="fancy-quote__gradient" gradientTransform="rotate(45)"><stop offset="10%" stop-color="hsl(325deg 56% 61%)"/><stop offset="60%" stop-color="hsl(246deg 28% 70%)"/><stop offset="100%" stop-color="hsl(193deg 75% 62%)"/></linearGradient></defs></svg>
     <figure class="fancy-quote__figure">
-      <blockquote cite="{citeURL}">
+      <blockquote cite={citeurl}>
         <p><slot></slot></p>
       </blockquote>
       <figcaption>
+        {#if authorurl}
+        <a href="{authorurl}">{author}</a>
+        {:else}
         <span>{author}</span>
+        {/if}
         {#if cite}
           <cite>{@html cite}</cite>
         {/if}
@@ -88,6 +93,11 @@
 }
 
 .fancy-quote {
+  --fq-color: #333;
+  --fq-color--hover: #000;
+
+  --outline-border-radius: 0.25rem;
+
   --motion-speed: 0.2s;
   --motion-speed-slow: 0.4s;
   --motion-speed-notice: 1s;
@@ -122,7 +132,7 @@
     transition: all var(--motion-speed-notice) ease;
   }
 
-  &.fancy-quote__container--hide {
+  &.fancy-quote__container--hide:not(:focus-within) {
     blockquote,
     figcaption,
     .fancy-quote__openquotes,
@@ -196,7 +206,7 @@
   */
 
   blockquote {
-    color: #333;
+    color: var(--fq-color);
     margin: 0;
     margin-block-start: 6.3rem;
     line-height: 1.5;
@@ -204,7 +214,7 @@
   }
 
   figcaption {
-    color: #333;
+    color: var(--fq-color);
     font-size: 1.75rem;
     display: flex;
     justify-content: space-between;
@@ -213,12 +223,38 @@
     row-gap: 2rem;
     flex-wrap: wrap;
 
+    a::before,
     span::before {
       content: '—';
     }
 
     cite {
       font-style: normal;
+    }
+
+    a {
+      color: currentColor;
+      border-block-end: 2px solid currentColor;
+      line-height: 1;
+      text-decoration: none;
+      transition-property: color, border;
+      transition-duration: var(--motion-speed);
+      transition-timing-function: ease;
+
+      &:hover,
+      &:focus {
+        border-block-end-color: rgba(0,0,0,0);
+        color: var(--fq-color--hover);
+      }
+
+      &:where(:focus, :focus-visible) {
+        outline: thin solid currentColor;
+        border-radius: var(--outline-border-radius);
+      }
+
+      &:where(:focus:not(:focus-visible)) {
+        outline-color: transparent;
+      }
     }
   }
 
