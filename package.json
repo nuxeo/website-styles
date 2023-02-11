@@ -61,7 +61,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "html-minifier": "^4.0.0",
-    "nodemon": "^2.0.6",
+    "nodemon": "^2.0.20",
     "postcss-cli": "^8.2.0",
     "prettier": "^2.3.0",
     "rollup": "^2.50.3",
