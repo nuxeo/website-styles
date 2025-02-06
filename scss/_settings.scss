@@ -54,6 +54,7 @@ $font-size-8: 2.5rem; // 40px
 
 // Colors
 $c-black: #000;
+$c-footer-bk: #181b19;
 $c-white: #fff;
 $c-green: #73d2cf;
 $c-green-strong: #2dcb48;
@@ -220,7 +221,9 @@ $breakpoints: (
   xxlarge: 1440px,
 );
 $print-breakpoint: large;
-$breakpoint-classes: (small medium large);
+$breakpoint-classes: (
+  small medium large
+);
 
 // 3. The Grid
 // -----------
@@ -246,44 +249,30 @@ $header-color: inherit;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
-  small: (
-    'h1': (
-      'font-size': 24,
+  small: ('h1': ('font-size': 24,
     ),
-    'h2': (
-      'font-size': 20,
+    'h2': ('font-size': 20,
     ),
-    'h3': (
-      'font-size': 19,
+    'h3': ('font-size': 19,
     ),
-    'h4': (
-      'font-size': 18,
+    'h4': ('font-size': 18,
     ),
-    'h5': (
-      'font-size': 17,
+    'h5': ('font-size': 17,
     ),
-    'h6': (
-      'font-size': 16,
+    'h6': ('font-size': 16,
     ),
   ),
-  medium: (
-    'h1': (
-      'font-size': 48,
+  medium: ('h1': ('font-size': 48,
     ),
-    'h2': (
-      'font-size': 40,
+    'h2': ('font-size': 40,
     ),
-    'h3': (
-      'font-size': 31,
+    'h3': ('font-size': 31,
     ),
-    'h4': (
-      'font-size': 25,
+    'h4': ('font-size': 25,
     ),
-    'h5': (
-      'font-size': 20,
+    'h5': ('font-size': 20,
     ),
-    'h6': (
-      'font-size': 16,
+    'h6': ('font-size': 16,
     ),
   ),
 );
@@ -690,7 +679,12 @@ $progress-radius: $global-radius;
 // 29. Prototype Arrow
 // -------------------
 
-$prototype-arrow-directions: (down, up, right, left);
+$prototype-arrow-directions: (
+  down,
+  up,
+  right,
+  left
+);
 $prototype-arrow-size: 0.4375rem;
 $prototype-arrow-color: $black;
 
@@ -716,7 +710,13 @@ $prototype-border-color: $medium-gray;
 // ---------------------
 
 $prototype-display-breakpoints: $global-prototype-breakpoints;
-$prototype-display: (inline, inline-block, block, table, table-cell);
+$prototype-display: (
+  inline,
+  inline-block,
+  block,
+  table,
+  table-cell
+);
 
 // 34. Prototype Font-Styling
 // --------------------------
@@ -730,7 +730,11 @@ $prototype-font-bold: $global-weight-bold;
 // -----------------------------
 
 $prototype-list-breakpoints: $global-prototype-breakpoints;
-$prototype-style-type-unordered: (disc, circle, square);
+$prototype-style-type-unordered: (
+  disc,
+  circle,
+  square
+);
 $prototype-style-type-ordered: (
   decimal,
   lower-alpha,
@@ -745,13 +749,22 @@ $prototype-style-type-ordered: (
 // ----------------------
 
 $prototype-overflow-breakpoints: $global-prototype-breakpoints;
-$prototype-overflow: (visible, hidden, scroll);
+$prototype-overflow: (
+  visible,
+  hidden,
+  scroll
+);
 
 // 37. Prototype Position
 // ----------------------
 
 $prototype-position-breakpoints: $global-prototype-breakpoints;
-$prototype-position: (static, relative, absolute, fixed);
+$prototype-position: (
+  static,
+  relative,
+  absolute,
+  fixed
+);
 $prototype-position-z-index: 975;
 
 // 38. Prototype Rounded
@@ -780,7 +793,10 @@ $prototype-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 
 // --------------------
 
 $prototype-sizing-breakpoints: $global-prototype-breakpoints;
-$prototype-sizing: (width, height);
+$prototype-sizing: (
+  width,
+  height
+);
 $prototype-sizes: (
   25: 25%,
   50: 50%,
@@ -798,13 +814,21 @@ $prototype-spacers-count: 3;
 // -----------------------------
 
 $prototype-decoration-breakpoints: $global-prototype-breakpoints;
-$prototype-text-decoration: (overline, underline, line-through);
+$prototype-text-decoration: (
+  overline,
+  underline,
+  line-through
+);
 
 // 44. Prototype Text-Transformation
 // ---------------------------------
 
 $prototype-transformation-breakpoints: $global-prototype-breakpoints;
-$prototype-text-transformation: (lowercase, uppercase, capitalize);
+$prototype-text-transformation: (
+  lowercase,
+  uppercase,
+  capitalize
+);
 
 // 45. Prototype Text-Utilities
 // ----------------------------
@@ -872,10 +896,8 @@ $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);
 $table-hover-scale: 2%;
 $table-row-hover: darken($table-background, $table-hover-scale);
-$table-row-stripe-hover: darken(
-  $table-background,
-  $table-color-scale + $table-hover-scale
-);
+$table-row-stripe-hover: darken($table-background,
+    $table-color-scale + $table-hover-scale);
 $table-is-striped: true;
 $table-striped-background: smart-scale($table-background, $table-color-scale);
 $table-stripe: even;
