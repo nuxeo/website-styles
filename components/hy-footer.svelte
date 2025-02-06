@@ -19,39 +19,28 @@
     </p>
     <ul class="{name}__legal-links">
       <li>
-        <a href="https://www.hyland.com/en/legal/privacy-policies">Privacy</a>
+        <a href="https://www.hyland.com/en/legal/privacy-policies"> Privacy </a>
       </li>
       <li>
-        <a href="https://www.hyland.com/en/legal/privacy-policies/cookie-policy"
-          >Cookies</a
+        <a href="https://www.hyland.com/en/legal/privacy-policies/cookie-policy">
+          Cookie Policy
+        </a>
+      </li>
+      <li>
+        <a href="https://www.hyland.com/en/legal/do-not-sell-share-personal-info">
+          Do Not Sell or Share My Personal Information
+        </a>
+      </li>
+      <li>
+        <a href="https://www.hyland.com/en/legal/terms-of-use"> Terms of Use</a>
+      </li>
+      <li>
+        <a href="https://www.hyland.com/en/legal/hyland-trust-center">
+          Security and Compliance</a
         >
       </li>
       <li>
-        <a href="https://www.hyland.com/en/legal/terms-of-use">Terms of Use</a>
-      </li>
-      <li>
-        <a href="https://www.hyland.com/en/legal/hyland-trust-center"
-          >Security and Compliance</a
-        >
-      </li>
-      <li>
-        <a href="https://www.hyland.com/en/legal/using-trademarks">Trademarks</a>
-      </li>
-      <li>
-        <a href="https://www.hyland.com/en/legal/supply-chain-transparency"
-          >Supply Chain Transparency</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://www.hyland.com/en/legal/ontario-accessibility-customer-service-policy"
-          >Ontario Accessibility Customer Service Policy</a
-        >
-      </li>
-      <li style="border-right: none;">
-        <a href="https://www.hyland.com/en/legal/vendors"
-          >Interacting with Hyland Sourcing</a
-        >
+        <a href="https://www.hyland.com/en/legal"> Legal and Compliance </a>
       </li>
     </ul>
   </div>
@@ -128,7 +117,7 @@
       &:focus-visible {
         outline: 1.5px solid currentColor;
         outline-offset: 0.25rem;
-        border-radius: 0.25rem;
+        border-radius: 1px;
       }
     }
   }
