@@ -1,5 +1,9 @@
 # Nuxeo Website Components
 
+_Note_: now in [maintenance mode](#maintenance-mode)
+
+---
+
 Please use [EditorConfig plugin for your code editor/IDE](http://editorconfig.org/#download).
 
 ## Using the package
@@ -198,3 +202,23 @@ Then push the version commit and the tags:
 ```bash
 git push && git push --tags
 ```
+
+## Maintenance mode
+
+---
+
+For `hy-footer`, `hyland-heritage`.
+
+Dev:
+
+```bash
+$ npm run dev:components
+```
+
+Build:
+
+```bash
+$ npm run build:components
+```
+
+`static/components/v1` needs to be updated manually on https://static.nuxeo.com/components/v1/, contact Nuxeo devops to update the files.
