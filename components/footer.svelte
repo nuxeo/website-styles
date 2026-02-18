@@ -13,8 +13,8 @@
     <div class="footer-icon footer-icon--hyland">
       <a href="https://www.hyland.com/">
         <img
-          width="80"
-          src="https://particle.hyland.com/assets/logos/hyland-inverse.svg"
+          width="100"
+          src="https://particle.hyland.com/assets/logos/wordmark-dark.svg"
           alt="Hyland"
         />
       </a>
