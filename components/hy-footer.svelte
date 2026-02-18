@@ -15,7 +15,7 @@
     style="{max_width_style} {padding_size ? `--padding-size: ${padding_size};` : ''}"
   >
     <p class="{name}__copyright-text">
-      &copy;{year} Hyland Software, Inc. and its affiliates. All rights reserved.
+      &copy;{year} Hyland. All rights reserved.
     </p>
     <ul class="{name}__legal-links">
       <li>
