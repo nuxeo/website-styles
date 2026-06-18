@@ -20,14 +20,16 @@
       </a>
     </div>
     <div class="footer-icon footer-icon--nuxeo">
-      <a href="https://www.nuxeo.com/" aria-label="Nuxeo">
-        <svg viewBox="0 0 128 24" xmlns="http://www.w3.org/2000/svg"
+      <a
+        href="https://www.hyland.com/en/solutions/products/nuxeo-platform"
+        aria-label="Nuxeo Platform"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="1061 176.2 557.6 81.4"
+          fill="#fff"
           ><path
-            class="nsvglogo"
-            d="M0,0 18,0 24,6 24,24 18,24 18,6 6,6 6,24 0,24M26,0 32,0 32,18 44,18 44,0 50,0 50,24 32,24 26,18M78,0 102,0 102,6 84,6 84,9 102,9 102,15 84,15 84,18 102,18 102,24 78,24M104,0 122,0 128,6 128,24 110,24 104,18 104,0 110,6 110,18 122,18 122,6 110,6z"
-          /><path
-            class="nsvglogo-x"
-            d="M52,0 57,0 76,19 76,24 71,24 52,5M52,24 52,19 71,0 76,0 76,5 57,24z"
+            d="M1008.7 177.4h-26.2l-45.2 79.1h26.2zm135.6 78.9H1128l-49.3-55.5v55.5H1061v-79h18.6l46.8 53v-53h17.8zm36.4-36.3v-42.6h18.3v41.1c0 14 6.5 23 22.8 23s22.7-9 22.7-23v-41.1h18.3v42.5c0 23-13.6 37.7-41 37.7s-41.1-14.8-41.1-37.7m158-16.8 23-25.7h22.5L1350 215l37.4 41.2h-23.1l-25.8-29-26 29H1290l37.2-41.1-34.2-37.8h23zm156.1-25.7V193h-58.5v15.2h52.3v15.5h-52.3v16.8h58.5v15.7h-76.5v-79zm123.8 39.5c0 23.5-19.7 40.6-46.9 40.6s-47-17.1-47-40.6 19.7-40.7 47-40.7 46.9 17.1 46.9 40.7m-75.2 0c0 15 11.8 24.7 28.3 24.7s28.2-9.8 28.2-24.7-11.8-24.8-28.2-24.8-28.3 9.8-28.3 24.8M295.7 177v78.6h-18.3v-32.4h-47.6v32.4h-18.3V177h18.3v30.7h47.5V177zm94.5 0h21.5l-39 46v32.6h-18.4V223l-39.2-46h22l26.6 31.1zm41 0h18.3v63h53v15.6h-71.3zm150.9 0 39 78.6h-19.8l-8.3-16.8h-43l-8.4 16.8H522l39.4-78.6zm-24.8 46.7h28.4L571.5 195zm166.2 32h-16l-49.1-55.4v55.3h-17.8V177h18.5l46.7 52.7V177h17.7zm31-78.7h41c28.1 0 45.7 15.4 45.7 39.5s-17.6 39.6-45.7 39.6h-41zm40.6 63.3c17 0 27-9.4 27-23.8s-10-23.7-27.1-23.7h-22.7v47.5zm77-59.7v14.7h-4.3v-14.7h-8V177H880v3.6zm22.1 14.7-6.2-14v14h-4.2V177h6.5l5.7 13 5.7-13h6.3v18.3h-4.1v-14l-6.3 14z"
           /></svg
         >
       </a>
@@ -36,32 +38,36 @@
       <div class="row small-up-2 medium-up-3 large-up-6 main-section">
         <div class="column">
           <div class="has-top-bar has-top-bar--for-small">
-            <a href="https://www.nuxeo.com/about/" class="strong">About</a>
+            <a href="https://www.hyland.com/en/company/about" class="strong">About</a>
           </div>
         </div>
         <div class="column">
           <div class="has-top-bar has-top-bar--for-small">
-            <a href="https://www.nuxeo.com/products/" class="strong">Products</a>
+            <a href="https://www.hyland.com/en/solutions/products" class="strong"
+              >Products</a
+            >
           </div>
         </div>
         <div class="column">
           <div class="has-top-bar has-top-bar--for-small">
-            <a class="strong" href="https://www.nuxeo.com/customers/">Customers</a>
+            <a class="strong" href="https://www.hyland.com/en/customers">Customers</a>
           </div>
         </div>
         <div class="column">
           <div class="has-top-bar has-top-bar--for-small">
-            <a href="https://www.nuxeo.com/services/" class="strong">Services</a>
+            <a href="https://www.hyland.com/en/solutions/services" class="strong"
+              >Services</a
+            >
           </div>
         </div>
         <div class="column">
           <div class="has-top-bar has-top-bar--for-small">
-            <a href="https://www.nuxeo.com/learn/" class="strong">Learn</a>
+            <a href="https://university.hyland.com/" class="strong">Learn</a>
           </div>
         </div>
         <div class="column">
           <div class="has-top-bar has-top-bar--for-small">
-            <a href="https://www.nuxeo.com/contact/" class="strong">Contact Us</a>
+            <a href="https://www.hyland.com/en/contact-us" class="strong">Contact Us</a>
           </div>
         </div>
       </div>
@@ -235,7 +241,7 @@
       }
 
       svg {
-        font-size: 14px;
+        font-size: 13px;
       }
     }
   }
